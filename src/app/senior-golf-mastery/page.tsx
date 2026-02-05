@@ -55,12 +55,16 @@ export default function SeniorGolfMasteryPage() {
       {/* Hero Section - Two Column */}
       <section className="pt-20 pb-12 bg-white">
         <div className="max-w-6xl mx-auto px-4">
+          {/* Eyebrow - Centered Above Both Columns */}
+          <div className="text-center mb-8">
+            <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm px-6 py-2 rounded-full">
+              Attention: Senior Golfers
+            </span>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Copy */}
             <div className="text-center lg:text-left">
-              <p className="text-gray-500 font-semibold tracking-widest uppercase text-sm mb-4">
-                Attention: Senior Golfers
-              </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
                 Add 30+ Yards to Your Drive & Hit Greens in Regulation Again
               </h1>
@@ -112,19 +116,66 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
-      {/* Benefits Grid */}
+      {/* Benefits Grid - Option 6: Vertical Accent Cards */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
+          <p className="text-center text-gray-400 text-xs uppercase tracking-widest mb-4">Option 6: Vertical Accent Cards</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "Move", highlight: "Better", color: "border-[#F26B4E]" },
+              { label: "Gain", highlight: "Distance", color: "border-[#1565c0]" },
+              { label: "Improve", highlight: "Consistency", color: "border-[#F26B4E]" },
+              { label: "Play More", highlight: "Frequently", color: "border-[#1565c0]" },
+            ].map((benefit, index) => (
+              <div key={index} className={`bg-white p-5 rounded-lg shadow-sm border-l-4 ${benefit.color} text-left`}>
+                <p className="text-gray-500 text-sm">{benefit.label}</p>
+                <p className="text-xl font-bold text-gray-900">{benefit.highlight}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Grid - Option 1: Icon Cards */}
+      <section className="py-12 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <p className="text-center text-gray-400 text-xs uppercase tracking-widest mb-4">Option 1: Icon Cards with Color</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { label: "Move", highlight: "Better" },
-              { label: "Gain", highlight: "Distance" },
-              { label: "Improve", highlight: "Consistency" },
-              { label: "Play More", highlight: "Frequently" },
+              { label: "Move", highlight: "Better", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+              { label: "Gain", highlight: "Distance", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { label: "Improve", highlight: "Consistency", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { label: "Play More", highlight: "Frequently", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
             ].map((benefit, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
-                <p className="text-gray-600 text-sm">{benefit.label}</p>
+              <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#F26B4E] transition-colors">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#0f4c81] to-[#1e88e5] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
+                  </svg>
+                </div>
+                <p className="text-gray-500 text-sm">{benefit.label}</p>
                 <p className="text-xl font-bold text-gray-900">{benefit.highlight}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Grid - Option 2: Stats Style */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <p className="text-center text-gray-400 text-xs uppercase tracking-widest mb-4">Option 2: Stats Style</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { stat: "30+", label: "Yards Gained", sublabel: "Move Better" },
+              { stat: "100%", label: "More Power", sublabel: "Gain Distance" },
+              { stat: "Every", label: "Single Shot", sublabel: "Improve Consistency" },
+              { stat: "2-3x", label: "More Rounds", sublabel: "Play More Frequently" },
+            ].map((benefit, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md">
+                <p className="text-4xl font-bold text-[#F26B4E] mb-1">{benefit.stat}</p>
+                <p className="text-lg font-semibold text-gray-900">{benefit.label}</p>
+                <p className="text-gray-500 text-sm mt-1">{benefit.sublabel}</p>
               </div>
             ))}
           </div>
