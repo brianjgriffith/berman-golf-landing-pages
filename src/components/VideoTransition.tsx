@@ -21,7 +21,7 @@ export default function VideoTransition({
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/tee-shot-background.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dtug3u8hc/video/upload/v1770329717/Berman_Golf_-_Tee_Shot_Background_1_ma6jwr.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
