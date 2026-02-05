@@ -2,25 +2,88 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+  --berman-orange: #F26B4E;
+  --berman-orange-hover: #e05a3d;
+  --berman-blue: #2B5BAF;
+  --berman-blue-dark: #1e4a8f;
+  --berman-navy: #1a365d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-berman-orange: var(--berman-orange);
+  --color-berman-orange-hover: var(--berman-orange-hover);
+  --color-berman-blue: var(--berman-blue);
+  --color-berman-blue-dark: var(--berman-blue-dark);
+  --color-berman-navy: var(--berman-navy);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--berman-orange);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--berman-orange-hover);
+}
+
+/* FAQ Accordion Animation */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
+
+/* Button hover animation */
+.btn-primary {
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(242, 107, 78, 0.4);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
 }
