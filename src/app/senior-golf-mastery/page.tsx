@@ -94,24 +94,24 @@ export default function SeniorGolfMasteryPage() {
                   className="w-full h-full"
                 />
               </div>
-            </div>
-          </div>
 
-          {/* Social Proof Badges - Below Both Columns */}
-          <div className="flex flex-wrap justify-center gap-3 mt-10">
-            {[
-              "1,000+ Senior Golfers Trained",
-              "100% Success Rate",
-              "Gain 20-50 Yards",
-              "Ages into 80s/90s",
-            ].map((badge, index) => (
-              <span key={index} className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium text-sm flex items-center gap-2">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                {badge}
-              </span>
-            ))}
+              {/* Social Proof - Below VSL */}
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
+                {[
+                  "1,000+ Senior Golfers Trained",
+                  "100% Success Rate",
+                  "Gain 20-50 Yards",
+                  "Ages into 80s/90s",
+                ].map((item, index) => (
+                  <span key={index} className="text-gray-800 text-xs font-medium flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
