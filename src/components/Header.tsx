@@ -12,6 +12,9 @@ export default function Header() {
     if (pathname === "/10yards-30days") {
       return { text: "Enroll Now - $97", href: "#enroll" };
     }
+    if (pathname === "/senior-golf-mastery") {
+      return { text: "Enroll Now - $997", href: "#enroll" };
+    }
     // Default for /free-class and home
     return { text: "Save My Spot", href: "#register" };
   };

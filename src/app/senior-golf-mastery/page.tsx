@@ -1,0 +1,574 @@
+import { Metadata } from "next";
+import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Senior Golf Mastery | Add 30+ Yards to Your Drive | The Berman Method",
+  description: "The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.",
+  openGraph: {
+    title: "Senior Golf Mastery | Add 30+ Yards to Your Drive",
+    description: "Join 1,000+ senior golfers who gained 20-50 yards with the Berman Method.",
+    type: "website",
+  },
+};
+
+export default function SeniorGolfMasteryPage() {
+  const testimonialVideos = [
+    { name: "Michael Litwin", videoId: "JpIUsGG1nhk" },
+    { name: "Pete", videoId: "p3dc2hx6teU" },
+    { name: "Karen Reinecke", videoId: "-BtarQM1mVs" },
+    { name: "Richard Rosenblatt", videoId: "jgMnW1dy1lU" },
+  ];
+
+  const textTestimonials = [
+    {
+      quote: "I was ready to quit golf. Couldn't finish a round from the pain. After working with Jake, I gained 50 yards and rejoined the 200 Club — at 77!",
+      name: "Michael Litwin",
+      age: 77,
+      location: "Quail Creek, FL",
+    },
+    {
+      quote: "I couldn't hit the ball more than 165 yards and had sharp back pain every swing. After 3 weeks with Jake, I'm crushing 200+ yard drives — and no pain at all.",
+      name: "Pete",
+      age: 78,
+      location: "Naples, FL",
+    },
+    {
+      quote: "Before this, I'd top it, chunk it, or spray it. Now every shot is right down the middle. And yes — I finally beat my husband!",
+      name: "Karen Reinecke",
+      age: 78,
+      location: "Florida",
+    },
+    {
+      quote: "This taught me how to swing with my body, not just my hands. It wasn't easy — but it absolutely worked. Game-changer for aging golfers.",
+      name: "Richard Rosenblatt",
+      age: 69,
+      location: "Naples, FL",
+    },
+  ];
+
+  return (
+    <main className="min-h-screen">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-gray-500 font-semibold tracking-widest uppercase text-sm mb-4">
+            Attention: Senior Golfers
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            Add 30+ Yards to Your Drive & Hit Greens in Regulation Again
+          </h1>
+          <p className="text-xl text-[#F26B4E] font-semibold mb-6">
+            Even If You&apos;ve Lost Distance in Recent Years
+          </p>
+          <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+            The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.
+          </p>
+          <p className="text-gray-600 mb-6">
+            Discover Why 1,000+ senior golfers have gained distance using this system
+          </p>
+
+          {/* Social Proof Badges */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {[
+              "1,000+ Senior Golfers Trained",
+              "100% Success Rate",
+              "Gain 20-50 Yards",
+              "Ages into 80s/90s",
+            ].map((badge, index) => (
+              <span key={index} className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium text-sm flex items-center gap-2">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          <a
+            href="#enroll"
+            className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
+          >
+            Gain 30+ Yards & Play Pain-Free
+          </a>
+          <p className="text-gray-500 text-sm">100% Success rate. Lifetime access. Start today.</p>
+        </div>
+      </section>
+
+      {/* Benefits Grid */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { label: "Move", highlight: "Better" },
+              { label: "Gain", highlight: "Distance" },
+              { label: "Improve", highlight: "Consistency" },
+              { label: "Play More", highlight: "Frequently" },
+            ].map((benefit, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+                <p className="text-gray-600 text-sm">{benefit.label}</p>
+                <p className="text-xl font-bold text-gray-900">{benefit.highlight}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VSL Section */}
+      <section className="py-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
+            How Senior Golfers Are Adding 30+ Yards & Playing Pain-Free Golf
+          </h2>
+
+          {/* Video Embed */}
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.youtube.com/embed/yJ1I5iHr54M"
+              title="Senior Golf Mastery"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 3 Pillars Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Pillar 1 */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl font-bold">1</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">The 7-Step Berman Method</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>Train from home</strong> — no clubs, no range, no travel
+              </p>
+              <p className="text-gray-600 mb-4">
+                Follow Jake&apos;s proven 7-step system that fixes the ROOT CAUSE of distance loss. Each module adds 5-10 yards by activating the right muscles in the right order.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Bite-sized lessons you can complete in 30-45 minutes. Watch, practice, see results.
+              </p>
+            </div>
+
+            {/* Pillar 2 */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Movements That Add Distance</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>Stop guessing.</strong> Start activating the muscles that matter.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Jake shows you EXACTLY which muscles to fire (and which to relax) to unlock explosive power without pain.
+              </p>
+              <p className="text-gray-500 text-sm">
+                No wasted reps. No confusing drills. Just proven movements backed by physics and biomechanics.
+              </p>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white text-2xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate System</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>Physics-based results.</strong> Not swing tips for 25-year-olds.
+              </p>
+              <p className="text-gray-600 mb-4">
+                This isn&apos;t theory or guesswork. It&apos;s a proven system used by 1,000+ senior golfers to gain distance and eliminate pain.
+              </p>
+              <p className="text-gray-500 text-sm">
+                100% of clients who complete the program gain distance. Not 90%. Not 95%. 100%.
+              </p>
+            </div>
+          </div>
+
+          {/* Social Proof */}
+          <div className="flex flex-wrap justify-center gap-3 mt-12 mb-8">
+            {[
+              "1,000+ Senior Golfers Trained",
+              "100% Success Rate",
+              "Gain 20-50 Yards",
+              "Ages into 80s/90s",
+            ].map((badge, index) => (
+              <span key={index} className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium text-sm flex items-center gap-2">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <p className="text-xl font-bold text-gray-900 mb-6">Ready to join the 50-Yard Club?</p>
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Yes! Show Me The 7-Step System
+            </a>
+            <p className="text-gray-500 mt-4">Instant access. Start training in 5 minutes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Text Testimonials */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-center text-[#F26B4E] font-semibold tracking-wide uppercase text-sm mb-3">
+            Testimonials
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            Meet The Senior Golfers Who Gained 20-50 Yards
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {textTestimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
+                <blockquote className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  &quot;{testimonial.quote}&quot;
+                </blockquote>
+                <p className="text-gray-600 font-semibold">
+                  - {testimonial.name}, {testimonial.age}, {testimonial.location}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-xl font-bold text-gray-900 mb-6">Ready to Join Them?</p>
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Enroll in Senior Golf Mastery
+            </a>
+            <p className="text-gray-500 mt-4">Join these senior golfers and get your distance back</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Offer Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-center text-[#F26B4E] font-semibold tracking-wide uppercase text-sm mb-3">
+            Introducing
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            Everything You Need to Add 20-50 Yards & Play Pain-Free Golf
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            The complete 7-step system used by 1,000+ senior golfers to restore distance, eliminate pain, and dominate their foursome
+          </p>
+
+          <div className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
+            <p className="text-center text-gray-700 mb-8 text-lg">
+              Here&apos;s what you get:
+            </p>
+            <p className="text-center text-gray-500 mb-8">Total value: <span className="font-bold text-gray-900">$2,532</span></p>
+
+            {/* Main Course */}
+            <div className="border-b border-gray-200 pb-8 mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">
+                Senior Golf Mastery <span className="text-gray-500 font-normal">($1,997 Value)</span>
+              </h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span><strong>Module 1:</strong> Quick Wins</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span><strong>Module 2:</strong> The Foundation - Steps 1-3</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span><strong>Module 3:</strong> Downswing & Impact - Steps 4-5</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span><strong>Module 4:</strong> Release & Finish - Steps 6-7</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span><strong>Module 5:</strong> Put It All Together</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Bonuses */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">BONUS MATERIALS (Included Free):</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>BONUS: Senior Golf Mastery PDF Book <span className="text-gray-500">($97 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>BONUS: Pre-Shot Routine <span className="text-gray-500">($97 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>BONUS: Weight Shift Hack for Seniors <span className="text-gray-500">($97 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>BONUS: Weekly Workout Videos <span className="text-gray-500">($197 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>BONUS: Golf Gear Guide for Seniors <span className="text-gray-500">($47 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Lifetime Access to Senior Golf Mastery <span className="text-gray-500">(Priceless)</span></span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Price */}
+            <div className="text-center bg-green-50 rounded-xl p-8">
+              <p className="text-gray-600 mb-2">Total Value: <span className="line-through">$2,532</span></p>
+              <p className="text-4xl font-bold text-gray-900 mb-2">Today Just $997</p>
+              <p className="text-green-600 font-semibold mb-6">(Save $1,535!)</p>
+              <a
+                href="#enroll"
+                className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+              >
+                Enroll in Senior Golf Mastery
+              </a>
+              <p className="text-gray-500 mt-4 text-sm">Instant access. Start training in 5 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Peter Testimonial */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-white rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="w-24 h-24 bg-[#1565c0] rounded-full flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
+              P
+            </div>
+            <div>
+              <p className="text-xl text-gray-700 italic mb-4">
+                &quot;It was amazing… I&apos;m hitting the sweet spot now and getting more distance—it&apos;s just easier.&quot;
+              </p>
+              <p className="text-gray-600 font-semibold">- Peter Schmitt, 78</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Money Back Guarantee */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-8 md:p-12">
+            <p className="text-green-600 font-semibold tracking-wide uppercase text-sm mb-3">
+              Try It Risk Free
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              100% Money Back Guarantee
+            </h2>
+            <p className="text-gray-700 mb-8">
+              We built Senior Golf Mastery to help senior golfers add effortless distance and play pain-free. If it doesn&apos;t do that for you, we don&apos;t want your money.
+            </p>
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Enroll in Senior Golf Mastery
+            </a>
+            <p className="text-gray-500 mt-4 text-sm">Instant access. Start training in 5 minutes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Instructor Section */}
+      <section className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-center text-blue-200 font-semibold tracking-wide uppercase text-sm mb-3">
+            Meet Your Instructor
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Hey, I&apos;m Dr. Jake!
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/jake-solo.png"
+                  alt="Dr. Jake Berman"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-4 text-blue-100 text-lg">
+              <p>
+                Dr. Jake Berman, PT, DPT, started as a physical therapist helping golfers overcome back pain. But he kept seeing the same pattern:
+              </p>
+              <p className="text-white font-semibold">
+                Senior golfers losing 30-50 yards... and nobody could tell them why.
+              </p>
+              <p>
+                Traditional golf instructors said &quot;turn more&quot; or &quot;swing harder.&quot; That just made things worse — more pain, less distance, more frustration.
+              </p>
+              <p className="bg-white/10 p-4 rounded-lg border-l-4 border-[#F26B4E] text-white">
+                <strong>Here&apos;s what Jake discovered:</strong> You&apos;re not losing distance because of age. You&apos;re losing distance because your body is compensating in ways that rob you of power and cause pain.
+              </p>
+              <p>
+                That&apos;s why he developed <strong>The Berman Method</strong> — a physics-based approach designed specifically for senior golfers.
+              </p>
+              <p>
+                Jake&apos;s method isn&apos;t based on theory or &quot;pro tour technique.&quot; It&apos;s grounded in how the body actually functions, especially as we age.
+              </p>
+
+              <div className="mt-6 space-y-2">
+                {["Gain real distance off the tee", "Improve consistency", "Play more often, with less pain"].map((result, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-white font-medium">{result}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-white font-semibold mt-6">
+                100% success rate. No gimmicks. Just science-backed movement.
+              </p>
+              <span className="inline-block bg-[#F26B4E] text-white font-bold px-6 py-2 rounded-lg mt-4">
+                Yeah baby. Let&apos;s get you back to dominating your foursome.
+              </span>
+            </div>
+          </div>
+
+          {/* Credentials */}
+          <div className="mt-12 pt-8 border-t border-white/20">
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                "Doctor of Physical Therapy with 15+ years helping aging golfers",
+                "Trusted by thousands of golfers over 60",
+                "Specializes in core, glute, and spine activation for safer, stronger swings",
+              ].map((credential, index) => (
+                <div key={index} className="flex items-start gap-3 bg-white rounded-xl p-5 shadow-lg">
+                  <svg className="w-6 h-6 text-[#F26B4E] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-gray-800 font-medium">{credential}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Testimonials */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            These Aren&apos;t Pros. They&apos;re Golfers Just Like You.
+          </h2>
+          <p className="text-center text-gray-600 mb-12">
+            These golfers refused to accept distance loss. Now they&apos;re crushing drives again. Your turn.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {testimonialVideos.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${testimonial.videoId}`}
+                    title={`${testimonial.name} testimonial`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Put Your Name on This Board
+            </a>
+            <p className="text-gray-500 mt-4">Join 1,000+ senior golfers who gained distance</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section id="enroll" className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Add 30+ Yards & Play Pain-Free?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Join 1,000+ senior golfers who&apos;ve transformed their game with Senior Golf Mastery.
+          </p>
+
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Senior Golf Mastery</h3>
+            <p className="text-gray-600 mb-2">Complete 7-Step System + All Bonuses + Lifetime Access</p>
+            <p className="text-gray-400 line-through mb-2">$2,532</p>
+            <p className="text-4xl font-bold text-gray-900 mb-6">$997</p>
+            <a
+              href="#"
+              className="btn-primary block w-full bg-[#F26B4E] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
+            >
+              Enroll Now - Instant Access
+            </a>
+            <p className="text-gray-500 text-sm">100% Money-Back Guarantee | Secure Checkout</p>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
