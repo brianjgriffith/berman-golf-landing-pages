@@ -101,7 +101,6 @@ export default function SeniorGolfMasteryPage() {
                   "1,000+ Senior Golfers Trained",
                   "100% Success Rate",
                   "Gain 20-50 Yards",
-                  "Ages into 80s/90s",
                 ].map((item, index) => (
                   <span key={index} className="text-gray-800 text-xs font-medium flex items-center gap-1.5">
                     <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
