@@ -52,27 +52,49 @@ export default function SeniorGolfMasteryPage() {
     <main className="min-h-screen">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-gray-500 font-semibold tracking-widest uppercase text-sm mb-4">
-            Attention: Senior Golfers
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Add 30+ Yards to Your Drive & Hit Greens in Regulation Again
-          </h1>
-          <p className="text-xl text-[#F26B4E] font-semibold mb-6">
-            Even If You&apos;ve Lost Distance in Recent Years
-          </p>
-          <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-            The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.
-          </p>
-          <p className="text-gray-600 mb-6">
-            Discover Why 1,000+ senior golfers have gained distance using this system
-          </p>
+      {/* Hero Section - Two Column */}
+      <section className="pt-20 pb-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column - Copy */}
+            <div className="text-center lg:text-left">
+              <p className="text-gray-500 font-semibold tracking-widest uppercase text-sm mb-4">
+                Attention: Senior Golfers
+              </p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                Add 30+ Yards to Your Drive & Hit Greens in Regulation Again
+              </h1>
+              <p className="text-xl text-[#F26B4E] font-semibold mb-4">
+                Even If You&apos;ve Lost Distance in Recent Years
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.
+              </p>
+              <a
+                href="#enroll"
+                className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-3"
+              >
+                Gain 30+ Yards & Play Pain-Free
+              </a>
+              <p className="text-gray-500 text-sm">100% Success rate. Lifetime access. Start today.</p>
+            </div>
 
-          {/* Social Proof Badges */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {/* Right Column - VSL */}
+            <div>
+              <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://www.youtube.com/embed/yJ1I5iHr54M"
+                  title="Senior Golf Mastery"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Social Proof Badges - Below Both Columns */}
+          <div className="flex flex-wrap justify-center gap-3 mt-10">
             {[
               "1,000+ Senior Golfers Trained",
               "100% Success Rate",
@@ -87,14 +109,6 @@ export default function SeniorGolfMasteryPage() {
               </span>
             ))}
           </div>
-
-          <a
-            href="#enroll"
-            className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
-          >
-            Gain 30+ Yards & Play Pain-Free
-          </a>
-          <p className="text-gray-500 text-sm">100% Success rate. Lifetime access. Start today.</p>
         </div>
       </section>
 
@@ -113,26 +127,6 @@ export default function SeniorGolfMasteryPage() {
                 <p className="text-xl font-bold text-gray-900">{benefit.highlight}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* VSL Section */}
-      <section className="py-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
-            How Senior Golfers Are Adding 30+ Yards & Playing Pain-Free Golf
-          </h2>
-
-          {/* Video Embed */}
-          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
-            <iframe
-              src="https://www.youtube.com/embed/yJ1I5iHr54M"
-              title="Senior Golf Mastery"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
           </div>
         </div>
       </section>
