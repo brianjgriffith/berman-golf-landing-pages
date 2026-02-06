@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import Header from "@/components/Header";
 import BookHero from "@/components/BookHero";
 import BookVSL from "@/components/BookVSL";
@@ -20,9 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default function FreeBookPage() {
-  // Replace with your actual GoHighLevel form webhook URL
-  const ghlFormAction = "#";
-
   return (
     <main className="min-h-screen">
       <Header />
@@ -32,8 +30,28 @@ export default function FreeBookPage() {
       <BookTestimonials />
       <VideoTransition />
       <Instructor />
-      <BookForm ghlFormAction={ghlFormAction} />
+      <BookForm />
       <Footer />
+
+      {/* GHL Popup Form */}
+      <iframe
+        src="https://link.physiofunnels.com/widget/form/D18SxDhr2xWsOI90DgLb"
+        style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "3px" }}
+        id="popup-D18SxDhr2xWsOI90DgLb"
+        data-layout='{"id":"POPUP"}'
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="(TM) Berman Method Book Freebie"
+        data-height="525"
+        data-layout-iframe-id="popup-D18SxDhr2xWsOI90DgLb"
+        data-form-id="D18SxDhr2xWsOI90DgLb"
+        title="(TM) Berman Method Book Freebie"
+      />
+      <Script src="https://link.physiofunnels.com/js/form_embed.js" strategy="afterInteractive" />
     </main>
   );
 }

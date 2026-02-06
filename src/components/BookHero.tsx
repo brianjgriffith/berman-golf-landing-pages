@@ -22,12 +22,17 @@ export default function BookHero() {
             <p className="text-xl text-gray-600 mb-8">
               Too many senior golfers are frustrated by watching their game deteriorate as they lose distance off their tee shots and are stunned by aches and pains. If you want to regain your competitive edge and fall back in love with the sport, this should be at the top of your To-Read list!
             </p>
-            <a
-              href="#get-book"
-              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            <button
+              onClick={() => {
+                const popup = document.getElementById('popup-D18SxDhr2xWsOI90DgLb');
+                if (popup) {
+                  popup.style.display = 'block';
+                }
+              }}
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide cursor-pointer"
             >
               Get Your Free Digital Copy
-            </a>
+            </button>
           </div>
 
           {/* Right Column - Book Image */}

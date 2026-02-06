@@ -1,39 +1,5 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import WhatYoullLearn from "@/components/WhatYoullLearn";
-import WalkAwayWith from "@/components/WalkAwayWith";
-import WhoThisIsFor from "@/components/WhoThisIsFor";
-import VideoTransition from "@/components/VideoTransition";
-import Instructor from "@/components/Instructor";
-import Testimonials from "@/components/Testimonials";
-import RegistrationForm from "@/components/RegistrationForm";
-import Footer from "@/components/Footer";
+import { redirect } from "next/navigation";
 
-export default function WorkshopPage() {
-  // Configure these for each workshop
-  const workshopConfig = {
-    date: "February 15th",
-    time: "3:30 PM ET",
-    // Replace with your actual GoHighLevel form webhook URL
-    ghlFormAction: "#",
-  };
-
-  return (
-    <main className="min-h-screen">
-      <Header />
-      <Hero workshopDate={workshopConfig.date} workshopTime={workshopConfig.time} />
-      <WhatYoullLearn />
-      <WalkAwayWith />
-      <WhoThisIsFor />
-      <VideoTransition />
-      <Instructor />
-      <Testimonials />
-      <RegistrationForm
-        workshopDate={workshopConfig.date}
-        workshopTime={workshopConfig.time}
-        ghlFormAction={workshopConfig.ghlFormAction}
-      />
-      <Footer />
-    </main>
-  );
+export default function HomePage() {
+  redirect("/free-book");
 }
