@@ -152,61 +152,86 @@ export default function SeniorGolfMasteryPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {/* Pillar 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
-              <div className="w-24 h-24 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
+              <Image
+                src="/icon-computer.png"
+                alt="Train from home"
+                width={120}
+                height={120}
+                className="mx-auto mb-6"
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-4">The 7-Step Berman Method</h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Train from home</strong> — no clubs, no range, no travel
-              </p>
+
+              <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
+                <p className="text-gray-800 font-semibold italic">
+                  Train from home — no clubs, no range, no travel
+                </p>
+              </div>
+
               <p className="text-gray-600 mb-4">
                 Follow Jake&apos;s proven 7-step system that fixes the ROOT CAUSE of distance loss. Each module adds 5-10 yards by activating the right muscles in the right order.
               </p>
-              <p className="text-gray-500 text-sm">
-                Bite-sized lessons you can complete in 30-45 minutes. Watch, practice, see results.
-              </p>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <p className="text-gray-500 text-sm">
+                  Bite-sized lessons you can complete in 30-45 minutes. Watch, practice, see results.
+                </p>
+              </div>
             </div>
 
             {/* Pillar 2 */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
-              <div className="w-24 h-24 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                </svg>
-              </div>
+              <Image
+                src="/icon-movement.png"
+                alt="Movements that add distance"
+                width={120}
+                height={120}
+                className="mx-auto mb-6"
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-4">Movements That Add Distance</h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Stop guessing.</strong> Start activating the muscles that matter.
-              </p>
+
+              <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
+                <p className="text-gray-800 font-semibold italic">
+                  Stop guessing. Start activating the muscles that matter.
+                </p>
+              </div>
+
               <p className="text-gray-600 mb-4">
                 Jake shows you EXACTLY which muscles to fire (and which to relax) to unlock explosive power without pain.
               </p>
-              <p className="text-gray-500 text-sm">
-                No wasted reps. No confusing drills. Just proven movements backed by physics and biomechanics.
-              </p>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <p className="text-gray-500 text-sm">
+                  No wasted reps. No confusing drills. Just proven movements backed by physics and biomechanics.
+                </p>
+              </div>
             </div>
 
             {/* Pillar 3 */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
-              <div className="w-24 h-24 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
+              <Image
+                src="/icone-gear.png"
+                alt="100% Success Rate"
+                width={120}
+                height={120}
+                className="mx-auto mb-6"
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate System</h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Physics-based results.</strong> Not swing tips for 25-year-olds.
-              </p>
+
+              <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
+                <p className="text-gray-800 font-semibold italic">
+                  Physics-based results. Not swing tips for 25-year-olds.
+                </p>
+              </div>
+
               <p className="text-gray-600 mb-4">
                 This isn&apos;t theory or guesswork. It&apos;s a proven system used by 1,000+ senior golfers to gain distance and eliminate pain.
               </p>
-              <p className="text-gray-500 text-sm">
-                100% of clients who complete the program gain distance. Not 90%. Not 95%. 100%.
-              </p>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <p className="text-gray-500 text-sm">
+                  100% of clients who complete the program gain distance. Not 90%. Not 95%. 100%.
+                </p>
+              </div>
             </div>
           </div>
 
