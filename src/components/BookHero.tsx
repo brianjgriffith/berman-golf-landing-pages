@@ -24,10 +24,7 @@ export default function BookHero() {
             </p>
             <button
               onClick={() => {
-                const popup = document.getElementById('popup-D18SxDhr2xWsOI90DgLb');
-                if (popup) {
-                  popup.style.display = 'block';
-                }
+                window.dispatchEvent(new CustomEvent("openBookPopup"));
               }}
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide cursor-pointer"
             >

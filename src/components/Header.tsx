@@ -22,10 +22,7 @@ export default function Header() {
   const { text: ctaText, href: ctaHref, isPopup } = getCtaConfig();
 
   const handlePopupClick = () => {
-    const popup = document.getElementById('popup-D18SxDhr2xWsOI90DgLb');
-    if (popup) {
-      popup.style.display = 'block';
-    }
+    window.dispatchEvent(new CustomEvent("openBookPopup"));
   };
 
   return (
