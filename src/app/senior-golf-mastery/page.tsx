@@ -142,13 +142,20 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* 3 Pillars Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Section Header */}
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            How Senior Golfers Are Adding 30+ Yards & Playing Pain-Free Golf
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Pillar 1 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">1</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <div className="w-24 h-24 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">The 7-Step Berman Method</h3>
               <p className="text-gray-600 mb-4">
@@ -163,9 +170,12 @@ export default function SeniorGolfMasteryPage() {
             </div>
 
             {/* Pillar 2 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">2</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <div className="w-24 h-24 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Movements That Add Distance</h3>
               <p className="text-gray-600 mb-4">
@@ -180,9 +190,12 @@ export default function SeniorGolfMasteryPage() {
             </div>
 
             {/* Pillar 3 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">3</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <div className="w-24 h-24 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate System</h3>
               <p className="text-gray-600 mb-4">
@@ -197,25 +210,8 @@ export default function SeniorGolfMasteryPage() {
             </div>
           </div>
 
-          {/* Social Proof */}
-          <div className="flex flex-wrap justify-center gap-3 mt-12 mb-8">
-            {[
-              "1,000+ Senior Golfers Trained",
-              "100% Success Rate",
-              "Gain 20-50 Yards",
-              "Ages into 80s/90s",
-            ].map((badge, index) => (
-              <span key={index} className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium text-sm flex items-center gap-2">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                {badge}
-              </span>
-            ))}
-          </div>
-
           {/* CTA */}
-          <div className="text-center">
+          <div className="text-center mt-12">
             <p className="text-xl font-bold text-gray-900 mb-6">Ready to join the 50-Yard Club?</p>
             <a
               href="#enroll"
