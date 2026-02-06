@@ -12,7 +12,7 @@ export default function Hero({ workshopDate = "February 15th", workshopTime = "1
     <section className="pt-24 pb-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white min-h-[90vh] flex items-center">
       <div className="max-w-6xl mx-auto px-4 w-full">
         {/* Eyebrow - centered above */}
-        <p className="text-center text-white/80 font-semibold tracking-widest uppercase text-sm mb-8">
+        <p className="text-center text-white/80 font-semibold tracking-widest uppercase text-base md:text-lg mb-8">
           Attention: Senior Golfers
         </p>
 

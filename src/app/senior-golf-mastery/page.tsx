@@ -57,7 +57,7 @@ export default function SeniorGolfMasteryPage() {
         <div className="max-w-6xl mx-auto px-4">
           {/* Eyebrow - Centered Above Both Columns */}
           <div className="text-center mb-8">
-            <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm px-6 py-2 rounded-full">
+            <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-base md:text-lg px-6 py-2 rounded-full">
               Attention: Senior Golfers
             </span>
           </div>

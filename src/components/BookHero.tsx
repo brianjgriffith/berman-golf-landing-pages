@@ -7,7 +7,7 @@ export default function BookHero() {
     <section className="pt-20 pb-16 bg-white flex items-center">
       <div className="max-w-6xl mx-auto px-4 w-full">
         {/* Eyebrow - centered above */}
-        <p className="text-center text-gray-500 font-semibold tracking-widest uppercase text-sm mb-6">
+        <p className="text-center text-gray-500 font-semibold tracking-widest uppercase text-base md:text-lg mb-6">
           Attention: Senior Golfers
         </p>
 

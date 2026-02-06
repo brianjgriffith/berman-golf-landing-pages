@@ -87,7 +87,7 @@ export default function TenYardsPage() {
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-gray-500 font-semibold tracking-widest uppercase text-sm mb-4">
+          <p className="text-gray-500 font-semibold tracking-widest uppercase text-base md:text-lg mb-4">
             Attention: Senior Golfers
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
