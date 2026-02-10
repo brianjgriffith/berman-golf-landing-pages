@@ -108,6 +108,27 @@ export default function SeniorGolfMasteryPage() {
               </span>
             ))}
           </div>
+
+          {/* Ray Testimonial */}
+          <div className="mt-10 max-w-2xl mx-auto">
+            <div className="bg-gray-50 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+              <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src="/ray.png"
+                  alt="Ray"
+                  width={80}
+                  height={80}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div>
+                <p className="text-lg text-gray-700 italic mb-2">
+                  &quot;At 80 years old, I&apos;m playing better and hitting it farther than I did ten years ago — with zero back pain.&quot;
+                </p>
+                <p className="text-gray-600 font-semibold">- Ray, 80</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
