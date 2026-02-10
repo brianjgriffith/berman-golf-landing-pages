@@ -120,7 +120,7 @@ export default function SeniorGolfMasteryCheckout() {
                 </div>
                 <div>
                   <p className="text-white italic mb-2">
-                    &quot;At 80 years old, I&apos;m playing better and hitting it farther than I did ten years ago — with zero back pain.&quot;
+                    &quot;At 80 years old, I&apos;m hitting it farther and playing more frequently than I did ten years ago. This program changed everything.&quot;
                   </p>
                   <p className="text-blue-200 font-semibold text-sm">- Ray, 80</p>
                 </div>
