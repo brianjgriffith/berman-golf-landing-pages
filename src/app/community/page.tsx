@@ -182,13 +182,13 @@ export default function CommunityPage() {
                 <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                Lifetime Access
+                Full Course Access
               </span>
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                Yours to Keep
+                Included with Membership
               </span>
             </div>
           </div>
@@ -292,7 +292,7 @@ export default function CommunityPage() {
               },
               {
                 question: "Do I keep the Tee Shot Transformation course if I cancel?",
-                answer: "Yes! The Tee Shot Transformation course is yours to keep forever, even if you decide to cancel your membership."
+                answer: "Access to Tee Shot Transformation is included as part of your membership. If you cancel, you'll lose access to the course along with the community and live calls. As long as you're a member, it's all yours!"
               },
               {
                 question: "What if I haven't purchased a Berman Golf course yet?",
