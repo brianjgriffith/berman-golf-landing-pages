@@ -65,7 +65,7 @@ export default function SeniorGolfMasteryPage() {
                 The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.
               </p>
               <a
-                href="#enroll"
+                href="/senior-golf-mastery/checkout"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-3"
               >
                 Gain 30+ Yards & Play Pain-Free
@@ -289,7 +289,7 @@ export default function SeniorGolfMasteryPage() {
           <div className="text-center mt-12">
             <p className="text-xl font-bold text-gray-900 mb-6">Ready to join the 50-Yard Club?</p>
             <a
-              href="#enroll"
+              href="/senior-golf-mastery/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Yes! Show Me The 7-Step System
@@ -356,7 +356,7 @@ export default function SeniorGolfMasteryPage() {
 
           <div className="text-center">
             <a
-              href="#enroll"
+              href="/senior-golf-mastery/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Put Your Name on This Board
@@ -438,7 +438,7 @@ export default function SeniorGolfMasteryPage() {
               If you checked more boxes on the left, you&apos;re exactly who this program was built for.
             </p>
             <a
-              href="#enroll"
+              href="/senior-golf-mastery/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               I&apos;m Ready — Show Me The Program
@@ -572,7 +572,7 @@ export default function SeniorGolfMasteryPage() {
               <p className="text-green-600 font-semibold mb-4">(Save $2,035!)</p>
 
               <a
-                href="#enroll"
+                href="/senior-golf-mastery/checkout"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
               >
                 Enroll in Senior Golf Mastery
@@ -777,7 +777,7 @@ export default function SeniorGolfMasteryPage() {
               We built Senior Golf Mastery to help senior golfers add effortless distance and play pain-free. If it doesn&apos;t do that for you, we don&apos;t want your money.
             </p>
             <a
-              href="#enroll"
+              href="/senior-golf-mastery/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Enroll in Senior Golf Mastery
@@ -858,7 +858,7 @@ export default function SeniorGolfMasteryPage() {
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-6">Still have questions?</p>
             <a
-              href="#enroll"
+              href="/senior-golf-mastery/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Join Senior Golf Mastery Today
