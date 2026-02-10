@@ -1,6 +1,7 @@
 export default function WhoThisIsFor() {
   const criteria = [
     "Used to hit 250+ yards but now struggle to reach 200",
+    "Tired of being told to 'just swing faster' or 'move up a tee'",
     "Need ibuprofen before/after rounds due to back pain",
     "Feel frustrated watching buddies outdrive you",
     "Want to play well into your 70s, 80s, and beyond",

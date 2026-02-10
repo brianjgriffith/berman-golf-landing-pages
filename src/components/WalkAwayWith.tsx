@@ -1,6 +1,6 @@
 export default function WalkAwayWith() {
   const benefits = [
-    "Add 20+ yards to your driver",
+    "Use muscles—not momentum—to add real distance (no speed sticks required)",
     "Eliminate back pain and stiffness after 18 holes",
     "Improve ball-striking consistency without changing your swing",
   ];
