@@ -437,8 +437,14 @@ export default function SeniorGolfMasteryPage() {
       <section className="py-12 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-white rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
-            <div className="w-24 h-24 bg-[#1565c0] rounded-full flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
-              P
+            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+              <Image
+                src="/peter-schmitt.png"
+                alt="Peter Schmitt"
+                width={96}
+                height={96}
+                className="object-cover w-full h-full"
+              />
             </div>
             <div>
               <p className="text-xl text-gray-700 italic mb-4">
