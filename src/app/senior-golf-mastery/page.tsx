@@ -528,6 +528,12 @@ export default function SeniorGolfMasteryPage() {
                   <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
+                  <span>BONUS: 1-on-1 Virtual Session with Dr. Jake <span className="text-gray-500">($500 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
                   <span>BONUS: Senior Golf Mastery PDF Book <span className="text-gray-500">($97 Value)</span></span>
                 </li>
                 <li className="flex items-center gap-3">
@@ -553,12 +559,6 @@ export default function SeniorGolfMasteryPage() {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>BONUS: Golf Gear Guide for Seniors <span className="text-gray-500">($47 Value)</span></span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>BONUS: 1-on-1 Virtual Session with Dr. Jake <span className="text-gray-500">($500 Value)</span></span>
                 </li>
                 <li className="flex items-center gap-3">
                   <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
