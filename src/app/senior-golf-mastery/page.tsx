@@ -85,9 +85,9 @@ export default function SeniorGolfMasteryPage() {
               <Image
                 src="/senior-golf-mastery-bundle-image.png"
                 alt="Senior Golf Mastery Bundle"
-                width={800}
-                height={600}
-                className="object-contain w-full max-w-[700px]"
+                width={1000}
+                height={750}
+                className="object-contain w-full"
                 priority
               />
             </div>
