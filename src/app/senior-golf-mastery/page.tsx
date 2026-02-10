@@ -74,13 +74,13 @@ export default function SeniorGolfMasteryPage() {
             </div>
 
             {/* Right Column - Bundle Image */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end lg:-mr-12">
               <Image
                 src="/senior-golf-mastery-bundle-image.png"
                 alt="Senior Golf Mastery Bundle"
-                width={1000}
-                height={750}
-                className="object-contain w-full"
+                width={1200}
+                height={900}
+                className="object-contain w-full lg:scale-125 lg:translate-x-4"
                 priority
               />
             </div>
