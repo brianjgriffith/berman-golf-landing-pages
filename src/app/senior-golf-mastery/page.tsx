@@ -456,6 +456,29 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
+      {/* Kathy Testimonial */}
+      <section className="py-12 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+              <Image
+                src="/kathy.png"
+                alt="Kathy"
+                width={96}
+                height={96}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="text-xl text-gray-700 italic mb-4">
+                &quot;Today we got a max club head speed of 68 miles an hour with your 7 iron… and the back is not hurting. No, not at all.&quot;
+              </p>
+              <p className="text-gray-600 font-semibold">- Kathy</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Money Back Guarantee */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
