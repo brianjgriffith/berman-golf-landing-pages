@@ -111,8 +111,8 @@ export default function SeniorGolfMasteryCheckout() {
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/30">
                   <Image
-                    src="/ray.png"
-                    alt="Ray"
+                    src="/peter-schmitt.png"
+                    alt="Pete"
                     width={64}
                     height={64}
                     className="object-cover w-full h-full"
@@ -120,9 +120,9 @@ export default function SeniorGolfMasteryCheckout() {
                 </div>
                 <div>
                   <p className="text-white italic mb-2">
-                    &quot;At 80 years old, I&apos;m hitting it farther and playing more frequently than I did ten years ago. This program changed everything.&quot;
+                    &quot;Day one max was 179 yards. Final max was 208 yards. Everything clicked. Boom.&quot;
                   </p>
-                  <p className="text-blue-200 font-semibold text-sm">- Ray, 80</p>
+                  <p className="text-blue-200 font-semibold text-sm">- Pete, 78</p>
                 </div>
               </div>
             </div>

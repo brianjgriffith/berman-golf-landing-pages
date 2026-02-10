@@ -11,28 +11,28 @@ export default function SeniorGolfMasteryPage() {
     {
       name: "Michael Litwin",
       videoId: "JpIUsGG1nhk",
-      quote: "I was ready to quit golf. Couldn't finish a round from the pain. After working with Jake, I gained 50 yards and rejoined the 200 Club — at 77!",
+      quote: "I was 80% certain I was canceling my golf club membership. Now I've gained 50 yards with the driver and joined the 200 Club — at 77!",
       age: 77,
       location: "Quail Creek, FL"
     },
     {
       name: "Pete",
       videoId: "p3dc2hx6teU",
-      quote: "I couldn't hit the ball more than 165 yards and had sharp back pain every swing. After 3 weeks with Jake, I'm crushing 200+ yard drives — and no pain at all.",
+      quote: "Day one max was 179 yards. Final max was 208 yards. Everything clicked. Boom.",
       age: 78,
       location: "Naples, FL"
     },
     {
       name: "Karen Reinecke",
       videoId: "-BtarQM1mVs",
-      quote: "Before this, I'd top it, chunk it, or spray it. Now every shot is right down the middle. And yes — I finally beat my husband!",
+      quote: "Before this, I'd top it, chunk it, or spray it. Now five out of five driver shots are right down the middle. And yes — I finally beat my husband!",
       age: 78,
       location: "Florida"
     },
     {
       name: "Richard Rosenblatt",
       videoId: "jgMnW1dy1lU",
-      quote: "This taught me how to swing with my body, not just my hands. It wasn't easy — but it absolutely worked. Game-changer for aging golfers.",
+      quote: "It really taught me about the body and how to use the body—not be wristy. We shaved three club lengths from tee to green.",
       age: 69,
       location: "Naples, FL"
     },
@@ -102,13 +102,13 @@ export default function SeniorGolfMasteryPage() {
             ))}
           </div>
 
-          {/* Ray Testimonial */}
+          {/* Michael Litwin Testimonial */}
           <div className="mt-10 max-w-2xl mx-auto">
             <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6 shadow-lg">
               <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/30">
                 <Image
-                  src="/ray.png"
-                  alt="Ray"
+                  src="/michael-litwin.png"
+                  alt="Michael Litwin"
                   width={80}
                   height={80}
                   className="object-cover w-full h-full"
@@ -116,9 +116,9 @@ export default function SeniorGolfMasteryPage() {
               </div>
               <div>
                 <p className="text-lg text-white italic mb-2">
-                  &quot;At 80 years old, I&apos;m playing better and hitting it farther than I did ten years ago — with zero back pain.&quot;
+                  &quot;I was 80% certain I was canceling my golf club membership. Now I&apos;ve gained 50 yards and joined the 200 Club — at 77!&quot;
                 </p>
-                <p className="text-blue-200 font-semibold">- Ray, 80</p>
+                <p className="text-blue-200 font-semibold">- Michael Litwin, 77</p>
               </div>
             </div>
           </div>
@@ -594,14 +594,14 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
-      {/* Kathy Testimonial */}
+      {/* Karen Testimonial */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-lg">
             <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/30">
               <Image
-                src="/kathy.png"
-                alt="Kathy"
+                src="/karen-reinecke.png"
+                alt="Karen Reinecke"
                 width={96}
                 height={96}
                 className="object-cover w-full h-full"
@@ -609,9 +609,9 @@ export default function SeniorGolfMasteryPage() {
             </div>
             <div>
               <p className="text-xl text-white italic mb-4">
-                &quot;Today we got a max club head speed of 68 miles an hour with your 7 iron. I never thought I&apos;d see numbers like that again.&quot;
+                &quot;My husband said, &apos;I never thought I&apos;d see the day that you&apos;d actually beat me.&apos; This is one of the best decisions I&apos;ve ever made for my golf game.&quot;
               </p>
-              <p className="text-blue-200 font-semibold">- Kathy</p>
+              <p className="text-blue-200 font-semibold">- Karen Reinecke, 78</p>
             </div>
           </div>
         </div>
@@ -863,6 +863,52 @@ export default function SeniorGolfMasteryPage() {
             >
               Join Senior Golf Mastery Today
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Testimonials - Ray & Kathy */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Ray */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm flex items-start gap-4">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#F26B4E]">
+                <Image
+                  src="/ray.png"
+                  alt="Ray"
+                  width={64}
+                  height={64}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div>
+                <p className="text-gray-700 italic mb-2">
+                  &quot;I just came here for my back. I had to settle for more distance. Imagine that.&quot;
+                </p>
+                <p className="text-gray-500 text-sm">Went from 157 to 180 yard average</p>
+                <p className="font-semibold text-gray-900 mt-1">- Ray, 80</p>
+              </div>
+            </div>
+            {/* Kathy */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm flex items-start gap-4">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#F26B4E]">
+                <Image
+                  src="/kathy.png"
+                  alt="Kathy"
+                  width={64}
+                  height={64}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div>
+                <p className="text-gray-700 italic mb-2">
+                  &quot;Keep the muscles activated and get through it. The back is not hurting — not at all.&quot;
+                </p>
+                <p className="text-gray-500 text-sm">Max club head speed: 68 mph with 7-iron</p>
+                <p className="font-semibold text-gray-900 mt-1">- Kathy, 78</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
