@@ -1,19 +1,12 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-  title: "Senior Golf Mastery | Add 30+ Yards to Your Drive | The Berman Method",
-  description: "The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.",
-  openGraph: {
-    title: "Senior Golf Mastery | Add 30+ Yards to Your Drive",
-    description: "Join 1,000+ senior golfers who gained 20-50 yards with the Berman Method.",
-    type: "website",
-  },
-};
-
 export default function SeniorGolfMasteryPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const testimonialVideos = [
     {
       name: "Michael Litwin",
@@ -789,7 +782,7 @@ export default function SeniorGolfMasteryPage() {
             Frequently Asked Questions
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {[
               {
                 question: "How long until I see results?",
@@ -824,9 +817,28 @@ export default function SeniorGolfMasteryPage() {
                 answer: "Yes! Once you enroll, you have lifetime access to all course materials, including any future updates. You can revisit the lessons anytime you need a refresher."
               },
             ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="bg-gray-50 rounded-xl shadow-sm overflow-hidden">
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
+                >
+                  <h3 className="text-lg font-bold text-gray-900 pr-4">{faq.question}</h3>
+                  <svg
+                    className={`w-6 h-6 text-[#F26B4E] flex-shrink-0 transition-transform duration-300 ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${openFaqIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-5 text-gray-600">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
