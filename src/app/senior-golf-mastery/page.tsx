@@ -147,6 +147,28 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
+      {/* Brief Dr. Jake Intro */}
+      <section className="py-10 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-4 border-[#F26B4E]">
+              <Image
+                src="/jake-solo.png"
+                alt="Dr. Jake Berman"
+                width={96}
+                height={96}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="text-lg text-gray-700">
+                <span className="font-bold text-gray-900">Dr. Jake Berman, PT, DPT</span> — Physical therapist turned golf performance specialist. After helping 1,000+ senior golfers add 20-50 yards, he developed the physics-based system you&apos;re about to learn.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Grid */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
@@ -281,6 +303,29 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
+      {/* Peter Testimonial - Moved up for better flow */}
+      <section className="py-12 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+              <Image
+                src="/peter-schmitt.png"
+                alt="Peter Schmitt"
+                width={96}
+                height={96}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="text-xl text-gray-700 italic mb-4">
+                &quot;It was amazing… I&apos;m hitting the sweet spot now and getting more distance—it&apos;s just easier.&quot;
+              </p>
+              <p className="text-gray-600 font-semibold">- Peter Schmitt, 78</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Video Testimonials */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -321,6 +366,87 @@ export default function SeniorGolfMasteryPage() {
               Put Your Name on This Board
             </a>
             <p className="text-gray-500 mt-4">Join 1,000+ senior golfers who gained distance</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Who This Is For Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            Is This Right For You?
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* This IS For You */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-green-200">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">This IS For You If...</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "You're 55+ and frustrated by losing distance off the tee",
+                  "You've tried lessons, tips, and new clubs — but nothing sticks",
+                  "Back pain, hip stiffness, or shoulder issues are affecting your swing",
+                  "You're tired of watching younger golfers out-drive you",
+                  "You want a proven system, not random YouTube tips",
+                  "You're ready to invest 30-45 minutes a day to see real results",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* This is NOT For You */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border-2 border-red-200">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">This is NOT For You If...</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "You're looking for a magic pill or overnight fix",
+                  "You're not willing to practice 30-45 minutes a day",
+                  "You think your distance loss is \"just part of getting old\"",
+                  "You'd rather keep buying new clubs than fix your swing mechanics",
+                  "You're under 50 and still have full flexibility",
+                  "You're happy with where your game is right now",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-lg text-gray-600 mb-6">
+              If you checked more boxes on the left, you&apos;re exactly who this program was built for.
+            </p>
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              I&apos;m Ready — Show Me The Program
+            </a>
           </div>
         </div>
       </section>
@@ -441,7 +567,18 @@ export default function SeniorGolfMasteryPage() {
             <div className="text-center bg-green-50 rounded-xl p-8">
               <p className="text-gray-600 mb-2">Total Value: <span className="line-through">$2,532</span></p>
               <p className="text-4xl font-bold text-gray-900 mb-2">Today Just $997</p>
-              <p className="text-green-600 font-semibold mb-6">(Save $1,535!)</p>
+              <p className="text-green-600 font-semibold mb-4">(Save $1,535!)</p>
+
+              {/* Guarantee Callout */}
+              <div className="bg-white border border-green-300 rounded-lg p-4 mb-6 inline-block">
+                <div className="flex items-center gap-3 justify-center">
+                  <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-green-700 font-semibold">100% Money-Back Guarantee</span>
+                </div>
+              </div>
+
               <a
                 href="#enroll"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
@@ -449,29 +586,6 @@ export default function SeniorGolfMasteryPage() {
                 Enroll in Senior Golf Mastery
               </a>
               <p className="text-gray-500 mt-4 text-sm">Instant access. Start training in 5 minutes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Peter Testimonial */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="bg-white rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
-            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-              <Image
-                src="/peter-schmitt.png"
-                alt="Peter Schmitt"
-                width={96}
-                height={96}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div>
-              <p className="text-xl text-gray-700 italic mb-4">
-                &quot;It was amazing… I&apos;m hitting the sweet spot now and getting more distance—it&apos;s just easier.&quot;
-              </p>
-              <p className="text-gray-600 font-semibold">- Peter Schmitt, 78</p>
             </div>
           </div>
         </div>
@@ -500,6 +614,143 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
+      {/* Why This Works (Alternative Comparison) */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            Why Traditional Golf Instruction Fails Senior Golfers
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Most golf pros teach techniques designed for 25-year-old bodies. That&apos;s why their advice doesn&apos;t work for you.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Traditional Golf Lessons */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <div className="text-center mb-4">
+                <span className="text-3xl">🏌️</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 text-center mb-2">Traditional Golf Lessons</h3>
+              <p className="text-2xl font-bold text-gray-900 text-center mb-4">$150+<span className="text-base font-normal text-gray-500">/hour</span></p>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  <span>Teaches techniques for younger, flexible bodies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  <span>&quot;Turn more&quot; and &quot;swing harder&quot; causes pain</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  <span>Requires 10+ lessons to see any change</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  <span>No understanding of biomechanics or pain</span>
+                </li>
+              </ul>
+              <div className="mt-4 pt-4 border-t border-gray-100 text-center">
+                <span className="text-gray-500 text-sm">10 lessons = $1,500+</span>
+              </div>
+            </div>
+
+            {/* 1-on-1 with Dr. Jake */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <div className="text-center mb-4">
+                <span className="text-3xl">👨‍⚕️</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 text-center mb-2">1-on-1 with Dr. Jake</h3>
+              <p className="text-2xl font-bold text-gray-900 text-center mb-4">$500<span className="text-base font-normal text-gray-500">/session</span></p>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Personalized assessment and coaching</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Biomechanics expertise for aging bodies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                  <span>Limited availability in Naples, FL only</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                  <span>Requires travel for most golfers</span>
+                </li>
+              </ul>
+              <div className="mt-4 pt-4 border-t border-gray-100 text-center">
+                <span className="text-gray-500 text-sm">4 sessions = $2,000</span>
+              </div>
+            </div>
+
+            {/* Senior Golf Mastery */}
+            <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-6 shadow-lg border-2 border-[#F26B4E] relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-[#F26B4E] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Best Value</span>
+              </div>
+              <div className="text-center mb-4">
+                <span className="text-3xl">🎯</span>
+              </div>
+              <h3 className="text-lg font-bold text-white text-center mb-2">Senior Golf Mastery</h3>
+              <p className="text-2xl font-bold text-white text-center mb-4">$997<span className="text-base font-normal text-blue-200"> one-time</span></p>
+              <ul className="space-y-2 text-blue-100 text-sm">
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white">Jake&apos;s complete 7-step system</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white">Designed specifically for 55+ bodies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white">Train from home — no travel required</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-white">Lifetime access + all bonuses</span>
+                </li>
+              </ul>
+              <div className="mt-4 pt-4 border-t border-white/20 text-center">
+                <span className="text-white font-semibold">100% Success Rate</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-sm max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 text-center">
+              <strong className="text-gray-900">The difference?</strong> Golf pros teach swing mechanics designed for younger, flexible bodies. Dr. Jake understands how the senior body actually moves — and how to unlock power without causing pain.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Money Back Guarantee */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
@@ -520,6 +771,67 @@ export default function SeniorGolfMasteryPage() {
               Enroll in Senior Golf Mastery
             </a>
             <p className="text-gray-500 mt-4 text-sm">Instant access. Start training in 5 minutes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-6">
+            {[
+              {
+                question: "How long until I see results?",
+                answer: "Most golfers notice improvements within the first 1-2 weeks. The Quick Wins module is designed to give you immediate gains. Full transformation typically happens over 4-6 weeks as you progress through all 7 steps."
+              },
+              {
+                question: "What if I'm not tech-savvy?",
+                answer: "If you can watch a YouTube video, you can do this. The course is simple, step-by-step video lessons. No apps to download, no complicated software. Just click play and follow along."
+              },
+              {
+                question: "What equipment do I need?",
+                answer: "None! That's the beauty of this program. You train from home without clubs, balls, or a driving range. The exercises can be done in your living room in 30-45 minutes."
+              },
+              {
+                question: "Will this work for my specific situation (back pain, hip issues, shoulder problems)?",
+                answer: "Yes. Dr. Jake designed this program specifically for senior golfers dealing with the common limitations that come with age — back pain, hip stiffness, reduced flexibility. The movements are designed to work WITH your body, not against it."
+              },
+              {
+                question: "How is this different from other golf programs?",
+                answer: "Most golf instruction is designed for younger, flexible bodies. \"Turn more\" and \"swing harder\" doesn't work when you're 65+. Dr. Jake's method is built on biomechanics and physics — teaching you how to generate power efficiently with an aging body."
+              },
+              {
+                question: "What if it doesn't work for me?",
+                answer: "We offer a 100% money-back guarantee. If you go through the program and don't see improvement, we'll refund your investment. We've helped 1,000+ senior golfers with a 100% success rate, so we're confident it will work for you too."
+              },
+              {
+                question: "How much time do I need to commit?",
+                answer: "30-45 minutes per day, 3-4 days per week. The lessons are bite-sized and designed to fit into your schedule. You can train from home at any time that works for you."
+              },
+              {
+                question: "Do I get lifetime access?",
+                answer: "Yes! Once you enroll, you have lifetime access to all course materials, including any future updates. You can revisit the lessons anytime you need a refresher."
+              },
+            ].map((faq, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">Still have questions?</p>
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Join Senior Golf Mastery Today
+            </a>
           </div>
         </div>
       </section>
