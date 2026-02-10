@@ -479,7 +479,7 @@ export default function SeniorGolfMasteryPage() {
             <p className="text-center text-gray-700 mb-4 text-lg">
               Here&apos;s what you get:
             </p>
-            <p className="text-center text-gray-500 mb-8">Total value: <span className="font-bold text-gray-900">$2,532</span></p>
+            <p className="text-center text-gray-500 mb-8">Total value: <span className="font-bold text-gray-900">$3,032</span></p>
 
             {/* Main Course */}
             <div className="border-b border-gray-200 pb-8 mb-8">
@@ -558,6 +558,12 @@ export default function SeniorGolfMasteryPage() {
                   <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
+                  <span>BONUS: 1-on-1 Virtual Session with Dr. Jake <span className="text-gray-500">($500 Value)</span></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
                   <span>Lifetime Access to Senior Golf Mastery <span className="text-gray-500">(Priceless)</span></span>
                 </li>
               </ul>
@@ -565,9 +571,9 @@ export default function SeniorGolfMasteryPage() {
 
             {/* Price */}
             <div className="text-center bg-green-50 rounded-xl p-8">
-              <p className="text-gray-600 mb-2">Total Value: <span className="line-through">$2,532</span></p>
+              <p className="text-gray-600 mb-2">Total Value: <span className="line-through">$3,032</span></p>
               <p className="text-4xl font-bold text-gray-900 mb-2">Today Just $997</p>
-              <p className="text-green-600 font-semibold mb-4">(Save $1,535!)</p>
+              <p className="text-green-600 font-semibold mb-4">(Save $2,035!)</p>
 
               {/* Guarantee Callout */}
               <div className="bg-white border border-green-300 rounded-lg p-4 mb-6 inline-block">
@@ -684,16 +690,16 @@ export default function SeniorGolfMasteryPage() {
                   <span>Biomechanics expertise for aging bodies</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Limited availability in Naples, FL only</span>
+                  <span>Available virtually — no travel required</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
-                  <span>Requires travel for most golfers</span>
+                  <span>Limited availability — books up fast</span>
                 </li>
               </ul>
               <div className="mt-4 pt-4 border-t border-gray-100 text-center">
@@ -931,7 +937,7 @@ export default function SeniorGolfMasteryPage() {
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Senior Golf Mastery</h3>
             <p className="text-gray-600 mb-2">Complete 7-Step System + All Bonuses + Lifetime Access</p>
-            <p className="text-gray-400 line-through mb-2">$2,532</p>
+            <p className="text-gray-400 line-through mb-2">$3,032</p>
             <p className="text-4xl font-bold text-gray-900 mb-6">$997</p>
             <a
               href="#"
