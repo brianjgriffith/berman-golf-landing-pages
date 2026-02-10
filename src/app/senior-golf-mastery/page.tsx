@@ -579,13 +579,16 @@ export default function SeniorGolfMasteryPage() {
               </a>
 
               {/* Guarantee Callout */}
-              <div className="flex items-center gap-2 justify-center text-green-600">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="font-semibold">100% Money-Back Guarantee</span>
+              <div className="flex justify-center mb-2">
+                <Image
+                  src="/guarantee-badge.jpg"
+                  alt="100% Money Back Guaranteed"
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                />
               </div>
-              <p className="text-gray-500 mt-2 text-sm">Instant access. Start training in 5 minutes.</p>
+              <p className="text-gray-500 text-sm">Instant access. Start training in 5 minutes.</p>
             </div>
           </div>
         </div>
@@ -755,6 +758,15 @@ export default function SeniorGolfMasteryPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-8 md:p-12">
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/guarantee-badge.jpg"
+                alt="100% Money Back Guaranteed"
+                width={150}
+                height={150}
+                className="object-contain"
+              />
+            </div>
             <p className="text-green-600 font-semibold tracking-wide uppercase text-sm mb-3">
               Try It Risk Free
             </p>
