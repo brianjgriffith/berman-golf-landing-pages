@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ workshopDate = "February 15th", workshopTime = "10:00 AM EST" }: HeroProps) {
   return (
-    <section className="pt-6 pb-6 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
+    <section className="pt-24 pb-6 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
       <div className="max-w-6xl mx-auto px-4 w-full">
         {/* Eyebrow - centered above */}
         <div className="text-center mb-4">
