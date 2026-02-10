@@ -249,6 +249,47 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
+      {/* Video Testimonials */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            These Aren&apos;t Pros. They&apos;re Golfers Just Like You.
+          </h2>
+          <p className="text-center text-gray-600 mb-12">
+            These golfers refused to accept distance loss. Now they&apos;re crushing drives again. Your turn.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {testimonialVideos.map((testimonial, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${testimonial.videoId}`}
+                    title={`${testimonial.name} testimonial`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="#enroll"
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Put Your Name on This Board
+            </a>
+            <p className="text-gray-500 mt-4">Join 1,000+ senior golfers who gained distance</p>
+          </div>
+        </div>
+      </section>
+
       {/* Text Testimonials */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -522,47 +563,6 @@ export default function SeniorGolfMasteryPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-            These Aren&apos;t Pros. They&apos;re Golfers Just Like You.
-          </h2>
-          <p className="text-center text-gray-600 mb-12">
-            These golfers refused to accept distance loss. Now they&apos;re crushing drives again. Your turn.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {testimonialVideos.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm">
-                <div className="aspect-video w-full">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${testimonial.videoId}`}
-                    title={`${testimonial.name} testimonial`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="p-4">
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <a
-              href="#enroll"
-              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
-            >
-              Put Your Name on This Board
-            </a>
-            <p className="text-gray-500 mt-4">Join 1,000+ senior golfers who gained distance</p>
           </div>
         </div>
       </section>
