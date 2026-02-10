@@ -15,36 +15,33 @@ export const metadata: Metadata = {
 
 export default function SeniorGolfMasteryPage() {
   const testimonialVideos = [
-    { name: "Michael Litwin", videoId: "JpIUsGG1nhk" },
-    { name: "Pete", videoId: "p3dc2hx6teU" },
-    { name: "Karen Reinecke", videoId: "-BtarQM1mVs" },
-    { name: "Richard Rosenblatt", videoId: "jgMnW1dy1lU" },
-  ];
-
-  const textTestimonials = [
     {
-      quote: "I was ready to quit golf. Couldn't finish a round from the pain. After working with Jake, I gained 50 yards and rejoined the 200 Club — at 77!",
       name: "Michael Litwin",
+      videoId: "JpIUsGG1nhk",
+      quote: "I was ready to quit golf. Couldn't finish a round from the pain. After working with Jake, I gained 50 yards and rejoined the 200 Club — at 77!",
       age: 77,
-      location: "Quail Creek, FL",
+      location: "Quail Creek, FL"
     },
     {
-      quote: "I couldn't hit the ball more than 165 yards and had sharp back pain every swing. After 3 weeks with Jake, I'm crushing 200+ yard drives — and no pain at all.",
       name: "Pete",
+      videoId: "p3dc2hx6teU",
+      quote: "I couldn't hit the ball more than 165 yards and had sharp back pain every swing. After 3 weeks with Jake, I'm crushing 200+ yard drives — and no pain at all.",
       age: 78,
-      location: "Naples, FL",
+      location: "Naples, FL"
     },
     {
-      quote: "Before this, I'd top it, chunk it, or spray it. Now every shot is right down the middle. And yes — I finally beat my husband!",
       name: "Karen Reinecke",
+      videoId: "-BtarQM1mVs",
+      quote: "Before this, I'd top it, chunk it, or spray it. Now every shot is right down the middle. And yes — I finally beat my husband!",
       age: 78,
-      location: "Florida",
+      location: "Florida"
     },
     {
-      quote: "This taught me how to swing with my body, not just my hands. It wasn't easy — but it absolutely worked. Game-changer for aging golfers.",
       name: "Richard Rosenblatt",
+      videoId: "jgMnW1dy1lU",
+      quote: "This taught me how to swing with my body, not just my hands. It wasn't easy — but it absolutely worked. Game-changer for aging golfers.",
       age: 69,
-      location: "Naples, FL",
+      location: "Naples, FL"
     },
   ];
 
@@ -271,8 +268,11 @@ export default function SeniorGolfMasteryPage() {
                     className="w-full h-full"
                   />
                 </div>
-                <div className="p-4">
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                <div className="p-6">
+                  <p className="text-gray-700 italic mb-4">&quot;{testimonial.quote}&quot;</p>
+                  <p className="font-semibold text-gray-900">
+                    - {testimonial.name}, {testimonial.age}, {testimonial.location}
+                  </p>
                 </div>
               </div>
             ))}
@@ -286,42 +286,6 @@ export default function SeniorGolfMasteryPage() {
               Put Your Name on This Board
             </a>
             <p className="text-gray-500 mt-4">Join 1,000+ senior golfers who gained distance</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Text Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <p className="text-center text-[#F26B4E] font-semibold tracking-wide uppercase text-sm mb-3">
-            Testimonials
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Meet The Senior Golfers Who Gained 20-50 Yards
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {textTestimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm">
-                <blockquote className="text-gray-700 text-lg mb-6 leading-relaxed">
-                  &quot;{testimonial.quote}&quot;
-                </blockquote>
-                <p className="text-gray-600 font-semibold">
-                  - {testimonial.name}, {testimonial.age}, {testimonial.location}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <p className="text-xl font-bold text-gray-900 mb-6">Ready to Join Them?</p>
-            <a
-              href="#enroll"
-              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
-            >
-              Enroll in Senior Golf Mastery
-            </a>
-            <p className="text-gray-500 mt-4">Join these senior golfers and get your distance back</p>
           </div>
         </div>
       </section>
