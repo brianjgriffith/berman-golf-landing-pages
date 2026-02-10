@@ -390,7 +390,7 @@ export default function SeniorGolfMasteryPage() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "You're 55+ and frustrated by losing distance off the tee",
+                  "You're a senior golfer frustrated by losing distance off the tee",
                   "You've tried lessons, tips, and new clubs — but nothing sticks",
                   "Back pain, hip stiffness, or shoulder issues are affecting your swing",
                   "You're tired of watching younger golfers out-drive you",
@@ -423,7 +423,7 @@ export default function SeniorGolfMasteryPage() {
                   "You're not willing to practice 30-45 minutes a day",
                   "You think your distance loss is \"just part of getting old\"",
                   "You'd rather keep buying new clubs than fix your swing mechanics",
-                  "You're under 50 and still have full flexibility",
+                  "You still have the flexibility of a 25-year-old",
                   "You're happy with where your game is right now",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -722,7 +722,7 @@ export default function SeniorGolfMasteryPage() {
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-white">Designed specifically for 55+ bodies</span>
+                  <span className="text-white">Designed specifically for senior golfers</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -802,7 +802,7 @@ export default function SeniorGolfMasteryPage() {
               },
               {
                 question: "How is this different from other golf programs?",
-                answer: "Most golf instruction is designed for younger, flexible bodies. \"Turn more\" and \"swing harder\" doesn't work when you're 65+. Dr. Jake's method is built on biomechanics and physics — teaching you how to generate power efficiently with an aging body."
+                answer: "Most golf instruction is designed for younger, flexible bodies. \"Turn more\" and \"swing harder\" doesn't work for senior golfers. Dr. Jake's method is built on biomechanics and physics — teaching you how to generate power efficiently with an aging body."
               },
               {
                 question: "What if it doesn't work for me?",
