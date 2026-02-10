@@ -9,20 +9,25 @@ interface HeroProps {
 
 export default function Hero({ workshopDate = "February 15th", workshopTime = "10:00 AM EST" }: HeroProps) {
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white min-h-[90vh] flex items-center">
+    <section className="pt-12 pb-8 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white min-h-[90vh] flex items-center">
       <div className="max-w-6xl mx-auto px-4 w-full">
         {/* Eyebrow - centered above */}
-        <p className="text-center text-white/80 font-semibold tracking-widest uppercase text-base md:text-lg mb-8">
-          Attention: Senior Golfers
-        </p>
+        <div className="text-center mb-8">
+          <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-base md:text-lg px-6 py-2 rounded-full">
+            Attention: Senior Golfers
+          </span>
+        </div>
 
         {/* Two Column Layout */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text */}
           <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Finally Out-Drive Your Buddies Again — Without Changing Your Swing
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+              Finally Out-Drive Your Buddies Again
             </h1>
+            <p className="text-2xl md:text-3xl text-white/90 font-semibold mb-6">
+              Without Changing Your Swing
+            </p>
           </div>
 
           {/* Right Column - Jake's Photo */}
