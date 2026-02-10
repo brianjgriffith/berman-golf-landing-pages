@@ -68,9 +68,9 @@ export default function SeniorGolfMasteryPage() {
                 href="/senior-golf-mastery/checkout"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-3"
               >
-                Gain 30+ Yards & Play Pain-Free
+                Join the 50-Yard Club
               </a>
-              <p className="text-gray-500 text-sm">100% Success rate. Lifetime access. Start today.</p>
+              <p className="text-gray-500 text-sm">100% success rate. Lifetime access. Start today.</p>
             </div>
 
             {/* Right Column - Bundle Image */}
@@ -196,7 +196,7 @@ export default function SeniorGolfMasteryPage() {
         <div className="max-w-6xl mx-auto px-4">
           {/* Section Header */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            How Senior Golfers Are Adding 30+ Yards & Playing Pain-Free Golf
+            How Senior Golfers Are Adding 30+ Yards & Playing Their Best Golf
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -213,17 +213,17 @@ export default function SeniorGolfMasteryPage() {
 
               <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
                 <p className="text-gray-800 font-semibold italic">
-                  Train from home — no clubs, no range, no travel
+                  &quot;The slower you go, the farther it&apos;ll go.&quot;
                 </p>
               </div>
 
               <p className="text-gray-600 mb-4">
-                Follow Jake&apos;s proven 7-step system that fixes the ROOT CAUSE of distance loss. Each module adds 5-10 yards by activating the right muscles in the right order.
+                Follow Jake&apos;s proven 7-step system from Address to Finish. Each step builds on the last, activating the right muscles in the right order to unlock distance you thought was gone forever.
               </p>
 
               <div className="border-t border-gray-100 pt-4 mt-4">
                 <p className="text-gray-500 text-sm">
-                  Bite-sized lessons you can complete in 30-45 minutes. Watch, practice, see results.
+                  Train from home in 30-45 minutes — no clubs, no range, no travel required.
                 </p>
               </div>
             </div>
@@ -237,21 +237,21 @@ export default function SeniorGolfMasteryPage() {
                 height={120}
                 className="mx-auto mb-6"
               />
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Movements That Add Distance</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Biomechanics, Not Technique</h3>
 
               <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
                 <p className="text-gray-800 font-semibold italic">
-                  Stop guessing. Start activating the muscles that matter.
+                  How your body DOES move — not how it SHOULD move.
                 </p>
               </div>
 
               <p className="text-gray-600 mb-4">
-                Jake shows you EXACTLY which muscles to fire (and which to relax) to unlock explosive power without pain.
+                This isn&apos;t swing tips for 25-year-olds. Jake teaches you how to activate your core, glutes, and the 16 muscles in your feet to generate real power.
               </p>
 
               <div className="border-t border-gray-100 pt-4 mt-4">
                 <p className="text-gray-500 text-sm">
-                  No wasted reps. No confusing drills. Just proven movements backed by physics and biomechanics.
+                  Rooted in laws of physics and biomechanics — not made-up technical advice.
                 </p>
               </div>
             </div>
@@ -265,16 +265,16 @@ export default function SeniorGolfMasteryPage() {
                 height={120}
                 className="mx-auto mb-6"
               />
-              <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate System</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate</h3>
 
               <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
                 <p className="text-gray-800 font-semibold italic">
-                  Physics-based results. Not swing tips for 25-year-olds.
+                  Every person who completed the program got results.
                 </p>
               </div>
 
               <p className="text-gray-600 mb-4">
-                This isn&apos;t theory or guesswork. It&apos;s a proven system used by 1,000+ senior golfers to gain distance and eliminate pain.
+                This isn&apos;t theory or guesswork. Multiple seniors in their 70s have gained 50-65 yards. Your name could be on the Wall of Fame next.
               </p>
 
               <div className="border-t border-gray-100 pt-4 mt-4">
@@ -388,7 +388,7 @@ export default function SeniorGolfMasteryPage() {
                 {[
                   "You're a senior golfer frustrated by losing distance off the tee",
                   "You've tried lessons, tips, and new clubs — but nothing sticks",
-                  "Back pain, hip stiffness, or shoulder issues are affecting your swing",
+                  "Your body doesn't move like it used to — and golf lessons haven't helped",
                   "You're tired of watching younger golfers out-drive you",
                   "You want a proven system, not random YouTube tips",
                   "You're ready to invest 30-45 minutes a day to see real results",
@@ -454,10 +454,10 @@ export default function SeniorGolfMasteryPage() {
             Introducing
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
-            Everything You Need to Add 20-50 Yards & Play Pain-Free Golf
+            Everything You Need to Gain Distance, Improve Consistency & Play More Frequently
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            The complete 7-step system used by 1,000+ senior golfers to restore distance, eliminate pain, and dominate their foursome
+            The complete 7-step system used by 1,000+ senior golfers to join the 50-Yard Club and dominate their foursome
           </p>
 
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
@@ -487,31 +487,31 @@ export default function SeniorGolfMasteryPage() {
                   <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>Module 1:</strong> Quick Wins</span>
+                  <span><strong>Module 1:</strong> Quick Wins — Fire up the right muscles and see immediate gains</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>Module 2:</strong> The Foundation - Steps 1-3</span>
+                  <span><strong>Module 2:</strong> The Foundation (Steps 1-3) — The most important module. Master address to top of backswing.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>Module 3:</strong> Downswing & Impact - Steps 4-5</span>
+                  <span><strong>Module 3:</strong> Downswing & Impact (Steps 4-5) — Initiate with your belt buckle, not your hands</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>Module 4:</strong> Release & Finish - Steps 6-7</span>
+                  <span><strong>Module 4:</strong> Release & Finish (Steps 6-7) — Complete weight transfer for maximum power</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>Module 5:</strong> Put It All Together</span>
+                  <span><strong>Module 5:</strong> Put It All Together — Translate drills into real swings with real results</span>
                 </li>
               </ul>
             </div>
@@ -609,7 +609,7 @@ export default function SeniorGolfMasteryPage() {
             </div>
             <div>
               <p className="text-xl text-white italic mb-4">
-                &quot;Today we got a max club head speed of 68 miles an hour with your 7 iron… and the back is not hurting. No, not at all.&quot;
+                &quot;Today we got a max club head speed of 68 miles an hour with your 7 iron. I never thought I&apos;d see numbers like that again.&quot;
               </p>
               <p className="text-blue-200 font-semibold">- Kathy</p>
             </div>
@@ -748,7 +748,7 @@ export default function SeniorGolfMasteryPage() {
 
           <div className="bg-white rounded-2xl p-8 shadow-sm max-w-3xl mx-auto">
             <p className="text-lg text-gray-700 text-center">
-              <strong className="text-gray-900">The difference?</strong> Golf pros teach swing mechanics designed for younger, flexible bodies. Dr. Jake understands how the senior body actually moves — and how to unlock power without causing pain.
+              <strong className="text-gray-900">The difference?</strong> Golf pros teach technique for how the club <em>should</em> move. Dr. Jake teaches biomechanics for how your body <em>does</em> move — and the club fits into that equation.
             </p>
           </div>
         </div>
@@ -774,7 +774,7 @@ export default function SeniorGolfMasteryPage() {
               100% Money Back Guarantee
             </h2>
             <p className="text-gray-700 mb-8">
-              We built Senior Golf Mastery to help senior golfers add effortless distance and play pain-free. If it doesn&apos;t do that for you, we don&apos;t want your money.
+              We built Senior Golf Mastery to help you gain distance, improve consistency, and play more frequently. If you follow the program and don&apos;t see results, we don&apos;t want your money.
             </p>
             <a
               href="/senior-golf-mastery/checkout"
@@ -809,16 +809,16 @@ export default function SeniorGolfMasteryPage() {
                 answer: "None! That's the beauty of this program. You train from home without clubs, balls, or a driving range. The exercises can be done in your living room in 30-45 minutes."
               },
               {
-                question: "Will this work for my specific situation (back pain, hip issues, shoulder problems)?",
-                answer: "Yes. Dr. Jake designed this program specifically for senior golfers dealing with the common limitations that come with age — back pain, hip stiffness, reduced flexibility. The movements are designed to work WITH your body, not against it."
+                question: "Will this work for my specific situation (hip replacement, limited mobility, etc.)?",
+                answer: "Yes. Dr. Jake designed this program specifically for senior golfers dealing with the common limitations that come with age. The movements are designed to work WITH your body, not against it. Many students with hip replacements and limited mobility have seen significant gains."
               },
               {
                 question: "How is this different from other golf programs?",
-                answer: "Most golf instruction is designed for younger, flexible bodies. \"Turn more\" and \"swing harder\" doesn't work for senior golfers. Dr. Jake's method is built on biomechanics and physics — teaching you how to generate power efficiently with an aging body."
+                answer: "Most golf instruction teaches technique designed for 25-year-old bodies. \"Turn more\" and \"swing harder\" doesn't work for seniors. Dr. Jake's method is built on biomechanics and physics — it's about how your body DOES move, not how it SHOULD move. The club fits into that equation."
               },
               {
                 question: "What if it doesn't work for me?",
-                answer: "We offer a 100% money-back guarantee. If you go through the program and don't see improvement, we'll refund your investment. We've helped 1,000+ senior golfers with a 100% success rate, so we're confident it will work for you too."
+                answer: "We offer a 100% money-back guarantee. If you follow the program exactly and don't see improvement, we'll refund your investment. We have a 100% success rate with every person who completed the program — so we're confident you'll join the 50-Yard Club too."
               },
               {
                 question: "How much time do I need to commit?",
@@ -891,26 +891,26 @@ export default function SeniorGolfMasteryPage() {
 
             <div className="space-y-4 text-blue-100 text-lg">
               <p>
-                Dr. Jake Berman, PT, DPT, started as a physical therapist helping golfers overcome back pain. But he kept seeing the same pattern:
+                Dr. Jake Berman, PT, DPT, kept seeing the same pattern with senior golfers:
               </p>
               <p className="text-white font-semibold">
-                Senior golfers losing 30-50 yards... and nobody could tell them why.
+                Losing 30-50 yards... and nobody could tell them why.
               </p>
               <p>
-                Traditional golf instructors said &quot;turn more&quot; or &quot;swing harder.&quot; That just made things worse — more pain, less distance, more frustration.
+                Traditional golf instructors teach techniques designed for 25-year-old bodies. &quot;Turn more&quot; and &quot;swing harder&quot; doesn&apos;t work when your body moves differently.
               </p>
               <p className="bg-white/10 p-4 rounded-lg border-l-4 border-[#F26B4E] text-white">
-                <strong>Here&apos;s what Jake discovered:</strong> You&apos;re not losing distance because of age. You&apos;re losing distance because your body is compensating in ways that rob you of power and cause pain.
+                <strong>Here&apos;s what Jake discovered:</strong> You&apos;re not losing distance because of age. You&apos;re losing distance because you&apos;re swinging with momentum instead of muscles.
               </p>
               <p>
-                That&apos;s why he developed <strong>The Berman Method</strong> — a physics-based approach designed specifically for senior golfers.
+                That&apos;s why he developed <strong>The Berman Method</strong> — rooted in laws of physics and biomechanics, not made-up technical advice.
               </p>
               <p>
-                Jake&apos;s method isn&apos;t based on theory or &quot;pro tour technique.&quot; It&apos;s grounded in how the body actually functions, especially as we age.
+                It&apos;s about how your body <strong>does</strong> move — and the club fits into that equation.
               </p>
 
               <div className="mt-6 space-y-2">
-                {["Gain real distance off the tee", "Improve consistency", "Play more often, with less pain"].map((result, index) => (
+                {["Gain real distance off the tee", "Improve consistency", "Play more frequently"].map((result, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -953,10 +953,10 @@ export default function SeniorGolfMasteryPage() {
       <section id="enroll" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Add 30+ Yards & Play Pain-Free?
+            Ready to Join the 50-Yard Club?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join 1,000+ senior golfers who&apos;ve transformed their game with Senior Golf Mastery.
+            Join 1,000+ senior golfers who&apos;ve gained distance, improved consistency, and are playing more frequently.
           </p>
 
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
