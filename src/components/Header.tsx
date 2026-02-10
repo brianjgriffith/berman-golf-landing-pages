@@ -15,6 +15,9 @@ export default function Header() {
     if (pathname === "/senior-golf-mastery" || pathname === "/senior-golf-mastery/checkout") {
       return { text: "Enroll Now - $997", href: "/senior-golf-mastery/checkout", isPopup: false };
     }
+    if (pathname === "/community") {
+      return { text: "Join - $47/mo", href: "#join", isPopup: false };
+    }
     // Default for /free-class and home
     return { text: "Save My Spot", href: "#register", isPopup: false };
   };
