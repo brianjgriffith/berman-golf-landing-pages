@@ -80,34 +80,48 @@ export default function SeniorGolfMasteryPage() {
               <p className="text-gray-500 text-sm">100% Success rate. Lifetime access. Start today.</p>
             </div>
 
-            {/* Right Column - VSL */}
-            <div>
-              <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
-                <iframe
-                  src="https://www.youtube.com/embed/yJ1I5iHr54M"
-                  title="Senior Golf Mastery"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-
-              {/* Social Proof - Below VSL */}
-              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-4">
-                {[
-                  "1,000+ Senior Golfers Trained",
-                  "100% Success Rate",
-                  "Gain 20-50 Yards",
-                ].map((item, index) => (
-                  <span key={index} className="text-gray-800 text-xs font-medium flex items-center gap-1.5">
-                    <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    {item}
-                  </span>
-                ))}
-              </div>
+            {/* Right Column - Bundle Image */}
+            <div className="flex justify-center">
+              <Image
+                src="/senior-golf-mastery-bundle-image.png"
+                alt="Senior Golf Mastery Bundle"
+                width={600}
+                height={450}
+                className="object-contain"
+                priority
+              />
             </div>
+          </div>
+
+          {/* Social Proof */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-8">
+            {[
+              "1,000+ Senior Golfers Trained",
+              "100% Success Rate",
+              "Gain 20-50 Yards",
+            ].map((item, index) => (
+              <span key={index} className="text-gray-800 text-sm font-medium flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VSL Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.youtube.com/embed/yJ1I5iHr54M"
+              title="Senior Golf Mastery"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
         </div>
       </section>
@@ -304,7 +318,18 @@ export default function SeniorGolfMasteryPage() {
           </p>
 
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
-            <p className="text-center text-gray-700 mb-8 text-lg">
+            {/* Bundle Image */}
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/senior-golf-mastery-bundle-image.png"
+                alt="Senior Golf Mastery Bundle"
+                width={500}
+                height={375}
+                className="object-contain"
+              />
+            </div>
+
+            <p className="text-center text-gray-700 mb-4 text-lg">
               Here&apos;s what you get:
             </p>
             <p className="text-center text-gray-500 mb-8">Total value: <span className="font-bold text-gray-900">$2,532</span></p>
