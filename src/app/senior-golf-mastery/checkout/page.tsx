@@ -38,9 +38,9 @@ export default function SeniorGolfMasteryCheckout() {
       </header>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-5 gap-8">
           {/* Left Column - Order Summary */}
-          <div>
+          <div className="lg:col-span-2">
             <h1 className="text-3xl font-bold text-gray-900 mb-8">Complete Your Order</h1>
 
             {/* Product Card */}
@@ -129,14 +129,14 @@ export default function SeniorGolfMasteryCheckout() {
           </div>
 
           {/* Right Column - Payment Form */}
-          <div>
+          <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
               <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">Payment Details</h2>
 
               {/* GHL Form Embed */}
               <iframe
                 src="https://link.physiofunnels.com/widget/form/e7HaJyrtlmofNOCv6wTE"
-                style={{ width: "100%", height: "1162px", border: "none", borderRadius: "3px" }}
+                style={{ width: "100%", height: "750px", border: "none", borderRadius: "3px" }}
                 id="inline-e7HaJyrtlmofNOCv6wTE"
                 data-layout='{"id":"INLINE"}'
                 data-trigger-type="alwaysShow"
@@ -146,7 +146,7 @@ export default function SeniorGolfMasteryCheckout() {
                 data-deactivation-type="neverDeactivate"
                 data-deactivation-value=""
                 data-form-name="Senior Golf Mastery"
-                data-height="1162"
+                data-height="750"
                 data-layout-iframe-id="inline-e7HaJyrtlmofNOCv6wTE"
                 data-form-id="e7HaJyrtlmofNOCv6wTE"
                 title="Senior Golf Mastery"
