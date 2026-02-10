@@ -133,8 +133,11 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* VSL Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">
+            Watch How Senior Golfers Are Adding 30+ Yards
+          </h2>
           <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
             <iframe
               src="https://www.youtube.com/embed/yJ1I5iHr54M"
@@ -196,7 +199,7 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* 3 Pillars Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           {/* Section Header */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
@@ -304,7 +307,7 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* Peter Testimonial - Moved up for better flow */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
             <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
@@ -596,7 +599,7 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* Kathy Testimonial */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
           <div className="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
             <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
@@ -619,7 +622,7 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* Why This Works (Alternative Comparison) */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
             Why Traditional Golf Instruction Fails Senior Golfers
@@ -756,7 +759,7 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* Money Back Guarantee */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-8 md:p-12">
             <p className="text-green-600 font-semibold tracking-wide uppercase text-sm mb-3">
@@ -780,7 +783,7 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
             Frequently Asked Questions
@@ -923,12 +926,12 @@ export default function SeniorGolfMasteryPage() {
       </section>
 
       {/* Final CTA */}
-      <section id="enroll" className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
+      <section id="enroll" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Ready to Add 30+ Yards & Play Pain-Free?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-gray-600 mb-8">
             Join 1,000+ senior golfers who&apos;ve transformed their game with Senior Golf Mastery.
           </p>
 
