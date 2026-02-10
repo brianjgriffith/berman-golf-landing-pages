@@ -47,7 +47,7 @@ export default function Hero({ workshopDate = "February 15th", workshopTime = "1
         {/* Subheadline - full width below */}
         <div className="text-center mt-4">
           <p className="text-xl md:text-2xl text-white mb-6 max-w-3xl mx-auto">
-            Free web class: The biomechanics-first method that&apos;s helped golfers in their 70s add 50+ yards—without swinging harder
+            Free web class: The biomechanics-first method that&apos;s helped golfers in their 70s add 50+ yards, without swinging harder
           </p>
 
           {/* CTA Button */}
