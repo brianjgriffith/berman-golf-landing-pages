@@ -21,7 +21,7 @@ export default function Hero({ workshopDate = "February 15th", workshopTime = "1
           {/* Left Column - Text */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              What If 2026 Is The Year You Finally Out-Drive Your Buddies Again?
+              Finally Out-Drive Your Buddies Again — Without Changing Your Swing
             </h1>
           </div>
 

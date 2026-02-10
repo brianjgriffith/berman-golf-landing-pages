@@ -41,7 +41,7 @@ export default function WhoThisIsFor() {
 
           {/* Closing Statement */}
           <p className="text-gray-700 text-lg font-medium border-t border-gray-200 pt-6">
-            If you&apos;re done making the same golf resolutions and want 2026 to actually be different, this is for you.
+            If you&apos;re tired of being told &quot;it&apos;s just your age,&quot; this training will change everything.
           </p>
         </div>
 
