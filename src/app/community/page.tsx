@@ -163,6 +163,15 @@ export default function CommunityPage() {
           </p>
 
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 max-w-2xl mx-auto">
+            <div className="mb-6">
+              <Image
+                src="/tee-shot-transformation.png"
+                alt="Tee Shot Transformation"
+                width={500}
+                height={281}
+                className="rounded-xl shadow-lg mx-auto"
+              />
+            </div>
             <div className="flex items-center justify-center gap-4 mb-6">
               <span className="text-5xl font-bold text-gray-300 line-through">$397</span>
               <span className="text-5xl font-bold text-green-500">FREE</span>
