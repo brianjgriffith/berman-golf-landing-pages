@@ -581,7 +581,7 @@ export default function SeniorGolfMasteryPage() {
               {/* Guarantee Callout */}
               <div className="flex justify-center mb-2">
                 <Image
-                  src="/guarantee-badge.jpg"
+                  src="/guarantee-badge.png"
                   alt="100% Money Back Guaranteed"
                   width={100}
                   height={100}
@@ -760,7 +760,7 @@ export default function SeniorGolfMasteryPage() {
           <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-8 md:p-12">
             <div className="flex justify-center mb-6">
               <Image
-                src="/guarantee-badge.jpg"
+                src="/guarantee-badge.png"
                 alt="100% Money Back Guaranteed"
                 width={150}
                 height={150}
