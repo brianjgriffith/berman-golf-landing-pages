@@ -9,10 +9,10 @@ interface HeroProps {
 
 export default function Hero({ workshopDate = "February 15th", workshopTime = "10:00 AM EST" }: HeroProps) {
   return (
-    <section className="pt-12 pb-8 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white min-h-[90vh] flex items-center">
+    <section className="pt-6 pb-6 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
       <div className="max-w-6xl mx-auto px-4 w-full">
         {/* Eyebrow - centered above */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-4">
           <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-base md:text-lg px-6 py-2 rounded-full">
             Attention: Senior Golfers
           </span>
@@ -45,8 +45,8 @@ export default function Hero({ workshopDate = "February 15th", workshopTime = "1
         </div>
 
         {/* Subheadline - full width below */}
-        <div className="text-center mt-8">
-          <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+        <div className="text-center mt-4">
+          <p className="text-xl md:text-2xl text-white mb-6 max-w-3xl mx-auto">
             Free web class: Learn the 7-step framework that&apos;s helped senior golfers gain 20-50+ yards, eliminate back pain, and prove age is just a number
           </p>
 
