@@ -19,19 +19,19 @@ export default function CommunityPage() {
             {/* Left Column - Text */}
             <div className="text-center lg:text-left">
               <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm md:text-base px-5 py-2 rounded-full mb-6">
-                Berman Club House
+                Berman Clubhouse
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
                 Get Ongoing Coaching, Live Q&A, and a Community of Senior Golfers Who Get It
               </h1>
               <p className="text-lg lg:text-xl text-blue-100 mb-8">
-                Join Dr. Jake&apos;s private virtual Club House and get monthly live coaching calls, direct access to his team, and connect online with golfers on the same journey as you.
+                Join Dr. Jake&apos;s private virtual Clubhouse and get monthly live coaching calls, direct access to his team, and connect online with golfers on the same journey as you.
               </p>
               <a
                 href="#join"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
               >
-                Join the Club House — $47/month
+                Join the Clubhouse — $47/month
               </a>
               <p className="text-blue-200 text-sm">Cancel anytime. No long-term commitment.</p>
             </div>
@@ -81,7 +81,7 @@ export default function CommunityPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Private Virtual Club House</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Private Virtual Clubhouse</h3>
               <p className="text-gray-600">
                 Connect virtually with senior golfers who understand your journey. Share wins, ask questions, and get support from golfers just like you — plus Jake&apos;s team is there to help.
               </p>
@@ -109,7 +109,7 @@ export default function CommunityPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Direct Team Access</h3>
               <p className="text-gray-600">
-                Got a question between calls? Jake&apos;s team is active in the Club House daily, ready to help you troubleshoot, stay motivated, and keep improving.
+                Got a question between calls? Jake&apos;s team is active in the Clubhouse daily, ready to help you troubleshoot, stay motivated, and keep improving.
               </p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function CommunityPage() {
                 Monthly Live Coaching with Dr. Jake
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Once a month, Dr. Jake goes live on Zoom exclusively for Club House members. This is your chance to get real-time coaching, ask questions, and get feedback on your progress.
+                Once a month, Dr. Jake goes live on Zoom exclusively for Clubhouse members. This is your chance to get real-time coaching, ask questions, and get feedback on your progress.
               </p>
               <ul className="space-y-4">
                 {[
@@ -182,7 +182,7 @@ export default function CommunityPage() {
             Get Tee Shot Transformation FREE
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            When you join the Club House, you&apos;ll get instant access to Tee Shot Transformation — a complete course we normally sell for $397. It&apos;s yours free as a member.
+            When you join the Clubhouse, you&apos;ll get instant access to Tee Shot Transformation — a complete course we normally sell for $397. It&apos;s yours free as a member.
           </p>
 
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 max-w-2xl mx-auto">
@@ -201,7 +201,7 @@ export default function CommunityPage() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Tee Shot Transformation</h3>
             <p className="text-gray-600 mb-6">
-              This course alone has helped hundreds of golfers add distance and consistency to their drives. It&apos;s the perfect complement to your Club House membership.
+              This course alone has helped hundreds of golfers add distance and consistency to their drives. It&apos;s the perfect complement to your Clubhouse membership.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
               <span className="flex items-center gap-1">
@@ -231,7 +231,7 @@ export default function CommunityPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            The Club House Is For You If...
+            The Clubhouse Is For You If...
           </h2>
 
           <div className="bg-white rounded-2xl p-8 shadow-sm">
@@ -260,10 +260,10 @@ export default function CommunityPage() {
       <section id="join" className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Join the Berman Club House
+            Join the Berman Clubhouse
           </h2>
           <p className="text-gray-600 mb-12">
-            Get ongoing coaching, Club House support, and exclusive bonuses.
+            Get ongoing coaching, Clubhouse support, and exclusive bonuses.
           </p>
 
           <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-8 md:p-12 text-white shadow-xl">
@@ -286,7 +286,7 @@ export default function CommunityPage() {
 
             <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
               {[
-                "Private Club House access",
+                "Private Clubhouse access",
                 "Monthly live coaching calls with Dr. Jake",
                 "Direct support from Jake's team",
                 "Tee Shot Transformation course ($397 value)",
@@ -323,26 +323,26 @@ export default function CommunityPage() {
             {[
               {
                 question: "When are the monthly live calls?",
-                answer: "Dr. Jake hosts a live Zoom call once per month. The schedule is shared in the Club House, and if you can't make it live, recordings are always available."
+                answer: "Dr. Jake hosts a live Zoom call once per month. The schedule is shared in the Clubhouse, and if you can't make it live, recordings are always available."
               },
               {
-                question: "Where is the Club House hosted?",
-                answer: "The Club House is hosted on Skool — a simple, easy-to-use platform. You'll get access as soon as you join, and you can participate from your computer or phone."
+                question: "Where is the Clubhouse hosted?",
+                answer: "The Clubhouse is hosted on Skool — a simple, easy-to-use platform. You'll get access as soon as you join, and you can participate from your computer or phone."
               },
               {
                 question: "Can I cancel anytime?",
-                answer: "Absolutely. There's no long-term commitment. If the Club House isn't right for you, you can cancel your membership anytime with no questions asked."
+                answer: "Absolutely. There's no long-term commitment. If the Clubhouse isn't right for you, you can cancel your membership anytime with no questions asked."
               },
               {
                 question: "Do I keep the Tee Shot Transformation course if I cancel?",
-                answer: "Access to Tee Shot Transformation is included as part of your membership. If you cancel, you'll lose access to the course along with the Club House and live calls. As long as you're a member, it's all yours!"
+                answer: "Access to Tee Shot Transformation is included as part of your membership. If you cancel, you'll lose access to the course along with the Clubhouse and live calls. As long as you're a member, it's all yours!"
               },
               {
                 question: "What if I haven't purchased a Berman Golf course yet?",
-                answer: "The Club House is designed for golfers who've already experienced Dr. Jake's training. If you're new, we recommend starting with one of our courses first to get the foundation."
+                answer: "The Clubhouse is designed for golfers who've already experienced Dr. Jake's training. If you're new, we recommend starting with one of our courses first to get the foundation."
               },
               {
-                question: "How active is the Club House?",
+                question: "How active is the Clubhouse?",
                 answer: "Very active! Jake's team is in there daily, and members regularly share wins, ask questions, and support each other. It's a welcoming, engaged group."
               },
             ].map((faq, index) => (
@@ -378,7 +378,7 @@ export default function CommunityPage() {
       <section className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Join the Club House?
+            Ready to Join the Clubhouse?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
             Get ongoing coaching, connect with fellow golfers, and keep improving your game.
