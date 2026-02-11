@@ -27,21 +27,23 @@ export default function CommunityPage() {
               <p className="text-lg lg:text-xl text-blue-100 mb-8">
                 Join Dr. Jake&apos;s private virtual Clubhouse and get monthly live coaching calls, direct access to his team, and connect online with golfers on the same journey as you.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="/community/checkout/monthly"
-                  className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+                  className="inline-block bg-white/20 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/30 uppercase tracking-wide border-2 border-white/50"
                 >
-                  Join Monthly — $47/mo
+                  $47/month
                 </a>
                 <a
                   href="/community/checkout/annual"
-                  className="inline-block bg-white text-[#0f4c81] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 uppercase tracking-wide border-2 border-white"
+                  className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide relative"
                 >
-                  Join Annual — $297/yr
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                    Save $267
+                  </span>
+                  $297/year
                 </a>
               </div>
-              <p className="text-blue-200 text-sm">Save $267 with annual membership!</p>
             </div>
 
             {/* Right Column - Image */}
@@ -434,22 +436,25 @@ export default function CommunityPage() {
           <p className="text-xl text-blue-100 mb-8">
             Get ongoing coaching, connect with fellow golfers, and keep improving your game.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/community/checkout/monthly"
-              className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+              className="inline-block bg-white/20 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/30 uppercase tracking-wide border-2 border-white/50"
             >
-              Join Monthly — $47/mo
+              $47/month
             </a>
             <a
               href="/community/checkout/annual"
-              className="inline-block bg-white text-[#0f4c81] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 uppercase tracking-wide"
+              className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide relative"
             >
-              Join Annual — $297/yr
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                Save $267
+              </span>
+              $297/year
             </a>
           </div>
-          <p className="text-blue-200 mt-4 text-sm">
-            Save $267 with annual! Plus get Tee Shot Transformation ($397 value) FREE
+          <p className="text-blue-200 mt-6 text-sm">
+            Plus get Tee Shot Transformation ($397 value) FREE
           </p>
         </div>
       </section>
