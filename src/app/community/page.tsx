@@ -40,6 +40,20 @@ export default function CommunityPage() {
         </div>
       </section>
 
+      {/* Clubhouse Image Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <Image
+            src="/berman-clubhouse.png"
+            alt="Berman Clubhouse - Exclusive Senior Golf Community"
+            width={1280}
+            height={720}
+            className="w-full h-auto rounded-2xl shadow-xl"
+            priority
+          />
+        </div>
+      </section>
+
       {/* What You Get Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
