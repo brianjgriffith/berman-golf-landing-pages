@@ -27,13 +27,21 @@ export default function CommunityPage() {
               <p className="text-lg lg:text-xl text-blue-100 mb-8">
                 Join Dr. Jake&apos;s private virtual Clubhouse and get monthly live coaching calls, direct access to his team, and connect online with golfers on the same journey as you.
               </p>
-              <a
-                href="#join"
-                className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
-              >
-                Join the Clubhouse — $47/month
-              </a>
-              <p className="text-blue-200 text-sm">Cancel anytime. No long-term commitment.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
+                <a
+                  href="/community/checkout/monthly"
+                  className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+                >
+                  Join Monthly — $47/mo
+                </a>
+                <a
+                  href="/community/checkout/annual"
+                  className="inline-block bg-white text-[#0f4c81] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 uppercase tracking-wide border-2 border-white"
+                >
+                  Join Annual — $297/yr
+                </a>
+              </div>
+              <p className="text-blue-200 text-sm">Save $267 with annual membership!</p>
             </div>
 
             {/* Right Column - Image */}
@@ -258,56 +266,99 @@ export default function CommunityPage() {
 
       {/* Pricing Section */}
       <section id="join" className="py-20 bg-white">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
             Join the Berman Clubhouse
           </h2>
-          <p className="text-gray-600 mb-12">
+          <p className="text-gray-600 mb-12 text-center">
             Get ongoing coaching, Clubhouse support, and exclusive bonuses.
           </p>
 
-          <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-8 md:p-12 text-white shadow-xl">
-            {/* Clubhouse Image */}
-            <div className="mb-6">
-              <Image
-                src="/berman-clubhouse.png"
-                alt="Berman Clubhouse"
-                width={600}
-                height={338}
-                className="w-full h-auto rounded-xl"
-              />
+          {/* Clubhouse Image */}
+          <div className="max-w-2xl mx-auto mb-10">
+            <Image
+              src="/berman-clubhouse.png"
+              alt="Berman Clubhouse"
+              width={800}
+              height={450}
+              className="w-full h-auto rounded-2xl shadow-lg"
+            />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Monthly Option */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200">
+              <p className="text-gray-500 font-semibold uppercase tracking-wide text-sm mb-2 text-center">Monthly Membership</p>
+              <div className="flex items-baseline justify-center gap-2 mb-6">
+                <span className="text-5xl font-bold text-gray-900">$47</span>
+                <span className="text-gray-500">/month</span>
+              </div>
+
+              <ul className="text-left space-y-3 mb-8">
+                {[
+                  "Private Clubhouse access",
+                  "Monthly live coaching calls",
+                  "Direct team support",
+                  "Tee Shot Transformation ($397 value)",
+                  "Cancel anytime",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="/community/checkout/monthly"
+                className="block w-full bg-gray-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 uppercase tracking-wide text-center"
+              >
+                Join Monthly
+              </a>
             </div>
 
-            <p className="text-blue-200 font-semibold uppercase tracking-wide text-sm mb-2">Monthly Membership</p>
-            <div className="flex items-baseline justify-center gap-2 mb-6">
-              <span className="text-5xl font-bold">$47</span>
-              <span className="text-blue-200">/month</span>
+            {/* Annual Option */}
+            <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-8 shadow-xl text-white relative">
+              {/* Best Value Badge */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-[#F26B4E] text-white font-bold uppercase text-xs px-4 py-2 rounded-full whitespace-nowrap">
+                  Best Value — Save $267
+                </span>
+              </div>
+
+              <p className="text-blue-200 font-semibold uppercase tracking-wide text-sm mb-2 text-center mt-2">Annual Membership</p>
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                <span className="text-5xl font-bold">$297</span>
+                <span className="text-blue-200">/year</span>
+              </div>
+              <p className="text-green-300 text-sm text-center mb-6">Just $24.75/month!</p>
+
+              <ul className="text-left space-y-3 mb-8">
+                {[
+                  "Private Clubhouse access",
+                  "Monthly live coaching calls",
+                  "Direct team support",
+                  "Tee Shot Transformation ($397 value)",
+                  "Full year of access",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="/community/checkout/annual"
+                className="block w-full bg-[#F26B4E] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide text-center"
+              >
+                Join Annual & Save
+              </a>
             </div>
-
-            <ul className="text-left space-y-3 mb-8 max-w-sm mx-auto">
-              {[
-                "Private Clubhouse access",
-                "Monthly live coaching calls with Dr. Jake",
-                "Direct support from Jake's team",
-                "Tee Shot Transformation course ($397 value)",
-                "Cancel anytime — no commitment",
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="#"
-              className="btn-primary block w-full bg-[#F26B4E] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
-            >
-              Join Now — $47/month
-            </a>
-            <p className="text-blue-200 text-sm">Secure checkout. Cancel anytime.</p>
           </div>
         </div>
       </section>
@@ -383,14 +434,22 @@ export default function CommunityPage() {
           <p className="text-xl text-blue-100 mb-8">
             Get ongoing coaching, connect with fellow golfers, and keep improving your game.
           </p>
-          <a
-            href="#join"
-            className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
-          >
-            Join Now — $47/month
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+            <a
+              href="/community/checkout/monthly"
+              className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Join Monthly — $47/mo
+            </a>
+            <a
+              href="/community/checkout/annual"
+              className="inline-block bg-white text-[#0f4c81] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 uppercase tracking-wide"
+            >
+              Join Annual — $297/yr
+            </a>
+          </div>
           <p className="text-blue-200 mt-4 text-sm">
-            Plus get Tee Shot Transformation ($397 value) FREE
+            Save $267 with annual! Plus get Tee Shot Transformation ($397 value) FREE
           </p>
         </div>
       </section>
