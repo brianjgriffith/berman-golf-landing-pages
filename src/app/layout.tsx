@@ -10,6 +10,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Berman Golf | The Berman Method for Senior Golfers",
   description: "Dr. Jake Berman's biomechanics-first approach to help senior golfers gain distance, improve consistency, and play more frequently.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Berman Golf | The Berman Method",
     description: "The biomechanics-first approach for senior golfers to gain distance and play their best golf.",
