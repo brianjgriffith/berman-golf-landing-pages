@@ -73,9 +73,9 @@ export default function ClubhouseAnnualCheckout() {
                   {[
                     "Private Virtual Clubhouse Access",
                     "Monthly Live Coaching Calls with Dr. Jake",
-                    "Direct Support from Jake's Team",
+                    "Priority Support (You Jump the Line)",
+                    "Access to All 30-Day Challenges",
                     "Tee Shot Transformation Course ($397 Value)",
-                    "Connect with Senior Golfers Nationwide",
                     "Full Year of Access — Huge Savings",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
