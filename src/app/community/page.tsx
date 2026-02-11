@@ -25,7 +25,7 @@ export default function CommunityPage() {
                 Get Ongoing Coaching, Live Q&A, and a Community of Senior Golfers Who Get It
               </h1>
               <p className="text-lg lg:text-xl text-blue-100 mb-8">
-                Join Dr. Jake&apos;s private Club House and get monthly live coaching calls, direct access to his team, and connect with golfers on the same journey as you.
+                Join Dr. Jake&apos;s private virtual Club House and get monthly live coaching calls, direct access to his team, and connect online with golfers on the same journey as you.
               </p>
               <a
                 href="#join"
@@ -81,9 +81,9 @@ export default function CommunityPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Private Club House</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Private Virtual Club House</h3>
               <p className="text-gray-600">
-                Connect with other senior golfers who understand your journey. Share wins, ask questions, and get support from golfers just like you — plus Jake&apos;s team is there to help.
+                Connect virtually with senior golfers who understand your journey. Share wins, ask questions, and get support from golfers just like you — plus Jake&apos;s team is there to help.
               </p>
             </div>
 
