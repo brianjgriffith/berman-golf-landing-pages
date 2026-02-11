@@ -13,44 +13,53 @@ export default function CommunityPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
         <div className="max-w-6xl mx-auto px-4">
-          {/* Eyebrow */}
-          <div className="text-center mb-8">
-            <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-base md:text-lg px-6 py-2 rounded-full">
-              Berman Club House
-            </span>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column - Text */}
+            <div className="text-center lg:text-left">
+              <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm md:text-base px-5 py-2 rounded-full mb-6">
+                Berman Club House
+              </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                Get Ongoing Coaching, Live Q&A, and a Community of Senior Golfers Who Get It
+              </h1>
+              <p className="text-lg lg:text-xl text-blue-100 mb-8">
+                Join Dr. Jake&apos;s private Club House and get monthly live coaching calls, direct access to his team, and connect with golfers on the same journey as you.
+              </p>
+              <a
+                href="#join"
+                className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
+              >
+                Join the Club House — $47/month
+              </a>
+              <p className="text-blue-200 text-sm">Cancel anytime. No long-term commitment.</p>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="hidden lg:block">
+              <Image
+                src="/berman-clubhouse.png"
+                alt="Berman Clubhouse - Exclusive Senior Golf Community"
+                width={1280}
+                height={720}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                priority
+              />
+            </div>
           </div>
 
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              Get Ongoing Coaching, Live Q&A, and a Community of Senior Golfers Who Get It
-            </h1>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Join Dr. Jake&apos;s private Club House and get monthly live coaching calls, direct access to his team, and connect with golfers on the same journey as you.
-            </p>
-            <a
-              href="#join"
-              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
-            >
-              Join the Club House — $47/month
-            </a>
-            <p className="text-blue-200 text-sm">Cancel anytime. No long-term commitment.</p>
+          {/* Mobile Image - Below text on smaller screens */}
+          <div className="lg:hidden mt-10">
+            <Image
+              src="/berman-clubhouse.png"
+              alt="Berman Clubhouse - Exclusive Senior Golf Community"
+              width={1280}
+              height={720}
+              className="w-full h-auto rounded-2xl shadow-xl"
+              priority
+            />
           </div>
-        </div>
-      </section>
-
-      {/* Clubhouse Image Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <Image
-            src="/berman-clubhouse.png"
-            alt="Berman Clubhouse - Exclusive Senior Golf Community"
-            width={1280}
-            height={720}
-            className="w-full h-auto rounded-2xl shadow-xl"
-            priority
-          />
         </div>
       </section>
 
@@ -258,6 +267,17 @@ export default function CommunityPage() {
           </p>
 
           <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-8 md:p-12 text-white shadow-xl">
+            {/* Clubhouse Image */}
+            <div className="mb-6">
+              <Image
+                src="/berman-clubhouse.png"
+                alt="Berman Clubhouse"
+                width={600}
+                height={338}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+
             <p className="text-blue-200 font-semibold uppercase tracking-wide text-sm mb-2">Monthly Membership</p>
             <div className="flex items-baseline justify-center gap-2 mb-6">
               <span className="text-5xl font-bold">$47</span>
