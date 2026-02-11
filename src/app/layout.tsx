@@ -8,11 +8,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Free Workshop | Berman Golf - Add 10+ Yards to Your Drive",
-  description: "Join Dr. Jake Berman for a free workshop designed specifically for senior golfers who want to move better, generate more power, and play pain-free.",
+  title: "Berman Golf | The Berman Method for Senior Golfers",
+  description: "Dr. Jake Berman's biomechanics-first approach to help senior golfers gain distance, improve consistency, and play more frequently.",
   openGraph: {
-    title: "Free Workshop | Berman Golf",
-    description: "Add 10+ yards to your drive without swinging harder. Free workshop for senior golfers.",
+    title: "Berman Golf | The Berman Method",
+    description: "The biomechanics-first approach for senior golfers to gain distance and play their best golf.",
     type: "website",
   },
 };
