@@ -122,14 +122,24 @@ export default function ClubhouseMonthlyCheckout() {
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
               <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">Payment Details</h2>
 
-              {/* GHL Form Embed Placeholder */}
-              <div className="bg-gray-100 rounded-xl p-8 text-center min-h-[500px] flex flex-col items-center justify-center">
-                <svg className="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <p className="text-gray-500 font-medium mb-2">GoHighLevel Form Coming Soon</p>
-                <p className="text-gray-400 text-sm">Monthly subscription checkout form will be embedded here</p>
-              </div>
+              {/* GHL Form Embed */}
+              <iframe
+                src="https://link.physiofunnels.com/widget/form/6brVPbLfMxVjuWowII9H"
+                style={{ width: "100%", height: "1251px", border: "none", borderRadius: "3px" }}
+                id="inline-6brVPbLfMxVjuWowII9H"
+                data-layout='{"id":"INLINE"}'
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="(TM) Berman Clubhouse - Monthly"
+                data-height="1251"
+                data-layout-iframe-id="inline-6brVPbLfMxVjuWowII9H"
+                data-form-id="6brVPbLfMxVjuWowII9H"
+                title="(TM) Berman Clubhouse - Monthly"
+              />
             </div>
 
             {/* Trust Indicators */}
