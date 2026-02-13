@@ -1,60 +1,16 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import Script from "next/script";
 
 interface RegistrationFormProps {
   workshopDate?: string;
   workshopTime?: string;
-  ghlFormAction?: string; // GoHighLevel form action URL
 }
 
 export default function RegistrationForm({
-  workshopDate = "February 15th",
-  workshopTime = "10:00 AM EST",
-  ghlFormAction = "#", // Replace with actual GHL webhook/form URL
+  workshopDate = "February 18th",
+  workshopTime = "3:30 PM ET",
 }: RegistrationFormProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    if (ghlFormAction === "#") {
-      // If no GHL URL configured, prevent default and show success
-      e.preventDefault();
-      setIsSubmitting(true);
-      // Simulate submission
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-      }, 1000);
-      return;
-    }
-    // Otherwise, let the form submit naturally to GHL
-    setIsSubmitting(true);
-  };
-
-  if (isSubmitted) {
-    return (
-      <section id="register" className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <div className="bg-white rounded-2xl p-12 shadow-xl">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">You&apos;re Registered!</h3>
-            <p className="text-gray-600 mb-6">
-              Check your email for the workshop details, Zoom link, and your free digital copy of <strong>The Berman Method</strong>. We&apos;ll also send you a reminder before we go live.
-            </p>
-            <p className="text-sm text-gray-500">
-              {workshopDate} at {workshopTime}
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="register" className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
       <div className="max-w-2xl mx-auto px-4">
@@ -75,91 +31,26 @@ export default function RegistrationForm({
             </p>
           </div>
 
-          {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            action={ghlFormAction}
-            method="POST"
-            className="space-y-4"
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                  First Name *
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F26B4E] focus:border-transparent outline-none transition-all"
-                  placeholder="John"
-                />
-              </div>
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                  Last Name *
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F26B4E] focus:border-transparent outline-none transition-all"
-                  placeholder="Smith"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F26B4E] focus:border-transparent outline-none transition-all"
-                placeholder="john@example.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F26B4E] focus:border-transparent outline-none transition-all"
-                placeholder="(555) 123-4567"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="btn-primary w-full bg-[#F26B4E] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? (
-                <span className="flex items-center justify-center gap-2">
-                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                  </svg>
-                  Reserving Your Spot...
-                </span>
-              ) : (
-                "Reserve My Spot + Get the Free Book"
-              )}
-            </button>
-
-            <p className="text-center text-sm text-gray-500">
-              We respect your privacy. No spam, ever.
-            </p>
-          </form>
+          {/* GHL Embedded Form */}
+          <div className="w-full min-h-[627px]">
+            <iframe
+              src="https://link.physiofunnels.com/widget/form/UtHzQj5ew5Mf8fCKpI4S"
+              style={{ width: "100%", height: "627px", border: "none", borderRadius: "3px" }}
+              id="inline-UtHzQj5ew5Mf8fCKpI4S"
+              data-layout='{"id":"INLINE"}'
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="(TM) (February 2026) Virtual Workshop Sign Up"
+              data-height="627"
+              data-layout-iframe-id="inline-UtHzQj5ew5Mf8fCKpI4S"
+              data-form-id="UtHzQj5ew5Mf8fCKpI4S"
+              title="(TM) (February 2026) Virtual Workshop Sign Up"
+            />
+          </div>
 
           {/* Trust Badges */}
           <div className="mt-8 pt-8 border-t border-gray-200">
@@ -187,6 +78,7 @@ export default function RegistrationForm({
           </div>
         </div>
       </div>
+      <Script src="https://link.physiofunnels.com/js/form_embed.js" strategy="lazyOnload" />
     </section>
   );
 }

@@ -26,8 +26,6 @@ export default function FreeClassPage() {
   const workshopConfig = {
     date: "February 18th",
     time: "3:30 PM ET",
-    // Replace with your actual GoHighLevel form webhook URL
-    ghlFormAction: "#",
   };
 
   return (
@@ -44,7 +42,6 @@ export default function FreeClassPage() {
       <RegistrationForm
         workshopDate={workshopConfig.date}
         workshopTime={workshopConfig.time}
-        ghlFormAction={workshopConfig.ghlFormAction}
       />
       <Footer />
     </main>
