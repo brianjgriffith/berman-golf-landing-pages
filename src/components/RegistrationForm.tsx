@@ -44,7 +44,7 @@ export default function RegistrationForm({
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">You&apos;re Registered!</h3>
             <p className="text-gray-600 mb-6">
-              Check your email for the workshop details and Zoom link. We&apos;ll also send you a reminder before we go live.
+              Check your email for the workshop details, Zoom link, and your free digital copy of <strong>The Berman Method</strong>. We&apos;ll also send you a reminder before we go live.
             </p>
             <p className="text-sm text-gray-500">
               {workshopDate} at {workshopTime}
@@ -64,8 +64,14 @@ export default function RegistrationForm({
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Reserve Your Free Spot
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-3">
               Join us on <strong>{workshopDate}</strong> at <strong>{workshopTime}</strong>
+            </p>
+            <p className="inline-flex items-center gap-2 bg-[#F26B4E]/10 text-[#F26B4E] text-sm font-semibold px-4 py-1.5 rounded-full">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5 5a3 3 0 015-3h2a3 3 0 015 3v.1a2 2 0 011.7 1.9v8a2 2 0 01-2 2H3.3a2 2 0 01-2-2V7a2 2 0 011.7-1.9V5zm4-1a1 1 0 00-1 1v.1h4V5a1 1 0 00-1-1H9z" />
+              </svg>
+              Includes a free digital copy of The Berman Method book
             </p>
           </div>
 
@@ -146,7 +152,7 @@ export default function RegistrationForm({
                   Reserving Your Spot...
                 </span>
               ) : (
-                "Reserve My Free Spot"
+                "Reserve My Spot + Get the Free Book"
               )}
             </button>
 

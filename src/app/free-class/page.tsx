@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhatYoullLearn from "@/components/WhatYoullLearn";
 import WalkAwayWith from "@/components/WalkAwayWith";
+import BonusGift from "@/components/BonusGift";
 import WhoThisIsFor from "@/components/WhoThisIsFor";
 import VideoTransition from "@/components/VideoTransition";
 import Instructor from "@/components/Instructor";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 export default function FreeClassPage() {
   // Configure these for each workshop
   const workshopConfig = {
-    date: "February 15th",
+    date: "February 18th",
     time: "3:30 PM ET",
     // Replace with your actual GoHighLevel form webhook URL
     ghlFormAction: "#",
@@ -35,6 +36,7 @@ export default function FreeClassPage() {
       <Hero workshopDate={workshopConfig.date} workshopTime={workshopConfig.time} />
       <WhatYoullLearn />
       <WalkAwayWith />
+      <BonusGift />
       <WhoThisIsFor />
       <VideoTransition />
       <Instructor />

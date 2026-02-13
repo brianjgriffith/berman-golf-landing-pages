@@ -58,6 +58,10 @@ export default function Hero({ workshopDate = "February 15th", workshopTime = "1
             <span className="block">Reserve Your Seat</span>
             <span className="block text-sm font-normal opacity-90">{workshopDate} {workshopTime}</span>
           </a>
+
+          <p className="mt-4 text-white/80 text-sm font-medium">
+            Plus, get a <strong className="text-white">free digital copy</strong> of The Berman Method book when you register
+          </p>
         </div>
       </div>
     </section>
