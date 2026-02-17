@@ -280,6 +280,16 @@ export default function TenYardsPage() {
           </p>
 
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+            {/* Product Image */}
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/10yards-30days-product.png"
+                alt="10 Yards in 30 Days - Exclusive 4-Week Virtual Group"
+                width={600}
+                height={338}
+                className="object-contain rounded-xl"
+              />
+            </div>
             <p className="text-gray-700 mb-8 text-center">
               Starting January 21st, you&apos;ll join Dr. Jake Berman for 4 live group coaching sessions where he&apos;ll guide you through the exact system that&apos;s helped 1,000+ senior golfers gain 20-50 yards.
             </p>
