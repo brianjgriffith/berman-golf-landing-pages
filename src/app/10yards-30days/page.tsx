@@ -731,10 +731,10 @@ export default function TenYardsPage() {
             <p className="text-gray-600 mb-6">4 Live Weekly Sessions + Lifetime Access + All Bonuses</p>
             <p className="text-4xl font-bold text-gray-900 mb-6">$97</p>
             <a
-              href="#"
+              href="/10yards-30days/checkout"
               className="btn-primary block w-full bg-[#F26B4E] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
             >
-              Enroll Now - Start January 21st
+              Enroll Now for $97
             </a>
             <p className="text-gray-500 text-sm">100% Money-Back Guarantee | Secure Checkout</p>
           </div>
