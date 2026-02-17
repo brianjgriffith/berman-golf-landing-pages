@@ -15,10 +15,34 @@ export const metadata: Metadata = {
 
 export default function TenYardsPage() {
   const testimonialVideos = [
-    { name: "Michael Litwin", videoId: "JpIUsGG1nhk" },
-    { name: "Pete", videoId: "p3dc2hx6teU" },
-    { name: "Karen Reinecke", videoId: "-BtarQM1mVs" },
-    { name: "Richard Rosenblatt", videoId: "jgMnW1dy1lU" },
+    {
+      name: "Michael Litwin",
+      videoId: "JpIUsGG1nhk",
+      quote: "I was 80% certain I was canceling my golf club membership. Now I've gained 50 yards and joined the 200 Club — at 77!",
+      age: 77,
+      location: "Quail Creek, FL",
+    },
+    {
+      name: "Pete",
+      videoId: "p3dc2hx6teU",
+      quote: "Day one max was 179 yards. Final max was 208 yards. Everything clicked. Boom.",
+      age: 78,
+      location: "Naples, FL",
+    },
+    {
+      name: "Karen Reinecke",
+      videoId: "-BtarQM1mVs",
+      quote: "Before this, I'd top it, chunk it, or spray it. Now five out of five driver shots are right down the middle. And yes — I finally beat my husband!",
+      age: 78,
+      location: "Florida",
+    },
+    {
+      name: "Richard Rosenblatt",
+      videoId: "jgMnW1dy1lU",
+      quote: "It really taught me about the body and how to use the body—not be wristy. We shaved three club lengths from tee to green.",
+      age: 69,
+      location: "Naples, FL",
+    },
   ];
 
   const faqs = [
@@ -84,55 +108,64 @@ export default function TenYardsPage() {
     <main className="min-h-screen">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-gray-500 font-semibold tracking-widest uppercase text-base md:text-lg mb-4">
-            Attention: Senior Golfers
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Add 10+ Yards to Your Drive in the Next 30 Days
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            (Without Expensive Lessons, New Equipment, or &quot;Swinging Harder&quot;)
-          </p>
-          <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-            Join Dr. Jake Berman for 4 weeks of live group coaching designed specifically for senior golfers who want to move better, generate more power, and play pain-free—starting January 21st.
-          </p>
-          <a
-            href="#enroll"
-            className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-6"
-          >
-            Secure Your Spot - Only $97
-          </a>
-          <p className="text-gray-600 mb-8">4 Live Weekly Sessions</p>
+      {/* Hero Section - Two Column with VSL */}
+      <section className="pt-20 pb-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Eyebrow */}
+          <div className="text-center mb-8">
+            <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-base md:text-lg px-6 py-2 rounded-full">
+              Attention: Senior Golfers
+            </span>
+          </div>
 
-          {/* Social Proof Badges */}
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium flex items-center gap-2">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              1,000+ Senior Golfers Trained
-            </span>
-            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium flex items-center gap-2">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              100% Success Rate
-            </span>
-            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium flex items-center gap-2">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Gain 10+ Yards
-            </span>
-            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium flex items-center gap-2">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Ages into 80s/90s
-            </span>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column - Copy */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                Add 10+ Yards to Your Drive in the Next 30 Days
+              </h1>
+              <p className="text-xl text-[#F26B4E] font-semibold mb-4">
+                Without Expensive Lessons, New Equipment, or &quot;Swinging Harder&quot;
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                Join Dr. Jake Berman for 4 weeks of live group coaching designed specifically for senior golfers who want to move better, generate more power, and play pain-free.
+              </p>
+              <a
+                href="#enroll"
+                className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-3"
+              >
+                Secure Your Spot - Only $97
+              </a>
+              <p className="text-gray-500 text-sm">4 Live Weekly Sessions | 100% Money-Back Guarantee</p>
+            </div>
+
+            {/* Right Column - VSL Video */}
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.youtube.com/embed/yX9__f-dBgw"
+                title="30 Day Distance Breakthrough"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+
+          {/* Social Proof */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-8">
+            {[
+              "1,000+ Senior Golfers Trained",
+              "100% Success Rate",
+              "Gain 10+ Yards",
+              "Ages into 80s/90s",
+            ].map((item, index) => (
+              <span key={index} className="text-gray-800 text-sm font-medium flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -140,43 +173,26 @@ export default function TenYardsPage() {
       {/* Benefits Grid */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "Move", highlight: "Better" },
-              { label: "Gain", highlight: "Distance" },
-              { label: "Improve", highlight: "Consistency" },
-              { label: "Play More", highlight: "Frequently" },
+              { label: "Move", highlight: "Better", color: "border-[#F26B4E]", bgColor: "bg-[#F26B4E]", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+              { label: "Gain", highlight: "Distance", color: "border-[#1565c0]", bgColor: "bg-[#1565c0]", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { label: "Improve", highlight: "Consistency", color: "border-[#F26B4E]", bgColor: "bg-[#F26B4E]", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { label: "Play More", highlight: "Frequently", color: "border-[#1565c0]", bgColor: "bg-[#1565c0]", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
             ].map((benefit, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
-                <p className="text-gray-600 text-sm">{benefit.label}</p>
-                <p className="text-xl font-bold text-gray-900">{benefit.highlight}</p>
+              <div key={index} className={`bg-white p-4 rounded-lg shadow-sm border-l-4 ${benefit.color} flex items-center gap-4`}>
+                <div className={`w-10 h-10 ${benefit.bgColor} rounded-full flex items-center justify-center flex-shrink-0`}>
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={benefit.icon} />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-500 text-sm">{benefit.label}</p>
+                  <p className="text-lg font-bold text-gray-900">{benefit.highlight}</p>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* VSL Section */}
-      <section className="py-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
-            How Senior Golfers Are Adding 10+ Yards In Just 30 Days
-          </h2>
-
-          {/* Video Embed */}
-          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-xl mb-8">
-            <iframe
-              src="https://www.youtube.com/embed/yX9__f-dBgw"
-              title="30 Day Distance Breakthrough"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
-
-          <p className="text-lg text-blue-100 text-center max-w-3xl mx-auto">
-            Over the next 30 days, you&apos;ll learn how to move your body more efficiently so you can generate more power from your core and glutes, and increase your shoulder turn. This system is custom-tailored to the way a senior body moves—not the way a 20-year-old pro on the PGA Tour moves. You&apos;ll swing more efficiently, not harder, and gain distance without pain.
-          </p>
         </div>
       </section>
 
@@ -333,15 +349,21 @@ export default function TenYardsPage() {
       {/* Peter Testimonial */}
       <section className="py-12 bg-white">
         <div className="max-w-3xl mx-auto px-4">
-          <div className="bg-gray-50 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6">
-            <div className="w-24 h-24 bg-[#1565c0] rounded-full flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
-              P
+          <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-lg">
+            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-4 border-white/30">
+              <Image
+                src="/peter-schmitt.png"
+                alt="Peter Schmitt"
+                width={96}
+                height={96}
+                className="object-cover w-full h-full"
+              />
             </div>
             <div>
-              <p className="text-xl text-gray-700 italic mb-4">
+              <p className="text-xl text-white italic mb-4">
                 &quot;It was amazing… I&apos;m hitting the sweet spot now and getting more distance—it&apos;s just easier.&quot;
               </p>
-              <p className="text-gray-600 font-semibold">- Peter Schmitt, 78</p>
+              <p className="text-blue-200 font-semibold">- Peter Schmitt, 78</p>
             </div>
           </div>
         </div>
@@ -418,7 +440,7 @@ export default function TenYardsPage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {testimonialVideos.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm">
+              <div key={index} className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
                 <div className="aspect-video w-full">
                   <iframe
                     src={`https://www.youtube.com/embed/${testimonial.videoId}`}
@@ -428,8 +450,11 @@ export default function TenYardsPage() {
                     className="w-full h-full"
                   />
                 </div>
-                <div className="p-4">
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                <div className="p-6">
+                  <p className="text-gray-700 italic mb-4">&quot;{testimonial.quote}&quot;</p>
+                  <p className="font-semibold text-gray-900">
+                    - {testimonial.name}, {testimonial.age}, {testimonial.location}
+                  </p>
                 </div>
               </div>
             ))}
@@ -444,6 +469,102 @@ export default function TenYardsPage() {
               Secure My Spot - $97
             </a>
             <p className="text-gray-500 mt-4">Join the 30-Day Distance Breakthrough</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why This Works - Comparison Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            Why Traditional Golf Instruction Fails Senior Golfers
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Most golf pros teach techniques designed for 25-year-old bodies. That&apos;s why their advice doesn&apos;t work for you.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Traditional Golf Lessons */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 text-center mb-2">Traditional Golf Lessons</h3>
+              <p className="text-2xl font-bold text-gray-900 text-center mb-4">$150+<span className="text-base font-normal text-gray-500">/hour</span></p>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                {[
+                  "Teaches techniques for younger, flexible bodies",
+                  "\"Turn more\" and \"swing harder\" causes pain",
+                  "Requires 10+ lessons to see any change",
+                  "No understanding of biomechanics or pain",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 pt-4 border-t border-gray-100 text-center">
+                <span className="text-gray-500 text-sm">10 lessons = $1,500+</span>
+              </div>
+            </div>
+
+            {/* Speed Sticks / Training Aids */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 text-center mb-2">Speed Sticks &amp; Training Aids</h3>
+              <p className="text-2xl font-bold text-gray-900 text-center mb-4">$200-400+</p>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                {[
+                  "One-size-fits-all approach",
+                  "Encourages swinging harder — risky for seniors",
+                  "No coaching or feedback included",
+                  "Doesn't address root cause of distance loss",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 pt-4 border-t border-gray-100 text-center">
+                <span className="text-gray-500 text-sm">Equipment only — no guidance</span>
+              </div>
+            </div>
+
+            {/* 30-Day Distance Breakthrough */}
+            <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-6 shadow-lg border-2 border-[#F26B4E] relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-[#F26B4E] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Best Value</span>
+              </div>
+              <h3 className="text-lg font-bold text-white text-center mb-2">30-Day Distance Breakthrough</h3>
+              <p className="text-2xl font-bold text-white text-center mb-4">$97<span className="text-base font-normal text-blue-200"> one-time</span></p>
+              <ul className="space-y-2 text-blue-100 text-sm">
+                {[
+                  "4 live coaching sessions with Dr. Jake",
+                  "Designed specifically for senior golfers",
+                  "Biomechanics-based — not swing tips",
+                  "Train from home — no travel required",
+                  "Lifetime access + community + bonuses",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-white">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 pt-4 border-t border-white/20 text-center">
+                <span className="text-white font-semibold">100% Success Rate</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-sm max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 text-center">
+              <strong className="text-gray-900">The difference?</strong> Golf pros teach technique for how the club <em>should</em> move. Dr. Jake teaches biomechanics for how your body <em>does</em> move — and the club fits into that equation.
+            </p>
           </div>
         </div>
       </section>
