@@ -45,6 +45,13 @@ export default function TenYardsCheckout() {
             {/* Product Card */}
             <div className="bg-white rounded-2xl p-6 shadow-sm mb-6">
               <div className="mb-6">
+                <Image
+                  src="/10yards-30days-product.png"
+                  alt="10 Yards in 30 Days"
+                  width={500}
+                  height={281}
+                  className="w-full h-auto rounded-lg mb-4"
+                />
                 <h2 className="text-xl font-bold text-gray-900">30-Day Distance Breakthrough</h2>
                 <p className="text-gray-600 text-sm">4 Live Weekly Sessions + Lifetime Access + All Bonuses</p>
                 <p className="text-gray-400 line-through text-sm mt-1">$888</p>

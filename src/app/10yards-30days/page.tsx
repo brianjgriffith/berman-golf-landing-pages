@@ -131,7 +131,7 @@ export default function TenYardsPage() {
                 Join Dr. Jake Berman for 4 weeks of live group coaching designed specifically for senior golfers who want to move better, generate more power, and play pain-free.
               </p>
               <a
-                href="#enroll"
+                href="/10yards-30days/checkout"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-3"
               >
                 Secure Your Spot - Only $97
@@ -199,56 +199,93 @@ export default function TenYardsPage() {
       {/* 3 Pillars Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            How Senior Golfers Are Adding 10+ Yards in Just 30 Days
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Pillar 1 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">1</span>
-              </div>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <Image
+                src="/icon-computer.png"
+                alt="Train from home"
+                width={120}
+                height={120}
+                className="mx-auto mb-6"
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-4">The 7-Step Berman Method</h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Train from home</strong> — no clubs, no range, no travel
-              </p>
+
+              <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
+                <p className="text-gray-800 font-semibold italic">
+                  &quot;Train from home — no clubs, no range, no travel.&quot;
+                </p>
+              </div>
+
               <p className="text-gray-600 mb-4">
                 Follow Jake&apos;s proven 7-step system that fixes the ROOT CAUSE of distance loss. Each module adds 5-10 yards by activating the right muscles in the right order.
               </p>
-              <p className="text-gray-500 text-sm">
-                Bite-sized lessons you can complete in 30-45 minutes. Watch, practice, see results.
-              </p>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <p className="text-gray-500 text-sm">
+                  Bite-sized lessons you can complete in 30-45 minutes. Watch, practice, see results.
+                </p>
+              </div>
             </div>
 
             {/* Pillar 2 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">2</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <Image
+                src="/icon-movement.png"
+                alt="Movements that add distance"
+                width={120}
+                height={120}
+                className="mx-auto mb-6"
+              />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Biomechanics, Not Technique</h3>
+
+              <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
+                <p className="text-gray-800 font-semibold italic">
+                  &quot;Stop guessing. Start activating the muscles that matter.&quot;
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Movements That Add Distance</h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Stop guessing.</strong> Start activating the muscles that matter.
-              </p>
+
               <p className="text-gray-600 mb-4">
                 Jake shows you EXACTLY which muscles to fire (and which to relax) to unlock explosive power without pain.
               </p>
-              <p className="text-gray-500 text-sm">
-                No wasted reps. No confusing drills. Just proven movements backed by physics and biomechanics.
-              </p>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <p className="text-gray-500 text-sm">
+                  No wasted reps. No confusing drills. Just proven movements backed by physics and biomechanics.
+                </p>
+              </div>
             </div>
 
             {/* Pillar 3 */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#F26B4E] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl font-bold">3</span>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <Image
+                src="/icone-gear.png"
+                alt="100% Success Rate"
+                width={120}
+                height={120}
+                className="mx-auto mb-6"
+              />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate</h3>
+
+              <div className="bg-gray-50 rounded-lg px-4 py-3 mb-4">
+                <p className="text-gray-800 font-semibold italic">
+                  &quot;Every person who completed the program got results.&quot;
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">100% Success Rate System</h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Physics-based results.</strong> Not swing tips for 25-year-olds.
-              </p>
+
               <p className="text-gray-600 mb-4">
                 This isn&apos;t theory or guesswork. It&apos;s a proven system used by 1,000+ senior golfers to gain distance and eliminate pain.
               </p>
-              <p className="text-gray-500 text-sm">
-                100% of clients who complete the program gain distance. Not 90%. Not 95%. 100%.
-              </p>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <p className="text-gray-500 text-sm">
+                  100% of clients who complete the program gain distance. Not 90%. Not 95%. 100%.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -256,7 +293,7 @@ export default function TenYardsPage() {
           <div className="text-center mt-12">
             <p className="text-xl font-bold text-gray-900 mb-6">Ready to Add 10+ Yards in 30 Days?</p>
             <a
-              href="#enroll"
+              href="/10yards-30days/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Yes! Reserve My Spot for $97
@@ -345,7 +382,7 @@ export default function TenYardsPage() {
               <p className="text-gray-600 mb-2">Total Value: <span className="line-through">$888</span></p>
               <p className="text-3xl font-bold text-gray-900 mb-4">Today Just $97 <span className="text-green-600">(Save $791!)</span></p>
               <a
-                href="#enroll"
+                href="/10yards-30days/checkout"
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
               >
                 Enroll Now for $97
@@ -428,7 +465,7 @@ export default function TenYardsPage() {
               We built this 4-week intensive to help senior golfers add effortless distance and play pain-free. If it doesn&apos;t do that for you, we don&apos;t want your money.
             </p>
             <a
-              href="#enroll"
+              href="/10yards-30days/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Start My 4-Week Transformation
@@ -473,7 +510,7 @@ export default function TenYardsPage() {
           <div className="text-center">
             <p className="text-xl font-bold text-gray-900 mb-6">Ready to Join Them?</p>
             <a
-              href="#enroll"
+              href="/10yards-30days/checkout"
               className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Secure My Spot - $97
@@ -692,7 +729,7 @@ export default function TenYardsPage() {
           <p className="text-xl text-gray-700 mb-8">So they did something about it. <strong>Now it&apos;s your turn.</strong></p>
 
           <a
-            href="#enroll"
+            href="/10yards-30days/checkout"
             className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
           >
             Put Your Name on This Board
