@@ -100,7 +100,7 @@ export default function TenYardsPage() {
     },
     {
       question: "When does the program start, and how do I access it?",
-      answer: "The program starts January 21st. After you enroll, you'll receive an email with your Zoom link and all the details to get started.",
+      answer: "The program starts Tuesday, March 3rd at 3:30 PM ET. After you enroll, you'll receive an email with your Zoom link and all the details to get started.",
     },
   ];
 
@@ -328,7 +328,7 @@ export default function TenYardsPage() {
               />
             </div>
             <p className="text-gray-700 mb-8 text-center">
-              Starting January 21st, you&apos;ll join Dr. Jake Berman for 4 live group coaching sessions where he&apos;ll guide you through the exact system that&apos;s helped 1,000+ senior golfers gain 20-50 yards.
+              Starting March 3rd, you&apos;ll join Dr. Jake Berman for 4 live group coaching sessions where he&apos;ll guide you through the exact system that&apos;s helped 1,000+ senior golfers gain 20-50 yards.
             </p>
 
             {/* Main Offer */}
@@ -338,16 +338,16 @@ export default function TenYardsPage() {
               </h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 1:</span> Foundation & Muscle Activation
+                  <span className="text-[#F26B4E] font-bold">Week 1 (Tue 3/3):</span> Foundation & Muscle Activation
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 2:</span> Top of Backswing Mastery
+                  <span className="text-[#F26B4E] font-bold">Week 2 (Wed 3/11):</span> Top of Backswing Mastery
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 3:</span> Downswing & Impact
+                  <span className="text-[#F26B4E] font-bold">Week 3 (Wed 3/18):</span> Downswing & Impact
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 4:</span> Release & Finish
+                  <span className="text-[#F26B4E] font-bold">Week 4 (Wed 3/25):</span> Release & Finish
                 </li>
               </ul>
             </div>
