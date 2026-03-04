@@ -4,6 +4,7 @@
 When updating workshop dates or form IDs, edit `src/config/workshops.ts`. This is the single source of truth used by:
 - `/free-class` — Hero buttons + RegistrationForm embeds
 - `/free-book/thank-you` — CTA buttons linking to free class
+- `/senior-golf-warm-up/thank-you` — CTA buttons linking to free class
 
 ## Page Structure
 - `/free-class` — Free workshop landing page (full funnel: hero, benefits, instructor, testimonials, registration forms)

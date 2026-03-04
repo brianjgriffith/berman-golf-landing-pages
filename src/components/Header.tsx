@@ -6,7 +6,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const getCtaConfig = () => {
-    if (pathname === "/free-book/thank-you") {
+    if (pathname === "/free-book/thank-you" || pathname === "/senior-golf-warm-up/thank-you") {
       return { text: "Join Free Class", href: "/free-class#register", isPopup: false };
     }
     if (pathname === "/free-book") {
