@@ -10,6 +10,7 @@ import Instructor from "@/components/Instructor";
 import Testimonials from "@/components/Testimonials";
 import RegistrationForm from "@/components/RegistrationForm";
 import Footer from "@/components/Footer";
+import { workshops } from "@/config/workshops";
 
 export const metadata: Metadata = {
   title: "Free Golf Workshop | The Berman Method - Out-Drive Your Buddies Again",
@@ -22,16 +23,10 @@ export const metadata: Metadata = {
 };
 
 export default function FreeClassPage() {
-  // Configure these for each workshop
-  const workshopConfig = {
-    date: "February 18th",
-    time: "3:30 PM ET",
-  };
-
   return (
     <main className="min-h-screen">
       <Header />
-      <Hero workshopDate={workshopConfig.date} workshopTime={workshopConfig.time} />
+      <Hero workshops={workshops} />
       <WhatYoullLearn />
       <WalkAwayWith />
       <BonusGift />
@@ -39,10 +34,7 @@ export default function FreeClassPage() {
       <VideoTransition />
       <Instructor />
       <Testimonials />
-      <RegistrationForm
-        workshopDate={workshopConfig.date}
-        workshopTime={workshopConfig.time}
-      />
+      <RegistrationForm workshops={workshops} />
       <Footer />
     </main>
   );
