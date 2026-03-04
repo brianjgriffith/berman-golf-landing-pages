@@ -90,28 +90,59 @@ export default function FreeBookThankYouPage() {
       </section>
 
       {/* Workshop CTA */}
-      <section className="py-16 bg-white text-center">
+      <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-            Want to Go Even Deeper?
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-md mx-auto">
-            Pick a date and reserve your free seat for the live workshop.
-          </p>
+          <div className="text-center mb-10">
+            <p className="text-[#F26B4E] font-semibold uppercase tracking-wider text-sm mb-3">
+              Free Live Workshop
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              The Book Tells You <em>What</em> to Do.<br />
+              The Class Shows You <em>How</em>.
+            </h2>
+            <p className="text-gray-600 text-lg max-w-xl mx-auto">
+              In this free 60-minute class, Dr. Jake Berman walks you through the exact 7-step framework his patients use to add 20-50+ yards &mdash; live, with Q&amp;A.
+            </p>
+          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {workshops.map((workshop, index) => (
-              <a
-                key={index}
-                href={`/free-class#register-${index}`}
-                className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] transition-colors"
-              >
-                <span className="block">Reserve Your Seat</span>
-                <span className="block text-sm font-normal opacity-90">
-                  {workshop.date} at {workshop.time}
-                </span>
-              </a>
+          {/* Value bullets */}
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-2xl mx-auto mb-10 text-left">
+            {[
+              "Why 99% of golf instruction fails senior bodies",
+              "The muscles-over-momentum secret to real distance",
+              "5-minute exercises you can do in your living room",
+              "How to eliminate back pain and stiffness after 18 holes",
+              "Live Q&A with Dr. Jake (not a recording)",
+              "Free — no pitch, no credit card required",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700">{item}</span>
+              </div>
             ))}
+          </div>
+
+          {/* CTA buttons */}
+          <div className="text-center">
+            <p className="text-gray-500 text-sm font-semibold uppercase tracking-wider mb-4">
+              Pick a date that works for you:
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {workshops.map((workshop, index) => (
+                <a
+                  key={index}
+                  href={`/free-class#register-${index}`}
+                  className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] transition-colors"
+                >
+                  <span className="block">Reserve Your Free Seat</span>
+                  <span className="block text-sm font-normal opacity-90">
+                    {workshop.date} at {workshop.time}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
