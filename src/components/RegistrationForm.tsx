@@ -17,7 +17,7 @@ export default function RegistrationForm({ workshops }: RegistrationFormProps) {
             Reserve Your Free Spot
           </h2>
           <p className="text-white/80 text-lg">
-            Pick the date that works best for you
+            Limited spots available — register now
           </p>
         </div>
 

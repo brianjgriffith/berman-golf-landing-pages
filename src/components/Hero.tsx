@@ -53,7 +53,7 @@ export default function Hero({ workshops }: HeroProps) {
 
           {/* CTA Buttons */}
           <p className="text-white/80 text-sm font-semibold uppercase tracking-wider mb-4">
-            Choose Your Date:
+            Save Your Spot:
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {workshops.map((workshop, index) => (
