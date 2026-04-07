@@ -47,8 +47,11 @@ export default function Hero({ workshops }: HeroProps) {
 
         {/* Subheadline - full width below */}
         <div className="text-center mt-4">
-          <p className="text-xl md:text-2xl text-white mb-6 max-w-3xl mx-auto">
-            Free web class: The biomechanics-first method that&apos;s helped golfers in their 70s add 50+ yards, without swinging harder
+          <p className="text-xl md:text-2xl text-white/90 mb-2 max-w-3xl mx-auto">
+            Join this free workshop and discover the biomechanics-first method
+          </p>
+          <p className="text-lg md:text-xl text-white font-semibold mb-6 max-w-3xl mx-auto">
+            that&apos;s helped golfers in their 70s add 50+ yards &mdash; without swinging harder
           </p>
 
           {/* CTA Buttons */}
@@ -62,7 +65,7 @@ export default function Hero({ workshops }: HeroProps) {
                 href={`#register-${index}`}
                 className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
               >
-                <span className="block">Reserve Your Seat</span>
+                <span className="block">Save My Spot</span>
                 <span className="block text-sm font-normal opacity-90">{workshop.date} at {workshop.time}</span>
               </a>
             ))}
