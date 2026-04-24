@@ -338,16 +338,16 @@ export default function TenYardsPage() {
               </h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 1:</span> Foundation & Muscle Activation
+                  <span className="text-[#F26B4E] font-bold">Week 1 (May 6th):</span> Foundation & Muscle Activation
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 2:</span> Top of Backswing Mastery
+                  <span className="text-[#F26B4E] font-bold">Week 2 (May 13th):</span> Top of Backswing Mastery
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 3:</span> Downswing & Impact
+                  <span className="text-[#F26B4E] font-bold">Week 3 (May 21st):</span> Downswing & Impact
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#F26B4E] font-bold">Week 4:</span> Release & Finish
+                  <span className="text-[#F26B4E] font-bold">Week 4 (May 27th):</span> Release & Finish
                 </li>
               </ul>
             </div>
