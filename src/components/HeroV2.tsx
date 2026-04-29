@@ -47,8 +47,11 @@ export default function HeroV2({ workshops }: HeroV2Props) {
 
         {/* Subheadline - full width below */}
         <div className="text-center mt-4">
+          <p className="text-xl md:text-2xl text-white font-semibold mb-4 max-w-3xl mx-auto leading-snug">
+            99% of golf instruction is designed for a 25-year-old body.
+          </p>
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
-            99% of golf instruction is designed for a 25-year-old body. Join <strong className="text-white">Dr. Jake Berman (PT, DPT)</strong> for a free, live class breaking down <strong className="text-white">The Activation Method</strong> &mdash; and learn how seniors are gaining distance, improving consistency, and playing more often without changing their swing or popping ibuprofen on the back 9.
+            Join <strong className="text-white">Dr. Jake Berman (PT, DPT)</strong> for a free, live class breaking down <strong className="text-white">The Activation Method</strong> &mdash; and learn how seniors are gaining distance, improving consistency, and playing more often without changing their swing or popping ibuprofen on the back 9.
           </p>
 
           {/* Bullets */}
@@ -88,9 +91,9 @@ export default function HeroV2({ workshops }: HeroV2Props) {
               <a
                 key={index}
                 href={`#register-${index}`}
-                className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+                className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-5 rounded-lg font-bold text-xl hover:bg-[#e05a3d] uppercase tracking-wide shadow-[0_10px_30px_rgba(242,107,78,0.45)] hover:shadow-[0_15px_40px_rgba(242,107,78,0.65)] hover:-translate-y-0.5 transition-all"
               >
-                <span className="block">Save My Spot</span>
+                <span className="block">Save My Spot &rarr;</span>
                 <span className="block text-sm font-normal opacity-90">{workshop.date} at {workshop.time}</span>
               </a>
             ))}
