@@ -39,18 +39,33 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-export default function Testimonials() {
+interface TestimonialsProps {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+export default function Testimonials({
+  eyebrow = "Testimonials",
+  title = "What Others Are Saying",
+  subtitle,
+}: TestimonialsProps = {}) {
   return (
     <section className="py-20 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
           <p className="text-[#F26B4E] font-semibold tracking-wide uppercase text-sm mb-3">
-            Testimonials
+            {eyebrow}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            What Others Are Saying
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight max-w-3xl mx-auto">
+            {title}
           </h2>
+          {subtitle && (
+            <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         {/* Testimonials Grid */}

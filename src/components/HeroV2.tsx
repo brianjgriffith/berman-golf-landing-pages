@@ -47,9 +47,14 @@ export default function HeroV2({ workshops }: HeroV2Props) {
 
         {/* Subheadline - full width below */}
         <div className="text-center mt-4">
-          <p className="text-xl md:text-2xl text-white font-semibold mb-4 max-w-3xl mx-auto leading-snug">
-            99% of golf instruction is designed for a 25-year-old body.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-5 mb-4 max-w-3xl mx-auto">
+            <span className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#F26B4E] tracking-tight leading-none">
+              99%
+            </span>
+            <p className="text-xl md:text-2xl text-white font-semibold leading-snug text-center md:text-left max-w-md">
+              of golf instruction is designed for a 25-year-old body.
+            </p>
+          </div>
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
             Join <strong className="text-white">Dr. Jake Berman (PT, DPT)</strong> for a free, live class breaking down <strong className="text-white">The Activation Method</strong> &mdash; and learn how seniors are gaining distance, improving consistency, and playing more often without changing their swing or popping ibuprofen on the back 9.
           </p>
@@ -69,7 +74,7 @@ export default function HeroV2({ workshops }: HeroV2Props) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-base md:text-lg font-semibold text-white/95">
-                Gain 20+ yards by waking up your <strong className="text-white">&ldquo;asleep&rdquo; muscles</strong>.
+                Gain <span className="text-[#F26B4E] text-xl md:text-2xl font-extrabold tracking-tight">20+ yards</span> by waking up your <strong className="text-white">&ldquo;asleep&rdquo; muscles</strong>.
               </span>
             </li>
             <li className="flex items-start gap-3">
