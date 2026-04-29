@@ -1,0 +1,41 @@
+import { Metadata } from "next";
+import Header from "@/components/Header";
+import HeroV2 from "@/components/HeroV2";
+import WhatYoullLearn from "@/components/WhatYoullLearn";
+import WalkAwayWith from "@/components/WalkAwayWith";
+import BonusGift from "@/components/BonusGift";
+import WhoThisIsFor from "@/components/WhoThisIsFor";
+import VideoTransition from "@/components/VideoTransition";
+import Instructor from "@/components/Instructor";
+import Testimonials from "@/components/Testimonials";
+import RegistrationForm from "@/components/RegistrationForm";
+import Footer from "@/components/Footer";
+import { workshops } from "@/config/workshops";
+
+export const metadata: Metadata = {
+  title: "Free Golf Workshop | The Berman Method - Out-Drive Your Buddies Again",
+  description: "Join our free web class and learn the 7-step framework that's helped senior golfers gain 20-50+ yards, eliminate back pain, and prove age is just a number.",
+  openGraph: {
+    title: "Free Golf Workshop | The Berman Method",
+    description: "Learn how senior golfers are adding 20-50 yards to their drives and playing pain-free golf.",
+    type: "website",
+  },
+};
+
+export default function FreeClassPage() {
+  return (
+    <main className="min-h-screen">
+      <Header />
+      <HeroV2 workshops={workshops} />
+      <WhatYoullLearn />
+      <WalkAwayWith />
+      <BonusGift />
+      <WhoThisIsFor />
+      <VideoTransition />
+      <Instructor />
+      <Testimonials />
+      <RegistrationForm workshops={workshops} />
+      <Footer />
+    </main>
+  );
+}
