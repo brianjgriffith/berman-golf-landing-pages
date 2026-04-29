@@ -15,7 +15,7 @@ export default function HeroV2({ workshops }: HeroV2Props) {
         {/* Eyebrow - centered above */}
         <div className="text-center mb-4">
           <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm md:text-base px-6 py-2 rounded-full">
-            Traditional Golf Lessons Don&apos;t Work For Seniors
+            Warning To Senior Golfers
           </span>
         </div>
 
@@ -24,10 +24,10 @@ export default function HeroV2({ workshops }: HeroV2Props) {
           {/* Left Column - Text */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-              Finally Out-Drive Your Buddies Again
+              Golf Lessons Don&apos;t Work.
             </h1>
             <p className="text-2xl md:text-3xl text-white/90 font-semibold mb-6">
-              Without Changing Your Swing
+              Here&apos;s What Actually Does.
             </p>
           </div>
 
@@ -47,12 +47,37 @@ export default function HeroV2({ workshops }: HeroV2Props) {
 
         {/* Subheadline - full width below */}
         <div className="text-center mt-4">
-          <p className="text-xl md:text-2xl text-white/90 mb-2 max-w-3xl mx-auto">
-            Join my free, live class and I&apos;ll break down <strong className="text-white">The Activated Swing</strong> &mdash; the 7-step Berman Method that turns on the right muscles at the right time
+          <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
+            99% of golf instruction is designed for a 25-year-old body. Join <strong className="text-white">Dr. Jake Berman (PT, DPT)</strong> for a free, live class breaking down <strong className="text-white">The Activation Method</strong> &mdash; and learn how seniors are gaining distance, improving consistency, and playing more often without changing their swing or popping ibuprofen on the back 9.
           </p>
-          <p className="text-lg md:text-xl text-white font-semibold mb-6 max-w-3xl mx-auto">
-            so thousands of seniors have gained distance, improved consistency, and played more frequently &mdash; without the aches and pains
-          </p>
+
+          {/* Bullets */}
+          <ul className="max-w-2xl mx-auto text-left space-y-3 mb-8">
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-[#F26B4E] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-base md:text-lg font-semibold text-white/95">
+                Stop swinging &ldquo;loose&rdquo; and start using <strong className="text-white">Ground Force</strong>.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-[#F26B4E] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-base md:text-lg font-semibold text-white/95">
+                Gain 20+ yards by waking up your <strong className="text-white">&ldquo;asleep&rdquo; muscles</strong>.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 md:w-6 md:h-6 text-[#F26B4E] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-base md:text-lg font-semibold text-white/95">
+                Live Q&amp;A: Dr. Jake answers your specific swing questions.
+              </span>
+            </li>
+          </ul>
 
           {/* CTA Buttons */}
           <p className="text-white/80 text-sm font-semibold uppercase tracking-wider mb-4">
