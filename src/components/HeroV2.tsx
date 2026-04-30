@@ -9,7 +9,7 @@ interface HeroV2Props {
 
 export default function HeroV2({ workshops }: HeroV2Props) {
   return (
-    <section className="pt-24 pb-12 md:pb-16 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
+    <section className="pt-24 pb-12 md:pb-16 bg-gradient-to-br from-[#081a2e] via-[#0a2845] to-[#0f4c81] text-white">
       <div className="max-w-7xl mx-auto px-4 w-full">
         <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Column - All Text Content */}
