@@ -30,13 +30,13 @@ export default function FreeClassPage() {
     <main className="min-h-screen">
       <Header />
       <HeroV2 workshops={workshops} />
+      <VideoTransition />
       <StatStrip />
       <WrongVsRight />
       <WhatYoullLearn />
       <WalkAwayWith />
       <BonusGift />
       <WhoThisIsFor />
-      <VideoTransition />
       <Instructor />
       <JakeQuote />
       <Testimonials
