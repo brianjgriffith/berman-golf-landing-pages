@@ -15,4 +15,14 @@ export const workshops: Workshop[] = [
       formId: "OWN7zP8uFeMGbkz2PS3G",
     },
   },
+  {
+    date: "Thursday, June 11th",
+    time: "10:00 AM ET",
+    form: {
+      src: "https://link.physiofunnels.com/widget/form/dDhVJk8t0QJNzPVfkLKf",
+      id: "inline-dDhVJk8t0QJNzPVfkLKf",
+      formName: "(TM) 06.11.26 Webclass Sign Up Page",
+      formId: "dDhVJk8t0QJNzPVfkLKf",
+    },
+  },
 ];
