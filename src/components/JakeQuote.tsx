@@ -19,11 +19,9 @@ export default function JakeQuote({
 
   if (isPoster) {
     return (
-      <section className="py-20 md:py-28 bg-[#efe5d4]">
+      <section className="py-24 md:py-32 bg-[#efe5d4]">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="h-[3px] w-32 bg-[#1a365d] mb-10" />
-
-          <blockquote className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] tracking-[0.005em] mb-10">
+          <blockquote className="font-display text-5xl md:text-7xl lg:text-8xl font-black uppercase text-[#1a365d] leading-[0.92] tracking-[0.005em] mb-10">
             {quote}
           </blockquote>
 

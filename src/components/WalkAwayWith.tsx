@@ -17,29 +17,28 @@ export default function WalkAwayWith({
 
   if (isPoster) {
     return (
-      <section className="py-20 bg-[#efe5d4]">
+      <section className="py-20 bg-[#f5ede0]">
         <div className="max-w-5xl mx-auto px-4">
           <div className="mb-10 md:mb-12 max-w-4xl">
-            <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] mb-4 tracking-[0.005em]">
+            <h2 className="font-serif italic text-3xl md:text-5xl lg:text-6xl text-[#1a365d] leading-[1.05] mb-4">
               {title}
             </h2>
-            <p className="font-serif text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">
+            <p className="font-serif text-lg md:text-xl text-[#1a365d]/70 max-w-2xl leading-relaxed">
               Simple, 5-minute exercises you can practice in your living room.
             </p>
           </div>
 
           <div className="bg-white border border-[#1a365d]/15 p-8 md:p-12">
-            <div className="space-y-5 mb-8">
+            <ul className="space-y-5 mb-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <span className="font-display text-2xl text-[#F26B4E] flex-shrink-0 leading-none w-8">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-serif text-[#1a365d]/90 text-lg leading-snug pt-1">{benefit}</span>
-                </div>
+                <li key={index} className="flex items-start gap-4">
+                  <svg className="w-6 h-6 text-[#1a365d] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="font-serif text-[#1a365d]/90 text-lg leading-snug">{benefit}</span>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <div className="bg-[#1a365d] text-[#f5ede0] p-6">
               <p className="font-serif text-lg leading-relaxed">

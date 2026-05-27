@@ -30,10 +30,15 @@ export default function WrongVsRight({ variant = "default" }: WrongVsRightProps 
       <div className="max-w-6xl mx-auto px-4">
         {isPoster ? (
           <div className="mb-12 md:mb-16 max-w-4xl">
-            <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] tracking-[0.005em]">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#F26B4E] mb-3">
+              The Problem
+            </p>
+            <h2 className="font-display text-3xl md:text-5xl font-black uppercase text-[#1a365d] leading-[1.0] mb-4 tracking-[0.005em]">
               Most golf advice for seniors is built to fail you.
             </h2>
+            <p className="font-serif italic text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">
+              Modern instruction was designed for a 25-year-old&apos;s body. Yours isn&apos;t.
+            </p>
           </div>
         ) : (
           <div className="text-center mb-12">

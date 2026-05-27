@@ -15,29 +15,28 @@ export default function WhoThisIsFor({ variant = "default" }: WhoThisIsForProps 
 
   if (isPoster) {
     return (
-      <section className="py-20 bg-[#efe5d4]">
+      <section className="py-20 bg-[#f5ede0]">
         <div className="max-w-5xl mx-auto px-4">
           <div className="mb-10 md:mb-12 max-w-4xl">
-            <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] mb-4 tracking-[0.005em]">
+            <h2 className="font-serif italic text-3xl md:text-5xl lg:text-6xl text-[#1a365d] leading-[1.05] mb-4">
               Who this is for.
             </h2>
-            <p className="font-serif text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">
+            <p className="font-serif text-lg md:text-xl text-[#1a365d]/70 max-w-2xl leading-relaxed">
               Senior golfers who refuse to &ldquo;age out&rdquo; of the game.
             </p>
           </div>
 
           <div className="bg-white border border-[#1a365d]/15 p-8 md:p-12">
-            <p className="text-sm font-bold uppercase tracking-widest text-[#F26B4E] mb-6">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#F26B4E] mb-6">
               This class is for you if you:
             </p>
 
             <ul className="space-y-4 mb-8">
               {criteria.map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
-                  <span className="font-display text-xl text-[#1a365d] flex-shrink-0 leading-none w-8 pt-1">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <svg className="w-6 h-6 text-[#1a365d] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
                   <span className="font-serif text-[#1a365d]/90 text-lg leading-snug">{item}</span>
                 </li>
               ))}
@@ -48,10 +47,10 @@ export default function WhoThisIsFor({ variant = "default" }: WhoThisIsForProps 
             </p>
           </div>
 
-          <div className="text-center mt-10">
+          <div className="mt-10">
             <a
               href="#register"
-              className="inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+              className="inline-block bg-[#F26B4E] text-white px-10 py-4 font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
               Reserve Your Seat
             </a>

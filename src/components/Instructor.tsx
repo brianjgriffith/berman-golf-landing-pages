@@ -48,8 +48,7 @@ export default function Instructor({ variant = "default" }: InstructorProps = {}
 
             {/* Right: Content */}
             <div className="md:col-span-7">
-              <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
-              <h2 className="font-display text-4xl md:text-6xl font-black uppercase text-[#1a365d] leading-[0.95] mb-6 tracking-[0.005em]">
+              <h2 className="font-serif italic text-3xl md:text-5xl lg:text-6xl text-[#1a365d] leading-[1.05] mb-6">
                 Hey, I&apos;m Dr. Jake.
               </h2>
 
@@ -92,10 +91,10 @@ export default function Instructor({ variant = "default" }: InstructorProps = {}
             <div className="grid md:grid-cols-3 gap-6">
               {credentials.map((credential, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="font-display text-2xl text-[#1a365d] flex-shrink-0 leading-none w-8">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-serif text-[#1a365d]/90 text-base leading-snug pt-1">{credential}</span>
+                  <svg className="w-5 h-5 text-[#1a365d] flex-shrink-0 mt-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="font-serif text-[#1a365d]/90 text-base leading-snug">{credential}</span>
                 </div>
               ))}
             </div>
