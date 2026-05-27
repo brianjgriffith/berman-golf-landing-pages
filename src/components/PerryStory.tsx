@@ -4,22 +4,23 @@ export default function PerryStory() {
   return (
     <section className="py-16 md:py-24 bg-[#f5ede0]">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12 lg:gap-16 items-center">
           {/* Left: Screenshot */}
-          <div className="flex justify-center order-2 md:order-1">
-            <div className="relative w-full max-w-md bg-white shadow-[0_25px_70px_rgba(26,54,93,0.15)] overflow-hidden border border-[#1a365d]/15">
+          <div className="md:col-span-7 flex justify-center order-2 md:order-1">
+            <div className="relative w-full bg-white shadow-[0_30px_80px_rgba(26,54,93,0.18)] overflow-hidden border border-[#1a365d]/15">
               <Image
                 src="/perry-full-picture.jpg"
                 alt="Screenshot of Perry Oliveira's Skool community post titled '1st place' showing his Veteran Golfers Association medal and tournament leaderboard, with caption thanking Dr. Jake Berman."
                 width={800}
                 height={1000}
                 className="w-full h-auto"
+                sizes="(min-width: 1024px) 640px, (min-width: 768px) 480px, 100vw"
               />
             </div>
           </div>
 
           {/* Right: Quote + Body */}
-          <div className="order-1 md:order-2">
+          <div className="md:col-span-5 order-1 md:order-2">
             <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
 
             <blockquote className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a365d] leading-[0.95] mb-6">
