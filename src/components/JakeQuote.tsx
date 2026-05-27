@@ -1,4 +1,18 @@
-export default function JakeQuote() {
+interface JakeQuoteProps {
+  quote?: React.ReactNode;
+  attribution?: string;
+}
+
+const defaultQuote = (
+  <>
+    &ldquo;Traditional lessons treat your body like a 25-year-old Tour pro. You don&apos;t need a swing rebuild &mdash; you need <span className="text-[#F26B4E]">activation</span>.&rdquo;
+  </>
+);
+
+export default function JakeQuote({
+  quote = defaultQuote,
+  attribution = "Dr. Jake Berman, PT, DPT",
+}: JakeQuoteProps = {}) {
   return (
     <section className="py-16 md:py-24 bg-gray-900 text-white">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -12,13 +26,13 @@ export default function JakeQuote() {
         </svg>
 
         <blockquote className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-8">
-          &ldquo;Traditional lessons treat your body like a 25-year-old Tour pro. You don&apos;t need a swing rebuild &mdash; you need <span className="text-[#F26B4E]">activation</span>.&rdquo;
+          {quote}
         </blockquote>
 
         <div className="flex items-center justify-center gap-3">
           <div className="w-10 h-px bg-[#F26B4E]" />
           <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-white/80">
-            Dr. Jake Berman, PT, DPT
+            {attribution}
           </p>
           <div className="w-10 h-px bg-[#F26B4E]" />
         </div>

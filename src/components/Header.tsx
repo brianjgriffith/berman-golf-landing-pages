@@ -21,6 +21,9 @@ export default function Header() {
     if (pathname === "/community") {
       return { text: "Join - $47/mo", href: "#join", isPopup: false };
     }
+    if (pathname === "/20-more-yards") {
+      return { text: "Reserve My Seat", href: "#register", isPopup: false };
+    }
     // Default for /free-class and home
     return { text: "Save My Spot", href: "#register", isPopup: false };
   };
