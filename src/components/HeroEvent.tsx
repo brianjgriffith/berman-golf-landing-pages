@@ -69,20 +69,40 @@ export default function HeroEvent() {
             </p>
           </div>
 
-          {/* Right column: Jake portrait, formally framed (no rotation) */}
+          {/* Right column: Polaroid stack on a table */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative max-w-sm">
-              <div className="bg-white p-3 shadow-[0_25px_70px_rgba(26,54,93,0.2)]">
-                <div className="relative aspect-[4/5] w-64 sm:w-80 md:w-96 overflow-hidden bg-[#1a365d]/10">
+            <div className="relative w-full max-w-md aspect-[4/5] mx-auto">
+              {/* Background Polaroid: coaching photo, tilted clockwise */}
+              <div className="absolute top-[2%] left-[2%] sm:left-[-4%] lg:left-[-8%] w-[60%] origin-top-left rotate-[6deg] bg-white p-2.5 shadow-[0_18px_45px_rgba(26,54,93,0.22)]">
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#1a365d]/10">
+                  <Image
+                    src="/jake-coaching.png"
+                    alt="Dr. Jake Berman coaching a senior golfer at the practice tee"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 240px, (min-width: 640px) 220px, 180px"
+                  />
+                </div>
+                <div className="pt-2 pb-1 text-center">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#1a365d]/70">
+                    Practice Tee
+                  </p>
+                </div>
+              </div>
+
+              {/* Foreground Polaroid: Jake portrait, tilted counter-clockwise */}
+              <div className="absolute bottom-0 right-0 sm:right-[-2%] w-[78%] origin-bottom-right -rotate-[3deg] bg-white p-3 shadow-[0_30px_80px_rgba(26,54,93,0.3)]">
+                <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#1a365d]/10">
                   <Image
                     src="/jake-solo.png"
                     alt="Dr. Jake Berman, PT, DPT"
                     fill
                     className="object-cover"
                     priority
+                    sizes="(min-width: 1024px) 380px, (min-width: 640px) 320px, 260px"
                   />
                 </div>
-                <div className="pt-4 pb-2 text-center border-t border-[#1a365d]/10 mt-3">
+                <div className="pt-3 pb-1.5 text-center border-t border-[#1a365d]/10 mt-2">
                   <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-[#1a365d]">
                     Dr. Jake Berman
                   </p>
