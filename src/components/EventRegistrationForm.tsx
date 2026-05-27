@@ -14,7 +14,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
       <div className="max-w-5xl mx-auto px-4">
         <div className="mb-12 max-w-4xl">
           <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] mb-4 tracking-[0.005em]">
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-[#1a365d] leading-[1.0] mb-4 tracking-tight">
             Reserve your free seat.
           </h2>
           <p className="font-serif text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">

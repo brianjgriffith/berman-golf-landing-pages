@@ -6,7 +6,7 @@ export default function EventLogistics() {
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#F26B4E] mb-3">
             Logistics
           </p>
-          <h2 className="font-display text-3xl md:text-5xl font-black uppercase text-[#1a365d] leading-[1.0] mb-4 tracking-[0.005em]">
+          <h2 className="font-display text-3xl md:text-5xl font-black text-[#1a365d] leading-[1.05] mb-4 tracking-tight">
             Everything you need to know.
           </h2>
           <p className="font-serif italic text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">

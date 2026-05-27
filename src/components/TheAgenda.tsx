@@ -4,7 +4,7 @@ export default function TheAgenda() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-12 md:mb-16 max-w-4xl">
           <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] mb-4 tracking-[0.005em]">
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-[#1a365d] leading-[1.0] mb-4 tracking-tight">
             Two days. One method.
             <br />
             Twenty more yards.
@@ -21,7 +21,7 @@ export default function TheAgenda() {
               <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">
                 Day 1 &bull; Wed, June 24 &bull; 10:00 AM ET
               </p>
-              <h3 className="font-display text-3xl md:text-4xl font-black uppercase text-[#1a365d] leading-tight mb-1">
+              <h3 className="font-display text-3xl md:text-4xl font-black text-[#1a365d] leading-tight mb-1">
                 The Activation Blueprint
               </h3>
               <p className="text-sm text-[#1a365d]/60 font-medium">90 minutes</p>
@@ -71,7 +71,7 @@ export default function TheAgenda() {
               <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">
                 Day 2 &bull; Thu, June 25 &bull; 10:00 AM ET
               </p>
-              <h3 className="font-display text-3xl md:text-4xl font-black uppercase leading-tight mb-1">
+              <h3 className="font-display text-3xl md:text-4xl font-black leading-tight mb-1">
                 Implementation &amp; Refinement
               </h3>
               <p className="text-sm text-[#f5ede0]/70 font-medium">90 minutes</p>

@@ -13,10 +13,10 @@ export default function WrongVsRight({ variant = "default" }: WrongVsRightProps 
     ? "bg-[#1a365d] text-[#f5ede0] p-8 md:p-10 relative overflow-hidden"
     : "bg-gradient-to-br from-[#0f4c81] to-[#1e88e5] text-white rounded-2xl p-8 md:p-10 shadow-xl relative overflow-hidden";
   const oldWayHeading = isPoster
-    ? "font-display text-2xl md:text-3xl font-black text-[#1a365d] uppercase tracking-wide"
+    ? "font-display text-2xl md:text-3xl font-black text-[#1a365d] tracking-tight"
     : "text-xl md:text-2xl font-extrabold text-gray-900 uppercase tracking-wide";
   const activationHeading = isPoster
-    ? "font-display text-2xl md:text-3xl font-black uppercase tracking-wide"
+    ? "font-display text-2xl md:text-3xl font-black tracking-tight"
     : "text-xl md:text-2xl font-extrabold uppercase tracking-wide";
   const oldWayItem = isPoster
     ? "font-serif text-base md:text-lg leading-snug text-[#1a365d]/90"
@@ -33,7 +33,7 @@ export default function WrongVsRight({ variant = "default" }: WrongVsRightProps 
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#F26B4E] mb-3">
               The Problem
             </p>
-            <h2 className="font-display text-3xl md:text-5xl font-black uppercase text-[#1a365d] leading-[1.0] mb-4 tracking-[0.005em]">
+            <h2 className="font-display text-3xl md:text-5xl font-black text-[#1a365d] leading-[1.05] mb-4 tracking-tight">
               Most golf advice for seniors is built to fail you.
             </h2>
             <p className="font-serif italic text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">

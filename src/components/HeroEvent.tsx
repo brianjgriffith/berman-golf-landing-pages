@@ -16,13 +16,13 @@ export default function HeroEvent() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left column: typography stack */}
           <div className="lg:col-span-7">
-            <h1 className="font-display text-[clamp(3.5rem,10vw,9rem)] font-black uppercase leading-[0.95] tracking-[0.005em] text-[#1a365d] mb-6">
+            <h1 className="font-display text-[clamp(3.5rem,10vw,9rem)] font-black leading-[0.95] tracking-[0.005em] text-[#1a365d] mb-6">
               20 More
               <br />
               Yards.
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-[0.12em] text-[#1a365d]/90 mb-8 leading-tight max-w-xl">
+            <p className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a365d] mb-8 leading-tight max-w-xl">
               Two days. Live with Dr. Jake Berman.
             </p>
 

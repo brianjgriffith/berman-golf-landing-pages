@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Anton, Source_Serif_4 } from "next/font/google";
+import { Inter, Anton, Source_Serif_4, Archivo_Black, Alfa_Slab_One } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,8 +16,20 @@ const anton = Anton({
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-source-serif",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700", "900"],
   style: ["normal", "italic"],
+});
+
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  variable: "--font-archivo-black",
+  weight: "400",
+});
+
+const alfaSlab = Alfa_Slab_One({
+  subsets: ["latin"],
+  variable: "--font-alfa-slab",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${anton.variable} ${sourceSerif.variable} antialiased`}>
+      <body className={`${inter.variable} ${anton.variable} ${sourceSerif.variable} ${archivoBlack.variable} ${alfaSlab.variable} antialiased`}>
         {children}
       </body>
     </html>
