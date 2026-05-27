@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { TwoDayEvent } from "@/config/events";
+import Countdown from "./Countdown";
 
 interface EventRegistrationFormProps {
   event: TwoDayEvent;
@@ -9,77 +10,92 @@ interface EventRegistrationFormProps {
 
 export default function EventRegistrationForm({ event }: EventRegistrationFormProps) {
   return (
-    <section id="register" className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5]">
-      <div className="max-w-3xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Reserve Your Free Seat
+    <section id="register" className="py-20 bg-[#f5ede0]">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="mb-12 max-w-4xl">
+          <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] mb-4 tracking-[0.005em]">
+            Reserve your free seat.
           </h2>
-          <p className="text-white/80 text-lg">
+          <p className="font-serif text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">
             Limited spots available. Register now.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl">
-          {/* Header showing both days */}
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">
-              {event.name} Live Event
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+          {/* Left: Countdown + Event meta */}
+          <aside className="lg:col-span-2 lg:sticky lg:top-24">
+            <Countdown />
+
+            <div className="mt-8 space-y-5 font-serif text-[#1a365d]/90">
               {event.days.map((day, i) => (
-                <div key={i} className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-1">
-                    Day {i + 1}
-                  </p>
-                  <p className="text-gray-900 font-bold text-sm">{day.date}</p>
-                  <p className="text-gray-600 text-sm">{day.time}</p>
+                <div key={i} className="flex items-baseline gap-4">
+                  <span className="font-display text-3xl font-black text-[#1a365d] tracking-tight w-12 flex-shrink-0">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#1a365d]/60 mb-1">
+                      Day {i + 1}
+                    </p>
+                    <p className="font-bold text-[#1a365d] text-base sm:text-lg leading-tight">
+                      {day.date}
+                    </p>
+                    <p className="text-[#1a365d]/70 text-sm">{day.time}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* GHL Embedded Form */}
-          <div className="w-full min-h-[627px]">
-            <iframe
-              src={event.form.src}
-              style={{ width: "100%", height: "627px", border: "none", borderRadius: "3px" }}
-              id={event.form.id}
-              data-layout='{"id":"INLINE"}'
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name={event.form.formName}
-              data-height="627"
-              data-layout-iframe-id={event.form.id}
-              data-form-id={event.form.formId}
-              title={event.form.formName}
-            />
-          </div>
+            <div className="mt-8 border-t border-[#1a365d]/15 pt-6">
+              <div className="flex flex-col gap-3 text-sm text-[#1a365d]/70">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-[#1a365d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 12l2 2 4-4M12 21a9 9 0 110-18 9 9 0 010 18z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>Secure registration</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-[#1a365d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 8l9 6 9-6M3 8v10a2 2 0 002 2h14a2 2 0 002-2V8M3 8l9-5 9 5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>Instant confirmation by email</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-[#F26B4E]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" strokeLinecap="round" />
+                  </svg>
+                  <span>Live only. Show up to both days.</span>
+                </div>
+              </div>
+            </div>
+          </aside>
 
-          {/* Trust Badges */}
-          <div className="mt-8 pt-8 border-t border-gray-200">
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Secure Registration</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Instant Confirmation</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-[#F26B4E]" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                </svg>
-                <span>Live Only. Show Up Both Days.</span>
+          {/* Right: Form */}
+          <div className="lg:col-span-3">
+            <div className="bg-white border border-[#1a365d]/15 p-6 md:p-8">
+              <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-[#1a365d]/60 mb-5">
+                {event.name} Live Event
+              </h3>
+
+              <div className="w-full min-h-[627px]">
+                <iframe
+                  src={event.form.src}
+                  style={{ width: "100%", height: "627px", border: "none" }}
+                  id={event.form.id}
+                  data-layout='{"id":"INLINE"}'
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name={event.form.formName}
+                  data-height="627"
+                  data-layout-iframe-id={event.form.id}
+                  data-form-id={event.form.formId}
+                  title={event.form.formName}
+                />
               </div>
             </div>
           </div>

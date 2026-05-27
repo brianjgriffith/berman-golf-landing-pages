@@ -40,18 +40,19 @@ export default function TwentyMoreYardsPage() {
       <Header />
       <HeroEvent />
       <PerryStory />
-      <WrongVsRight />
+      <WrongVsRight variant="poster" />
       <WhyTwoDays />
       <TheAgenda />
-      <WalkAwayWith title="What You Walk Away With After Day 2" />
+      <WalkAwayWith title="What You Walk Away With After Day 2" variant="poster" />
       <Testimonials
         eyebrow="Real Senior Golfers. Real Results."
         title="Don't let them tell you it's just your age."
         subtitle="Real results from golfers who refused to age out of the game."
+        variant="poster"
       />
-      <WhoThisIsFor />
-      <Instructor />
-      <JakeQuote quote={jakeEventQuote} />
+      <WhoThisIsFor variant="poster" />
+      <Instructor variant="poster" />
+      <JakeQuote quote={jakeEventQuote} variant="poster" />
       <EventLogistics />
       <EventRegistrationForm event={twentyMoreYardsEvent} />
       <Footer />

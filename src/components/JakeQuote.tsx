@@ -1,18 +1,40 @@
 interface JakeQuoteProps {
   quote?: React.ReactNode;
   attribution?: string;
+  variant?: "default" | "poster";
 }
 
 const defaultQuote = (
   <>
-    &ldquo;Traditional lessons treat your body like a 25-year-old Tour pro. You don&apos;t need a swing rebuild &mdash; you need <span className="text-[#F26B4E]">activation</span>.&rdquo;
+    &ldquo;Traditional lessons treat your body like a 25-year-old Tour pro. You don&apos;t need a swing rebuild. You need <span className="text-[#F26B4E]">activation</span>.&rdquo;
   </>
 );
 
 export default function JakeQuote({
   quote = defaultQuote,
   attribution = "Dr. Jake Berman, PT, DPT",
+  variant = "default",
 }: JakeQuoteProps = {}) {
+  const isPoster = variant === "poster";
+
+  if (isPoster) {
+    return (
+      <section className="py-20 md:py-28 bg-[#efe5d4]">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="h-[3px] w-32 bg-[#1a365d] mb-10" />
+
+          <blockquote className="font-display text-4xl md:text-6xl lg:text-7xl font-black uppercase text-[#1a365d] leading-[0.95] tracking-[0.005em] mb-10">
+            {quote}
+          </blockquote>
+
+          <p className="text-xs md:text-sm font-bold uppercase tracking-[0.35em] text-[#1a365d]/70">
+            {attribution}
+          </p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-16 md:py-24 bg-gray-900 text-white">
       <div className="max-w-4xl mx-auto px-4 text-center">
