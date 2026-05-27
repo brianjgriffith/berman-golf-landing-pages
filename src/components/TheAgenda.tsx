@@ -2,15 +2,14 @@ export default function TheAgenda() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <p className="text-[#F26B4E] font-semibold tracking-widest uppercase text-sm mb-3">
-            What We&apos;ll Cover
-          </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight max-w-3xl mx-auto mb-4">
-            Two Days. One Method. 20 More Yards.
+        <div className="mb-12 md:mb-16 max-w-4xl">
+          <div className="h-[2px] w-16 bg-[#1a365d] mb-6" />
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.05] mb-4">
+            Two days. One method.<br />
+            Twenty more yards.
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Here&apos;s exactly what happens across the 3 hours you&apos;ll spend with Dr. Jake.
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl">
+            Here&apos;s exactly what happens across the three hours you&apos;ll spend with Dr. Jake.
           </p>
         </div>
 
@@ -35,7 +34,7 @@ export default function TheAgenda() {
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="text-base md:text-lg leading-snug">
-                  Why traditional golf instruction quietly fails the senior body &mdash; and the fix no swing coach is teaching you
+                  Why traditional golf instruction quietly fails the senior body, and the fix no swing coach is teaching you
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -47,7 +46,7 @@ export default function TheAgenda() {
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="text-base md:text-lg leading-snug">
-                  How &ldquo;Ground Force&rdquo; generates real distance &mdash; without changing a single thing about your swing
+                  How &ldquo;Ground Force&rdquo; generates real distance, without changing a single thing about your swing
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -91,7 +90,7 @@ export default function TheAgenda() {
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="text-base md:text-lg leading-snug">
-                  Live Q&amp;A &mdash; Jake answers <strong>YOUR</strong> specific questions, not the ones from a script
+                  Live Q&amp;A. Jake answers <strong>YOUR</strong> specific questions, not the ones from a script
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -109,7 +108,7 @@ export default function TheAgenda() {
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="text-base md:text-lg leading-snug">
-                  The path forward &mdash; for golfers ready to go deeper
+                  The path forward, for golfers ready to go deeper
                 </span>
               </li>
             </ul>

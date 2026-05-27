@@ -43,14 +43,14 @@ export default function Instructor() {
               <p>
                 Dr. Jake Berman, PT, DPT, started out as a physical therapist helping golfers overcome back pain. What he discovered changed everything:
               </p>
-              <p className="bg-white/10 p-4 rounded-lg border-l-4 border-[#F26B4E] text-white">
-                <strong>The key to distance, consistency, and injury prevention isn&apos;t swing tips — it&apos;s how your body moves.</strong>
+              <p className="bg-white/10 p-4 rounded-lg border border-white/20 text-white">
+                <strong>The key to distance, consistency, and injury prevention isn&apos;t swing tips. It&apos;s how your body moves.</strong>
               </p>
               <p>
-                That&apos;s why he developed <strong>The Activation Method</strong> — a biomechanics-first approach designed specifically for aging golfers over 60.
+                That&apos;s why he developed <strong>The Activation Method</strong>, a biomechanics-first approach designed specifically for aging golfers over 60.
               </p>
               <p>
-                Jake&apos;s method isn&apos;t based on theory or &quot;pro tour technique.&quot; It&apos;s grounded in how the body actually functions — especially after age 60 — and it&apos;s helped every single golfer who&apos;s gone through his programs:
+                Jake&apos;s method isn&apos;t based on theory or &quot;pro tour technique.&quot; It&apos;s grounded in how the body actually functions, especially after age 60, and it&apos;s helped every single golfer who&apos;s gone through his programs:
               </p>
             </div>
 

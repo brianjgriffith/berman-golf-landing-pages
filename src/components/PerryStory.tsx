@@ -4,12 +4,6 @@ export default function PerryStory() {
   return (
     <section className="py-16 md:py-24 bg-gray-100">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <p className="text-[#F26B4E] font-semibold tracking-widest uppercase text-sm mb-3">
-            Proof It Works
-          </p>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Left: Screenshot */}
           <div className="flex justify-center order-2 md:order-1">
@@ -26,12 +20,12 @@ export default function PerryStory() {
 
           {/* Right: Quote + Body */}
           <div className="order-1 md:order-2">
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-              &ldquo;Back nine was a monster. <span className="text-[#F26B4E]">Getting my swing</span> &mdash; thanks, Dr. Jake Berman.&rdquo;
+            <blockquote className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a365d] leading-[1.05] mb-6">
+              &ldquo;Back nine was a monster. <span className="text-[#F26B4E]">Getting my swing</span>, thanks Dr. Jake Berman.&rdquo;
             </blockquote>
 
             <p className="text-lg text-gray-700 mb-8">
-              <strong>Perry Oliveira</strong> just took <strong>1st place in Senior Flight C</strong> at the Veteran Golfers Association tournament &mdash; Clear Creek, VA.
+              <strong>Perry Oliveira</strong> just took <strong>1st place in Senior Flight C</strong> at the Veteran Golfers Association tournament, Clear Creek, VA.
             </p>
 
             <p className="text-base md:text-lg text-gray-800 mb-4">

@@ -16,7 +16,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
             Reserve Your Free Seat
           </h2>
           <p className="text-white/80 text-lg">
-            Limited spots available &mdash; register now
+            Limited spots available. Register now.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
                 <svg className="w-5 h-5 text-[#F26B4E]" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
-                <span>Live Only &mdash; Show Up Both Days</span>
+                <span>Live Only. Show Up Both Days.</span>
               </div>
             </div>
           </div>
