@@ -62,18 +62,18 @@ export default function EventLogistics() {
             </p>
           </div>
 
-          {/* LIVE ONLY */}
+          {/* LIMITED REPLAY */}
           <div className="bg-white p-6 text-center border-2 border-[#F26B4E]">
             <svg className="w-10 h-10 mx-auto mb-3 text-[#F26B4E]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
               <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none" />
             </svg>
-            <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">Live Only</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">Limited Replay</p>
             <p className="text-[#1a365d] font-bold text-sm md:text-base leading-tight">
-              No replays.
+              Replay through Sun, June 28
             </p>
             <p className="font-serif text-[#1a365d]/80 text-sm mt-1">
-              Show up live or miss it.
+              Live attendance is still the move.
             </p>
           </div>
         </div>

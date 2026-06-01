@@ -35,31 +35,31 @@ export default function TheAgenda() {
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-snug">
-                  Why traditional golf instruction quietly fails the senior body, and the fix no swing coach is teaching you
+                  The real reason your distance is fading. Hint: it&apos;s not your age, and it&apos;s not your swing.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-snug">
-                  The muscles that go dormant after 50, and the exact sequence to wake them up
+                  The exact mobility restrictions wrecking your swing &mdash; and how to spot them in your own body
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-snug">
-                  How &ldquo;Ground Force&rdquo; generates real distance, without changing a single thing about your swing
+                  How The Activation Method generates real distance without changing a single thing about your swing
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-snug">
-                  A live walk-through of The Activation Method you can do in your living room
+                  Off the chair, on camera with Jake: the first wave of fixes you can do in your living room
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-snug">
-                  Your homework: two specific movements to try before Day 2
+                  Your homework before Day 2 &mdash; short, specific, designed to give you an early win
                 </span>
               </li>
             </ul>
@@ -85,31 +85,31 @@ export default function TheAgenda() {
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg leading-snug">
-                  Report back: what changed after 24 hours of activation (you&apos;ll be surprised)
+                  Report back: what changed in 24 hours of doing the work (most golfers are surprised)
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg leading-snug">
-                  Live Q&amp;A. Jake answers <strong className="font-bold">YOUR</strong> specific questions, not the ones from a script
+                  The full implementation &mdash; Jake hits the fixes harder, sharper, and deeper
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg leading-snug">
-                  Troubleshooting the 3 most common stumbling blocks
+                  The 3 most common stumbling blocks, and exactly how to push through each
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg leading-snug">
-                  The take-home protocol: exactly what to do for the next 30 days to keep gaining yards
+                  Your take-home protocol: immediately actionable, built for a legitimate shot at 20 more yards
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#F26B4E] font-extrabold flex-shrink-0 mt-1">&rarr;</span>
                 <span className="font-serif text-base md:text-lg leading-snug">
-                  The path forward, for golfers ready to go deeper
+                  Live Q&amp;A &mdash; Jake answers <strong className="font-bold">your</strong> specific questions, not the ones from a script
                 </span>
               </li>
             </ul>

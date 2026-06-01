@@ -22,8 +22,12 @@ export default function HeroEvent() {
               Yards.
             </h1>
 
-            <p className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a365d] mb-8 leading-tight max-w-xl">
+            <p className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a365d] mb-4 leading-tight max-w-xl">
               Two days. Live with Dr. Jake Berman.
+            </p>
+
+            <p className="font-display text-lg sm:text-xl md:text-2xl text-[#1a365d]/75 mb-8 leading-tight max-w-xl">
+              Stop being the shortest ball off the tee.
             </p>
 
             {/* Heavy rule */}
@@ -65,7 +69,7 @@ export default function HeroEvent() {
             </a>
 
             <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#1a365d]/70">
-              Free &middot; Live Only &middot; No Replays
+              Free &middot; Live + Limited Replay
             </p>
           </div>
 

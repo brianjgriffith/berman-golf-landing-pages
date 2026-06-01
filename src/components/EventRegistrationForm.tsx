@@ -65,7 +65,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
                     <circle cx="12" cy="12" r="9" />
                     <path d="M12 7v5l3 2" strokeLinecap="round" />
                   </svg>
-                  <span>Live only. Show up to both days.</span>
+                  <span>Replay through Sun, June 28 (live is best).</span>
                 </div>
               </div>
             </div>

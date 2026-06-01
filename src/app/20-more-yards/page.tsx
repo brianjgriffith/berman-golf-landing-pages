@@ -32,8 +32,8 @@ export const metadata: Metadata = {
 
 const jakeEventQuote = (
   <>
-    &ldquo;This isn&apos;t really about yards. It&apos;s about what the last 10, 15, 20 years of your golf life look like.{" "}
-    <span className="text-[#F26B4E]">Shrinking</span> with every season, or playing better than you have in a decade.&rdquo;
+    &ldquo;You&apos;ve got maybe 10 quality golf years left. Spend them{" "}
+    <span className="text-[#F26B4E]">out-driving your buddies</span> &mdash; not watching them out-drive you.&rdquo;
   </>
 );
 
