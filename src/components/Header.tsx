@@ -6,6 +6,13 @@ export default function Header() {
   const pathname = usePathname();
 
   const getCtaConfig = () => {
+    // Thank-you pages (poster): keep it non-salesy — just a help link.
+    if (pathname === "/20-more-yards/thank-you" || pathname === "/senior-golf-mastery/thank-you") {
+      return { text: "Need Help?", href: "mailto:distance@bermangolf.com", isPopup: false };
+    }
+    if (pathname === "/senior-golf-mastery-cohort") {
+      return { text: "Enroll Now - $3,000", href: "/senior-golf-mastery-cohort/checkout", isPopup: false };
+    }
     if (pathname === "/free-book/thank-you" || pathname === "/senior-golf-warm-up/thank-you") {
       return { text: "Join Free Class", href: "/free-class#register", isPopup: false };
     }
@@ -28,7 +35,13 @@ export default function Header() {
   };
 
   const { text: ctaText, href: ctaHref, isPopup } = getCtaConfig();
-  const isPoster = pathname === "/20-more-yards";
+  const posterRoutes = [
+    "/20-more-yards",
+    "/20-more-yards/thank-you",
+    "/senior-golf-mastery-cohort",
+    "/senior-golf-mastery/thank-you",
+  ];
+  const isPoster = posterRoutes.includes(pathname);
 
   const handlePopupClick = () => {
     window.dispatchEvent(new CustomEvent("openBookPopup"));
