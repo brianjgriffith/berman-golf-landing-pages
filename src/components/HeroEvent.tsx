@@ -16,18 +16,20 @@ export default function HeroEvent() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left column: typography stack */}
           <div className="lg:col-span-7">
-            <h1 className="font-display text-[clamp(3.5rem,10vw,9rem)] font-black leading-[0.95] tracking-[0.005em] text-[#1a365d] mb-6">
-              20 More
+            <h1 className="font-display text-[clamp(2.75rem,7.5vw,6.5rem)] font-black leading-[0.95] tracking-[0.005em] text-[#1a365d] mb-6">
+              Stop being the
               <br />
-              Yards.
+              shortest ball
+              <br />
+              off the tee.
             </h1>
 
             <p className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a365d] mb-4 leading-tight max-w-xl">
-              Two days. Live with Dr. Jake Berman.
+              Gain <span className="text-[#F26B4E]">20 more yards</span> in 48 hours.
             </p>
 
             <p className="font-display text-lg sm:text-xl md:text-2xl text-[#1a365d]/75 mb-8 leading-tight max-w-xl">
-              Stop being the shortest ball off the tee.
+              Two days. Live with Dr. Jake Berman.
             </p>
 
             {/* Heavy rule */}

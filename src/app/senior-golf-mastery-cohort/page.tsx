@@ -300,7 +300,7 @@ export default function SeniorGolfMasteryCohortPage() {
           </h2>
           <p className="font-serif text-center text-[#f5ede0]/75 mb-12 text-lg">
             Total value:{" "}
-            <span className="font-bold text-[#f5ede0] line-through decoration-[#F26B4E]/70">$4,829+</span>
+            <span className="font-bold text-[#f5ede0] line-through decoration-[#F26B4E]/70">$6,596+</span>
           </p>
 
           <div className="space-y-5">
@@ -351,7 +351,7 @@ export default function SeniorGolfMasteryCohortPage() {
                 <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0]">
                   1 Full Year in the Berman Clubhouse
                 </h3>
-                <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$297 Value</span>
+                <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$564 Value</span>
               </div>
               <p className="font-serif text-[#f5ede0]/80 mb-4 leading-relaxed">
                 When the 6 weeks end, your progress doesn&apos;t. Stay coached all year long:
@@ -361,6 +361,7 @@ export default function SeniorGolfMasteryCohortPage() {
                   "Monthly live group coaching calls with Jake's team",
                   "Private community of senior golfers on the same journey",
                   "Ongoing Q&A and direct access for your questions",
+                  "The Tee Shot Transformation course — included free",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check />
@@ -377,7 +378,6 @@ export default function SeniorGolfMasteryCohortPage() {
               </h3>
               <ul className="space-y-2.5 font-serif text-[#f5ede0]/80">
                 {[
-                  ["1-on-1 Virtual Session with Dr. Jake", "$500"],
                   ["Senior Golf Mastery PDF Book", "$97"],
                   ["Pre-Shot Routine Guide", "$97"],
                   ["Weight Shift Hack for Seniors", "$97"],
@@ -396,13 +396,33 @@ export default function SeniorGolfMasteryCohortPage() {
                 ))}
               </ul>
             </div>
+
+            {/* Fast-action bonus: 1-on-1 session, first 10 only */}
+            <div className="bg-[#F26B4E]/15 border-2 border-dashed border-[#F26B4E] p-6 md:p-7">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-block bg-[#F26B4E] text-white text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded">
+                  First 10 Only
+                </span>
+              </div>
+              <div className="flex items-baseline justify-between gap-4 mb-3">
+                <h3 className="font-display text-xl md:text-2xl font-black uppercase tracking-tight text-[#F26B4E]">
+                  Free 1-on-1 Virtual Session with Dr. Jake
+                </h3>
+                <span className="font-bold text-[#f5ede0]/70 text-sm whitespace-nowrap">$500 Value</span>
+              </div>
+              <p className="font-serif text-[#f5ede0]/85 leading-relaxed">
+                Enroll among the first 10 and you get a private, one-on-one virtual session with Dr.
+                Jake &mdash; your swing, your questions, your plan, one-on-one. Once the first 10 spots
+                are gone, this bonus is gone.
+              </p>
+            </div>
           </div>
 
           {/* Price block */}
           <div className="text-center mt-12">
             <p className="font-serif text-[#f5ede0]/70 mb-1">
               Total value:{" "}
-              <span className="line-through decoration-[#F26B4E]/70">$4,829+</span>
+              <span className="line-through decoration-[#F26B4E]/70">$6,596+</span>
             </p>
             <p className="font-display text-5xl md:text-6xl font-black text-[#f5ede0] mb-2">
               {cohort.price}
@@ -421,11 +441,33 @@ export default function SeniorGolfMasteryCohortPage() {
       </section>
 
       {/* ===== TESTIMONIALS (reused poster component) ===== */}
+      {/*
+        Virtual-session students added for the cohort page (these did it over Zoom,
+        like cohort members will). TODO(BERMAN): add quote text for each.
+        NOTE: Antonio's videoId is currently identical to Jerry's — confirm the correct URL.
+      */}
       <Testimonials
         eyebrow="Real Senior Golfers. Real Results."
         title="They stopped guessing. So can you."
         subtitle="Results from golfers who did the work with Jake instead of going it alone."
         variant="poster"
+        extraTestimonials={[
+          {
+            name: "Jerry",
+            location: "Virtual Coaching Student",
+            videoId: "-gCL2Gw48GU",
+          },
+          {
+            name: "Antonio",
+            location: "Virtual Coaching Student",
+            videoId: "-gCL2Gw48GU",
+          },
+          {
+            name: "Perry",
+            location: "Virtual Coaching Student",
+            videoId: "n-yNUxO1fGM",
+          },
+        ]}
       />
 
       {/* ===== WHO THIS IS FOR (cohort-specific) ===== */}

@@ -46,29 +46,14 @@ export default function SeniorGolfMasteryThankYouPage() {
           </p>
 
           {/* Watch this first — Jake's video */}
-          {/* TODO(BERMAN): Replace the placeholder below with Jake's welcome video embed once edited. */}
           <div className="relative w-full max-w-2xl mx-auto aspect-video rounded-xl overflow-hidden shadow-[0_30px_80px_rgba(26,54,93,0.3)] border-2 border-[#1a365d] bg-[#1a365d]">
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-[#f5ede0]/80 gap-3 px-6 text-center">
-              <svg className="w-14 h-14" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <p className="text-sm font-bold uppercase tracking-[0.2em]">
-                Welcome video from Dr. Jake
-              </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#f5ede0]/50">
-                Video coming soon
-              </p>
-            </div>
-            {/*
-            Example once the video is ready (delete the placeholder div above):
             <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+              src="https://www.youtube.com/embed/ZajjA-uGlvU?rel=0"
               title="Welcome to Senior Golf Mastery — Dr. Jake"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
             />
-            */}
           </div>
         </div>
       </section>

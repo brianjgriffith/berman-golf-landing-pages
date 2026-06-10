@@ -1,7 +1,7 @@
 "use client";
 
-interface Testimonial {
-  quote: string;
+export interface Testimonial {
+  quote?: string;
   name: string;
   age?: number;
   location?: string;
@@ -44,6 +44,8 @@ interface TestimonialsProps {
   title?: string;
   subtitle?: string;
   variant?: "default" | "poster";
+  /** Extra testimonials appended after the defaults (e.g. virtual-session students on the cohort page). */
+  extraTestimonials?: Testimonial[];
 }
 
 export default function Testimonials({
@@ -51,8 +53,10 @@ export default function Testimonials({
   title = "What Others Are Saying",
   subtitle,
   variant = "default",
+  extraTestimonials = [],
 }: TestimonialsProps = {}) {
   const isPoster = variant === "poster";
+  const items = [...testimonials, ...extraTestimonials];
 
   if (isPoster) {
     return (
@@ -71,7 +75,7 @@ export default function Testimonials({
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {testimonials.map((testimonial, index) => (
+            {items.map((testimonial, index) => (
               <div key={index} className="bg-white border border-[#1a365d]/15 overflow-hidden">
                 {testimonial.videoId && (
                   <div className="aspect-video w-full">
@@ -85,9 +89,11 @@ export default function Testimonials({
                   </div>
                 )}
                 <div className="p-6">
-                  <blockquote className="font-serif text-[#1a365d]/90 text-lg mb-4 leading-relaxed">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </blockquote>
+                  {testimonial.quote && (
+                    <blockquote className="font-serif text-[#1a365d]/90 text-lg mb-4 leading-relaxed">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </blockquote>
+                  )}
                   <p className="text-sm font-bold uppercase tracking-[0.15em] text-[#1a365d]/70">
                     {testimonial.name}
                     {testimonial.ageLabel && `, ${testimonial.ageLabel}`}
@@ -130,7 +136,7 @@ export default function Testimonials({
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {items.map((testimonial, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
@@ -147,9 +153,11 @@ export default function Testimonials({
                 </div>
               )}
               <div className="p-6">
-                <blockquote className="text-gray-800 text-lg mb-4 leading-relaxed font-medium">
-                  &quot;{testimonial.quote}&quot;
-                </blockquote>
+                {testimonial.quote && (
+                  <blockquote className="text-gray-800 text-lg mb-4 leading-relaxed font-medium">
+                    &quot;{testimonial.quote}&quot;
+                  </blockquote>
+                )}
                 <p className="text-gray-600">
                   <span className="font-semibold">{testimonial.name}</span>
                   {testimonial.ageLabel && `, ${testimonial.ageLabel}`}

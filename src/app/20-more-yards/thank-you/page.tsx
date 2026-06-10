@@ -40,37 +40,22 @@ export default function TwentyMoreYardsThankYouPage() {
 
           <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/80 leading-relaxed max-w-xl mx-auto mb-2">
             You&apos;re on the list for <strong className="text-[#1a365d]">20 More Yards</strong> &mdash; two
-            days, live with Dr. Jake Berman.
+            days, live with Dr. Jake Berman. This is all about never being the{" "}
+            <strong className="text-[#1a365d]">shortest ball off the tee</strong> again.
           </p>
           <p className="font-serif italic text-[#1a365d]/70 text-base sm:text-lg mb-10">
             Check your inbox for the confirmation &amp; your Zoom link. Then press play below. &darr;
           </p>
 
           {/* Watch this first — Jake's video */}
-          {/* TODO(BERMAN): Replace the src below with Jake's welcome video embed URL once edited. */}
           <div className="relative w-full max-w-2xl mx-auto aspect-video rounded-xl overflow-hidden shadow-[0_30px_80px_rgba(26,54,93,0.3)] border-2 border-[#1a365d] bg-[#1a365d]">
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-[#f5ede0]/80 gap-3 px-6 text-center">
-              <svg className="w-14 h-14" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <p className="text-sm font-bold uppercase tracking-[0.2em]">
-                Welcome video from Dr. Jake
-              </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#f5ede0]/50">
-                {/* TODO(BERMAN): swap this placeholder for the real <iframe> embed */}
-                Video coming soon
-              </p>
-            </div>
-            {/*
-            Example once the video is ready (delete the placeholder div above):
             <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID?rel=0"
+              src="https://www.youtube.com/embed/Uzhoz936K-8?rel=0"
               title="Welcome from Dr. Jake — 20 More Yards"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
             />
-            */}
           </div>
         </div>
       </section>
