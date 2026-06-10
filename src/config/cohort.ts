@@ -20,12 +20,14 @@ export interface CohortOffer {
   price: string;
   priceNumeric: number;
   schedule: CohortSchedule;
-  // GHL checkout form embed. TODO: replace placeholder IDs with the real cohort form.
+  // GHL checkout form embed.
   checkoutForm: {
     src: string;
     id: string;
     formName: string;
     formId: string;
+    // Natural form height from GHL's embed code (data-height), in px.
+    height: number;
   };
 }
 
@@ -41,12 +43,11 @@ export const seniorGolfMasteryCohort: CohortOffer = {
     duration: "6 weeks",
   },
 
-  // TODO(BERMAN): Replace with the real $3,000 cohort checkout form from GHL.
-  // (Reusing the SGM form ID as a visible placeholder so the embed renders.)
   checkoutForm: {
-    src: "https://link.physiofunnels.com/widget/form/REPLACE_WITH_COHORT_FORM_ID",
-    id: "inline-REPLACE_WITH_COHORT_FORM_ID",
-    formName: "Senior Golf Mastery Cohort",
-    formId: "REPLACE_WITH_COHORT_FORM_ID",
+    src: "https://link.physiofunnels.com/widget/form/NF1KPUDnoQ13M1VWQicq",
+    id: "inline-NF1KPUDnoQ13M1VWQicq",
+    formName: "(TM) Senior Golf Mastery Cohort",
+    formId: "NF1KPUDnoQ13M1VWQicq",
+    height: 1135,
   },
 };

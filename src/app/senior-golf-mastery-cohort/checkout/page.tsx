@@ -159,7 +159,7 @@ export default function SeniorGolfMasteryCohortCheckout() {
                 /* GHL Form Embed */
                 <iframe
                   src={cohort.checkoutForm.src}
-                  style={{ width: "100%", height: "750px", border: "none", borderRadius: "3px" }}
+                  style={{ width: "100%", height: `${cohort.checkoutForm.height}px`, border: "none", borderRadius: "3px" }}
                   id={cohort.checkoutForm.id}
                   data-layout='{"id":"INLINE"}'
                   data-trigger-type="alwaysShow"
@@ -169,7 +169,7 @@ export default function SeniorGolfMasteryCohortCheckout() {
                   data-deactivation-type="neverDeactivate"
                   data-deactivation-value=""
                   data-form-name={cohort.checkoutForm.formName}
-                  data-height="750"
+                  data-height={String(cohort.checkoutForm.height)}
                   data-layout-iframe-id={cohort.checkoutForm.id}
                   data-form-id={cohort.checkoutForm.formId}
                   title={cohort.checkoutForm.formName}
