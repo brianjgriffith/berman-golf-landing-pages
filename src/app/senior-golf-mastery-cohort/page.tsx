@@ -444,7 +444,6 @@ export default function SeniorGolfMasteryCohortPage() {
       {/*
         Virtual-session students added for the cohort page (these did it over Zoom,
         like cohort members will). TODO(BERMAN): add quote text for each.
-        NOTE: Antonio's videoId is currently identical to Jerry's — confirm the correct URL.
       */}
       <Testimonials
         eyebrow="Real Senior Golfers. Real Results."
@@ -455,7 +454,7 @@ export default function SeniorGolfMasteryCohortPage() {
           {
             name: "Jerry",
             location: "Virtual Coaching Student",
-            videoId: "-gCL2Gw48GU",
+            videoId: "esVtVa4MbPQ",
           },
           {
             name: "Antonio",
