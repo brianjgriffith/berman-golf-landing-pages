@@ -13,6 +13,10 @@ export default function Header() {
     if (pathname === "/senior-golf-mastery-cohort") {
       return { text: "Enroll Now - $3,000", href: "/senior-golf-mastery-cohort/checkout", isPopup: false };
     }
+    // Replay page (poster): point warm viewers at the cohort.
+    if (pathname === "/20-more-yards/replay") {
+      return { text: "Join the Cohort", href: "/senior-golf-mastery-cohort", isPopup: false };
+    }
     if (pathname === "/free-book/thank-you" || pathname === "/senior-golf-warm-up/thank-you") {
       return { text: "Join Free Class", href: "/free-class#register", isPopup: false };
     }
@@ -38,6 +42,7 @@ export default function Header() {
   const posterRoutes = [
     "/20-more-yards",
     "/20-more-yards/thank-you",
+    "/20-more-yards/replay",
     "/senior-golf-mastery-cohort",
     "/senior-golf-mastery/thank-you",
   ];
