@@ -72,7 +72,7 @@ export default function SeniorGolfMasteryCohortCheckout() {
                   <p className="font-serif text-[#1a365d]/70 text-sm">
                     6 weeks live with Dr. Jake + course, bonuses &amp; Clubhouse
                   </p>
-                  <p className="text-[#1a365d]/40 line-through text-sm mt-1">$4,829+</p>
+                  <p className="text-[#1a365d]/40 line-through text-sm mt-1">$6,596+</p>
                   <p className="font-display text-2xl font-black text-[#1a365d]">{cohort.price}</p>
                 </div>
               </div>
@@ -85,8 +85,9 @@ export default function SeniorGolfMasteryCohortCheckout() {
                   {[
                     "6 Weeks Live Group Coaching with Dr. Jake ($3,000 Value)",
                     "Full Senior Golf Mastery Course (5 Modules)",
-                    "1 Full Year in the Berman Clubhouse ($297 Value)",
-                    "1-on-1 Virtual Session with Dr. Jake ($500 Value)",
+                    "1 Full Year in the Berman Clubhouse ($564 Value)",
+                    "Tee Shot Transformation Course (included with Clubhouse)",
+                    "FREE 1-on-1 Virtual Session with Dr. Jake — first 10 only ($500 Value)",
                     "Senior Golf Mastery PDF Book",
                     "Pre-Shot Routine + Weight Shift Hack",
                     "Weekly Workout Videos + Gear Guide",
