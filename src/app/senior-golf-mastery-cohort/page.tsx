@@ -568,7 +568,7 @@ export default function SeniorGolfMasteryCohortPage() {
                 a: "No. Dr. Jake is a physical therapist first — the whole approach is built around what your body can do now, and meeting you where you are.",
               },
               {
-                q: "Is the $3,000 a one-time payment?",
+                q: "Is the $2,997 a one-time payment?",
                 a: "Yes — one enrollment covers the full 6-week cohort, the complete course and all bonuses, and a full year in the Berman Clubhouse.",
               },
             ].map((faq) => (

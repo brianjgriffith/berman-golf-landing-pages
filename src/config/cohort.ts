@@ -1,4 +1,4 @@
-// Single source of truth for the Senior Golf Mastery Cohort ($3,000 offer).
+// Single source of truth for the Senior Golf Mastery Cohort ($2,997 offer).
 // Used by:
 //   - /senior-golf-mastery-cohort           (sales page)
 //   - /senior-golf-mastery-cohort/checkout   (checkout page)
@@ -33,8 +33,8 @@ export interface CohortOffer {
 
 export const seniorGolfMasteryCohort: CohortOffer = {
   name: "Senior Golf Mastery Cohort",
-  price: "$3,000",
-  priceNumeric: 3000,
+  price: "$2,997",
+  priceNumeric: 2997,
 
   // TODO(BERMAN): Confirm the real schedule. Placeholders below are editable.
   schedule: {
