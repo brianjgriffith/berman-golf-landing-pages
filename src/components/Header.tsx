@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 
 export default function Header() {
   const pathname = usePathname();
@@ -11,7 +12,7 @@ export default function Header() {
       return { text: "Need Help?", href: "mailto:distance@bermangolf.com", isPopup: false };
     }
     if (pathname === "/senior-golf-mastery-cohort") {
-      return { text: "Enroll Now - $3,000", href: "/senior-golf-mastery-cohort/checkout", isPopup: false };
+      return { text: `Enroll Now - ${cohort.price}`, href: "/senior-golf-mastery-cohort/checkout", isPopup: false };
     }
     // Replay page (poster): point warm viewers at the cohort.
     if (pathname === "/20-more-yards/replay") {
