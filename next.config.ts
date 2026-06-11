@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        // Funnel all /free-class ("Golf Lessons Don't Work") traffic to the
+        // /20-more-yards page. Temporary (302/307) so it can be flipped back
+        // anytime without browsers caching it permanently.
+        source: "/free-class",
+        destination: "/20-more-yards",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return {
       // beforeFiles runs before filesystem routes, so it overrides the
