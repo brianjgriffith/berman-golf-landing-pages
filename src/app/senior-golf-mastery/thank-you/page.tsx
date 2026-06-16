@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 
 export const metadata: Metadata = {
   title: "Welcome to Senior Golf Mastery | Berman Golf",
@@ -117,6 +118,49 @@ export default function SeniorGolfMasteryThankYouPage() {
               distance@bermangolf.com
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* Cohort call schedule — for cohort members */}
+      <section className="pb-20 md:pb-24">
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="bg-[#1a365d] text-[#f5ede0] p-8 md:p-10 shadow-[0_20px_60px_rgba(26,54,93,0.3)]">
+            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#F26B4E] mb-3">
+              Enrolled in the Cohort?
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-black leading-tight mb-2">
+              Your Live Call Schedule
+            </h2>
+            <p className="font-serif text-[#f5ede0]/80 mb-8">
+              Six live Zoom calls with Dr. Jake &mdash; all at{" "}
+              <strong className="text-white">{cohort.schedule.time}</strong>. Block these out now.
+              Every call is recorded in case you ever miss one live.
+            </p>
+
+            <ol className="divide-y divide-[#f5ede0]/15 border-y border-[#f5ede0]/15">
+              {cohort.schedule.sessions.map((date, i) => (
+                <li key={date} className="flex items-center gap-4 py-3.5">
+                  <span className="font-display text-xl font-black text-[#F26B4E] w-8 flex-none">
+                    {i + 1}
+                  </span>
+                  <span className="font-serif text-base md:text-lg font-bold text-[#f5ede0]">
+                    {date}
+                  </span>
+                  <span className="ml-auto font-serif text-sm text-[#f5ede0]/60">
+                    {cohort.schedule.time}
+                  </span>
+                </li>
+              ))}
+            </ol>
+
+            <p className="font-serif text-sm text-[#f5ede0]/60 mt-6">
+              Your Zoom link for each call arrives by email before the session. Add{" "}
+              <a href="mailto:distance@bermangolf.com" className="font-bold text-[#F26B4E] hover:underline">
+                distance@bermangolf.com
+              </a>{" "}
+              to your contacts so it lands in your inbox.
+            </p>
+          </div>
         </div>
       </section>
 

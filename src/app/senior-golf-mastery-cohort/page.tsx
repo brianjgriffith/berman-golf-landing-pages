@@ -119,7 +119,6 @@ export default function SeniorGolfMasteryCohortPage() {
               </a>
 
               <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#1a365d]/70">
-                {/* TODO(BERMAN): confirm cohort start once dates are set */}
                 {cohort.schedule.startLabel} &middot; Limited seats
               </p>
             </div>
@@ -239,10 +238,32 @@ export default function SeniorGolfMasteryCohortPage() {
           <h2 className="font-display text-3xl md:text-5xl font-black text-center text-[#1a365d] mb-3 leading-tight">
             Six weeks. One clear path.
           </h2>
-          <p className="font-serif italic text-center text-[#1a365d]/70 max-w-2xl mx-auto mb-12 text-lg">
+          <p className="font-serif italic text-center text-[#1a365d]/70 max-w-2xl mx-auto mb-8 text-lg">
             {cohort.schedule.callDay}. Each week builds on the last &mdash; with Jake coaching you
             through it live.
           </p>
+
+          {/* The six live call dates */}
+          <div className="max-w-2xl mx-auto mb-12 bg-white border-2 border-[#1a365d] shadow-[0_10px_30px_rgba(26,54,93,0.12)]">
+            <p className="text-center text-[11px] font-bold tracking-[0.3em] uppercase text-[#f5ede0] bg-[#1a365d] py-2">
+              Your 6 Live Call Dates &middot; All at {cohort.schedule.time}
+            </p>
+            <ol className="divide-y divide-[#1a365d]/10">
+              {cohort.schedule.sessions.map((date, i) => (
+                <li key={date} className="flex items-center gap-4 px-5 sm:px-8 py-3">
+                  <span className="font-display text-lg font-black text-[#F26B4E] w-8 flex-none">
+                    {i + 1}
+                  </span>
+                  <span className="font-serif text-[15px] sm:text-base font-bold text-[#1a365d]">
+                    {date}
+                  </span>
+                  <span className="ml-auto font-serif text-sm text-[#1a365d]/60">
+                    {cohort.schedule.time}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[

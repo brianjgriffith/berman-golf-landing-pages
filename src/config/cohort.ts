@@ -1,9 +1,10 @@
 // Single source of truth for the Senior Golf Mastery Cohort ($2,997 offer).
 // Used by:
-//   - /senior-golf-mastery-cohort           (sales page)
+//   - /senior-golf-mastery-cohort            (sales page)
 //   - /senior-golf-mastery-cohort/checkout   (checkout page)
+//   - /senior-golf-mastery/thank-you         (cohort call schedule)
 //
-// TODO(BERMAN): Fill in the real cohort schedule + GHL checkout form once available.
+// TODO(BERMAN): Wire up the real GHL checkout form once available.
 
 export interface CohortSchedule {
   // e.g. "Wednesdays at 11:00 AM ET"
@@ -12,6 +13,10 @@ export interface CohortSchedule {
   startLabel: string;
   // e.g. "6 weeks"
   duration: string;
+  // Time of every live call, e.g. "11:00 AM ET"
+  time: string;
+  // The six live session dates, in order.
+  sessions: string[];
 }
 
 export interface CohortOffer {
@@ -36,11 +41,19 @@ export const seniorGolfMasteryCohort: CohortOffer = {
   price: "$2,997",
   priceNumeric: 2997,
 
-  // TODO(BERMAN): Confirm the real schedule. Placeholders below are editable.
   schedule: {
-    callDay: "Weekly live Zoom calls — day & time TBD",
-    startLabel: "Next cohort starts soon — dates TBD",
+    callDay: "Wednesdays at 11:00 AM ET (with one Thursday session)",
+    startLabel: "Starts Wednesday, July 8, 2026",
     duration: "6 weeks",
+    time: "11:00 AM ET",
+    sessions: [
+      "Wednesday, July 8, 2026",
+      "Wednesday, July 15, 2026",
+      "Wednesday, July 22, 2026",
+      "Thursday, July 30, 2026",
+      "Wednesday, August 5, 2026",
+      "Wednesday, August 12, 2026",
+    ],
   },
 
   checkoutForm: {
