@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { EMAIL_CONTENT } from "./emailContent";
 
 /* ------------------------------------------------------------------ */
 /*  20 More Yards — internal email campaign plan (team view)          */
@@ -101,12 +102,169 @@ function emailsForDay(day: number | null): Email[] {
 const WRITTEN = EMAILS.filter((e) => e.status === "written").length;
 const OUTLINED = EMAILS.filter((e) => e.status === "outlined").length;
 
+const EMAIL_BY_ID: Record<string, Email> = Object.fromEntries(EMAILS.map((e) => [e.id, e]));
+
+/* ------------------------------------------------------------------ */
+/*  Lightweight markdown renderer for the modal email bodies.         */
+/*  Supports: **bold**, *italic*, "- " bullets, and [Button text].    */
+/* ------------------------------------------------------------------ */
+
+function renderInline(text: string, keyBase: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  // Order matters: bold-wrapped button, plain button, bold, italic.
+  const regex = /\*\*\[(.+?)\]\*\*|\[(.+?)\]|\*\*(.+?)\*\*|\*(.+?)\*/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) nodes.push(text.slice(last, m.index));
+    if (m[1] !== undefined || m[2] !== undefined) {
+      const label = (m[1] ?? m[2]) as string;
+      nodes.push(
+        <span
+          key={`${keyBase}-b${i}`}
+          className="my-0.5 inline-block rounded-md bg-[#F26B4E] px-3 py-1.5 text-sm font-bold text-white"
+        >
+          {label}
+        </span>
+      );
+    } else if (m[3] !== undefined) {
+      nodes.push(<strong key={`${keyBase}-s${i}`}>{m[3]}</strong>);
+    } else if (m[4] !== undefined) {
+      nodes.push(<em key={`${keyBase}-i${i}`}>{m[4]}</em>);
+    }
+    last = regex.lastIndex;
+    i++;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
+
+function renderBody(body: string): React.ReactNode[] {
+  const lines = body.split("\n");
+  const blocks: React.ReactNode[] = [];
+  let bullets: string[] = [];
+  let bi = 0;
+
+  const flushBullets = () => {
+    if (bullets.length === 0) return;
+    const items = bullets;
+    blocks.push(
+      <ul key={`ul-${bi++}`} className="my-2 list-disc space-y-1 pl-5">
+        {items.map((b, idx) => (
+          <li key={idx}>{renderInline(b, `ul${bi}-${idx}`)}</li>
+        ))}
+      </ul>
+    );
+    bullets = [];
+  };
+
+  lines.forEach((raw, idx) => {
+    const line = raw.trimEnd();
+    if (line.trim().startsWith("- ")) {
+      bullets.push(line.trim().slice(2));
+      return;
+    }
+    flushBullets();
+    if (line.trim() === "") return; // blank line = paragraph break (handled by margins)
+    blocks.push(
+      <p key={`p-${idx}`} className="my-2 leading-relaxed">
+        {renderInline(line, `p${idx}`)}
+      </p>
+    );
+  });
+  flushBullets();
+  return blocks;
+}
+
+function EmailModal({ emailId, onClose }: { emailId: string; onClose: () => void }) {
+  const email = EMAIL_BY_ID[emailId];
+  const content = EMAIL_CONTENT[emailId];
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  if (!email) return null;
+  const color = TRACK_COLOR[email.track];
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/50 p-4 backdrop-blur-sm sm:p-8"
+      onClick={onClose}
+    >
+      <div
+        className="my-auto w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Modal header */}
+        <div className="flex items-start justify-between gap-4 px-6 py-4 text-white" style={{ backgroundColor: color }}>
+          <div>
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide opacity-90">
+              <span className="rounded bg-white/25 px-1.5 py-0.5 font-bold">{email.id}</span>
+              <span>{email.when}</span>
+            </div>
+            <h3 className="mt-1 text-lg font-black leading-tight">{email.name}</h3>
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="flex-none rounded-full p-1.5 text-white/90 transition hover:bg-white/20"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Subject + preheader */}
+        <div className="border-b border-slate-100 bg-slate-50 px-6 py-3 text-sm">
+          <div>
+            <span className="font-semibold text-slate-400">Subject:&nbsp;</span>
+            <span className="font-bold text-[#1a2b3c]">{email.subject}</span>
+          </div>
+          {content?.preheader && (
+            <div className="mt-1">
+              <span className="font-semibold text-slate-400">Preheader:&nbsp;</span>
+              <span className="italic text-slate-500">{content.preheader}</span>
+            </div>
+          )}
+          {content?.outlined && (
+            <div className="mt-2 inline-block rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-700">
+              Outlined — copy written after the live sessions
+            </div>
+          )}
+        </div>
+
+        {/* Body */}
+        <div className="max-h-[60vh] overflow-y-auto px-6 py-5 text-[15px] text-[#1a2b3c]">
+          {content ? (
+            renderBody(content.body)
+          ) : (
+            <p className="italic text-slate-400">No copy on file for this email yet.</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 
 export default function CampaignPlanPage() {
   const [unlocked, setUnlocked] = useState(false);
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
+  const [openEmail, setOpenEmail] = useState<string | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && sessionStorage.getItem("berman_campaign_ok") === "1") {
@@ -214,10 +372,12 @@ export default function CampaignPlanPage() {
                       )}
                       <div className="flex flex-wrap gap-1">
                         {dayEmails.map((e) => (
-                          <span
+                          <button
                             key={e.id}
-                            title={`${e.id} · ${e.name} (${e.when})\n${e.subject}`}
-                            className="cursor-default rounded px-1.5 py-0.5 text-[11px] font-bold text-white"
+                            type="button"
+                            onClick={() => setOpenEmail(e.id)}
+                            title={`${e.id} · ${e.name} (${e.when})\n${e.subject}\n\nClick to read the email`}
+                            className="cursor-pointer rounded px-1.5 py-0.5 text-[11px] font-bold text-white transition hover:brightness-110 hover:ring-2 hover:ring-offset-1"
                             style={
                               e.status === "written"
                                 ? { backgroundColor: TRACK_COLOR[e.track] }
@@ -225,7 +385,7 @@ export default function CampaignPlanPage() {
                             }
                           >
                             {e.id}
-                          </span>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -234,7 +394,7 @@ export default function CampaignPlanPage() {
               </div>
             </div>
           </div>
-          <p className="mt-3 text-xs text-slate-400">Hover any email chip for its name, send time, and subject line. <strong>B1 (Confirmation)</strong> isn&apos;t on the calendar — it fires automatically the moment someone signs up.</p>
+          <p className="mt-3 text-xs text-slate-400"><strong>Click any email chip</strong> to read the full copy in a pop-up. <strong>B1 (Confirmation)</strong> isn&apos;t on the calendar — it fires automatically the moment someone signs up.</p>
         </section>
 
         {/* Track-by-track detail */}
@@ -255,7 +415,12 @@ export default function CampaignPlanPage() {
                 </div>
                 <div className="divide-y divide-slate-100">
                   {list.map((e) => (
-                    <div key={e.id} className="flex flex-col gap-1 px-5 py-3 sm:flex-row sm:items-center sm:gap-4">
+                    <button
+                      key={e.id}
+                      type="button"
+                      onClick={() => setOpenEmail(e.id)}
+                      className="flex w-full flex-col gap-1 px-5 py-3 text-left transition hover:bg-slate-50 sm:flex-row sm:items-center sm:gap-4"
+                    >
                       <span className="flex-none rounded px-1.5 py-0.5 text-[11px] font-bold text-white" style={{ backgroundColor: t.color }}>{e.id}</span>
                       <div className="w-32 flex-none text-xs font-semibold text-slate-500">{e.when}</div>
                       <div className="flex-1">
@@ -269,7 +434,8 @@ export default function CampaignPlanPage() {
                       >
                         {e.status === "written" ? "Written ✓" : "Outlined"}
                       </span>
-                    </div>
+                      <span className="hidden flex-none text-slate-300 sm:inline" aria-hidden>›</span>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -281,6 +447,8 @@ export default function CampaignPlanPage() {
           Internal planning view · Berman Golf · cohort enrollment + replay both close Sun June 28, midnight ET
         </footer>
       </div>
+
+      {openEmail && <EmailModal emailId={openEmail} onClose={() => setOpenEmail(null)} />}
     </main>
   );
 }
