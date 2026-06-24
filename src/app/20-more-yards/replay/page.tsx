@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// TODO(BERMAN): Paste the YouTube video IDs once the recordings are uploaded.
-// (The ID is the part after "watch?v=" — e.g. for youtu.be/abc123XYZ the ID is "abc123XYZ".)
-const DAY_1_VIDEO_ID = "";
+// YouTube video IDs (the part after youtu.be/ or watch?v=).
+// To publish Day 2: paste its ID below and flip `published: true` in the days array.
+const DAY_1_VIDEO_ID = "pF_yRTIzQPQ";
 const DAY_2_VIDEO_ID = "";
 
 // TODO(BERMAN): Confirm this matches the deadline in the event FAQ.
@@ -23,12 +23,14 @@ const days = [
     title: "The Activation Method",
     blurb: "Where it all starts — firing up the right muscles to unlock distance you already have.",
     videoId: DAY_1_VIDEO_ID,
+    published: true,
   },
   {
     label: "Day 2",
     title: "Putting It Into Your Swing",
     blurb: "Turning activation into real clubhead speed — and the path to keep gaining after today.",
     videoId: DAY_2_VIDEO_ID,
+    published: false, // flip to true once Day 2 is recorded + the ID is pasted above
   },
 ];
 
@@ -70,6 +72,9 @@ function VideoEmbed({
 }
 
 export default function TwentyMoreYardsReplayPage() {
+  const publishedDays = days.filter((day) => day.published);
+  const day2Pending = days.some((day) => day.label === "Day 2" && !day.published);
+
   return (
     <main className="min-h-screen bg-[#f5ede0] text-[#1a365d]">
       <Header />
@@ -98,8 +103,9 @@ export default function TwentyMoreYardsReplayPage() {
           </h1>
 
           <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/80 leading-relaxed max-w-xl mx-auto">
-            Missed it live, or want to watch again? Both days are below. Grab a club, find some space,
-            and follow along with Dr. Jake.
+            {day2Pending
+              ? "Missed Day 1, or want to watch it again? It's below. Grab a club, find some space, and follow along with Dr. Jake — then meet us LIVE for Day 2."
+              : "Missed it live, or want to watch again? Both days are below. Grab a club, find some space, and follow along with Dr. Jake."}
           </p>
         </div>
       </section>
@@ -107,7 +113,7 @@ export default function TwentyMoreYardsReplayPage() {
       {/* Videos */}
       <section className="pb-8">
         <div className="max-w-4xl mx-auto px-4 space-y-14">
-          {days.map((day) => (
+          {publishedDays.map((day) => (
             <div key={day.label}>
               <div className="flex items-baseline gap-4 mb-5">
                 <span className="font-display text-4xl sm:text-5xl font-black text-[#F26B4E] leading-none">
