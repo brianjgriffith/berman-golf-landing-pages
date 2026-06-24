@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const EVENT_DATE = new Date("2026-06-24T14:00:00Z");
+const DEFAULT_TARGET = new Date("2026-06-24T14:00:00Z");
 
 interface TimeLeft {
   days: number;
@@ -11,8 +11,8 @@ interface TimeLeft {
   seconds: number;
 }
 
-function getTimeLeft(): TimeLeft {
-  const diff = EVENT_DATE.getTime() - Date.now();
+function getTimeLeft(target: Date): TimeLeft {
+  const diff = target.getTime() - Date.now();
   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -32,19 +32,25 @@ const LABEL_TEXT: Record<keyof TimeLeft, string> = {
 
 interface CountdownProps {
   tone?: "light" | "dark";
+  targetDate?: Date;
+  heading?: string;
 }
 
-export default function Countdown({ tone = "light" }: CountdownProps = {}) {
+export default function Countdown({
+  tone = "light",
+  targetDate = DEFAULT_TARGET,
+  heading = "Doors open in",
+}: CountdownProps = {}) {
   const [time, setTime] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
-    const initialTimer = setTimeout(() => setTime(getTimeLeft()), 0);
-    const id = setInterval(() => setTime(getTimeLeft()), 1000);
+    const initialTimer = setTimeout(() => setTime(getTimeLeft(targetDate)), 0);
+    const id = setInterval(() => setTime(getTimeLeft(targetDate)), 1000);
     return () => {
       clearTimeout(initialTimer);
       clearInterval(id);
     };
-  }, []);
+  }, [targetDate]);
 
   const isLight = tone === "light";
   const cardClass = isLight
@@ -57,7 +63,7 @@ export default function Countdown({ tone = "light" }: CountdownProps = {}) {
   return (
     <div>
       <p className={`text-xs font-bold uppercase tracking-[0.25em] mb-3 ${headingClass}`}>
-        Doors open in
+        {heading}
       </p>
       <div className="grid grid-cols-4 gap-2 sm:gap-3 max-w-md">
         {LABELS.map((key) => (

@@ -2,30 +2,77 @@
 
 import Script from "next/script";
 import { TwoDayEvent } from "@/config/events";
+import {
+  EventPhase,
+  SESSION_1,
+  SESSION_2,
+  REPLAY_END,
+  useEventPhase,
+} from "@/lib/eventPhase";
 import Countdown from "./Countdown";
 
 interface EventRegistrationFormProps {
   event: TwoDayEvent;
 }
 
+interface PhaseCopy {
+  heading: string;
+  subhead: string;
+  countdownHeading?: string;
+  countdownTarget?: Date;
+}
+
+const PHASE_COPY: Record<EventPhase, PhaseCopy> = {
+  before: {
+    heading: "Reserve your free seat.",
+    subhead: "Limited spots available. Register now.",
+    countdownHeading: "Doors open in",
+    countdownTarget: SESSION_1,
+  },
+  between: {
+    heading: "Session 1's in the books.",
+    subhead:
+      "Not too late to jump in. Register below to get the Session 1 replay — then join us live for Session 2 at 10 AM ET.",
+    countdownHeading: "Session 2 starts in",
+    countdownTarget: SESSION_2,
+  },
+  replay: {
+    heading: "Catch the replay before it's gone.",
+    subhead:
+      "Both sessions are yours to watch free through Sunday, June 28 at midnight ET. Register below for instant access.",
+    countdownHeading: "Replay closes in",
+    countdownTarget: REPLAY_END,
+  },
+  closed: {
+    heading: "This challenge has wrapped.",
+    subhead:
+      "Want in on the next one? Register below and we'll save you a seat for the next live event.",
+  },
+};
+
 export default function EventRegistrationForm({ event }: EventRegistrationFormProps) {
+  const phase = useEventPhase();
+  const copy = PHASE_COPY[phase];
+
   return (
     <section id="register" className="py-20 bg-[#f5ede0]">
       <div className="max-w-5xl mx-auto px-4">
         <div className="mb-12 max-w-4xl">
           <div className="h-[3px] w-32 bg-[#1a365d] mb-8" />
           <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-[#1a365d] leading-[1.0] mb-4 tracking-tight">
-            Reserve your free seat.
+            {copy.heading}
           </h2>
           <p className="font-serif text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">
-            Limited spots available. Register now.
+            {copy.subhead}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
           {/* Left: Countdown + Event meta */}
           <aside className="lg:col-span-2 lg:sticky lg:top-24">
-            <Countdown />
+            {copy.countdownTarget && (
+              <Countdown targetDate={copy.countdownTarget} heading={copy.countdownHeading} />
+            )}
 
             <div className="mt-8 space-y-5 font-serif text-[#1a365d]/90">
               {event.days.map((day, i) => (
