@@ -121,6 +121,9 @@ export default function SeniorGolfMasteryCohortPage() {
               <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#1a365d]/70">
                 {cohort.schedule.startLabel} &middot; Limited seats
               </p>
+              <p className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#F26B4E]">
+                Enrollment closes {cohort.enrollDeadline}
+              </p>
             </div>
 
             {/* Right: Polaroid */}
@@ -457,6 +460,9 @@ export default function SeniorGolfMasteryCohortPage() {
             >
               Enroll in the Cohort &rarr;
             </a>
+            <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#f5ede0]/70">
+              Enrollment closes {cohort.enrollDeadline}
+            </p>
           </div>
         </div>
       </section>
@@ -622,6 +628,9 @@ export default function SeniorGolfMasteryCohortPage() {
           </a>
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#1a365d]/70">
             Limited seats &middot; {cohort.schedule.startLabel}
+          </p>
+          <p className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#F26B4E]">
+            Enrollment closes {cohort.enrollDeadline}
           </p>
         </div>
       </section>

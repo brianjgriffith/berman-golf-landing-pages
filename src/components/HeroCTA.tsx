@@ -13,7 +13,7 @@ const HERO_COPY: Record<EventPhase, { cta: string; trust: string }> = {
   },
   replay: {
     cta: "Watch The Replay Free",
-    trust: "Free · Through Sun, June 28",
+    trust: "Free · Through Wed, July 1",
   },
   closed: {
     cta: "Join The Next One",

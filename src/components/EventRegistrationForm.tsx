@@ -39,7 +39,7 @@ const PHASE_COPY: Record<EventPhase, PhaseCopy> = {
   replay: {
     heading: "Catch the replay before it's gone.",
     subhead:
-      "Both sessions are yours to watch free through Sunday, June 28 at midnight ET. Register below for instant access.",
+      "Both sessions are yours to watch free through Wednesday, July 1 at midnight ET. Register below for instant access.",
     countdownHeading: "Replay closes in",
     countdownTarget: REPLAY_END,
   },
@@ -112,7 +112,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
                     <circle cx="12" cy="12" r="9" />
                     <path d="M12 7v5l3 2" strokeLinecap="round" />
                   </svg>
-                  <span>Replay through Sun, June 28 (live is best).</span>
+                  <span>Replay through Wed, July 1 (live is best).</span>
                 </div>
               </div>
             </div>

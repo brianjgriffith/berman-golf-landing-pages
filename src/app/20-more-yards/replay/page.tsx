@@ -15,7 +15,7 @@ const DAY_1_VIDEO_ID = "";
 const DAY_2_VIDEO_ID = "";
 
 // TODO(BERMAN): Confirm this matches the deadline in the event FAQ.
-const REPLAY_DEADLINE = "Sunday, June 28 at midnight ET";
+const REPLAY_DEADLINE = "Wednesday, July 1 at midnight ET";
 
 const days = [
   {

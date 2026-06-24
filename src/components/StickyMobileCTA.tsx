@@ -15,7 +15,7 @@ const STICKY_COPY: Record<EventPhase, { eyebrow: string; title: string; cta: str
     cta: "Join Free",
   },
   replay: {
-    eyebrow: "Replay free thru Sun, June 28",
+    eyebrow: "Replay free thru Wed, July 1",
     title: "Watch Both Sessions",
     cta: "Watch Free",
   },

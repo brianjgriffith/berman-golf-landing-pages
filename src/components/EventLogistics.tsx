@@ -70,7 +70,7 @@ export default function EventLogistics() {
             </svg>
             <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">Limited Replay</p>
             <p className="text-[#1a365d] font-bold text-sm md:text-base leading-tight">
-              Replay through Sun, June 28
+              Replay through Wed, July 1
             </p>
             <p className="font-serif text-[#1a365d]/80 text-sm mt-1">
               Live attendance is still the move.

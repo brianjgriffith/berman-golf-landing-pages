@@ -24,6 +24,9 @@ export interface CohortOffer {
   // Headline price shown to the buyer (one-time).
   price: string;
   priceNumeric: number;
+  // Enrollment cart-close. Same moment the 20 More Yards replay comes down.
+  // e.g. "Wednesday, July 1 at midnight ET"
+  enrollDeadline: string;
   schedule: CohortSchedule;
   // GHL checkout form embed.
   checkoutForm: {
@@ -40,6 +43,7 @@ export const seniorGolfMasteryCohort: CohortOffer = {
   name: "Senior Golf Mastery Cohort",
   price: "$2,997",
   priceNumeric: 2997,
+  enrollDeadline: "Wednesday, July 1 at midnight ET",
 
   schedule: {
     callDay: "Wednesdays at 11:00 AM ET (with one Thursday session)",

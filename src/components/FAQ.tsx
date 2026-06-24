@@ -45,7 +45,7 @@ const posterFaqs: FAQItem[] = [
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes — but with a limited window. The replay will be available through Sunday, June 28 at midnight ET. After that, it comes down. Showing up live is still the move: you can ask Jake questions, get real-time feedback, and the work happens with you in the room.",
+    answer: "Yes — but with a limited window. The replay will be available through Wednesday, July 1 at midnight ET. After that, it comes down. Showing up live is still the move: you can ask Jake questions, get real-time feedback, and the work happens with you in the room.",
   },
   {
     question: "Will I be pitched something at the end?",
