@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 // YouTube video IDs (the part after youtu.be/ or watch?v=).
 // To publish Day 2: paste its ID below and flip `published: true` in the days array.
 const DAY_1_VIDEO_ID = "pF_yRTIzQPQ";
-const DAY_2_VIDEO_ID = "";
+const DAY_2_VIDEO_ID = "D2jmjCPH30s";
 
 // TODO(BERMAN): Confirm this matches the deadline in the event FAQ.
 const REPLAY_DEADLINE = "Wednesday, July 1 at midnight ET";
@@ -30,7 +30,7 @@ const days = [
     title: "Putting It Into Your Swing",
     blurb: "Turning activation into real clubhead speed — and the path to keep gaining after today.",
     videoId: DAY_2_VIDEO_ID,
-    published: false, // flip to true once Day 2 is recorded + the ID is pasted above
+    published: true,
   },
 ];
 
