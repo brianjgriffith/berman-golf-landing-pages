@@ -37,6 +37,17 @@ function Check() {
   );
 }
 
+// Small rotated "N left" badge that sits on the corner of a CTA button.
+// Renders nothing once seats are gone (cohort.slotsLeft === 0).
+function SlotSticker() {
+  if (cohort.slotsLeft <= 0) return null;
+  return (
+    <span className="absolute -top-3 -right-3 rotate-12 bg-[#1a365d] text-[#f5ede0] text-[11px] font-black uppercase tracking-wide leading-none px-2.5 py-1.5 rounded-full border-2 border-[#f5ede0] shadow-[0_4px_12px_rgba(26,54,93,0.45)]">
+      {cohort.slotsLeft} left
+    </span>
+  );
+}
+
 const cohortQuote = (
   <>
     &ldquo;Six weeks. Me, in the room with you, every week. We don&apos;t guess &mdash;{" "}
@@ -49,8 +60,26 @@ export default function SeniorGolfMasteryCohortPage() {
     <main className="min-h-screen bg-[#f5ede0] text-[#1a365d]">
       <Header />
 
+      {/* ===== SLOTS-LEFT BAR ===== */}
+      {/* The top padding clears the fixed poster header (~64/68px) and sits hidden
+          behind it, so only the orange strip shows. Disappears when slotsLeft is 0. */}
+      {cohort.slotsLeft > 0 && (
+        <div className="pt-16 md:pt-[68px] bg-[#F26B4E] text-white">
+          <div className="max-w-7xl mx-auto px-4 py-2.5 text-center">
+            <p className="text-[11px] sm:text-sm font-bold uppercase tracking-[0.15em] leading-snug">
+              <span aria-hidden>&#9203;</span> Only {cohort.slotsLeft} slots left &mdash;
+              enrollment closes {cohort.enrollDeadline}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* ===== HERO ===== */}
-      <section className="relative pt-24 pb-16 md:pb-20 overflow-hidden bg-[#f5ede0]">
+      <section
+        className={`relative ${
+          cohort.slotsLeft > 0 ? "pt-12" : "pt-24"
+        } pb-16 md:pb-20 overflow-hidden bg-[#f5ede0]`}
+      >
         <div className="relative max-w-7xl mx-auto px-4 w-full">
           {/* Kicker */}
           <div className="flex items-center gap-3 mb-8 md:mb-10">
@@ -113,8 +142,9 @@ export default function SeniorGolfMasteryCohortPage() {
 
               <a
                 href="/senior-golf-mastery-cohort/checkout"
-                className="inline-block bg-[#F26B4E] text-white px-10 sm:px-12 py-5 rounded-md font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:bg-[#e05a3d] shadow-[0_10px_30px_rgba(242,107,78,0.35)] hover:shadow-[0_15px_40px_rgba(242,107,78,0.5)] hover:-translate-y-0.5 transition-all"
+                className="relative inline-block bg-[#F26B4E] text-white px-10 sm:px-12 py-5 rounded-md font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:bg-[#e05a3d] shadow-[0_10px_30px_rgba(242,107,78,0.35)] hover:shadow-[0_15px_40px_rgba(242,107,78,0.5)] hover:-translate-y-0.5 transition-all"
               >
+                <SlotSticker />
                 Claim Your Spot &rarr;
               </a>
 
@@ -649,8 +679,9 @@ export default function SeniorGolfMasteryCohortPage() {
           </p>
           <a
             href="/senior-golf-mastery-cohort/checkout"
-            className="inline-block bg-[#F26B4E] text-white px-12 sm:px-16 py-5 rounded-md font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:bg-[#e05a3d] shadow-[0_10px_30px_rgba(242,107,78,0.4)] hover:-translate-y-0.5 transition-all"
+            className="relative inline-block bg-[#F26B4E] text-white px-12 sm:px-16 py-5 rounded-md font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:bg-[#e05a3d] shadow-[0_10px_30px_rgba(242,107,78,0.4)] hover:-translate-y-0.5 transition-all"
           >
+            <SlotSticker />
             Claim Your Spot &mdash; {cohort.price} &rarr;
           </a>
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#1a365d]/70">
