@@ -5,7 +5,17 @@ const nextConfig: NextConfig = {
     // /free-class was temporarily funneled to /20-more-yards during the
     // challenge. The challenge is over, so /free-class now serves its own
     // opt-in page again (the July 23 webclass).
-    return [];
+    return [
+      {
+        // The 2-day challenge is over. Forward the challenge landing page to
+        // the /free-class webclass opt-in. Exact match only, so sub-pages
+        // (/20-more-yards/replay, /20-more-yards/thank-you) still work.
+        // Temporary (307) so it can be flipped back for a future challenge.
+        source: "/20-more-yards",
+        destination: "/free-class",
+        permanent: false,
+      },
+    ];
   },
   async rewrites() {
     return {
