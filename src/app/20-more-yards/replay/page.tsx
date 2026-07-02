@@ -5,16 +5,22 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Replay | 20 More Yards Live Event with Dr. Jake Berman",
   description:
-    "Watch the replay of the 20 More Yards 2-day live event with Dr. Jake Berman. Available for a limited time only.",
+    "The 20 More Yards 2-day live event replay with Dr. Jake Berman has ended. See what's next inside the Senior Golf Mastery Cohort.",
   robots: { index: false, follow: false },
 };
 
+// ── REPLAY STATE ────────────────────────────────────────────────
+// The free replay window has closed (came down at 12 AM ET, Wed July 1).
+// To bring the replay BACK: set REPLAY_EXPIRED = false. Everything below
+// (video IDs, embeds, day copy) is preserved and will render again.
+const REPLAY_EXPIRED: boolean = true;
+
 // YouTube video IDs (the part after youtu.be/ or watch?v=).
-// To publish Day 2: paste its ID below and flip `published: true` in the days array.
 const DAY_1_VIDEO_ID = "pF_yRTIzQPQ";
 const DAY_2_VIDEO_ID = "D2jmjCPH30s";
 
-// TODO(BERMAN): Confirm this matches the deadline in the event FAQ.
+// When the free replay came down. Used in both the live banner and the
+// "window closed" notice.
 const REPLAY_DEADLINE = "Wednesday, July 1 at midnight ET";
 
 const days = [
@@ -82,7 +88,15 @@ export default function TwentyMoreYardsReplayPage() {
       {/* Urgency banner */}
       <div className="bg-[#F26B4E] text-white text-center px-4 py-3 mt-16 md:mt-[68px]">
         <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.15em]">
-          &#9203; Replay available through {REPLAY_DEADLINE} &mdash; then it comes down.
+          {REPLAY_EXPIRED ? (
+            <>
+              &#9203; The replay has ended &mdash; the Senior Golf Mastery Cohort closes tonight at midnight ET.
+            </>
+          ) : (
+            <>
+              &#9203; Replay available through {REPLAY_DEADLINE} &mdash; then it comes down.
+            </>
+          )}
         </p>
       </div>
 
@@ -92,59 +106,100 @@ export default function TwentyMoreYardsReplayPage() {
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-[#1a365d]/30 max-w-[100px]" />
             <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#1a365d]">
-              Event Replay
+              {REPLAY_EXPIRED ? "Replay Ended" : "Event Replay"}
             </p>
             <div className="h-px flex-1 bg-[#1a365d]/30 max-w-[100px]" />
           </div>
 
-          <h1 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight text-[#1a365d] mb-6">
-            20 More Yards. <br />
-            <span className="text-[#F26B4E]">The Replay.</span>
-          </h1>
-
-          <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/80 leading-relaxed max-w-xl mx-auto">
-            {day2Pending
-              ? "Missed Day 1, or want to watch it again? It's below. Grab a club, find some space, and follow along with Dr. Jake — then meet us LIVE for Day 2."
-              : "Missed it live, or want to watch again? Both days are below. Grab a club, find some space, and follow along with Dr. Jake."}
-          </p>
+          {REPLAY_EXPIRED ? (
+            <>
+              <h1 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight text-[#1a365d] mb-6">
+                That&apos;s a wrap. <br />
+                <span className="text-[#F26B4E]">The replay has ended.</span>
+              </h1>
+              <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/80 leading-relaxed max-w-xl mx-auto">
+                The free 2-day 20 More Yards replay came down at midnight ET. But you
+                haven&apos;t missed your shot at the yards &mdash; the next step is still open.
+              </p>
+            </>
+          ) : (
+            <>
+              <h1 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight text-[#1a365d] mb-6">
+                20 More Yards. <br />
+                <span className="text-[#F26B4E]">The Replay.</span>
+              </h1>
+              <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/80 leading-relaxed max-w-xl mx-auto">
+                {day2Pending
+                  ? "Missed Day 1, or want to watch it again? It's below. Grab a club, find some space, and follow along with Dr. Jake — then meet us LIVE for Day 2."
+                  : "Missed it live, or want to watch again? Both days are below. Grab a club, find some space, and follow along with Dr. Jake."}
+              </p>
+            </>
+          )}
         </div>
       </section>
 
-      {/* Videos */}
-      <section className="pb-8">
-        <div className="max-w-4xl mx-auto px-4 space-y-14">
-          {publishedDays.map((day) => (
-            <div key={day.label}>
-              <div className="flex items-baseline gap-4 mb-5">
-                <span className="font-display text-4xl sm:text-5xl font-black text-[#F26B4E] leading-none">
-                  {day.label}
-                </span>
-                <div>
-                  <h2 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#1a365d] leading-tight">
-                    {day.title}
-                  </h2>
-                  <p className="font-serif italic text-[#1a365d]/70 text-sm sm:text-base">
-                    {day.blurb}
-                  </p>
-                </div>
+      {REPLAY_EXPIRED ? (
+        /* Replay-ended notice */
+        <section className="pb-8">
+          <div className="max-w-2xl mx-auto px-4">
+            <div className="rounded-2xl border-2 border-[#1a365d]/15 bg-white/60 px-6 py-12 sm:py-16 text-center shadow-[0_20px_60px_rgba(26,54,93,0.08)]">
+              <div className="text-5xl mb-5" aria-hidden>
+                &#9203;
               </div>
-              <VideoEmbed videoId={day.videoId} title={`20 More Yards — ${day.label}`} />
+              <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#1a365d] mb-4">
+                The replay window has closed
+              </h2>
+              <p className="font-serif text-lg text-[#1a365d]/75 leading-relaxed">
+                The free 2-day replay came down <strong>{REPLAY_DEADLINE}</strong>. Thanks to
+                everyone who showed up, grabbed a club, and put in the reps &mdash; nearly 70
+                senior golfers live from all over the world.
+              </p>
+              <p className="font-serif text-lg text-[#1a365d]/75 leading-relaxed mt-4">
+                Didn&apos;t get to finish &mdash; or ready to make these moves permanent? That&apos;s
+                exactly what comes next. 👇
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ) : (
+        /* Videos */
+        <section className="pb-8">
+          <div className="max-w-4xl mx-auto px-4 space-y-14">
+            {publishedDays.map((day) => (
+              <div key={day.label}>
+                <div className="flex items-baseline gap-4 mb-5">
+                  <span className="font-display text-4xl sm:text-5xl font-black text-[#F26B4E] leading-none">
+                    {day.label}
+                  </span>
+                  <div>
+                    <h2 className="font-display text-xl sm:text-2xl font-black uppercase tracking-tight text-[#1a365d] leading-tight">
+                      {day.title}
+                    </h2>
+                    <p className="font-serif italic text-[#1a365d]/70 text-sm sm:text-base">
+                      {day.blurb}
+                    </p>
+                  </div>
+                </div>
+                <VideoEmbed videoId={day.videoId} title={`20 More Yards — ${day.label}`} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Cohort CTA */}
       <section className="py-16 md:py-20 bg-[#1a365d] text-[#f5ede0] mt-8">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#f5ede0]/60 mb-4">
-            Ready For The Next Step?
+            {REPLAY_EXPIRED ? "Your Last Chance" : "Ready For The Next Step?"}
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-black mb-6 leading-tight">
-            Don&apos;t let it stop at the replay.
+            {REPLAY_EXPIRED
+              ? "The replay's gone. This isn't — yet."
+              : "Don't let it stop at the replay."}
           </h2>
           <p className="font-serif text-lg md:text-xl text-[#f5ede0]/80 leading-relaxed mb-4 max-w-2xl mx-auto">
-            You just saw what&apos;s possible. The <strong className="text-[#f5ede0]">Senior Golf
+            You saw what&apos;s possible. The <strong className="text-[#f5ede0]">Senior Golf
             Mastery Cohort</strong> is where you actually do it &mdash; six weeks live with Dr. Jake,
             the full course, every bonus, and a year in the Berman Clubhouse.
           </p>
@@ -160,7 +215,9 @@ export default function TwentyMoreYardsReplayPage() {
           </a>
 
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#f5ede0]/60">
-            Replay comes down {REPLAY_DEADLINE}
+            {REPLAY_EXPIRED
+              ? "Enrollment closes tonight — Wednesday, July 1 at midnight ET"
+              : `Replay comes down ${REPLAY_DEADLINE}`}
           </p>
         </div>
       </section>

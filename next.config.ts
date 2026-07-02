@@ -2,16 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
-      {
-        // Funnel all /free-class ("Golf Lessons Don't Work") traffic to the
-        // /20-more-yards page. Temporary (302/307) so it can be flipped back
-        // anytime without browsers caching it permanently.
-        source: "/free-class",
-        destination: "/20-more-yards",
-        permanent: false,
-      },
-    ];
+    // /free-class was temporarily funneled to /20-more-yards during the
+    // challenge. The challenge is over, so /free-class now serves its own
+    // opt-in page again (the July 23 webclass).
+    return [];
   },
   async rewrites() {
     return {
@@ -19,11 +13,12 @@ const nextConfig: NextConfig = {
       // homepage's redirect("/free-book") for the 20moreyards.com vanity domain.
       beforeFiles: [
         {
-          // Serve the /20-more-yards landing page at the root of 20moreyards.com
-          // (and www.) while keeping the clean 20moreyards.com URL.
+          // Serve the /free-class opt-in page at the root of 20moreyards.com
+          // (and www.) while keeping the clean 20moreyards.com URL. The 2-day
+          // challenge is over; the domain now points at the July 23 webclass.
           source: "/",
           has: [{ type: "host", value: "(www\\.)?20moreyards\\.com" }],
-          destination: "/20-more-yards",
+          destination: "/free-class",
         },
       ],
       afterFiles: [],

@@ -17,23 +17,23 @@ export default function HeroV2({ workshops }: HeroV2Props) {
             {/* Eyebrow */}
             <div className="mb-5">
               <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-xs md:text-sm px-5 py-2 rounded-full">
-                Warning To Senior Golfers
+                Free Live Class For Senior Golfers
               </span>
             </div>
 
             {/* H1 */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-3">
-              Golf Lessons Don&apos;t Work.
+              Out-Drive Your Buddies This Summer.
             </h1>
 
             {/* Sub-H1 */}
             <p className="text-2xl md:text-3xl lg:text-4xl text-[#F26B4E] font-extrabold leading-tight mb-6 tracking-tight">
-              The Activation Method Adds 20&ndash;50 Yards.
+              Gain 20&ndash;50 Yards Without Rebuilding Your Swing.
             </p>
 
             {/* Body */}
             <p className="text-base md:text-lg text-white/90 leading-relaxed mb-6 max-w-xl mx-auto md:mx-0">
-              99% of golf instruction is designed for a 25-year-old body. Join <strong className="text-white">Dr. Jake Berman (PT, DPT)</strong> for a free, live class on <strong className="text-white">The Activation Method</strong> &mdash; and start gaining yards without rebuilding your swing.
+              You don&apos;t need a new swing &mdash; you need a body that fires the right muscles in the right order. Join <strong className="text-white">Dr. Jake Berman (PT, DPT)</strong> for a free, live class on the biomechanics that add distance for senior golfers &mdash; no matter your age or handicap.
             </p>
 
             {/* Bullets */}

@@ -6,13 +6,13 @@ export interface Workshop {
 
 export const workshops: Workshop[] = [
   {
-    date: "Thursday, June 11th",
-    time: "10:00 AM ET",
+    date: "Thursday, July 23rd",
+    time: "11:00 AM ET",
     form: {
-      src: "https://link.physiofunnels.com/widget/form/dDhVJk8t0QJNzPVfkLKf",
-      id: "inline-dDhVJk8t0QJNzPVfkLKf",
-      formName: "(TM) 06.11.26 Webclass Sign Up Page",
-      formId: "dDhVJk8t0QJNzPVfkLKf",
+      src: "https://link.physiofunnels.com/widget/form/lm0WRYRo3j4eBJagMcgh",
+      id: "inline-lm0WRYRo3j4eBJagMcgh",
+      formName: "(TM) 07.23.26 Webclass Sign Up Page",
+      formId: "lm0WRYRo3j4eBJagMcgh",
     },
   },
 ];
