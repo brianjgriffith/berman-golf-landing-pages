@@ -52,13 +52,11 @@ export const twentyMoreYardsSale: DownsellOffer = {
     checkoutPath: "/community/checkout/annual",
   },
 
-  // TODO(BERMAN): replace the src + formId below with the real $997 GHL form.
-  // Leaving the REPLACE_WITH sentinel keeps the checkout placeholder visible.
   checkoutForm: {
-    src: "https://link.physiofunnels.com/widget/form/REPLACE_WITH_997_FORM_ID",
-    id: "inline-REPLACE_WITH_997_FORM_ID",
-    formName: "(TM) Senior Golf Mastery + Clubhouse",
-    formId: "REPLACE_WITH_997_FORM_ID",
-    height: 1135,
+    src: "https://link.physiofunnels.com/widget/form/e7HaJyrtlmofNOCv6wTE",
+    id: "inline-e7HaJyrtlmofNOCv6wTE",
+    formName: "(TM) Senior Golf Mastery",
+    formId: "e7HaJyrtlmofNOCv6wTE",
+    height: 1138,
   },
 };
