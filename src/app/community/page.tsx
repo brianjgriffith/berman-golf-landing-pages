@@ -139,6 +139,40 @@ export default function CommunityPage() {
         </div>
       </section>
 
+      {/* Take a Look Inside — Loom Walkthrough */}
+      <section className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm px-4 py-1 rounded-full mb-6">
+            Take a Look Inside
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            See What It&apos;s Like Inside the Clubhouse
+          </h2>
+          <p className="text-lg text-blue-100 mb-10 max-w-2xl mx-auto">
+            Wondering what you actually get when you join? Watch Dr. Jake give you a personal walkthrough of the Clubhouse — the coaching, the community, and everything waiting for you inside.
+          </p>
+
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+            <iframe
+              src="https://www.loom.com/embed/2dc64f7f7e73455e8892ea5bce7ef806"
+              title="Inside the Berman Clubhouse — A Walkthrough with Dr. Jake"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+
+          <div className="mt-10">
+            <a
+              href="#join"
+              className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Join the Clubhouse
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Monthly Calls Deep Dive */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
