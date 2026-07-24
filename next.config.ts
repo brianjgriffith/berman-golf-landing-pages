@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     // /free-class was temporarily funneled to /20-more-yards during the
     // challenge. The challenge is over, so /free-class now serves its own
-    // opt-in page again (the July 23 webclass).
+    // opt-in page again (whatever webclass is current in config/workshops.ts).
     return [
       {
         // The 2-day challenge is over. Forward the challenge landing page to
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
         {
           // Serve the /free-class opt-in page at the root of 20moreyards.com
           // (and www.) while keeping the clean 20moreyards.com URL. The 2-day
-          // challenge is over; the domain now points at the July 23 webclass.
+          // challenge is over; the domain now points at the current webclass.
           source: "/",
           has: [{ type: "host", value: "(www\\.)?20moreyards\\.com" }],
           destination: "/free-class",
