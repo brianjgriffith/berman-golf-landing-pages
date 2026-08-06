@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 
 export const metadata: Metadata = {
   title: "Replay | 20 More Yards Live Event with Dr. Jake Berman",
@@ -10,18 +11,20 @@ export const metadata: Metadata = {
 };
 
 // ── REPLAY STATE ────────────────────────────────────────────────
-// The free replay window has closed (came down at 12 AM ET, Wed July 1).
-// To bring the replay BACK: set REPLAY_EXPIRED = false. Everything below
-// (video IDs, embeds, day copy) is preserved and will render again.
+// Holding closed until the Aug 26 + 27 challenge wraps. After Day 2:
+// set REPLAY_EXPIRED = false AND swap the video IDs below to the new
+// recordings (the current IDs are the June sessions). Flip back to true
+// after the deadline below.
 const REPLAY_EXPIRED: boolean = true;
 
 // YouTube video IDs (the part after youtu.be/ or watch?v=).
+// TODO: replace with the Aug 26 + 27 recordings before reopening.
 const DAY_1_VIDEO_ID = "pF_yRTIzQPQ";
 const DAY_2_VIDEO_ID = "D2jmjCPH30s";
 
-// When the free replay came down. Used in both the live banner and the
+// When the free replay comes down. Used in both the live banner and the
 // "window closed" notice.
-const REPLAY_DEADLINE = "Wednesday, July 1 at midnight ET";
+const REPLAY_DEADLINE = "Wednesday, September 2 at midnight ET";
 
 const days = [
   {
@@ -216,7 +219,7 @@ export default function TwentyMoreYardsReplayPage() {
 
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#f5ede0]/60">
             {REPLAY_EXPIRED
-              ? "Enrollment closes tonight — Wednesday, July 1 at midnight ET"
+              ? `Enrollment closes ${cohort.enrollDeadline}`
               : `Replay comes down ${REPLAY_DEADLINE}`}
           </p>
         </div>

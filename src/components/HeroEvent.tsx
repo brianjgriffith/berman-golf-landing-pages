@@ -43,7 +43,7 @@ export default function HeroEvent() {
                   When
                 </p>
                 <p className="text-base sm:text-lg md:text-xl font-bold text-[#1a365d] leading-tight">
-                  June 24 + 25
+                  Aug 26 + 27
                 </p>
               </div>
               <div>

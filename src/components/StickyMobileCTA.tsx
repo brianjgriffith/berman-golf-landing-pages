@@ -5,17 +5,17 @@ import { EventPhase, useEventPhase } from "@/lib/eventPhase";
 
 const STICKY_COPY: Record<EventPhase, { eyebrow: string; title: string; cta: string }> = {
   before: {
-    eyebrow: "June 24 + 25 · 10:00 AM ET",
+    eyebrow: "Aug 26 + 27 · 10:00 AM ET",
     title: "20 More Yards Live Event",
     cta: "Reserve",
   },
   between: {
-    eyebrow: "Session 2 · Thu June 25 · 10 AM ET",
+    eyebrow: "Session 2 · Thu Aug 27 · 10 AM ET",
     title: "Replay + Live Session 2",
     cta: "Join Free",
   },
   replay: {
-    eyebrow: "Replay free thru Wed, July 1",
+    eyebrow: "Replay free thru Wed, Sept 2",
     title: "Watch Both Sessions",
     cta: "Watch Free",
   },

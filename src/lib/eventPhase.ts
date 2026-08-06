@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 // Single source of truth for where the live event stands right now.
 // Session times are 10:00 AM ET each day (EDT = UTC-4).
-export const SESSION_1 = new Date("2026-06-24T14:00:00Z");
-export const SESSION_2 = new Date("2026-06-25T14:00:00Z");
-export const REPLAY_END = new Date("2026-07-02T04:00:00Z"); // Thu 12 AM ET, after Wed July 1
+export const SESSION_1 = new Date("2026-08-26T14:00:00Z");
+export const SESSION_2 = new Date("2026-08-27T14:00:00Z");
+export const REPLAY_END = new Date("2026-09-03T04:00:00Z"); // Thu 12 AM ET, after Wed Sept 2
 
 export type EventPhase = "before" | "between" | "replay" | "closed";
 

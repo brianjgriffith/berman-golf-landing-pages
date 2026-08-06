@@ -18,7 +18,7 @@ export default function WhyTwoDays() {
           {/* Day 1 */}
           <div className="bg-white border border-[#1a365d]/15 p-6 md:p-8">
             <div className="text-[#F26B4E] font-bold text-xs uppercase tracking-[0.25em] mb-3">
-              Day 1 &bull; June 24
+              Day 1 &bull; August 26
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-black text-[#1a365d] mb-4 leading-tight">
               Learn
@@ -44,7 +44,7 @@ export default function WhyTwoDays() {
           {/* Day 2 */}
           <div className="bg-white border border-[#1a365d]/15 p-6 md:p-8">
             <div className="text-[#F26B4E] font-bold text-xs uppercase tracking-[0.25em] mb-3">
-              Day 2 &bull; June 25
+              Day 2 &bull; August 27
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-black text-[#1a365d] mb-4 leading-tight">
               Refine

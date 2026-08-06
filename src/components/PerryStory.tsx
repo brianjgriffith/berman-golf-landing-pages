@@ -57,7 +57,7 @@ export default function PerryStory() {
             </ul>
 
             <p className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-relaxed">
-              The Activation Method that Perry used is the same one you&apos;ll walk away with on <strong className="font-bold">June 25th</strong>.
+              The Activation Method that Perry used is the same one you&apos;ll walk away with on <strong className="font-bold">August 27th</strong>.
             </p>
 
             <a

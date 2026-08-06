@@ -21,7 +21,7 @@ import { twentyMoreYardsEvent } from "@/config/events";
 export const metadata: Metadata = {
   title: "20 More Yards in 2 Days | Free Live Event with Dr. Jake Berman",
   description:
-    "Free 2-day live event June 24 + 25, 2026 with Dr. Jake Berman. Learn the exact protocol senior golfers are using to add 20+ yards, without rebuilding their swing.",
+    "Free 2-day live event August 26 + 27, 2026 with Dr. Jake Berman. Learn the exact protocol senior golfers are using to add 20+ yards, without rebuilding their swing.",
   openGraph: {
     title: "20 More Yards. In 2 Days. Live with Dr. Jake.",
     description:
@@ -43,8 +43,8 @@ const eventSchema = JSON.stringify({
   name: "20 More Yards: Live 2-Day Event with Dr. Jake Berman",
   description:
     "Free 2-day live event teaching senior golfers The Activation Method to add 20+ yards without rebuilding their swing.",
-  startDate: "2026-06-24T10:00:00-04:00",
-  endDate: "2026-06-25T11:30:00-04:00",
+  startDate: "2026-08-26T10:00:00-04:00",
+  endDate: "2026-08-27T11:30:00-04:00",
   eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   location: {
@@ -66,7 +66,7 @@ const eventSchema = JSON.stringify({
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     url: "https://20moreyards.com/#register",
-    validFrom: "2026-05-01T00:00:00-04:00",
+    validFrom: "2026-08-05T00:00:00-04:00",
   },
 });
 

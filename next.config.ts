@@ -1,40 +1,17 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  async redirects() {
-    // /free-class was temporarily funneled to /20-more-yards during the
-    // challenge. The challenge is over, so /free-class now serves its own
-    // opt-in page again (whatever webclass is current in config/workshops.ts).
-    return [
-      {
-        // The 2-day challenge is over. Forward the challenge landing page to
-        // the /free-class webclass opt-in. Exact match only, so sub-pages
-        // (/20-more-yards/replay, /20-more-yards/thank-you) still work.
-        // Temporary (307) so it can be flipped back for a future challenge.
-        source: "/20-more-yards",
-        destination: "/free-class",
-        permanent: false,
-      },
-    ];
-  },
-  async rewrites() {
-    return {
-      // beforeFiles runs before filesystem routes, so it overrides the
-      // homepage's redirect("/free-book") for the 20moreyards.com vanity domain.
-      beforeFiles: [
-        {
-          // Serve the /free-class opt-in page at the root of 20moreyards.com
-          // (and www.) while keeping the clean 20moreyards.com URL. The 2-day
-          // challenge is over; the domain now points at the current webclass.
-          source: "/",
-          has: [{ type: "host", value: "(www\\.)?20moreyards\\.com" }],
-          destination: "/free-class",
-        },
-      ],
-      afterFiles: [],
-      fallback: [],
-    };
-  },
-};
+// Funnel routing lives in src/proxy.ts, not here.
+//
+// The webclass -> challenge handoff is time-based (see config/funnelSwitch.ts),
+// and next.config redirects/rewrites are baked in at build time, so they can't
+// express "flip at 11:00 AM ET." The proxy runs per request and can.
+//
+// Two things the proxy owns that used to live in this file:
+//   - the 20moreyards.com root rewrite
+//   - /free-class -> /20-more-yards
+//
+// Keep them there. A `beforeFiles` rewrite here would run after the proxy and
+// silently shadow it.
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const DEFAULT_TARGET = new Date("2026-06-24T14:00:00Z");
+const DEFAULT_TARGET = new Date("2026-08-26T14:00:00Z");
 
 interface TimeLeft {
   days: number;

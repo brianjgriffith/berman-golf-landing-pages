@@ -9,9 +9,32 @@ read from `../Docs/Berman Knowledge Base/` first:
 - `README.md` — index + hard rules for copy.
 Other copy assets live in `../Docs/` (e.g. `20 More Yards Challenge - Social Captions.md`).
 
-## Redirects (next.config.ts)
-- `20moreyards.com` (+ www) root → serves `/20-more-yards` (rewrite, clean URL preserved)
-- `/free-class` → `/20-more-yards` (temporary 307 redirect; "Golf Lessons Don't Work" funnel now points at the challenge)
+## Routing (src/proxy.ts — NOT next.config.ts)
+All funnel routing lives in `src/proxy.ts`, because the webclass → challenge
+handoff is **time-based** and next.config redirects/rewrites are baked in at
+build time. `next.config.ts` is intentionally empty; a `beforeFiles` rewrite
+there would run after the proxy and silently shadow it.
+
+The cutover timestamp is `src/config/funnelSwitch.ts` (currently
+**Aug 6, 2026 11:00 AM ET** — the moment the Aug 6 webclass starts). Before it,
+the webclass funnel takes signups; after it, everything feeds the challenge:
+
+| Entry point | Before cutover | After cutover |
+|---|---|---|
+| `20moreyards.com/` (+ www) | `/free-class` (rewrite) | `/20-more-yards` (rewrite) |
+| `/free-class` | serves opt-in | → `/20-more-yards` (307) |
+| `/free-class-v1` (archived) | serves opt-in | → `/20-more-yards` (307) |
+| `golflessonsdontwork.com` | → `/free-class` | inherits the 307 → `/20-more-yards` |
+| `gaindistance.com/` | → `/free-book` | unchanged |
+| `/free-book` | unchanged | unchanged |
+
+`golflessonsdontwork.com` forwards to `gaindistance.com/free-class` at the
+**registrar** (301, not Vercel), so it is not in this repo — it inherits
+whatever `/free-class` does. Leave that forward pointing at `/free-class`.
+
+Query strings survive the redirect, so ad UTMs are preserved. 307 (not 308) so
+`/free-class` can serve its own opt-in again for the next webclass — to do
+that, push the timestamp forward and update `src/config/workshops.ts`.
 
 ## Workshop Dates
 When updating workshop dates or form IDs, edit `src/config/workshops.ts`. This is the single source of truth used by:
