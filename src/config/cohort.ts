@@ -11,11 +11,14 @@ export interface CohortSchedule {
   callDay: string;
   // e.g. "Starts July 16, 2026"
   startLabel: string;
-  // e.g. "6 weeks"
+  // Total program length, e.g. "12 weeks". NOTE: this is the FULL program
+  // (6 weeks of live calls + 6 weeks of range implementation), not the number
+  // of weeks that have a live call. Don't set this to the session count.
   duration: string;
   // Time of every live call, e.g. "11:00 AM ET"
   time: string;
-  // The six live session dates, in order.
+  // The six live session dates, in order. These cover weeks 1-6 only —
+  // weeks 7-12 have no scheduled calls (weekly range-video critiques instead).
   sessions: string[];
 }
 
@@ -47,21 +50,25 @@ export const seniorGolfMasteryCohort: CohortOffer = {
   name: "Senior Golf Mastery Cohort",
   price: "$2,997",
   priceNumeric: 2997,
-  enrollDeadline: "when the cohort starts Wednesday, July 8",
-  slotsLeft: 3,
+  enrollDeadline: "when the cohort starts Tuesday, September 8",
+  slotsLeft: 10,
 
   schedule: {
-    callDay: "Wednesdays at 11:00 AM ET (with one Thursday session)",
-    startLabel: "Starts Wednesday, July 8, 2026",
-    duration: "6 weeks",
+    // NOTE: this cohort is NOT one fixed weekday. Calls 1-3 are Tuesdays,
+    // calls 4-6 are Wednesdays. Keep callDay honest about the switch --
+    // buyers block these out on a calendar and a wrong weekday is a refund.
+    callDay:
+      "Tuesdays at 11:00 AM ET for calls 1–3, then Wednesdays for calls 4–6",
+    startLabel: "Starts Tuesday, September 8, 2026",
+    duration: "12 weeks",
     time: "11:00 AM ET",
     sessions: [
-      "Wednesday, July 8, 2026",
-      "Wednesday, July 15, 2026",
-      "Wednesday, July 22, 2026",
-      "Thursday, July 30, 2026",
-      "Wednesday, August 5, 2026",
-      "Wednesday, August 12, 2026",
+      "Tuesday, September 8, 2026",
+      "Tuesday, September 15, 2026",
+      "Tuesday, September 22, 2026",
+      "Wednesday, September 30, 2026",
+      "Wednesday, October 7, 2026",
+      "Wednesday, October 14, 2026",
     ],
   },
 

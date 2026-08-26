@@ -60,7 +60,7 @@ export default function TwentyMoreYardsSalePage() {
             Missed the Live Cohort? Here&apos;s Your Way In — Without the $2,997 Price Tag
           </h1>
           <p className="text-lg lg:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            The 6-week live cohort has closed its doors. But you can still get Dr. Jake&apos;s
+            The 12-week live cohort has closed its doors. But you can still get Dr. Jake&apos;s
             complete biomechanics system — plus a full year of live coaching in the Berman
             Clubhouse — and work through it at your own pace.
           </p>
@@ -107,15 +107,15 @@ export default function TwentyMoreYardsSalePage() {
             Same Method. Same Results. On Your Schedule.
           </h2>
           <p className="text-lg text-gray-700 mb-4">
-            In the live cohort, Jake walks a small group through his system over six weeks on
-            Zoom. Those seats are gone. But the <strong>method doesn&apos;t change</strong> — and
+            In the live cohort, Jake walks a small group through his system over twelve weeks &mdash;
+            six weeks live on Zoom, then six weeks of range video critiques. Those seats are gone. But the <strong>method doesn&apos;t change</strong> — and
             neither do the results.
           </p>
           <p className="text-lg text-gray-700">
             This is the self-paced path: the complete <strong>Senior Golf Mastery</strong> course
             to work through whenever it suits you, <strong>plus a full year in the Berman
             Clubhouse</strong> — where Jake goes live every month for coaching and Q&amp;A. You get
-            the system <em>and</em> ongoing access to Jake. Just not on a fixed six-week clock.
+            the system <em>and</em> ongoing access to Jake. Just not on a fixed 12-week clock.
           </p>
         </div>
       </section>
@@ -397,7 +397,7 @@ export default function TwentyMoreYardsSalePage() {
               {
                 question: "How is this different from the live cohort?",
                 answer:
-                  "The cohort is six weeks of live group coaching with Jake on a fixed schedule — those seats are closed. This is the self-paced version: you get the complete Senior Golf Mastery course to work through on your own time, plus a full year in the Clubhouse where Jake still coaches live every month. Same method, same science — just no fixed six-week clock.",
+                  "The cohort is twelve weeks on a fixed schedule — six weeks of live group coaching with Jake, then six weeks of weekly range video critiques. Those seats are closed. This is the self-paced version: you get the complete Senior Golf Mastery course to work through on your own time, plus a full year in the Clubhouse where Jake still coaches live every month. Same method, same science — just no fixed 12-week clock.",
               },
               {
                 question: "What happens after the first year — what's the $297?",

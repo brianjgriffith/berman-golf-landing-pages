@@ -8,13 +8,13 @@ import JakeQuote from "@/components/JakeQuote";
 import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 
 export const metadata: Metadata = {
-  title: "Senior Golf Mastery Cohort | 6 Weeks Live with Dr. Jake Berman",
+  title: "Senior Golf Mastery Cohort | 12 Weeks with Dr. Jake Berman",
   description:
-    "A 6-week live coaching cohort with Dr. Jake Berman over Zoom. Get the complete Senior Golf Mastery course, all bonuses, and a full year in the Berman Clubhouse.",
+    "A 12-week coaching cohort with Dr. Jake Berman: six weeks of live Zoom coaching, then six weeks on the range with Jake reviewing your video every week. Includes the complete Senior Golf Mastery course, all bonuses, and a full year in the Berman Clubhouse.",
   openGraph: {
-    title: "Senior Golf Mastery Cohort | 6 Weeks Live with Dr. Jake",
+    title: "Senior Golf Mastery Cohort | 12 Weeks with Dr. Jake",
     description:
-      "Not just a course — six weeks of live coaching with Dr. Jake, plus the full course, bonuses, and a year in the Berman Clubhouse.",
+      "Not just a course — six weeks of live coaching, then six weeks taking it to the range with Jake critiquing your swing every week. Plus the full course, bonuses, and a year in the Berman Clubhouse.",
     type: "website",
   },
 };
@@ -50,7 +50,7 @@ function SlotSticker() {
 
 const cohortQuote = (
   <>
-    &ldquo;Six weeks. Me, in the room with you, every week. We don&apos;t guess &mdash;{" "}
+    &ldquo;Six weeks to learn it. Six weeks to prove it on the range. We don&apos;t guess &mdash;{" "}
     <span className="text-[#F26B4E]">we fix it together</span>.&rdquo;
   </>
 );
@@ -85,7 +85,7 @@ export default function SeniorGolfMasteryCohortPage() {
           <div className="flex items-center gap-3 mb-8 md:mb-10">
             <div className="h-px flex-1 bg-[#1a365d]/30 max-w-[120px]" />
             <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#1a365d]">
-              6-Week Live Cohort
+              12-Week Coaching Cohort
             </p>
             <div className="h-px flex-1 bg-[#1a365d]/30 max-w-[120px]" />
           </div>
@@ -100,13 +100,14 @@ export default function SeniorGolfMasteryCohortPage() {
               </h1>
 
               <p className="font-display text-2xl sm:text-3xl md:text-4xl text-[#1a365d] mb-4 leading-tight max-w-xl">
-                Six weeks. Live with Dr. Jake Berman.
+                Twelve weeks. Coached by Dr. Jake Berman.
               </p>
 
               <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/75 mb-8 leading-relaxed max-w-xl">
-                This isn&apos;t a course you watch alone. It&apos;s a small group, coached live over Zoom
-                every week &mdash; with the full course, every bonus, and a year inside the Berman
-                Clubhouse.
+                This isn&apos;t a course you watch alone. Six weeks of live Zoom coaching in a small
+                group with Jake &mdash; then six more weeks taking it to the range, with Jake reviewing
+                your swing on video every week. Plus the full course, every bonus, and a year inside the
+                Berman Clubhouse.
               </p>
 
               {/* Heavy rule */}
@@ -246,10 +247,10 @@ export default function SeniorGolfMasteryCohortPage() {
               </h3>
               <ul className="space-y-3 font-serif text-[#f5ede0]">
                 {[
-                  "Live weekly Zoom calls with Dr. Jake",
-                  "Your swing seen and corrected directly",
+                  "Six weeks of live Zoom calls with Dr. Jake",
+                  "Six more weeks of range video, critiqued by Jake",
                   "Ask anything — answered on the call",
-                  "A group keeping you accountable for 6 weeks",
+                  "A group keeping you accountable for 12 weeks",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check />
@@ -266,20 +267,20 @@ export default function SeniorGolfMasteryCohortPage() {
       <section className="py-16 md:py-20 bg-[#f5ede0]">
         <div className="max-w-5xl mx-auto px-4">
           <p className="text-center text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#1a365d]/60 mb-4">
-            How the 6 Weeks Work
+            How the 12 Weeks Work
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-black text-center text-[#1a365d] mb-3 leading-tight">
-            Six weeks. One clear path.
+            Twelve weeks. Two phases. <br className="hidden md:block" />One clear path.
           </h2>
           <p className="font-serif italic text-center text-[#1a365d]/70 max-w-2xl mx-auto mb-8 text-lg">
-            {cohort.schedule.callDay}. Each week builds on the last &mdash; with Jake coaching you
-            through it live.
+            Weeks 1&ndash;6 are live on Zoom &mdash; {cohort.schedule.callDay}. Weeks 7&ndash;12 you take
+            it to the range, and Jake gets eyes on your swing every single week.
           </p>
 
           {/* The six live call dates */}
           <div className="max-w-2xl mx-auto mb-12 bg-white border-2 border-[#1a365d] shadow-[0_10px_30px_rgba(26,54,93,0.12)]">
             <p className="text-center text-[11px] font-bold tracking-[0.3em] uppercase text-[#f5ede0] bg-[#1a365d] py-2">
-              Your 6 Live Call Dates &middot; All at {cohort.schedule.time}
+              Weeks 1&ndash;6 &middot; Your 6 Live Call Dates &middot; {cohort.schedule.time}
             </p>
             <ol className="divide-y divide-[#1a365d]/10">
               {cohort.schedule.sessions.map((date, i) => (
@@ -298,38 +299,70 @@ export default function SeniorGolfMasteryCohortPage() {
             </ol>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
                 week: "Weeks 1–2",
+                phase: "Live on Zoom",
                 title: "Quick Wins & Foundation",
                 body:
                   "Fire up the right muscles for instant gains, then lock in your address-to-top-of-backswing — the most important piece.",
               },
               {
                 week: "Weeks 3–4",
-                title: "Downswing, Impact & Release",
+                phase: "Live on Zoom",
+                title: "Downswing & Impact",
                 body:
                   "Initiate from your belt buckle, not your hands. Build the sequence that turns rotation into real clubhead speed.",
               },
               {
                 week: "Weeks 5–6",
-                title: "Put It All Together",
+                phase: "Live on Zoom",
+                title: "Release & Full Swing",
                 body:
-                  "Translate the drills into real swings on the course — with Jake reviewing your progress and dialing it in.",
+                  "Lock in release and finish, then put all seven steps together into one repeatable swing you don't have to think about.",
+              },
+              {
+                week: "Weeks 7–12",
+                phase: "On the range",
+                title: "Take It to the Ball",
+                body:
+                  "Now you hit balls. Film your range session each week and upload it — Jake tells you exactly what to fix before you go back out. This is where it sticks.",
+                highlight: true,
               },
             ].map((card) => (
               <div
                 key={card.week}
-                className="bg-white border-2 border-[#1a365d] p-6 shadow-[0_10px_30px_rgba(26,54,93,0.12)]"
+                className={`p-6 shadow-[0_10px_30px_rgba(26,54,93,0.12)] ${
+                  card.highlight
+                    ? "bg-[#1a365d] border-2 border-[#1a365d] text-[#f5ede0]"
+                    : "bg-white border-2 border-[#1a365d]"
+                }`}
               >
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F26B4E] mb-3">
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#F26B4E] mb-1">
                   {card.week}
                 </p>
-                <h3 className="font-display text-xl font-black uppercase tracking-tight text-[#1a365d] mb-2">
+                <p
+                  className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-3 ${
+                    card.highlight ? "text-[#f5ede0]/50" : "text-[#1a365d]/50"
+                  }`}
+                >
+                  {card.phase}
+                </p>
+                <h3
+                  className={`font-display text-xl font-black uppercase tracking-tight mb-2 ${
+                    card.highlight ? "text-[#f5ede0]" : "text-[#1a365d]"
+                  }`}
+                >
                   {card.title}
                 </h3>
-                <p className="font-serif text-[#1a365d]/75 leading-relaxed text-[15px]">{card.body}</p>
+                <p
+                  className={`font-serif leading-relaxed text-[15px] ${
+                    card.highlight ? "text-[#f5ede0]/80" : "text-[#1a365d]/75"
+                  }`}
+                >
+                  {card.body}
+                </p>
               </div>
             ))}
           </div>
@@ -358,19 +391,46 @@ export default function SeniorGolfMasteryCohortPage() {
           </p>
 
           <div className="space-y-5">
-            {/* Headline: the live cohort */}
+            {/* Headline: phase 1 — the live cohort */}
             <div className="bg-[#F26B4E]/15 border-2 border-[#F26B4E] p-6 md:p-7">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-block bg-[#F26B4E] text-white text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded">
+                  Phase 1
+                </span>
+              </div>
               <div className="flex items-baseline justify-between gap-4 mb-3">
                 <h3 className="font-display text-xl md:text-2xl font-black uppercase tracking-tight text-[#F26B4E]">
-                  6 Weeks Live Coaching with Dr. Jake
+                  Weeks 1&ndash;6: Live Coaching with Dr. Jake
                 </h3>
                 <span className="font-bold text-[#f5ede0]/70 text-sm whitespace-nowrap">
                   $3,000 Value
                 </span>
               </div>
               <p className="font-serif text-[#f5ede0]/85 leading-relaxed">
-                Weekly small-group Zoom calls where Jake coaches you through every step, reviews your
-                swing, and answers your questions live. This is the heart of the program.
+                Six weekly small-group Zoom calls where Jake coaches you through every step, reviews your
+                swing, and answers your questions live. This is where your body learns the movement.
+              </p>
+            </div>
+
+            {/* Headline: phase 2 — range implementation (replaces the old 30-day critique bonus) */}
+            <div className="bg-[#F26B4E]/15 border-2 border-[#F26B4E] p-6 md:p-7">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-block bg-[#F26B4E] text-white text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded">
+                  Phase 2
+                </span>
+              </div>
+              <div className="flex items-baseline justify-between gap-4 mb-3">
+                <h3 className="font-display text-xl md:text-2xl font-black uppercase tracking-tight text-[#F26B4E]">
+                  Weeks 7&ndash;12: Range Video Critiques
+                </h3>
+                <span className="font-bold text-[#f5ede0]/70 text-sm whitespace-nowrap">
+                  $997 Value
+                </span>
+              </div>
+              <p className="font-serif text-[#f5ede0]/85 leading-relaxed">
+                Learning it in the living room isn&apos;t the same as owning it on the course. For six
+                more weeks you take it to the range, film your session, and upload it &mdash; and Jake
+                sends back exactly what to fix before you go back out. Every week, until it clicks.
               </p>
             </div>
 
@@ -422,7 +482,7 @@ export default function SeniorGolfMasteryCohortPage() {
                 <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$564 Value</span>
               </div>
               <p className="font-serif text-[#f5ede0]/80 mb-4 leading-relaxed">
-                When the 6 weeks end, your progress doesn&apos;t. Stay coached all year long:
+                When the 12 weeks end, your progress doesn&apos;t. Stay coached all year long:
               </p>
               <ul className="space-y-2.5 font-serif text-[#f5ede0]/80">
                 {[
@@ -477,25 +537,6 @@ export default function SeniorGolfMasteryCohortPage() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* 30 days of video critiques — replaces the old first-10 1-on-1; now every member */}
-            <div className="bg-[#F26B4E]/15 border-2 border-[#F26B4E] p-6 md:p-7">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="inline-block bg-[#F26B4E] text-white text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded">
-                  Every Member
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between gap-4 mb-3">
-                <h3 className="font-display text-xl md:text-2xl font-black uppercase tracking-tight text-[#F26B4E]">
-                  30 Days of Video Critiques
-                </h3>
-                <span className="font-bold text-[#f5ede0]/70 text-sm whitespace-nowrap">$997 Value</span>
-              </div>
-              <p className="font-serif text-[#f5ede0]/85 leading-relaxed">
-                For a full 30 days, send Jake your swing and get his eyes on it. Record, upload, and get
-                personal video feedback on exactly what to fix &mdash; again and again, until it clicks.
-              </p>
             </div>
           </div>
 
@@ -568,7 +609,7 @@ export default function SeniorGolfMasteryCohortPage() {
                 {[
                   "You're a senior golfer serious about adding real distance",
                   "You learn best with live feedback, not just videos",
-                  "You'll show up to weekly calls for 6 weeks",
+                  "You'll show up to six weekly calls — then film your range sessions for six more",
                   "You want a coach in your corner, not another course gathering dust",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -586,8 +627,8 @@ export default function SeniorGolfMasteryCohortPage() {
                 {[
                   "You just want a cheap video course to watch on your own",
                   "You're looking for a quick swing-tip, not a real change",
-                  "You can't commit any time over the next 6 weeks",
-                  "You're not willing to put a club in your hands and do the drills",
+                  "You can't commit any time over the next 12 weeks",
+                  "You're not willing to film yourself hitting balls and take the feedback",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="text-[#1a365d]/30 mt-0.5">&times;</span>
@@ -619,8 +660,8 @@ export default function SeniorGolfMasteryCohortPage() {
                 Show Up &amp; You&apos;re Covered
               </h3>
               <p className="font-serif text-[#1a365d]/80 leading-relaxed">
-                Do the work, come to the calls, and if you don&apos;t see real progress, we don&apos;t want
-                your money. Simple as that.
+                Come to the calls, do the drills, send in your range video &mdash; and if you don&apos;t
+                see real progress, we don&apos;t want your money. Simple as that.
               </p>
             </div>
           </div>
@@ -637,11 +678,19 @@ export default function SeniorGolfMasteryCohortPage() {
             {[
               {
                 q: "How is this different from the Senior Golf Mastery course?",
-                a: "You get the full course — but the cohort is the live, coached version. Instead of watching alone, you spend six weeks on weekly Zoom calls with Dr. Jake, getting your swing seen and your questions answered in real time. You also get a full year in the Berman Clubhouse.",
+                a: "You get the full course — but the cohort is the live, coached version. Instead of watching alone, you spend six weeks on weekly Zoom calls with Dr. Jake, getting your swing seen and your questions answered in real time — then six more weeks taking it to the range while Jake critiques your video every week. You also get a full year in the Berman Clubhouse.",
+              },
+              {
+                q: "Why is it 12 weeks and not 6?",
+                a: "Because learning the movement and owning it on the course are two different things. The first six weeks train your body to move correctly — indoors, without a ball, which is where the real work happens. The last six weeks are where you take it to the range, hit real shots, and Jake reviews your video every week. Six weeks gets it into your body. Twelve gets it into your golf.",
               },
               {
                 q: "When are the live calls?",
-                a: `${cohort.schedule.callDay}. ${cohort.schedule.startLabel}. Every call is recorded, so if you ever miss one live, you can catch up and still ask questions.`,
+                a: `The six live calls run in weeks 1–6: ${cohort.schedule.callDay}. ${cohort.schedule.startLabel}. Every call is recorded, so if you ever miss one live, you can catch up and still ask questions. Weeks 7–12 have no scheduled calls — you film your range sessions on your own time and Jake sends back his critique.`,
+              },
+              {
+                q: "What do I have to send in during weeks 7–12?",
+                a: "One video of you hitting balls at the range each week. Phone on a stand, a few swings, upload it. Jake reviews it and tells you exactly what to fix before your next session. No special equipment, no editing — just your phone.",
               },
               {
                 q: "What if I can't attend every week?",
@@ -653,7 +702,7 @@ export default function SeniorGolfMasteryCohortPage() {
               },
               {
                 q: "Is the $2,997 a one-time payment?",
-                a: "Yes — one enrollment covers the full 6-week cohort, the complete course and all bonuses, and a full year in the Berman Clubhouse.",
+                a: "Yes — one enrollment covers the full 12-week cohort, the complete course and all bonuses, and a full year in the Berman Clubhouse.",
               },
             ].map((faq) => (
               <div key={faq.q} className="border border-[#f5ede0]/20 p-6">
@@ -672,10 +721,11 @@ export default function SeniorGolfMasteryCohortPage() {
         <div className="max-w-2xl mx-auto px-4">
           <div className="h-[3px] bg-[#1a365d] mb-8 w-32 mx-auto" />
           <h2 className="font-display text-4xl md:text-6xl font-black text-[#1a365d] mb-6 leading-[0.95]">
-            Spend the next 6 weeks getting better.
+            Spend the next 12 weeks getting better.
           </h2>
           <p className="font-serif text-lg md:text-xl text-[#1a365d]/75 mb-10 leading-relaxed">
-            Not watching videos. Not guessing. Doing the work, live, with Dr. Jake in your corner.
+            Not watching videos. Not guessing. Six weeks learning it live with Dr. Jake, then six weeks
+            proving it on the range with him watching every swing.
           </p>
           <a
             href="/senior-golf-mastery-cohort/checkout"

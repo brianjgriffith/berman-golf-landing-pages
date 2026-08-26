@@ -132,9 +132,10 @@ export default function SeniorGolfMasteryThankYouPage() {
               Your Live Call Schedule
             </h2>
             <p className="font-serif text-[#f5ede0]/80 mb-8">
-              Six live Zoom calls with Dr. Jake &mdash; all at{" "}
+              Weeks 1&ndash;6 are six live Zoom calls with Dr. Jake &mdash; all at{" "}
               <strong className="text-white">{cohort.schedule.time}</strong>. Block these out now.
-              Every call is recorded in case you ever miss one live.
+              Every call is recorded in case you ever miss one live. Weeks 7&ndash;12 have no scheduled
+              calls &mdash; you film your range session each week and Jake sends back his critique.
             </p>
 
             <ol className="divide-y divide-[#f5ede0]/15 border-y border-[#f5ede0]/15">
