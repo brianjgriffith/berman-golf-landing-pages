@@ -30,6 +30,16 @@ export interface CohortOffer {
   // Enrollment cart-close phrase, e.g. "when the cohort starts Wednesday, July 8".
   // Reads after "Enrollment closes ...".
   enrollDeadline: string;
+  // Stacked value of everything included, as shown on the sales + checkout pages.
+  // SOURCE OF TRUTH: Jake's "Everything You Get" deck slide --
+  //   12-Week Senior Golf Mastery Live      $5,000
+  //   6 Weeks of Personal Video Critiques   $3,000
+  //   Complete Senior Golf Video Library   $14,391  (see the Vault slide breakdown)
+  //   12 Months Community Access              $564
+  //   Personalized Swing Roadmap              $500
+  // Don't change this without changing the line items on the page -- the number
+  // has to be the sum of what's actually listed, or the stack stops adding up.
+  totalValue: string;
   // How many seats remain in this reopen. Powers the top "slots left" bar and the
   // button stickers. Set to 0 to hide the scarcity UI (bar + stickers disappear).
   // KEEP THIS HONEST — only show what's actually available.
@@ -51,6 +61,7 @@ export const seniorGolfMasteryCohort: CohortOffer = {
   price: "$2,997",
   priceNumeric: 2997,
   enrollDeadline: "when the cohort starts Tuesday, September 8",
+  totalValue: "$23,455",
   slotsLeft: 10,
 
   schedule: {

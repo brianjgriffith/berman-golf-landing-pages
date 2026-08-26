@@ -387,7 +387,9 @@ export default function SeniorGolfMasteryCohortPage() {
           </h2>
           <p className="font-serif text-center text-[#f5ede0]/75 mb-12 text-lg">
             Total value:{" "}
-            <span className="font-bold text-[#f5ede0] line-through decoration-[#F26B4E]/70">$8,590+</span>
+            <span className="font-bold text-[#f5ede0] line-through decoration-[#F26B4E]/70">
+              {cohort.totalValue}
+            </span>
           </p>
 
           <div className="space-y-5">
@@ -403,7 +405,7 @@ export default function SeniorGolfMasteryCohortPage() {
                   Weeks 1&ndash;6: Live Coaching with Dr. Jake
                 </h3>
                 <span className="font-bold text-[#f5ede0]/70 text-sm whitespace-nowrap">
-                  $3,000 Value
+                  $5,000 Value
                 </span>
               </div>
               <p className="font-serif text-[#f5ede0]/85 leading-relaxed">
@@ -424,7 +426,7 @@ export default function SeniorGolfMasteryCohortPage() {
                   Weeks 7&ndash;12: Range Video Critiques
                 </h3>
                 <span className="font-bold text-[#f5ede0]/70 text-sm whitespace-nowrap">
-                  $997 Value
+                  $3,000 Value
                 </span>
               </div>
               <p className="font-serif text-[#f5ede0]/85 leading-relaxed">
@@ -434,14 +436,20 @@ export default function SeniorGolfMasteryCohortPage() {
               </p>
             </div>
 
-            {/* The course */}
+            {/* The course + the vault, priced as one library.
+                The $14,391 and its five sub-values come straight off Jake's
+                "Bonus: The Senior Golf Vault" slide -- 397 + 500 + 997 + 497 +
+                12,000. Change one, change the header. */}
             <div className="bg-[#f5ede0]/5 border border-[#f5ede0]/20 p-6 md:p-7">
               <div className="flex items-baseline justify-between gap-4 mb-4">
                 <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0]">
-                  The Full Senior Golf Mastery Course
+                  The Complete Senior Golf Video Library
                 </h3>
-                <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$1,997 Value</span>
+                <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$14,391 Value</span>
               </div>
+              <p className="font-serif text-[#f5ede0]/80 mb-4 leading-relaxed">
+                The full Senior Golf Mastery course &mdash; every module, start to finish:
+              </p>
               <ul className="space-y-2.5 font-serif text-[#f5ede0]/80">
                 {[
                   "Module 1: Quick Wins — fire up the right muscles for immediate gains",
@@ -457,13 +465,36 @@ export default function SeniorGolfMasteryCohortPage() {
                   </li>
                 ))}
               </ul>
+
+              <p className="font-serif text-[#f5ede0]/80 mt-6 mb-4 leading-relaxed">
+                Plus the entire vault &mdash; everything Jake has ever taught, all in one place:
+              </p>
+              <ul className="space-y-2.5 font-serif text-[#f5ede0]/80">
+                {[
+                  ["Tee Shot Transformation", "$397"],
+                  ["Every Previous 30-Day Challenge", "$500"],
+                  ["The Senior Golf Training Video Archive", "$997"],
+                  ["Drills & Practice Sessions", "$497"],
+                  ["Every Previous Coaching Call & Recording", "$12,000"],
+                ].map(([item, value]) => (
+                  <li key={item} className="flex items-start justify-between gap-4">
+                    <span className="flex items-start gap-3">
+                      <Check />
+                      <span>{item}</span>
+                    </span>
+                    <span className="font-bold text-[#f5ede0]/50 text-sm whitespace-nowrap">
+                      {value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Personalized swing analysis */}
             <div className="bg-[#f5ede0]/5 border border-[#f5ede0]/20 p-6 md:p-7">
               <div className="flex items-baseline justify-between gap-4 mb-3">
                 <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0]">
-                  Personalized Swing Analysis
+                  Personalized Swing Roadmap
                 </h3>
                 <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$500 Value</span>
               </div>
@@ -477,7 +508,7 @@ export default function SeniorGolfMasteryCohortPage() {
             <div className="bg-[#f5ede0]/5 border border-[#f5ede0]/20 p-6 md:p-7">
               <div className="flex items-baseline justify-between gap-4 mb-4">
                 <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0]">
-                  1 Full Year in the Berman Clubhouse
+                  12 Months in the Berman Clubhouse
                 </h3>
                 <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$564 Value</span>
               </div>
@@ -489,7 +520,7 @@ export default function SeniorGolfMasteryCohortPage() {
                   "Monthly live group coaching calls with Jake's team",
                   "Private community of senior golfers on the same journey",
                   "Ongoing Q&A and direct access for your questions",
-                  "The Tee Shot Transformation course — included free",
+                  "Keep your full video library access all year long",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check />
@@ -505,7 +536,9 @@ export default function SeniorGolfMasteryCohortPage() {
                 <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0]">
                   Lifetime Access to Future Program Updates
                 </h3>
-                <span className="font-bold text-[#f5ede0]/60 text-sm whitespace-nowrap">$997 Value</span>
+                <span className="font-bold text-[#F26B4E] text-sm whitespace-nowrap uppercase tracking-[0.15em]">
+                  Included
+                </span>
               </div>
               <p className="font-serif text-[#f5ede0]/80 leading-relaxed">
                 Every time Jake adds to or improves the program &mdash; new modules, new drills, new
@@ -515,25 +548,25 @@ export default function SeniorGolfMasteryCohortPage() {
 
             {/* Bonuses */}
             <div className="bg-[#f5ede0]/5 border border-[#f5ede0]/20 p-6 md:p-7">
-              <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0] mb-4">
-                Plus Every Bonus
-              </h3>
+              <div className="flex items-baseline justify-between gap-4 mb-4">
+                <h3 className="font-display text-lg md:text-xl font-black uppercase tracking-tight text-[#f5ede0]">
+                  Plus Every Bonus
+                </h3>
+                <span className="font-bold text-[#F26B4E] text-sm whitespace-nowrap uppercase tracking-[0.15em]">
+                  Included
+                </span>
+              </div>
               <ul className="space-y-2.5 font-serif text-[#f5ede0]/80">
                 {[
-                  ["Senior Golf Mastery PDF Book", "$97"],
-                  ["Pre-Shot Routine Guide", "$97"],
-                  ["Weight Shift Hack for Seniors", "$97"],
-                  ["Weekly Workout Videos", "$197"],
-                  ["Golf Gear Guide for Seniors", "$47"],
-                ].map(([item, value]) => (
-                  <li key={item} className="flex items-start justify-between gap-4">
-                    <span className="flex items-start gap-3">
-                      <Check />
-                      <span>{item}</span>
-                    </span>
-                    <span className="font-bold text-[#f5ede0]/50 text-sm whitespace-nowrap">
-                      {value} Value
-                    </span>
+                  "Senior Golf Mastery PDF Book",
+                  "Pre-Shot Routine Guide",
+                  "Weight Shift Hack for Seniors",
+                  "Weekly Workout Videos",
+                  "Golf Gear Guide for Seniors",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -544,7 +577,7 @@ export default function SeniorGolfMasteryCohortPage() {
           <div className="text-center mt-12">
             <p className="font-serif text-[#f5ede0]/70 mb-1">
               Total value:{" "}
-              <span className="line-through decoration-[#F26B4E]/70">$8,590+</span>
+              <span className="line-through decoration-[#F26B4E]/70">{cohort.totalValue}</span>
             </p>
             <p className="font-display text-5xl md:text-6xl font-black text-[#f5ede0] mb-2">
               {cohort.price}

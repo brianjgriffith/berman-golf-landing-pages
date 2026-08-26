@@ -72,7 +72,7 @@ export default function SeniorGolfMasteryCohortCheckout() {
                   <p className="font-serif text-[#1a365d]/70 text-sm">
                     12 weeks with Dr. Jake + course, bonuses &amp; Clubhouse
                   </p>
-                  <p className="text-[#1a365d]/40 line-through text-sm mt-1">$8,590+</p>
+                  <p className="text-[#1a365d]/40 line-through text-sm mt-1">{cohort.totalValue}</p>
                   <p className="font-display text-2xl font-black text-[#1a365d]">{cohort.price}</p>
                 </div>
               </div>
@@ -83,15 +83,16 @@ export default function SeniorGolfMasteryCohortCheckout() {
                 </p>
                 <ul className="space-y-2 text-sm font-serif text-[#1a365d]/75">
                   {[
-                    "Weeks 1–6: Live Group Coaching with Dr. Jake ($3,000 Value)",
-                    "Weeks 7–12: Weekly Range Video Critiques from Dr. Jake ($997 Value)",
+                    "Weeks 1–6: Live Group Coaching with Dr. Jake ($5,000 Value)",
+                    "Weeks 7–12: Weekly Range Video Critiques from Dr. Jake ($3,000 Value)",
+                    "The Complete Senior Golf Video Library ($14,391 Value)",
                     "Full Senior Golf Mastery Course (5 Modules)",
-                    "1 Full Year in the Berman Clubhouse ($564 Value)",
-                    "Tee Shot Transformation Course (included with Clubhouse)",
-                    "Personalized Swing Analysis ($500 Value)",
-                    "Lifetime Access to Future Program Updates ($997 Value)",
-                    "Senior Golf Mastery PDF Book",
-                    "Pre-Shot Routine + Weight Shift Hack",
+                    "Tee Shot Transformation + every 30-Day Challenge",
+                    "Drills, practice sessions & every past coaching call",
+                    "12 Months in the Berman Clubhouse ($564 Value)",
+                    "Personalized Swing Roadmap ($500 Value)",
+                    "Lifetime Access to Future Program Updates (Included)",
+                    "Senior Golf Mastery PDF Book, Pre-Shot Routine + Weight Shift Hack",
                     "Weekly Workout Videos + Gear Guide",
                     "Lifetime Access to Course Material",
                   ].map((item, index) => (
