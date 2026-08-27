@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
+import { REPLAY_END_LABEL, replayIsLive } from "@/config/eventWindow";
 
 export const metadata: Metadata = {
   title: "Replay | 20 More Yards Live Event with Dr. Jake Berman",
@@ -10,21 +11,22 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// The replay window is evaluated per request, so this page must not be
+// prerendered — a static render would bake in whatever Date.now() was at
+// build time and the replay would never come down (or never open).
+export const dynamic = "force-dynamic";
+
 // ── REPLAY STATE ────────────────────────────────────────────────
-// Holding closed until the Aug 26 + 27 challenge wraps. After Day 2:
-// set REPLAY_EXPIRED = false AND swap the video IDs below to the new
-// recordings (the current IDs are the June sessions). Flip back to true
-// after the deadline below.
-const REPLAY_EXPIRED: boolean = true;
+// The replay expires itself against REPLAY_END in @/config/eventWindow —
+// no deploy needs to be timed to the deadline. To change the window, move
+// that one timestamp (and its matching REPLAY_END_LABEL).
+//
+// Rendered per request (see the `dynamic` export above) so the switch
+// actually happens at the deadline instead of freezing at build time.
 
-// YouTube video IDs (the part after youtu.be/ or watch?v=).
-// TODO: replace with the Aug 26 + 27 recordings before reopening.
-const DAY_1_VIDEO_ID = "pF_yRTIzQPQ";
-const DAY_2_VIDEO_ID = "D2jmjCPH30s";
-
-// When the free replay comes down. Used in both the live banner and the
-// "window closed" notice.
-const REPLAY_DEADLINE = "Wednesday, September 2 at midnight ET";
+// YouTube video IDs (the part after youtu.be/ or watch?v=). Aug 26 + 27 sessions.
+const DAY_1_VIDEO_ID = "S3Ueeky9e0A";
+const DAY_2_VIDEO_ID = "nqm-9OhMG1s";
 
 const days = [
   {
@@ -81,6 +83,7 @@ function VideoEmbed({
 }
 
 export default function TwentyMoreYardsReplayPage() {
+  const REPLAY_EXPIRED = !replayIsLive();
   const publishedDays = days.filter((day) => day.published);
   const day2Pending = days.some((day) => day.label === "Day 2" && !day.published);
 
@@ -97,7 +100,7 @@ export default function TwentyMoreYardsReplayPage() {
             </>
           ) : (
             <>
-              &#9203; Replay available through {REPLAY_DEADLINE} &mdash; then it comes down.
+              &#9203; Replay available through {REPLAY_END_LABEL} &mdash; then it comes down.
             </>
           )}
         </p>
@@ -153,7 +156,7 @@ export default function TwentyMoreYardsReplayPage() {
                 The replay window has closed
               </h2>
               <p className="font-serif text-lg text-[#1a365d]/75 leading-relaxed">
-                The free 2-day replay came down <strong>{REPLAY_DEADLINE}</strong>. Thanks to
+                The free 2-day replay came down <strong>{REPLAY_END_LABEL}</strong>. Thanks to
                 everyone who showed up, grabbed a club, and put in the reps &mdash; nearly 70
                 senior golfers live from all over the world.
               </p>
@@ -220,7 +223,7 @@ export default function TwentyMoreYardsReplayPage() {
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#f5ede0]/60">
             {REPLAY_EXPIRED
               ? `Enrollment closes ${cohort.enrollDeadline}`
-              : `Replay comes down ${REPLAY_DEADLINE}`}
+              : `Replay comes down ${REPLAY_END_LABEL}`}
           </p>
         </div>
       </section>

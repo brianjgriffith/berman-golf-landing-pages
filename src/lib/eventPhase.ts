@@ -1,21 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getPhase, type EventPhase } from "@/config/eventWindow";
 
-// Single source of truth for where the live event stands right now.
-// Session times are 10:00 AM ET each day (EDT = UTC-4).
-export const SESSION_1 = new Date("2026-08-26T14:00:00Z");
-export const SESSION_2 = new Date("2026-08-27T14:00:00Z");
-export const REPLAY_END = new Date("2026-09-03T04:00:00Z"); // Thu 12 AM ET, after Wed Sept 2
-
-export type EventPhase = "before" | "between" | "replay" | "closed";
-
-export function getPhase(now: number): EventPhase {
-  if (now < SESSION_1.getTime()) return "before";
-  if (now < SESSION_2.getTime()) return "between";
-  if (now < REPLAY_END.getTime()) return "replay";
-  return "closed";
-}
+// Timeline constants live in @/config/eventWindow so server components can
+// read them too. Re-exported here so existing client imports keep working.
+export {
+  SESSION_1,
+  SESSION_2,
+  REPLAY_END,
+  REPLAY_END_LABEL,
+  getPhase,
+  replayIsLive,
+} from "@/config/eventWindow";
+export type { EventPhase } from "@/config/eventWindow";
 
 // Starts on "before" so SSR and the first client render match, then corrects
 // after mount and re-checks every 30s so the page rolls itself between phases.
