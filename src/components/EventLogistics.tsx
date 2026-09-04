@@ -1,4 +1,14 @@
+import {
+  twentyMoreYardsEvent,
+  isWaitlist,
+  longDates,
+  timeLabel,
+} from "@/config/events";
+
 export default function EventLogistics() {
+  const event = twentyMoreYardsEvent;
+  const waitlist = isWaitlist(event);
+
   return (
     <section className="py-16 md:py-24 bg-[#efe5d4]">
       <div className="max-w-5xl mx-auto px-4">
@@ -10,7 +20,9 @@ export default function EventLogistics() {
             Everything you need to know.
           </h2>
           <p className="font-serif italic text-lg md:text-xl text-[#1a365d]/80 max-w-2xl leading-relaxed">
-            Two live sessions. Online via Zoom. Free.
+            {waitlist
+              ? "Two live sessions. Online via Zoom. Free. Here's what the next run looks like."
+              : "Two live sessions. Online via Zoom. Free."}
           </p>
         </div>
 
@@ -23,13 +35,13 @@ export default function EventLogistics() {
             </svg>
             <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">When</p>
             <p className="text-[#1a365d] font-bold text-sm md:text-base leading-tight">
-              August 26 + 27
+              {waitlist ? event.windowLabel : longDates(event)}
             </p>
             <p className="font-serif text-[#1a365d]/80 text-sm mt-1">
-              10:00 AM ET
+              {waitlist ? "Exact dates announced soon" : timeLabel(event)}
             </p>
             <p className="font-serif text-[#1a365d]/80 text-sm">
-              90 min per session
+              {event.sessionLength}, 2 sessions
             </p>
           </div>
 
@@ -44,7 +56,9 @@ export default function EventLogistics() {
               Online via Zoom
             </p>
             <p className="font-serif text-[#1a365d]/80 text-sm mt-1">
-              Link sent to your inbox after registration
+              {waitlist
+                ? "Zoom link sent once you register"
+                : "Link sent to your inbox after registration"}
             </p>
           </div>
 
@@ -68,19 +82,23 @@ export default function EventLogistics() {
               <circle cx="12" cy="12" r="9" />
               <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none" />
             </svg>
-            <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">Limited Replay</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">
+              {waitlist ? "Waitlist First" : "Limited Replay"}
+            </p>
             <p className="text-[#1a365d] font-bold text-sm md:text-base leading-tight">
-              Replay through Wed, Sept 2
+              {waitlist ? "You register before the public" : "Limited replay window"}
             </p>
             <p className="font-serif text-[#1a365d]/80 text-sm mt-1">
-              Live attendance is still the move.
+              {waitlist
+                ? "Dates hit your inbox first."
+                : "Live attendance is still the move."}
             </p>
           </div>
         </div>
 
         <div className="bg-white p-8 md:p-10 border border-[#1a365d]/15">
           <p className="text-sm font-bold uppercase tracking-widest text-[#F26B4E] mb-6 text-center">
-            What to have ready:
+            {waitlist ? "What you'll need on the day:" : "What to have ready:"}
           </p>
           <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             <div className="flex items-start gap-3">

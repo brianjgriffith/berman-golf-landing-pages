@@ -1,4 +1,8 @@
+import { twentyMoreYardsEvent, dayLabelShort } from "@/config/events";
+
 export default function WhyTwoDays() {
+  const event = twentyMoreYardsEvent;
+
   return (
     <section className="py-16 md:py-24 bg-[#efe5d4]">
       <div className="max-w-5xl mx-auto px-4">
@@ -18,7 +22,7 @@ export default function WhyTwoDays() {
           {/* Day 1 */}
           <div className="bg-white border border-[#1a365d]/15 p-6 md:p-8">
             <div className="text-[#F26B4E] font-bold text-xs uppercase tracking-[0.25em] mb-3">
-              Day 1 &bull; August 26
+              {dayLabelShort(event, 0)}
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-black text-[#1a365d] mb-4 leading-tight">
               Learn
@@ -44,7 +48,7 @@ export default function WhyTwoDays() {
           {/* Day 2 */}
           <div className="bg-white border border-[#1a365d]/15 p-6 md:p-8">
             <div className="text-[#F26B4E] font-bold text-xs uppercase tracking-[0.25em] mb-3">
-              Day 2 &bull; August 27
+              {dayLabelShort(event, 1)}
             </div>
             <h3 className="font-display text-2xl md:text-3xl font-black text-[#1a365d] mb-4 leading-tight">
               Refine

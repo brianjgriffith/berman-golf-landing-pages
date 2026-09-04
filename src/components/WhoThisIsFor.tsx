@@ -1,8 +1,13 @@
 interface WhoThisIsForProps {
   variant?: "default" | "poster";
+  /** Button copy for the #register CTA. The challenge page overrides this while on the waitlist. */
+  ctaLabel?: string;
 }
 
-export default function WhoThisIsFor({ variant = "default" }: WhoThisIsForProps = {}) {
+export default function WhoThisIsFor({
+  variant = "default",
+  ctaLabel = "Reserve Your Seat",
+}: WhoThisIsForProps = {}) {
   const isPoster = variant === "poster";
 
   const criteria = [
@@ -52,7 +57,7 @@ export default function WhoThisIsFor({ variant = "default" }: WhoThisIsForProps 
               href="#register"
               className="inline-block bg-[#F26B4E] text-white px-10 py-4 font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
-              Reserve Your Seat
+              {ctaLabel}
             </a>
           </div>
         </div>
@@ -100,7 +105,7 @@ export default function WhoThisIsFor({ variant = "default" }: WhoThisIsForProps 
             href="#register"
             className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
           >
-            <span className="block">Reserve Your Seat</span>
+            <span className="block">{ctaLabel}</span>
           </a>
         </div>
       </div>

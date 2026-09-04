@@ -1,6 +1,7 @@
 "use client";
 
 import { EventPhase, useEventPhase } from "@/lib/eventPhase";
+import { twentyMoreYardsEvent, isWaitlist } from "@/config/events";
 
 const HERO_COPY: Record<EventPhase, { cta: string; trust: string }> = {
   before: {
@@ -13,7 +14,7 @@ const HERO_COPY: Record<EventPhase, { cta: string; trust: string }> = {
   },
   replay: {
     cta: "Watch The Replay Free",
-    trust: "Free · Through Wed, Sept 2",
+    trust: "Free · Limited replay window",
   },
   closed: {
     cta: "Join The Next One",
@@ -21,9 +22,15 @@ const HERO_COPY: Record<EventPhase, { cta: string; trust: string }> = {
   },
 };
 
+// Between runs there is no phase to be in — the waitlist copy wins outright.
+const WAITLIST_COPY = {
+  cta: "Join The Waitlist",
+  trust: "Free \u00b7 First access when dates drop",
+};
+
 export default function HeroCTA() {
   const phase = useEventPhase();
-  const copy = HERO_COPY[phase];
+  const copy = isWaitlist(twentyMoreYardsEvent) ? WAITLIST_COPY : HERO_COPY[phase];
 
   return (
     <>

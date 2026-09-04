@@ -1,7 +1,30 @@
 import Image from "next/image";
 import HeroCTA from "./HeroCTA";
+import {
+  twentyMoreYardsEvent,
+  isWaitlist,
+  shortDates,
+  timeLabel,
+} from "@/config/events";
 
 export default function HeroEvent() {
+  const event = twentyMoreYardsEvent;
+  const waitlist = isWaitlist(event);
+
+  // While dates aren't locked there's no time to show, so the third cell
+  // carries the format instead of a placeholder nobody can act on.
+  const stats = waitlist
+    ? [
+        { label: "When", value: event.windowLabel },
+        { label: "Format", value: "2 live sessions" },
+        { label: "Cost", value: "Free" },
+      ]
+    : [
+        { label: "When", value: shortDates(event) },
+        { label: "Time", value: timeLabel(event) },
+        { label: "Length", value: event.sessionLength },
+      ];
+
   return (
     <section className="relative pt-24 pb-16 md:pb-20 overflow-hidden bg-[#f5ede0]">
       <div className="relative max-w-7xl mx-auto px-4 w-full">
@@ -9,7 +32,7 @@ export default function HeroEvent() {
         <div className="flex items-center gap-3 mb-8 md:mb-10">
           <div className="h-px flex-1 bg-[#1a365d]/30 max-w-[120px]" />
           <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#1a365d]">
-            Live Event
+            {waitlist ? "Next Live Event" : "Live Event"}
           </p>
           <div className="h-px flex-1 bg-[#1a365d]/30 max-w-[120px]" />
         </div>
@@ -30,7 +53,9 @@ export default function HeroEvent() {
             </p>
 
             <p className="font-display text-lg sm:text-xl md:text-2xl text-[#1a365d]/75 mb-8 leading-tight max-w-xl">
-              Two days. Live with Dr. Jake Berman.
+              {waitlist
+                ? `Two days, live with Dr. Jake Berman. Next run: ${event.windowLabel}.`
+                : "Two days. Live with Dr. Jake Berman."}
             </p>
 
             {/* Heavy rule */}
@@ -38,30 +63,16 @@ export default function HeroEvent() {
 
             {/* Date strip */}
             <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-10 max-w-lg">
-              <div>
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#1a365d]/60 mb-1">
-                  When
-                </p>
-                <p className="text-base sm:text-lg md:text-xl font-bold text-[#1a365d] leading-tight">
-                  Aug 26 + 27
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#1a365d]/60 mb-1">
-                  Time
-                </p>
-                <p className="text-base sm:text-lg md:text-xl font-bold text-[#1a365d] leading-tight">
-                  10:00 AM ET
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#1a365d]/60 mb-1">
-                  Length
-                </p>
-                <p className="text-base sm:text-lg md:text-xl font-bold text-[#1a365d] leading-tight">
-                  90 min ea.
-                </p>
-              </div>
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#1a365d]/60 mb-1">
+                    {stat.label}
+                  </p>
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-[#1a365d] leading-tight">
+                    {stat.value}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <HeroCTA />

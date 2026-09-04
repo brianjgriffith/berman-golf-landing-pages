@@ -2,34 +2,59 @@
 
 import { useEffect, useState } from "react";
 import { EventPhase, useEventPhase } from "@/lib/eventPhase";
+import {
+  twentyMoreYardsEvent,
+  isWaitlist,
+  shortDates,
+  timeLabel,
+} from "@/config/events";
 
-const STICKY_COPY: Record<EventPhase, { eyebrow: string; title: string; cta: string }> = {
-  before: {
-    eyebrow: "Aug 26 + 27 · 10:00 AM ET",
-    title: "20 More Yards Live Event",
-    cta: "Reserve",
-  },
-  between: {
-    eyebrow: "Session 2 · Thu Aug 27 · 10 AM ET",
-    title: "Replay + Live Session 2",
-    cta: "Join Free",
-  },
-  replay: {
-    eyebrow: "Replay free thru Wed, Sept 2",
-    title: "Watch Both Sessions",
-    cta: "Watch Free",
-  },
-  closed: {
-    eyebrow: "Next live event coming soon",
-    title: "20 More Yards Challenge",
-    cta: "Join Next",
-  },
-};
+interface StickyCopy {
+  eyebrow: string;
+  title: string;
+  cta: string;
+}
+
+// Dates come from the event config so booking the next run doesn't leave a
+// stale sticky bar behind.
+function stickyCopy(event: typeof twentyMoreYardsEvent): Record<EventPhase, StickyCopy> {
+  const day2 = event.days[1];
+  return {
+    before: {
+      eyebrow: `${shortDates(event)} · ${timeLabel(event)}`,
+      title: "20 More Yards Live Event",
+      cta: "Reserve",
+    },
+    between: {
+      eyebrow: day2 ? `Session 2 · ${day2.short} · ${day2.time}` : "Session 2 is next",
+      title: "Replay + Live Session 2",
+      cta: "Join Free",
+    },
+    replay: {
+      eyebrow: "Free replay · closing soon",
+      title: "Watch Both Sessions",
+      cta: "Watch Free",
+    },
+    closed: {
+      eyebrow: "Next live event coming soon",
+      title: "20 More Yards Challenge",
+      cta: "Join Next",
+    },
+  };
+}
 
 export default function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);
   const phase = useEventPhase();
-  const copy = STICKY_COPY[phase];
+  const event = twentyMoreYardsEvent;
+  // Between runs there is no phase to be in — the waitlist copy wins outright.
+  const copy = isWaitlist(event)
+    ? {
+        eyebrow: `Next run \u00b7 ${event.windowLabel}`,
+        title: "20 More Yards Challenge",
+        cta: "Get On It",
+      }
+    : stickyCopy(event)[phase];
 
   useEffect(() => {
     const onScroll = () => {

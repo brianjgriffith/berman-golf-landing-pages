@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { twentyMoreYardsEvent, isWaitlist } from "@/config/events";
 
 export default function PerryStory() {
+  const waitlist = isWaitlist(twentyMoreYardsEvent);
+
   return (
     <section className="py-16 md:py-24 bg-[#f5ede0]">
       <div className="max-w-6xl mx-auto px-4">
@@ -57,14 +60,14 @@ export default function PerryStory() {
             </ul>
 
             <p className="font-serif text-base md:text-lg text-[#1a365d]/90 leading-relaxed">
-              The Activation Method that Perry used is the same one you&apos;ll walk away with on <strong className="font-bold">August 27th</strong>.
+              The Activation Method that Perry used is the same one you&apos;ll walk away with on <strong className="font-bold">Day 2</strong>.
             </p>
 
             <a
               href="#register"
               className="inline-block mt-8 bg-[#F26B4E] text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
-              Join the 2-Day Event &rarr;
+              {waitlist ? "Join The Waitlist" : "Join the 2-Day Event"} &rarr;
             </a>
           </div>
         </div>

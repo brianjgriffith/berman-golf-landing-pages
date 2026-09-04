@@ -16,19 +16,31 @@ import FAQ from "@/components/FAQ";
 import EventRegistrationForm from "@/components/EventRegistrationForm";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { twentyMoreYardsEvent } from "@/config/events";
+import { twentyMoreYardsEvent, isWaitlist, longDates, ctaLabel } from "@/config/events";
 
-export const metadata: Metadata = {
-  title: "20 More Yards in 2 Days | Free Live Event with Dr. Jake Berman",
-  description:
-    "Free 2-day live event August 26 + 27, 2026 with Dr. Jake Berman. Learn the exact protocol senior golfers are using to add 20+ yards, without rebuilding their swing.",
-  openGraph: {
-    title: "20 More Yards. In 2 Days. Live with Dr. Jake.",
-    description:
-      "Two free live sessions where senior golfers learn The Activation Method, and start gaining 20+ yards without rebuilding their swing.",
-    type: "website",
-  },
-};
+const event = twentyMoreYardsEvent;
+const waitlist = isWaitlist(event);
+
+export const metadata: Metadata = waitlist
+  ? {
+      title: "20 More Yards Challenge Waitlist | Dr. Jake Berman",
+      description: `The next free 2-day 20 More Yards Challenge runs ${event.windowLabel}. Join the waitlist and get the dates before registration opens to everyone else.`,
+      openGraph: {
+        title: "20 More Yards. In 2 Days. Live with Dr. Jake.",
+        description: `The next free 2-day challenge runs ${event.windowLabel}. Get on the waitlist for first access.`,
+        type: "website",
+      },
+    }
+  : {
+      title: "20 More Yards in 2 Days | Free Live Event with Dr. Jake Berman",
+      description: `Free 2-day live event ${longDates(event)}, 2026 with Dr. Jake Berman. Learn the exact protocol senior golfers are using to add 20+ yards, without rebuilding their swing.`,
+      openGraph: {
+        title: "20 More Yards. In 2 Days. Live with Dr. Jake.",
+        description:
+          "Two free live sessions where senior golfers learn The Activation Method, and start gaining 20+ yards without rebuilding their swing.",
+        type: "website",
+      },
+    };
 
 const jakeEventQuote = (
   <>
@@ -37,6 +49,11 @@ const jakeEventQuote = (
   </>
 );
 
+// Schema.org Event requires a startDate, so this is emitted only when the
+// run is actually booked. While on the waitlist the page ships no Event
+// markup rather than invalid markup for a date that doesn't exist yet.
+// NOTE: the dates below are the JSON-LD copy of config/events.ts `days` —
+// update both when the next run is scheduled.
 const eventSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Event",
@@ -73,9 +90,11 @@ const eventSchema = JSON.stringify({
 export default function TwentyMoreYardsPage() {
   return (
     <main className="min-h-screen">
-      <Script id="event-schema" type="application/ld+json" strategy="beforeInteractive">
-        {eventSchema}
-      </Script>
+      {!waitlist && (
+        <Script id="event-schema" type="application/ld+json" strategy="beforeInteractive">
+          {eventSchema}
+        </Script>
+      )}
       <Header />
       <HeroEvent />
       <PerryStory />
@@ -88,13 +107,14 @@ export default function TwentyMoreYardsPage() {
         title="Don't let them tell you it's just your age."
         subtitle="Real results from golfers who refused to age out of the game."
         variant="poster"
+        ctaLabel={ctaLabel(event)}
       />
-      <WhoThisIsFor variant="poster" />
+      <WhoThisIsFor variant="poster" ctaLabel={ctaLabel(event)} />
       <Instructor variant="poster" />
       <JakeQuote quote={jakeEventQuote} variant="poster" />
       <EventLogistics />
       <FAQ variant="poster" />
-      <EventRegistrationForm event={twentyMoreYardsEvent} />
+      <EventRegistrationForm event={event} />
       <Footer variant="poster" />
       <StickyMobileCTA />
     </main>

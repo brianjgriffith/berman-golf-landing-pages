@@ -46,6 +46,8 @@ interface TestimonialsProps {
   variant?: "default" | "poster";
   /** Extra testimonials appended after the defaults (e.g. virtual-session students on the cohort page). */
   extraTestimonials?: Testimonial[];
+  /** Button copy for the #register CTA. The challenge page overrides this while on the waitlist. */
+  ctaLabel?: string;
 }
 
 export default function Testimonials({
@@ -54,6 +56,7 @@ export default function Testimonials({
   subtitle,
   variant = "default",
   extraTestimonials = [],
+  ctaLabel = "Reserve Your Seat",
 }: TestimonialsProps = {}) {
   const isPoster = variant === "poster";
   const items = [...testimonials, ...extraTestimonials];
@@ -110,7 +113,7 @@ export default function Testimonials({
               href="#register"
               className="inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-md font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
             >
-              Reserve Your Seat
+              {ctaLabel}
             </a>
           </div>
         </div>
@@ -174,7 +177,7 @@ export default function Testimonials({
             href="#register"
             className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
           >
-            Reserve Your Seat
+            {ctaLabel}
           </a>
         </div>
       </div>

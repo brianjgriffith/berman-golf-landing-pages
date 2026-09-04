@@ -1,3 +1,5 @@
+import { twentyMoreYardsEvent, isWaitlist, longDates } from "@/config/events";
+
 interface FooterProps {
   variant?: "default" | "poster";
 }
@@ -41,7 +43,11 @@ export default function Footer({ variant = "default" }: FooterProps = {}) {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs uppercase tracking-[0.2em] text-[#1a365d]/60">
             <p>&copy; {new Date().getFullYear()} Berman Golf. All rights reserved.</p>
-            <p className="font-bold text-[#1a365d]/80">20 More Yards &middot; Live Event &middot; August 26 + 27, 2026</p>
+            <p className="font-bold text-[#1a365d]/80">
+              {twentyMoreYardsEvent.name} &middot;{" "}
+              {isWaitlist(twentyMoreYardsEvent) ? "Next Live Event" : "Live Event"} &middot;{" "}
+              {longDates(twentyMoreYardsEvent)}
+            </p>
           </div>
         </div>
       </footer>

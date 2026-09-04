@@ -2,6 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
+import { twentyMoreYardsEvent, isWaitlist } from "@/config/events";
+import { clubhouse } from "@/config/clubhouse";
 
 export default function Header() {
   const pathname = usePathname();
@@ -19,7 +21,7 @@ export default function Header() {
       return { text: "Join the Cohort", href: "/senior-golf-mastery-cohort", isPopup: false };
     }
     if (pathname === "/free-book/thank-you" || pathname === "/senior-golf-warm-up/thank-you") {
-      return { text: "Join Free Class", href: "/free-class#register", isPopup: false };
+      return { text: "Join The Clubhouse", href: clubhouse.path, isPopup: false };
     }
     if (pathname === "/free-book") {
       return { text: "Get Free Book", href: "#get-book", isPopup: true };
@@ -31,10 +33,18 @@ export default function Header() {
       return { text: "Enroll Now - $997", href: "/senior-golf-mastery/checkout", isPopup: false };
     }
     if (pathname === "/community") {
-      return { text: "Join - $47/mo", href: "#join", isPopup: false };
+      return {
+        text: `Join - ${clubhouse.monthly.price}${clubhouse.monthly.cadence}`,
+        href: "#join",
+        isPopup: false,
+      };
     }
     if (pathname === "/20-more-yards") {
-      return { text: "Reserve My Seat", href: "#register", isPopup: false };
+      return {
+        text: isWaitlist(twentyMoreYardsEvent) ? "Join The Waitlist" : "Reserve My Seat",
+        href: "#register",
+        isPopup: false,
+      };
     }
     return { text: "Save My Spot", href: "#register", isPopup: false };
   };

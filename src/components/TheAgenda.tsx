@@ -1,4 +1,8 @@
+import { twentyMoreYardsEvent, dayLabel } from "@/config/events";
+
 export default function TheAgenda() {
+  const event = twentyMoreYardsEvent;
+
   return (
     <section className="py-16 md:py-24 bg-[#f5ede0]">
       <div className="max-w-6xl mx-auto px-4">
@@ -19,7 +23,7 @@ export default function TheAgenda() {
           <div className="bg-white border border-[#1a365d]/15 p-8 md:p-10">
             <div className="mb-6">
               <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">
-                Day 1 &bull; Wed, Aug 26 &bull; 10:00 AM ET
+                {dayLabel(event, 0)}
               </p>
               <h3 className="font-display text-3xl md:text-4xl font-black text-[#1a365d] leading-tight mb-1">
                 The Activation Blueprint
@@ -69,7 +73,7 @@ export default function TheAgenda() {
           <div className="bg-[#1a365d] text-[#f5ede0] p-8 md:p-10">
             <div className="mb-6">
               <p className="text-xs font-bold uppercase tracking-widest text-[#F26B4E] mb-2">
-                Day 2 &bull; Thu, Aug 27 &bull; 10:00 AM ET
+                {dayLabel(event, 1)}
               </p>
               <h3 className="font-display text-3xl md:text-4xl font-black leading-tight mb-1">
                 Implementation &amp; Refinement

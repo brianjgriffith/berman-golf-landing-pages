@@ -294,8 +294,8 @@ export default function CommunityPage() {
           <div className="bg-white rounded-2xl p-8 shadow-sm">
             <ul className="space-y-4">
               {[
-                "You've already worked with Dr. Jake and want ongoing support",
-                "You've completed a Berman Golf course and want to keep improving",
+                "You've read the book or done the warm-up and want someone checking your work",
+                "You've worked with Dr. Jake before and want to keep the momentum going",
                 "You want accountability and a community that understands your goals",
                 "You'd love direct access to Dr. Jake through monthly live calls",
                 "You want to connect with other senior golfers on the same journey",
@@ -440,8 +440,8 @@ export default function CommunityPage() {
                 answer: "Access to Tee Shot Transformation is included as part of your membership. If you cancel, you'll lose access to the course along with the Clubhouse and live calls. As long as you're a member, it's all yours!"
               },
               {
-                question: "What if I haven't purchased a Berman Golf course yet?",
-                answer: "The Clubhouse is designed for golfers who've already experienced Dr. Jake's training. If you're new, we recommend starting with one of our courses first to get the foundation."
+                question: "What if I've never bought anything from Dr. Jake before?",
+                answer: "Then this is the easiest place to start. Tee Shot Transformation is included with your membership, so you get a full course to work through from day one — plus the monthly live call to ask Jake whatever you're stuck on. You don't need to buy anything else first."
               },
               {
                 question: "How active is the Clubhouse?",

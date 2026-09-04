@@ -96,7 +96,7 @@ export default function TwentyMoreYardsReplayPage() {
         <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.15em]">
           {REPLAY_EXPIRED ? (
             <>
-              &#9203; The replay has ended &mdash; the Senior Golf Mastery Cohort closes tonight at midnight ET.
+              &#9203; The replay has ended &mdash; Senior Golf Mastery Cohort enrollment closes {cohort.enrollDeadline}.
             </>
           ) : (
             <>

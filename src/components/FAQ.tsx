@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { twentyMoreYardsEvent, isWaitlist } from "@/config/events";
+import { REPLAY_END_LABEL } from "@/config/eventWindow";
 
 interface FAQItem {
   question: string;
@@ -45,11 +47,11 @@ const posterFaqs: FAQItem[] = [
   },
   {
     question: "Will there be a replay?",
-    answer: "Yes — but with a limited window. The replay will be available through Wednesday, September 2 at midnight ET. After that, it comes down. Showing up live is still the move: you can ask Jake questions, get real-time feedback, and the work happens with you in the room.",
+    answer: `Yes — but with a limited window. The replay will be available through ${REPLAY_END_LABEL}. After that, it comes down. Showing up live is still the move: you can ask Jake questions, get real-time feedback, and the work happens with you in the room.`,
   },
   {
     question: "Will I be pitched something at the end?",
-    answer: "Day 2 ends with an invitation to keep going in a 6-week paid program for golfers who want to go deeper. That's it. No high-pressure tactics, no countdown timer to a discount. You'll have already gotten a real method by then.",
+    answer: "Day 2 ends with an invitation to keep going in a 12-week paid program for golfers who want to go deeper. That's it. No high-pressure tactics, no countdown timer to a discount. You'll have already gotten a real method by then.",
   },
   {
     question: "I have back pain or limited mobility. Is this safe for me?",
@@ -61,6 +63,23 @@ const posterFaqs: FAQItem[] = [
   },
 ];
 
+// Swapped in while the challenge is between runs — the three questions that
+// assume booked dates get honest waitlist answers instead.
+const waitlistOverrides: Record<string, FAQItem> = {
+  "What if I miss Day 1?": {
+    question: "When exactly is the next challenge?",
+    answer: `We're locking the dates for ${twentyMoreYardsEvent.windowLabel} now. Join the waitlist and you'll get them the moment they're set — before we open registration to everyone else.`,
+  },
+  "Will there be a replay?": {
+    question: "Will there be a replay?",
+    answer: "Yes, with a limited window. Everyone who registers gets replay access for a few days after the second session. Showing up live is still the move: you can ask Jake questions and get real-time feedback.",
+  },
+  "What do I need to attend?": {
+    question: "What does the waitlist cost?",
+    answer: "Nothing. No card, no commitment. It's a name and an email so we know where to send the dates. You can unsubscribe any time.",
+  },
+};
+
 interface FAQProps {
   variant?: "default" | "poster";
 }
@@ -68,7 +87,12 @@ interface FAQProps {
 export default function FAQ({ variant = "default" }: FAQProps = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const isPoster = variant === "poster";
-  const faqs = isPoster ? posterFaqs : defaultFaqs;
+  const waitlist = isWaitlist(twentyMoreYardsEvent);
+  const faqs = isPoster
+    ? posterFaqs.map((faq) =>
+        waitlist ? waitlistOverrides[faq.question] ?? faq : faq
+      )
+    : defaultFaqs;
 
   if (isPoster) {
     return (

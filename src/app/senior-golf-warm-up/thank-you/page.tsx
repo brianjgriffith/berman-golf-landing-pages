@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { workshops } from "@/config/workshops";
+import ClubhouseOffer from "@/components/ClubhouseOffer";
 
 export default function WarmUpThankYouPage() {
   return (
@@ -75,62 +75,18 @@ export default function WarmUpThankYouPage() {
         </div>
       </section>
 
-      {/* Free Class CTA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <p className="text-[#F26B4E] font-semibold uppercase tracking-wider text-sm mb-3">
-              Free Live Workshop
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Ready to Turn Today&apos;s Warm-Up<br className="hidden md:block" /> Into 20+ Extra Yards?
-            </h2>
-            <p className="text-gray-600 text-lg max-w-xl mx-auto">
-              This warm-up activates the right muscles. The free class shows you how to <em>use</em> them to add serious distance &mdash; live, with Dr. Jake answering your questions.
-            </p>
-          </div>
-
-          {/* Value bullets */}
-          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-2xl mx-auto mb-10 text-left">
-            {[
-              "The muscles-over-momentum secret to real distance",
-              "Why warming up is only step one of the equation",
-              "5-minute drills you can do at home between rounds",
-              "How to eliminate back pain and stiffness after 18 holes",
-              "Live Q&A with Dr. Jake (not a recording)",
-              "Free — no pitch, no credit card required",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-700">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA buttons */}
-          <div className="text-center">
-            <p className="text-gray-500 text-sm font-semibold uppercase tracking-wider mb-4">
-              Pick a date that works for you:
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {workshops.map((workshop, index) => (
-                <a
-                  key={index}
-                  href={`/free-class#register-${index}`}
-                  className="inline-block bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] transition-colors"
-                >
-                  <span className="block">Reserve Your Free Seat</span>
-                  <span className="block text-sm font-normal opacity-90">
-                    {workshop.date} at {workshop.time}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Clubhouse soft-sell */}
+      <ClubhouseOffer
+        eyebrow="Your Next Step"
+        title={
+          <>
+            The Warm-Up Wakes the Muscles Up.
+            <br />
+            The Clubhouse Teaches You to <em>Use</em> Them.
+          </>
+        }
+        intro="Five minutes of activation is step one. Turning it into yards takes someone watching how your body actually moves. Inside the Berman Clubhouse you get Dr. Jake live every month, your swing video broken down on camera, and a room full of senior golfers doing the exact same work."
+      />
 
       <Footer />
     </main>
