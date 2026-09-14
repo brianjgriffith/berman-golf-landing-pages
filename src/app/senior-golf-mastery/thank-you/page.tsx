@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
+import { seniorGolfMastery as sgm } from "@/config/seniorGolfMastery";
 
 export const metadata: Metadata = {
   title: "Welcome to Senior Golf Mastery | Berman Golf",
@@ -40,7 +41,7 @@ export default function SeniorGolfMasteryThankYouPage() {
 
           <p className="font-serif text-lg sm:text-xl md:text-2xl text-[#1a365d]/80 leading-relaxed max-w-xl mx-auto mb-2">
             You&apos;re in. <strong className="text-[#1a365d]">Senior Golf Mastery</strong> is yours &mdash;
-            course, bonuses, and lifetime access.
+            and your {sgm.duration} start today.
           </p>
           <p className="font-serif italic text-[#1a365d]/70 text-base sm:text-lg mb-10">
             Your login details are on the way to your inbox. First, a quick word from Dr. Jake. &darr;
@@ -86,9 +87,9 @@ export default function SeniorGolfMasteryThankYouPage() {
               },
               {
                 num: "03",
-                title: "Claim Your Bonuses",
+                title: "Film Your First Video",
                 body:
-                  "Your PDF book, pre-shot routine, workout videos and gear guide are all waiting inside. Don't skip your 1-on-1 session with Dr. Jake.",
+                  "At the end of week 1 you'll film your homework and upload it. A phone propped against your bag is all you need. That's the habit that makes the next twelve weeks work.",
               },
             ].map((step) => (
               <div
@@ -118,6 +119,50 @@ export default function SeniorGolfMasteryThankYouPage() {
               distance@bermangolf.com
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* The 12 weeks — what the support actually is, and when it ends.
+          Added Sept 2026 with the course -> program reposition. Buyers were
+          sold twelve weeks of feedback; this is where that becomes concrete. */}
+      <section className="pb-16">
+        <div className="max-w-2xl mx-auto px-4">
+          <div className="bg-white border-2 border-[#1a365d] p-8 md:p-10 shadow-[0_10px_30px_rgba(26,54,93,0.12)]">
+            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#F26B4E] mb-3">
+              Your Next {sgm.duration}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-black leading-tight text-[#1a365d] mb-6">
+              Here&apos;s How The Coaching Works
+            </h2>
+
+            <div className="space-y-5 font-serif text-[#1a365d]/85 text-[17px] leading-relaxed">
+              <p>
+                <strong className="text-[#1a365d]">Every week &mdash; send me your swing.</strong> Each
+                week of the program ends with homework. Film it, upload it, and I&apos;ll send back
+                what&apos;s working, where your power is leaking, and the one thing to fix before you
+                move on. Don&apos;t skip these. They&apos;re the difference between watching the course
+                and actually changing.
+              </p>
+              <p>
+                <strong className="text-[#1a365d]">Once a month &mdash; get on the call.</strong>{" "}
+                {sgm.support.groupCalls.count} live group coaching calls across your {sgm.duration}. Bring
+                questions. Every one is recorded if you can&apos;t make it live.
+              </p>
+              <p>
+                <strong className="text-[#1a365d]">And don&apos;t forget your 1-on-1.</strong> You have a
+                private virtual session with me included. Most golfers use it in the first couple of
+                weeks so the rest of the program is aimed at their body specifically.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-[#1a365d]/15">
+              <p className="font-serif text-[15px] text-[#1a365d]/70 leading-relaxed">
+                The course and every bonus are yours for life. The weekly feedback and the group calls
+                run for your {sgm.duration} from today &mdash; so start now rather than saving it for a
+                quieter month.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+import { seniorGolfMastery as sgm } from "@/config/seniorGolfMastery";
 import Link from "next/link";
 
 export default function SeniorGolfMasteryCheckout() {
@@ -57,9 +58,9 @@ export default function SeniorGolfMasteryCheckout() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900">Senior Golf Mastery</h2>
-                  <p className="text-gray-600 text-sm">Complete 7-Step System + All Bonuses</p>
-                  <p className="text-gray-400 line-through text-sm mt-1">$3,032</p>
-                  <p className="text-2xl font-bold text-gray-900">$997</p>
+                  <p className="text-gray-600 text-sm">12-Week Program + Weekly Video Feedback + All Bonuses</p>
+                  <p className="text-gray-400 line-through text-sm mt-1">{sgm.totalValue}</p>
+                  <p className="text-2xl font-bold text-gray-900">{sgm.price}</p>
                 </div>
               </div>
 
@@ -67,14 +68,16 @@ export default function SeniorGolfMasteryCheckout() {
                 <p className="font-semibold text-gray-900 mb-3">What&apos;s Included:</p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   {[
-                    "Senior Golf Mastery Course (5 Modules)",
+                    "The 12-Week Program (all 5 modules, on a schedule)",
+                    `${sgm.support.weeklyVideo.label} (${sgm.support.weeklyVideo.value} Value)`,
                     "1-on-1 Virtual Session with Dr. Jake ($500 Value)",
+                    `${sgm.support.groupCalls.label} (${sgm.support.groupCalls.value} Value)`,
                     "Senior Golf Mastery PDF Book",
                     "Pre-Shot Routine Guide",
                     "Weight Shift Hack for Seniors",
                     "Weekly Workout Videos",
                     "Golf Gear Guide for Seniors",
-                    "Lifetime Access",
+                    "Lifetime access to the course & every bonus",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">

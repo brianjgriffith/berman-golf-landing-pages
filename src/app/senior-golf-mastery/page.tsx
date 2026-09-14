@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { seniorGolfMastery as sgm, programPhases } from "@/config/seniorGolfMastery";
 
 export default function SeniorGolfMasteryPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -62,7 +63,7 @@ export default function SeniorGolfMasteryPage() {
                 Even If You&apos;ve Lost Distance in Recent Years
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                The 7-step biomechanics system proven by 1,000+ senior golfers to add 20-50 yards, improve consistency, and play pain-free — without expensive lessons or new equipment.
+                A <strong>12-week program</strong> built on the 7-step biomechanics system 1,000+ senior golfers have used to add 20-50 yards — and you&apos;re not doing it alone. Every week you send Dr. Jake a swing video and he breaks it down.
               </p>
               <a
                 href="/senior-golf-mastery/checkout"
@@ -70,7 +71,7 @@ export default function SeniorGolfMasteryPage() {
               >
                 Join the 50-Yard Club
               </a>
-              <p className="text-gray-500 text-sm">100% success rate. Lifetime access. Start today.</p>
+              <p className="text-gray-500 text-sm">Starts the day you enroll &mdash; no cohort to wait for.</p>
             </div>
 
             {/* Right Column - Bundle Image */}
@@ -89,9 +90,9 @@ export default function SeniorGolfMasteryPage() {
           {/* Social Proof */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-8">
             {[
+              "12 Weeks of Coaching",
+              "Weekly Video Feedback",
               "1,000+ Senior Golfers Trained",
-              "100% Success Rate",
-              "Gain 20-50 Yards",
             ].map((item, index) => (
               <span key={index} className="text-gray-800 text-sm font-medium flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -447,6 +448,95 @@ export default function SeniorGolfMasteryPage() {
         </div>
       </section>
 
+      {/* How The 12 Weeks Work
+          ───────────────────────────────────────────────────────────
+          Added Sept 2026 with the reposition from course -> 12-week
+          program. Everything here is a delivery promise: the weekly
+          video review and the three group calls are things somebody
+          has to actually do. Structure + values live in
+          @/config/seniorGolfMastery. */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-4">
+            <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-xs px-4 py-1.5 rounded-full">
+              This Is Not Just A Course
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
+            How Your 12 Weeks Actually Work
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Buying a course and finishing a course are two different things. So this one has a
+            schedule, and it has me looking at your swing every week.
+          </p>
+
+          {/* The two support pillars */}
+          <div className="grid md:grid-cols-2 gap-6 mb-14">
+            <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-7 shadow-lg">
+              <div className="text-3xl mb-3">🎥</div>
+              <h3 className="text-xl font-bold text-white mb-2">Every week, I watch your swing</h3>
+              <p className="text-blue-100 text-[15px] leading-relaxed">
+                Each week you film your homework and upload it. I break it down and send it back &mdash;
+                what&apos;s working, what&apos;s leaking power, and the one thing to fix before next week.
+                That&apos;s <strong className="text-white">{sgm.support.weeklyVideo.value} worth of feedback</strong> over your twelve weeks.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] rounded-2xl p-7 shadow-lg">
+              <div className="text-3xl mb-3">📞</div>
+              <h3 className="text-xl font-bold text-white mb-2">Once a month, we get on a call</h3>
+              <p className="text-blue-100 text-[15px] leading-relaxed">
+                {sgm.support.groupCalls.count} live group coaching calls across your twelve weeks. Bring your
+                questions, watch me work through other senior golfers&apos; swings, and hear the answer to
+                the thing you didn&apos;t know to ask. Recorded if you can&apos;t make it live.
+              </p>
+            </div>
+          </div>
+
+          {/* The 12-week arc */}
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-3">The Twelve Weeks</h3>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto text-[15px]">
+            30&ndash;45 minutes a day, 3&ndash;4 days a week. No range time required &mdash; most of this
+            happens in your living room without a ball.
+          </p>
+
+          <div className="space-y-4 mb-12">
+            {programPhases.map((phase) => (
+              <div
+                key={phase.weeks}
+                className="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col sm:flex-row sm:items-start gap-4"
+              >
+                <span className="inline-block bg-[#0f4c81] text-white font-bold text-sm px-4 py-1.5 rounded-full whitespace-nowrap self-start">
+                  {phase.weeks}
+                </span>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-1">{phase.title}</h4>
+                  <p className="text-gray-600 text-[15px] leading-relaxed">{phase.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Honesty note — course access vs support window */}
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 max-w-3xl mx-auto mb-10">
+            <p className="text-gray-700 text-[15px] leading-relaxed text-center">
+              <strong className="text-gray-900">To be clear about what runs out and what doesn&apos;t:</strong>{" "}
+              the course and every bonus are yours for life &mdash; go back to them whenever you want.
+              The weekly video feedback and the group calls run for your {sgm.duration}.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <a
+              href={sgm.checkoutPath}
+              className="btn-primary inline-block bg-[#F26B4E] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+            >
+              Start My 12 Weeks
+            </a>
+            <p className="text-gray-500 text-sm mt-3">Begins the day you enroll. No waiting for a group to fill.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Offer Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
@@ -475,12 +565,12 @@ export default function SeniorGolfMasteryPage() {
             <p className="text-center text-gray-700 mb-4 text-lg">
               Here&apos;s what you get:
             </p>
-            <p className="text-center text-gray-500 mb-8">Total value: <span className="font-bold text-gray-900">$3,032</span></p>
+            <p className="text-center text-gray-500 mb-8">Total value: <span className="font-bold text-gray-900">{sgm.totalValue}</span></p>
 
             {/* Main Course */}
             <div className="border-b border-gray-200 pb-8 mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Senior Golf Mastery <span className="text-gray-500 font-normal">($1,997 Value)</span>
+                The 12-Week Program <span className="text-gray-500 font-normal">($1,997 Value)</span>
               </h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
@@ -516,16 +606,53 @@ export default function SeniorGolfMasteryPage() {
               </ul>
             </div>
 
+            {/* Coaching & Support — the part that makes this a program, not a course.
+                Added Sept 2026. Every line here is somebody's actual workload. */}
+            <div className="border-b border-gray-200 pb-8 mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                YOUR COACHING &amp; SUPPORT
+              </h3>
+              <p className="text-gray-600 text-[15px] mb-6">
+                Runs for your {sgm.duration}. This is what you don&apos;t get from a video course.
+              </p>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>
+                    <strong>{sgm.support.weeklyVideo.label}</strong> <span className="text-gray-500">({sgm.support.weeklyVideo.value} Value)</span>
+                    <br />
+                    <span className="text-gray-600 text-[15px]">Upload your homework each week &mdash; Dr. Jake breaks it down and sends it back.</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>
+                    <strong>{sgm.support.groupCalls.label}</strong> <span className="text-gray-500">({sgm.support.groupCalls.value} Value)</span>
+                    <br />
+                    <span className="text-gray-600 text-[15px]">One live call each month of your twelve weeks. Recorded if you miss it.</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>
+                    <strong>1-on-1 Virtual Session with Dr. Jake</strong> <span className="text-gray-500">($500 Value)</span>
+                    <br />
+                    <span className="text-gray-600 text-[15px]">Your own session, just you and Jake. Most golfers save it for week one.</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
             {/* Bonuses */}
             <div className="mb-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">BONUS MATERIALS (Included Free):</h3>
               <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>BONUS: 1-on-1 Virtual Session with Dr. Jake <span className="text-gray-500">($500 Value)</span></span>
-                </li>
                 <li className="flex items-center gap-3">
                   <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -560,16 +687,16 @@ export default function SeniorGolfMasteryPage() {
                   <svg className="w-5 h-5 text-[#F26B4E] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Lifetime Access to Senior Golf Mastery <span className="text-gray-500">(Priceless)</span></span>
+                  <span>Lifetime Access to the course &amp; every bonus <span className="text-gray-500">(Priceless)</span></span>
                 </li>
               </ul>
             </div>
 
             {/* Price */}
             <div className="text-center bg-green-50 rounded-xl p-8">
-              <p className="text-gray-600 mb-2">Total Value: <span className="line-through">$3,032</span></p>
-              <p className="text-4xl font-bold text-gray-900 mb-2">Today Just $997</p>
-              <p className="text-green-600 font-semibold mb-4">(Save $2,035!)</p>
+              <p className="text-gray-600 mb-2">Total Value: <span className="line-through">{sgm.totalValue}</span></p>
+              <p className="text-4xl font-bold text-gray-900 mb-2">Today Just {sgm.price}</p>
+              <p className="text-green-600 font-semibold mb-4">(Save {sgm.savings}!)</p>
 
               <a
                 href="/senior-golf-mastery/checkout"
@@ -588,7 +715,7 @@ export default function SeniorGolfMasteryPage() {
                   className="object-contain"
                 />
               </div>
-              <p className="text-gray-500 text-sm">Instant access. Start training in 5 minutes.</p>
+              <p className="text-gray-500 text-sm">Instant access. Week 1 starts in 5 minutes.</p>
             </div>
           </div>
         </div>
@@ -719,25 +846,25 @@ export default function SeniorGolfMasteryPage() {
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-white">Jake&apos;s complete 7-step system</span>
+                  <span className="text-white">Jake&apos;s complete 7-step system, over 12 weeks</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-white">Designed specifically for senior golfers</span>
+                  <span className="text-white">Weekly swing video feedback from Jake</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-white">Train from home — no travel required</span>
+                  <span className="text-white">Monthly live group coaching calls</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-white">Lifetime access + all bonuses</span>
+                  <span className="text-white">Train from home + lifetime access</span>
                 </li>
               </ul>
               <div className="mt-4 pt-4 border-t border-white/20 text-center">
@@ -798,7 +925,19 @@ export default function SeniorGolfMasteryPage() {
             {[
               {
                 question: "How long until I see results?",
-                answer: "Most golfers notice improvements within the first 1-2 weeks. The Quick Wins module is designed to give you immediate gains. Full transformation typically happens over 4-6 weeks as you progress through all 7 steps."
+                answer: "Most golfers notice improvements within the first 1-2 weeks — that's what the Quick Wins phase is built for. The full 7-step transformation is laid out over the 12 weeks, and the weekly video feedback is there to make sure you're actually doing it right instead of grooving a mistake for three months."
+              },
+              {
+                question: "Is this live, or can I go at my own pace?",
+                answer: "Both, in the way that matters. The lessons are pre-recorded, so you start the day you enroll — no waiting for a cohort to fill, and no 9 AM call you have to build your week around. What's live is the coaching: your weekly video gets a real response from Dr. Jake, and there's a group call each month."
+              },
+              {
+                question: "How does the weekly video feedback work?",
+                answer: "Each week you'll have homework — a specific movement or drill. You film yourself doing it on your phone and upload it. Dr. Jake watches it and sends back what's working, where your power is leaking, and the one thing to fix before next week. You don't need special equipment or a launch monitor. A phone propped against a bag is fine."
+              },
+              {
+                question: "What if I fall behind?",
+                answer: "You won't be the first. The course and bonuses are yours for life, so the material waits for you. Your 12 weeks of video feedback and group calls run on the calendar from the day you enroll, so if you know a stretch is going to be busy, start when you can actually give it 30-45 minutes a few days a week."
               },
               {
                 question: "What if I'm not tech-savvy?",
@@ -822,11 +961,11 @@ export default function SeniorGolfMasteryPage() {
               },
               {
                 question: "How much time do I need to commit?",
-                answer: "30-45 minutes per day, 3-4 days per week. The lessons are bite-sized and designed to fit into your schedule. You can train from home at any time that works for you."
+                answer: "30-45 minutes per day, 3-4 days per week, for 12 weeks. Plus a few minutes to film your swing once a week. The lessons are bite-sized and you train from home, at whatever time works for you."
               },
               {
                 question: "Do I get lifetime access?",
-                answer: "Yes! Once you enroll, you have lifetime access to all course materials, including any future updates. You can revisit the lessons anytime you need a refresher."
+                answer: "To the course and every bonus, yes — lifetime, including future updates, so you can come back for a refresher any time. The coaching side is different and we want to be straight with you about it: the weekly video feedback and the group calls run for your 12 weeks. That's the program. The library is forever."
               },
             ].map((faq, index) => (
               <div key={index} className="bg-gray-50 rounded-xl shadow-sm overflow-hidden">
@@ -1002,16 +1141,19 @@ export default function SeniorGolfMasteryPage() {
             Ready to Join the 50-Yard Club?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join 1,000+ senior golfers who&apos;ve gained distance, improved consistency, and are playing more frequently.
+            Join 1,000+ senior golfers who&apos;ve gained distance, improved consistency, and are playing
+            more frequently &mdash; with Dr. Jake checking your work every week for twelve weeks.
           </p>
 
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Senior Golf Mastery</h3>
-            <p className="text-gray-600 mb-2">Complete 7-Step System + All Bonuses + Lifetime Access</p>
-            <p className="text-gray-400 line-through mb-2">$3,032</p>
-            <p className="text-4xl font-bold text-gray-900 mb-6">$997</p>
+            <p className="text-gray-600 mb-2">
+              12-Week Program + Weekly Video Feedback + All Bonuses + Lifetime Access
+            </p>
+            <p className="text-gray-400 line-through mb-2">{sgm.totalValue}</p>
+            <p className="text-4xl font-bold text-gray-900 mb-6">{sgm.price}</p>
             <a
-              href="#"
+              href={sgm.checkoutPath}
               className="btn-primary block w-full bg-[#F26B4E] text-white py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide mb-4"
             >
               Enroll Now - Instant Access

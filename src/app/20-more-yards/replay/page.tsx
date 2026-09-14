@@ -1,13 +1,12 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 import { REPLAY_END_LABEL, replayIsLive } from "@/config/eventWindow";
 
 export const metadata: Metadata = {
   title: "Replay | 20 More Yards Live Event with Dr. Jake Berman",
   description:
-    "The 20 More Yards 2-day live event replay with Dr. Jake Berman has ended. See what's next inside the Senior Golf Mastery Cohort.",
+    "The 20 More Yards 2-day live event replay with Dr. Jake Berman has ended. See what's next inside Senior Golf Mastery.",
   robots: { index: false, follow: false },
 };
 
@@ -24,9 +23,18 @@ export const dynamic = "force-dynamic";
 // Rendered per request (see the `dynamic` export above) so the switch
 // actually happens at the deadline instead of freezing at build time.
 
-// YouTube video IDs (the part after youtu.be/ or watch?v=). Aug 26 + 27 sessions.
-const DAY_1_VIDEO_ID = "S3Ueeky9e0A";
-const DAY_2_VIDEO_ID = "nqm-9OhMG1s";
+// YouTube video IDs (the part after youtu.be/ or watch?v=).
+//
+// ⚠️ EMPTY ON PURPOSE — these are for the Sept 30 + Oct 1 run and the sessions
+// haven't happened yet. An empty ID renders the "replay uploading soon"
+// placeholder instead of last month's video. Drop each ID in and flip its
+// `published` flag as the recording goes up (Day 1 the afternoon of Sept 30,
+// Day 2 the afternoon of Oct 1).
+//
+// For reference, the Aug 26 + 27 recordings were:
+//   Day 1 "S3Ueeky9e0A" · Day 2 "nqm-9OhMG1s"
+const DAY_1_VIDEO_ID = "";
+const DAY_2_VIDEO_ID = "";
 
 const days = [
   {
@@ -41,7 +49,7 @@ const days = [
     title: "Putting It Into Your Swing",
     blurb: "Turning activation into real clubhead speed — and the path to keep gaining after today.",
     videoId: DAY_2_VIDEO_ID,
-    published: true,
+    published: false,
   },
 ];
 
@@ -96,7 +104,7 @@ export default function TwentyMoreYardsReplayPage() {
         <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.15em]">
           {REPLAY_EXPIRED ? (
             <>
-              &#9203; The replay has ended &mdash; Senior Golf Mastery Cohort enrollment closes {cohort.enrollDeadline}.
+              &#9203; The replay has ended &mdash; Senior Golf Mastery is still open.
             </>
           ) : (
             <>
@@ -193,7 +201,17 @@ export default function TwentyMoreYardsReplayPage() {
         </section>
       )}
 
-      {/* Cohort CTA */}
+      {/* Next-step CTA
+          ───────────────────────────────────────────────────────────────
+          Points at Senior Golf Mastery ($997), NOT the $2,997 cohort.
+          Decided on the Sept 11, 2026 strategy call: Jake can't commit to
+          running a live cohort through Q4, so the post-challenge call to
+          action for this run is the $997.
+
+          The $997 is now sold as a 12-week program with support (weekly
+          swing-video feedback + monthly group calls), not a self-paced
+          course — see @/config/seniorGolfMastery. The copy below has to
+          keep matching that page; if the offer changes, change both. */}
       <section className="py-16 md:py-20 bg-[#1a365d] text-[#f5ede0] mt-8">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#f5ede0]/60 mb-4">
@@ -205,24 +223,26 @@ export default function TwentyMoreYardsReplayPage() {
               : "Don't let it stop at the replay."}
           </h2>
           <p className="font-serif text-lg md:text-xl text-[#f5ede0]/80 leading-relaxed mb-4 max-w-2xl mx-auto">
-            You saw what&apos;s possible. The <strong className="text-[#f5ede0]">Senior Golf
-            Mastery Cohort</strong> is where you actually do it &mdash; six weeks live with Dr. Jake,
-            the full course, every bonus, and a year in the Berman Clubhouse.
+            You saw what&apos;s possible in two days. <strong className="text-[#f5ede0]">Senior
+            Golf Mastery</strong> is the next twelve weeks &mdash; the full seven-step system on a
+            schedule, a 1-on-1 with Dr. Jake, and <strong className="text-[#f5ede0]">a swing video
+            you send him every single week</strong> that he breaks down and sends back.
           </p>
           <p className="font-serif italic text-[#f5ede0]/65 mb-10">
-            Small group. Limited seats. Real coaching, not another video to watch alone.
+            Two days got you moving. Twelve weeks is where it sticks &mdash; with somebody checking
+            your work.
           </p>
 
           <a
-            href="/senior-golf-mastery-cohort"
+            href="/senior-golf-mastery"
             className="inline-block bg-[#F26B4E] text-white px-10 sm:px-14 py-5 rounded-md font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:bg-[#e05a3d] shadow-[0_10px_30px_rgba(242,107,78,0.4)] hover:-translate-y-0.5 transition-all"
           >
-            See the Cohort &rarr;
+            See Senior Golf Mastery &rarr;
           </a>
 
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#f5ede0]/60">
             {REPLAY_EXPIRED
-              ? `Enrollment closes ${cohort.enrollDeadline}`
+              ? "12 weeks of coaching \u00b7 100% money-back guarantee"
               : `Replay comes down ${REPLAY_END_LABEL}`}
           </p>
         </div>

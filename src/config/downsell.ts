@@ -15,6 +15,25 @@
 // TODO(BERMAN): Wire up the real $997 GHL checkout form once available — drop
 // the ID into `checkoutForm` below and the checkout page swaps from the
 // "coming soon" placeholder to the live embed automatically.
+//
+// ⚠️ OFFER CONFLICT — UNRESOLVED (flagged Sept 14, 2026)
+// There are now TWO different $997 offers on this site:
+//
+//   /senior-golf-mastery   $997 = 12-week program, weekly swing-video
+//                          feedback from Jake, 3 group calls. Repositioned
+//                          Sept 14 and is the post-challenge CTA for the
+//                          Sept 30 + Oct 1 run.
+//   /20-more-yards-sale    $997 = the course + 1 year of Clubhouse,
+//                          explicitly sold as "self-paced... no fixed
+//                          12-week clock" (see the FAQ on that page).
+//
+// Same price, contradictory promises. This page isn't linked from anywhere
+// in the site, but the route is live and August's emails point at it, so
+// somebody can still land on it and read the opposite pitch.
+//
+// Needs a decision before Track D goes out (D3, Fri Oct 2): retire this
+// page, re-price it, or fold the Clubhouse year into the main $997. Don't
+// drive traffic here in the meantime.
 
 export interface DownsellOffer {
   name: string;
