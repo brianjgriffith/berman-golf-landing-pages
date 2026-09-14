@@ -76,11 +76,29 @@ export const twentyMoreYardsEvent: TwoDayEvent = {
   name: "20 More Yards",
   slug: "20-more-yards",
 
-  // The Aug 26 + 27 run is finished and the replay window closed Sept 2.
-  // Next run is late September — dates not locked yet, so: waitlist.
-  status: "waitlist",
-  days: [],
-  windowLabel: "Late September 2026",
+  // Dates locked on the Sept 11, 2026 strategy call: Wed Sept 30 + Thu Oct 1,
+  // 9:00 AM ET both days. 9 AM (not the usual 10) because Jake has Senior Golf
+  // Mastery Cohort call 4 at 11:00 AM ET on Wed Sept 30 — see config/cohort.ts.
+  // Don't move the challenge to 10 AM without checking that call first.
+  status: "scheduled",
+  days: [
+    {
+      date: "Wednesday, September 30",
+      time: "9:00 AM ET",
+      short: "Sept 30",
+    },
+    {
+      date: "Thursday, October 1",
+      time: "9:00 AM ET",
+      short: "Oct 1",
+    },
+  ],
+  // Only read while on the waitlist — dormant right now. ⚠️ It said
+  // "Late September 2026" through the last waitlist phase, which is now in
+  // the past; flipping back to waitlist without touching this would sell a
+  // window that already closed. Set it to the real next window whenever
+  // `status` goes back to "waitlist".
+  windowLabel: "Late 2026",
   sessionLength: "90 min each",
 
   // The standing 20 More Yards opt-in form. Replace the ID when the next run

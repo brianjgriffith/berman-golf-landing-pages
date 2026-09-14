@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SESSION_1 } from "@/config/eventWindow";
 
-const DEFAULT_TARGET = new Date("2026-08-26T14:00:00Z");
+// Callers normally pass an explicit targetDate; this is the fallback so the
+// default can never drift behind the live event window.
+const DEFAULT_TARGET = SESSION_1;
 
 interface TimeLeft {
   days: number;

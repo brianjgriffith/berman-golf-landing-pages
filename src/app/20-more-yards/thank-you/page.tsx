@@ -17,12 +17,17 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// NOTE: step 01 deliberately does NOT promise a join link. The opt-in
+// confirmation stopped carrying one on Sept 14 — the Zoom rooms didn't exist
+// yet, so the link is emailed the morning of each session instead. If the
+// links go back into that email, say so here again. The two have to match:
+// promising a link the email doesn't contain is the June failure.
 const registeredSteps = [
   {
     num: "01",
     title: "Check Your Email",
     body:
-      "We just sent your confirmation and the link to join live. If you don't see it in a few minutes, check spam and add us to your contacts.",
+      "We just sent your confirmation. If you don't see it in a few minutes, check spam and add distance@bermangolf.com to your contacts — that's where your join link comes from.",
   },
   {
     num: "02",
@@ -31,9 +36,9 @@ const registeredSteps = [
   },
   {
     num: "03",
-    title: "Show Up Ready",
+    title: "Watch For Your Link",
     body:
-      "Have a club nearby and a little space to move. Come with questions — Jake answers them live, this isn't a recording.",
+      "Your join link lands in your inbox the morning of each session. Have a club nearby and a little space to move — you're moving with Jake, not watching him.",
   },
 ];
 
@@ -109,7 +114,8 @@ export default function TwentyMoreYardsThankYouPage() {
                 <strong className="text-[#1a365d]">shortest ball off the tee</strong> again.
               </p>
               <p className="font-serif italic text-[#1a365d]/70 text-base sm:text-lg mb-10">
-                Check your inbox for the confirmation &amp; your Zoom link. Then press play below. &darr;
+                Check your inbox for the confirmation &mdash; your join link follows on the morning of
+                each session. Then press play below. &darr;
               </p>
             </>
           )}

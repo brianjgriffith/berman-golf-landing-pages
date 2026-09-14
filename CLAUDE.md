@@ -44,7 +44,13 @@ that, push the timestamp forward and update `src/config/workshops.ts`.
 | `"scheduled"` | Full registration page — real dates in hero/agenda/logistics/footer, countdown, Event JSON-LD, GHL registration form. |
 | `"waitlist"` | Between runs. No dates, no countdown, **no Event schema** (invalid without a `startDate`). Sells the next run by `windowLabel` and captures a waitlist instead. |
 
-**Currently `waitlist`** — Aug 26 + 27 ran, replay closed Sept 2. Next run: late September 2026, dates TBD.
+**Currently `scheduled`** — dates locked on the Sept 11, 2026 strategy call:
+**Wed Sept 30 + Thu Oct 1, 2026, 9:00 AM ET both days.** Replay comes down
+Wed Oct 7 at midnight ET.
+
+> **9 AM, not the usual 10.** Jake has Senior Golf Mastery Cohort call 4 at
+> 11:00 AM ET on Wed Sept 30 (`src/config/cohort.ts`). Check that calendar
+> before moving the challenge time.
 
 **The waitlist reuses the existing opt-in form** (`(TM) 20 More Yards Opt In`, `W0ydyDyDva54Rx6xRYGx`) — it already collects name + email, which is all a waitlist needs. The waitlist/registrant distinction is handled **in GHL**, where these submissions get tagged as waitlist and routed to the waitlist confirmation email. The page just changes what it promises around the embed.
 
@@ -52,13 +58,16 @@ that, push the timestamp forward and update `src/config/workshops.ts`.
 
 (If `waitlistForm.formId` is ever emptied, the register section falls back to a "waitlist opens shortly" panel pointing at the Clubhouse rather than rendering a dead embed.)
 
-**To schedule the next run** (all in `src/config/events.ts` unless noted):
+**To schedule a run** (all in `src/config/events.ts` unless noted) — this is the
+checklist that was run for Sept 30 + Oct 1:
 1. `status` → `"scheduled"`
 2. Fill `days` with the two real dates (`date` long, `time`, `short`)
 3. Point `form` at the new GHL registration form
 4. Update `SESSION_1` / `SESSION_2` / `REPLAY_END` / `REPLAY_END_LABEL` in `src/config/eventWindow.ts`
 5. Update the hardcoded dates in the `eventSchema` JSON-LD in `src/app/20-more-yards/page.tsx` (the one place that can't read the config — it's a static string)
 6. If a webclass runs first, push `FUNNEL_SWITCHOVER` in `src/config/funnelSwitch.ts`
+7. **Clear `DAY_1_VIDEO_ID` / `DAY_2_VIDEO_ID` in `src/app/20-more-yards/replay/page.tsx`** and set Day 2's `published` to `false`. They hold the *previous* run's recordings; an empty ID renders the "uploading soon" placeholder instead of last month's video. Fill them back in as each session is uploaded.
+8. Check the post-challenge CTA on the replay page still points at an offer that's actually open — it pointed at a cohort that had already started after the August run.
 
 Everything else reads from the config: `HeroEvent`, `HeroCTA`, `StickyMobileCTA`, `TheAgenda`, `WhyTwoDays`, `PerryStory`, `EventLogistics`, `FAQ`, `Footer`, `EventRegistrationForm`, `/20-more-yards/thank-you`, `Header`, and page metadata.
 

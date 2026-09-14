@@ -6,6 +6,7 @@ import {
   isWaitlist,
   waitlistFormReady,
   activeForm,
+  timeLabel,
 } from "@/config/events";
 import { clubhouse } from "@/config/clubhouse";
 import {
@@ -29,7 +30,8 @@ interface PhaseCopy {
   countdownTarget?: Date;
 }
 
-const PHASE_COPY: Record<EventPhase, PhaseCopy> = {
+function phaseCopy(event: TwoDayEvent): Record<EventPhase, PhaseCopy> {
+  return {
   before: {
     heading: "Reserve your free seat.",
     subhead: "Limited spots available. Register now.",
@@ -39,7 +41,7 @@ const PHASE_COPY: Record<EventPhase, PhaseCopy> = {
   between: {
     heading: "Session 1's in the books.",
     subhead:
-      "Not too late to jump in. Register below to get the Session 1 replay — then join us live for Session 2 at 10 AM ET.",
+      `Not too late to jump in. Register below to get the Session 1 replay — then join us live for Session 2 at ${timeLabel(event)}.`,
     countdownHeading: "Session 2 starts in",
     countdownTarget: SESSION_2,
   },
@@ -54,7 +56,8 @@ const PHASE_COPY: Record<EventPhase, PhaseCopy> = {
     subhead:
       "Want in on the next one? Register below and we'll save you a seat for the next live event.",
   },
-};
+  };
+}
 
 export default function EventRegistrationForm({ event }: EventRegistrationFormProps) {
   const phase = useEventPhase();
@@ -68,7 +71,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
         heading: "Get first crack at the next one.",
         subhead: `The next ${event.name} Challenge runs ${event.windowLabel}. Dates land soon — the waitlist gets them first, before we open registration to everyone else.`,
       }
-    : PHASE_COPY[phase];
+    : phaseCopy(event)[phase];
 
   return (
     <section id="register" className="py-20 bg-[#f5ede0]">
@@ -102,7 +105,7 @@ export default function EventRegistrationForm({ event }: EventRegistrationFormPr
                 </div>
                 <p className="text-base leading-relaxed">
                   Two live sessions with Dr. Jake, {event.sessionLength}. Same
-                  format we ran in June and August.
+                  format we&apos;ve run all year.
                 </p>
               </div>
             ) : (

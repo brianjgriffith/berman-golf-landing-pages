@@ -60,8 +60,8 @@ const eventSchema = JSON.stringify({
   name: "20 More Yards: Live 2-Day Event with Dr. Jake Berman",
   description:
     "Free 2-day live event teaching senior golfers The Activation Method to add 20+ yards without rebuilding their swing.",
-  startDate: "2026-08-26T10:00:00-04:00",
-  endDate: "2026-08-27T11:30:00-04:00",
+  startDate: "2026-09-30T09:00:00-04:00",
+  endDate: "2026-10-01T10:30:00-04:00",
   eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   location: {
@@ -83,7 +83,7 @@ const eventSchema = JSON.stringify({
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     url: "https://20moreyards.com/#register",
-    validFrom: "2026-08-05T00:00:00-04:00",
+    validFrom: "2026-09-14T00:00:00-04:00",
   },
 });
 
