@@ -4,21 +4,29 @@ import { usePathname } from "next/navigation";
 import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 import { twentyMoreYardsEvent, isWaitlist } from "@/config/events";
 import { clubhouse } from "@/config/clubhouse";
+import { masteryMembership } from "@/config/masteryMembership";
 
 export default function Header() {
   const pathname = usePathname();
 
   const getCtaConfig = () => {
     // Thank-you pages (poster): keep it non-salesy — just a help link.
-    if (pathname === "/20-more-yards/thank-you" || pathname === "/senior-golf-mastery/thank-you") {
+    if (
+      pathname === "/20-more-yards/thank-you" ||
+      pathname === "/senior-golf-mastery/thank-you" ||
+      pathname === masteryMembership.thankYouPath
+    ) {
       return { text: "Need Help?", href: "mailto:distance@bermangolf.com", isPopup: false };
     }
     if (pathname === "/senior-golf-mastery-cohort") {
       return { text: `Enroll Now - ${cohort.price}`, href: "/senior-golf-mastery-cohort/checkout", isPopup: false };
     }
-    // Replay page (poster): point warm viewers at the cohort.
+    // Replay page (poster): point warm viewers at the post-challenge offer.
     if (pathname === "/20-more-yards/replay") {
-      return { text: "Join the Cohort", href: "/senior-golf-mastery-cohort", isPopup: false };
+      return { text: "Choose Your Plan", href: `${masteryMembership.path}#join`, isPopup: false };
+    }
+    if (pathname === masteryMembership.path) {
+      return { text: "Choose Your Plan", href: "#join", isPopup: false };
     }
     if (pathname === "/free-book/thank-you" || pathname === "/senior-golf-warm-up/thank-you") {
       return { text: "Join The Clubhouse", href: clubhouse.path, isPopup: false };

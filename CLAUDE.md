@@ -92,7 +92,8 @@ Because the Clubhouse is now sold to brand-new leads, `/community` no longer say
 - `/free-book` — Free book opt-in page
 - `/free-book/thank-you` — Book confirmation + workshop upsell
 - `/10yards-30days` — Paid course page
-- `/senior-golf-mastery` — Premium course page
+- `/senior-golf-mastery` — $997 12-week program (superseded as the post-challenge CTA on Sept 29, 2026 — still live)
+- `/mastery` — **Senior Golf Mastery membership ($199/mo · $1,997/yr)**, the Day 2 offer for the Sept 30 + Oct 1 challenge. Checkouts at `/mastery/checkout/monthly|annual`, thank-you at `/mastery/thank-you`. Everything reads from `src/config/masteryMembership.ts`; checkouts show a "checkout opens shortly" panel until the GHL form IDs are filled in there.
 - `/community` — Berman Clubhouse membership page ($47/mo, $297/yr)
 - `/20-more-yards` — Challenge page (registration or waitlist, see above)
 - `/20-more-yards/thank-you` — Confirmation (registered or waitlisted) + Clubhouse offer

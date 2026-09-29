@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { REPLAY_END_LABEL, replayIsLive } from "@/config/eventWindow";
+import { masteryMembership as mm } from "@/config/masteryMembership";
 
 export const metadata: Metadata = {
   title: "Replay | 20 More Yards Live Event with Dr. Jake Berman",
@@ -203,15 +204,11 @@ export default function TwentyMoreYardsReplayPage() {
 
       {/* Next-step CTA
           ───────────────────────────────────────────────────────────────
-          Points at Senior Golf Mastery ($997), NOT the $2,997 cohort.
-          Decided on the Sept 11, 2026 strategy call: Jake can't commit to
-          running a live cohort through Q4, so the post-challenge call to
-          action for this run is the $997.
-
-          The $997 is now sold as a 12-week program with support (weekly
-          swing-video feedback + monthly group calls), not a self-paced
-          course — see @/config/seniorGolfMastery. The copy below has to
-          keep matching that page; if the offer changes, change both. */}
+          Points at the Senior Golf Mastery MEMBERSHIP ($199/mo or
+          $1,997/yr) — the offer Jake pitches at the end of Day 2 of the
+          Sept 30 + Oct 1 run. Replaced the $997 12-week program on
+          Sept 29, 2026. See @/config/masteryMembership. The copy below has
+          to keep matching that page; if the offer changes, change both. */}
       <section className="py-16 md:py-20 bg-[#1a365d] text-[#f5ede0] mt-8">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#f5ede0]/60 mb-4">
@@ -224,17 +221,17 @@ export default function TwentyMoreYardsReplayPage() {
           </h2>
           <p className="font-serif text-lg md:text-xl text-[#f5ede0]/80 leading-relaxed mb-4 max-w-2xl mx-auto">
             You saw what&apos;s possible in two days. <strong className="text-[#f5ede0]">Senior
-            Golf Mastery</strong> is the next twelve weeks &mdash; the full seven-step system on a
-            schedule, a 1-on-1 with Dr. Jake, and <strong className="text-[#f5ede0]">a swing video
-            you send him every single week</strong> that he breaks down and sends back.
+            Golf Mastery</strong> is where it sticks &mdash; the full seven-step system, <strong className="text-[#f5ede0]">live
+            coaching with Dr. Jake every month</strong>, and a Clubhouse full of senior golfers doing
+            the work alongside you.
           </p>
           <p className="font-serif italic text-[#f5ede0]/65 mb-10">
-            Two days got you moving. Twelve weeks is where it sticks &mdash; with somebody checking
-            your work.
+            {mm.monthly.price}{mm.monthly.cadence}, or {mm.annual.price}{mm.annual.cadence} with a
+            free 1-on-1 with Jake.
           </p>
 
           <a
-            href="/senior-golf-mastery"
+            href={mm.path}
             className="inline-block bg-[#F26B4E] text-white px-10 sm:px-14 py-5 rounded-md font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:bg-[#e05a3d] shadow-[0_10px_30px_rgba(242,107,78,0.4)] hover:-translate-y-0.5 transition-all"
           >
             See Senior Golf Mastery &rarr;
@@ -242,7 +239,7 @@ export default function TwentyMoreYardsReplayPage() {
 
           <p className="mt-6 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#f5ede0]/60">
             {REPLAY_EXPIRED
-              ? "12 weeks of coaching \u00b7 100% money-back guarantee"
+              ? "Monthly coaching \u00b7 Cancel monthly anytime"
               : `Replay comes down ${REPLAY_END_LABEL}`}
           </p>
         </div>
