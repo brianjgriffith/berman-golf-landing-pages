@@ -23,7 +23,7 @@ export default function HeroV2({ workshops }: HeroV2Props) {
 
             {/* H1 */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-3">
-              Out-Drive Your Buddies This Summer.
+              Out-Drive Your Buddies.
             </h1>
 
             {/* Sub-H1 */}

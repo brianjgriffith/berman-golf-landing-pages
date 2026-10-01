@@ -1,23 +1,38 @@
-// When the webclass funnel hands off to the 20 More Yards challenge.
+// Which free event owns the funnel right now: the webclass (/free-class) or
+// the 20 More Yards challenge (/20-more-yards).
 //
-// The Aug 6 webclass starts at 11:00 AM ET. The moment it does, there is
-// nothing left to register for, so every free-class entry point stops taking
-// signups and feeds the Aug 26 + 27 challenge instead:
+// Whichever owns it, the other one's opt-in pages forward to it — so there is
+// always exactly one place taking free signups, and the two can never redirect
+// into each other.
 //
-//   /free-class            -> /20-more-yards   (307)
-//   /free-class-v1         -> /20-more-yards   (307)
-//   20moreyards.com/       -> /20-more-yards   (rewrite, clean URL kept)
-//   golflessonsdontwork.com -> forwards to /free-class at the registrar,
-//                              so it inherits the redirect for free.
+//   owner "webclass"   /20-more-yards        -> /free-class     (307)
+//                      /free-class-v1        -> /free-class     (307)
+//                      20moreyards.com/      -> /free-class     (rewrite, clean URL kept)
 //
-// /free-book and gaindistance.com/ are deliberately untouched.
+//   owner "challenge"  /free-class           -> /20-more-yards  (307)
+//                      /free-class-v1        -> /20-more-yards  (307)
+//                      20moreyards.com/      -> /20-more-yards  (rewrite)
 //
-// This is enforced at request time in src/proxy.ts, so the switch happens on
-// its own — no deploy needs to be timed to the minute. To hand the webclass
-// funnel back to /free-class for a future class, move this timestamp forward
-// (and update config/workshops.ts with the new date).
-export const FUNNEL_SWITCHOVER = Date.parse("2026-08-06T11:00:00-04:00");
+// golflessonsdontwork.com forwards to /free-class at the registrar, so it
+// follows whatever /free-class does.
+//
+// Only the exact challenge opt-in path moves. /20-more-yards/replay and
+// /20-more-yards/thank-you stay put. /free-book and gaindistance.com/ are
+// deliberately untouched.
+//
+// Oct 1, 2026: handed back to the webclass for the Thu Oct 15 class
+// (config/workshops.ts). This used to be a timestamp that flipped webclass ->
+// challenge automatically when the Aug 6 class started. There's no challenge
+// booked after Oct 15, so it's a plain switch now.
+//
+// ⚠️ Nothing changes on its own after the Oct 15 class starts: /free-class
+// keeps taking signups for a date that has passed. Book the next class (or
+// challenge) and flip this, or update workshops.ts, before then.
 
-export function challengeOwnsFunnel(now: number = Date.now()): boolean {
-  return now >= FUNNEL_SWITCHOVER;
+export type FunnelOwner = "webclass" | "challenge";
+
+export const FUNNEL_OWNER: FunnelOwner = "webclass";
+
+export function challengeOwnsFunnel(): boolean {
+  return FUNNEL_OWNER === "challenge";
 }

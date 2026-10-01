@@ -10,31 +10,41 @@ read from `../Docs/Berman Knowledge Base/` first:
 Other copy assets live in `../Docs/` (e.g. `20 More Yards Challenge - Social Captions.md`).
 
 ## Routing (src/proxy.ts — NOT next.config.ts)
-All funnel routing lives in `src/proxy.ts`, because the webclass → challenge
-handoff is **time-based** and next.config redirects/rewrites are baked in at
-build time. `next.config.ts` is intentionally empty; a `beforeFiles` rewrite
-there would run after the proxy and silently shadow it.
+All funnel routing lives in `src/proxy.ts` (per request). `next.config.ts` is
+intentionally empty; a `beforeFiles` rewrite there would run after the proxy and
+silently shadow it.
 
-The cutover timestamp is `src/config/funnelSwitch.ts` (currently
-**Aug 6, 2026 11:00 AM ET** — the moment the Aug 6 webclass starts). Before it,
-the webclass funnel takes signups; after it, everything feeds the challenge:
+`FUNNEL_OWNER` in `src/config/funnelSwitch.ts` decides which free event takes
+signups — the webclass (`/free-class`) or the challenge (`/20-more-yards`). The
+other one's opt-in pages forward to it, so there's always exactly one, and the
+two can't redirect into each other. **Currently `"webclass"`** — the
+**Thu Oct 15, 2026, 12:00 PM ET** class (set Oct 1, 2026):
 
-| Entry point | Before cutover | After cutover |
+| Entry point | owner `"webclass"` (now) | owner `"challenge"` |
 |---|---|---|
 | `20moreyards.com/` (+ www) | `/free-class` (rewrite) | `/20-more-yards` (rewrite) |
 | `/free-class` | serves opt-in | → `/20-more-yards` (307) |
-| `/free-class-v1` (archived) | serves opt-in | → `/20-more-yards` (307) |
-| `golflessonsdontwork.com` | → `/free-class` | inherits the 307 → `/20-more-yards` |
-| `gaindistance.com/` | → `/free-book` | unchanged |
-| `/free-book` | unchanged | unchanged |
+| `/20-more-yards` | → `/free-class` (307) | serves opt-in |
+| `/free-class-v1` (archived) | → `/free-class` (307) | → `/20-more-yards` (307) |
+| `golflessonsdontwork.com` | → `/free-class` | inherits the 307 |
+| `/20-more-yards/replay`, `/thank-you` | unchanged | unchanged |
+| `gaindistance.com/`, `/free-book` | unchanged | unchanged |
 
 `golflessonsdontwork.com` forwards to `gaindistance.com/free-class` at the
 **registrar** (301, not Vercel), so it is not in this repo — it inherits
 whatever `/free-class` does. Leave that forward pointing at `/free-class`.
 
-Query strings survive the redirect, so ad UTMs are preserved. 307 (not 308) so
-`/free-class` can serve its own opt-in again for the next webclass — to do
-that, push the timestamp forward and update `src/config/workshops.ts`.
+Query strings survive the redirect, so ad UTMs are preserved. 307 (not 308)
+because ownership flips between runs.
+
+⚠️ It's a plain switch, not a timestamp (it used to flip automatically when the
+Aug 6 class started). Nothing changes on its own after Oct 15 — `/free-class`
+will keep taking signups for a past date until someone books the next class or
+challenge and updates `workshops.ts` / `FUNNEL_OWNER`.
+
+**Free-class thank-you:** `/free-class/thank-you` (built Oct 1, 2026). Reads
+`workshops[0]` for the date, time and Google Calendar link. The GHL form's
+On Submit redirect has to point at it — that's set in GHL, not here.
 
 ## Challenge dates + waitlist mode (src/config/events.ts)
 `/20-more-yards` has two modes, driven by `status` in `src/config/events.ts`:

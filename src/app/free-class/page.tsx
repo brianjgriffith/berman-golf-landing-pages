@@ -16,10 +16,10 @@ import Footer from "@/components/Footer";
 import { workshops } from "@/config/workshops";
 
 export const metadata: Metadata = {
-  title: "Out-Drive Your Buddies This Summer | Free Live Class with Dr. Jake Berman",
+  title: "Out-Drive Your Buddies | Free Live Class with Dr. Jake Berman",
   description: "Gain 20-50 yards without rebuilding your swing. Join Dr. Jake Berman (PT, DPT) for a free, live class on the biomechanics that add distance for senior golfers — no matter your age or handicap.",
   openGraph: {
-    title: "Out-Drive Your Buddies This Summer | Free Live Class",
+    title: "Out-Drive Your Buddies | Free Live Class",
     description: "Free live class with Dr. Jake Berman on how senior golfers are gaining 20-50 yards without rebuilding their swing.",
     type: "website",
   },
