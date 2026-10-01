@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { REPLAY_END_LABEL, replayIsLive } from "@/config/eventWindow";
-import { masteryMembership as mm } from "@/config/masteryMembership";
+import { masteryMembership as mm, annualBonusLive } from "@/config/masteryMembership";
 
 export const metadata: Metadata = {
   title: "Replay | 20 More Yards Live Event with Dr. Jake Berman",
@@ -252,8 +252,10 @@ export default function TwentyMoreYardsReplayPage() {
             the work alongside you.
           </p>
           <p className="font-serif italic text-[#f5ede0]/65 mb-10">
-            {mm.monthly.price}{mm.monthly.cadence}, or {mm.annual.price}{mm.annual.cadence} with a
-            free 1-on-1 with Jake.
+            {mm.monthly.price}{mm.monthly.cadence}, or {mm.annual.price}{mm.annual.cadence}
+            {annualBonusLive()
+              ? ` with a free 1-on-1 with Jake (through ${mm.annualBonus.endsLabel}).`
+              : "."}
           </p>
 
           <a

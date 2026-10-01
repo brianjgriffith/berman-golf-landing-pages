@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { masteryMembership as mm } from "@/config/masteryMembership";
+import { masteryMembership as mm, annualBonusLive } from "@/config/masteryMembership";
 
 export const metadata: Metadata = {
   title: "Welcome to Senior Golf Mastery | Berman Golf",
@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// Per request: the 1-on-1 reminder only shows while the bonus is on offer, so
+// an annual buyer after the deadline isn't promised a session they didn't get.
+export const dynamic = "force-dynamic";
+
 export default function MasteryThankYouPage() {
+  const bonusLive = annualBonusLive();
+
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
@@ -62,6 +68,7 @@ export default function MasteryThankYouPage() {
             ))}
           </div>
 
+          {bonusLive && (
           <div className="mt-10 max-w-3xl mx-auto bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 md:p-8 text-center">
             <p className="text-xs font-bold tracking-widest uppercase text-amber-700 mb-2">Joined for the year?</p>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Don&apos;t Forget Your 1-on-1 With Dr. Jake</h3>
@@ -70,6 +77,7 @@ export default function MasteryThankYouPage() {
               to book it. Most golfers use it early, so everything after is aimed at their body specifically.
             </p>
           </div>
+          )}
 
           <p className="text-center text-gray-600 mt-12">
             Questions? Email{" "}

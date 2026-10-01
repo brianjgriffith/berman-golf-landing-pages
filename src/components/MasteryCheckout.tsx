@@ -11,8 +11,18 @@ import { masteryMembership as mm, type MasteryPlan } from "@/config/masteryMembe
  *
  * If the plan's GHL form ID is still empty, this renders a "checkout opens
  * shortly" panel instead of a dead iframe.
+ *
+ * `bonusLive` comes from the (server, force-dynamic) checkout page so the
+ * annual 1-on-1 disappears at its deadline — see annualBonus in
+ * @/config/masteryMembership.
  */
-export default function MasteryCheckout({ planKey }: { planKey: "monthly" | "annual" }) {
+export default function MasteryCheckout({
+  planKey,
+  bonusLive,
+}: {
+  planKey: "monthly" | "annual";
+  bonusLive: boolean;
+}) {
   const plan: MasteryPlan = mm[planKey];
   const other: MasteryPlan = planKey === "monthly" ? mm.annual : mm.monthly;
   const isAnnual = planKey === "annual";
@@ -87,10 +97,15 @@ export default function MasteryCheckout({ planKey }: { planKey: "monthly" | "ann
                       {item.label}
                     </li>
                   ))}
-                  {isAnnual && (
+                  {isAnnual && bonusLive && (
                     <li className="flex items-start gap-2 font-semibold text-gray-900">
                       <span aria-hidden>🎁</span>
-                      {mm.annualBonus.label} ({mm.annualBonus.value} Value)
+                      <span>
+                        {mm.annualBonus.label} ({mm.annualBonus.value} Value)
+                        <span className="block font-normal text-gray-600 text-xs mt-0.5">
+                          Comes with annual through {mm.annualBonus.endsLabel}.
+                        </span>
+                      </span>
                     </li>
                   )}
                   {!isAnnual && (
@@ -111,14 +126,18 @@ export default function MasteryCheckout({ planKey }: { planKey: "monthly" | "ann
                 <>
                   <p className="text-gray-900 font-semibold mb-2">Rather pay month to month?</p>
                   <p className="text-gray-600 text-sm mb-3">
-                    Monthly is {other.price}{other.cadence}, cancel anytime. (The free 1-on-1 with Dr. Jake is annual only.)
+                    Monthly is {other.price}{other.cadence}, cancel anytime.
+                    {bonusLive && " (The free 1-on-1 with Dr. Jake is annual only.)"}
                   </p>
                 </>
               ) : (
                 <>
                   <p className="text-gray-900 font-semibold mb-2">Want to save {mm.annualSavings}?</p>
                   <p className="text-gray-600 text-sm mb-3">
-                    Go annual for {other.price}{other.cadence} and get a free 1-on-1 session with Dr. Jake ({mm.annualBonus.value} value).
+                    Go annual for {other.price}{other.cadence}
+                    {bonusLive
+                      ? ` and get a free 1-on-1 session with Dr. Jake (${mm.annualBonus.value} value) — through ${mm.annualBonus.endsLabel}.`
+                      : ` — that's ${mm.annualSavings} less than twelve months of monthly.`}
                   </p>
                 </>
               )}

@@ -68,7 +68,9 @@ export const masteryMembership = {
     priceNumeric: 1997,
     cadence: "/year",
     checkoutPath: "/mastery/checkout/annual",
-    note: "Best value — includes a 1-on-1 with Dr. Jake",
+    // No 1-on-1 here on purpose — the bonus expires (see `annualBonus`).
+    // Use annualNote() where the line should mention it while it's live.
+    note: "Best value — save $391",
     // Live GHL form, added Sept 29, 2026. The trailing space in the name is
     // how it's saved in GHL — kept so the embed matches exactly.
     checkoutForm: { formId: "rLmDnK5rkUg6j1lRMvep", formName: "(TM) SGM - Annual ", height: 1082 },
@@ -83,10 +85,22 @@ export const masteryMembership = {
    * Annual-only bonus, per the slide. The monthly plan does NOT include it.
    * TODO(BERMAN): confirm how annual buyers book this (link in the welcome
    * email? Calendly?) — the thank-you page promises an email about it.
+   *
+   * ⏰ TIME-BOXED (decided Oct 1, 2026). The post-challenge emails close on
+   * "the free 1-on-1 comes with annual through Wed Oct 7 at midnight ET" —
+   * the membership itself never closes, so this is the real deadline. After
+   * `endsAt` the bonus is genuinely gone: every page that shows it checks
+   * annualBonusLive() per request and drops it on its own, no deploy. That's
+   * what keeps the deadline honest — if the bonus were still on the page on
+   * Oct 8, the emails would have been fake urgency. To run it again, move
+   * `endsAt` + `endsLabel` together (and tell the email side).
    */
   annualBonus: {
     label: "A Free 1-on-1 Session with Dr. Jake",
     value: "$500",
+    // Thu Oct 8, 12:00 AM ET (EDT = UTC-4) = end of Wed Oct 7.
+    endsAt: new Date("2026-10-08T04:00:00Z"),
+    endsLabel: "Wednesday, October 7 at midnight ET",
   },
 
   /**
@@ -126,6 +140,18 @@ export const masteryMembership = {
     },
   ],
 } as const;
+
+/** True while the annual 1-on-1 bonus is still on offer. Check per request. */
+export function annualBonusLive(now: number = Date.now()): boolean {
+  return now < masteryMembership.annualBonus.endsAt.getTime();
+}
+
+/** The annual plan's short note — mentions the 1-on-1 only while it's live. */
+export function annualNote(now: number = Date.now()): string {
+  return annualBonusLive(now)
+    ? "Best value — includes a 1-on-1 with Dr. Jake"
+    : masteryMembership.annual.note;
+}
 
 // The annual strike-through and savings are arithmetic, not marketing.
 // If a price changes, the build fails until all three numbers agree.
