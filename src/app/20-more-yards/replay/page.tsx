@@ -26,18 +26,29 @@ export const dynamic = "force-dynamic";
 
 // YouTube video IDs (the part after youtu.be/ or watch?v=).
 //
-// ⚠️ EMPTY ON PURPOSE — these are for the Sept 30 + Oct 1 run and the sessions
-// haven't happened yet. An empty ID renders the "replay uploading soon"
-// placeholder instead of last month's video. Drop each ID in and flip its
-// `published` flag as the recording goes up (Day 1 the afternoon of Sept 30,
-// Day 2 the afternoon of Oct 1).
+// Sept 30 + Oct 1, 2026 run.
+//
+// ⚠️ DAY 2 IS NOT THE OCT 1 SESSION. Jake paused the Zoom recording mid-way
+// through Day 2 and it never resumed, so there is no recording of the live
+// session. CBktMj7UhGk is the Day 2 teaching from the previous run with the
+// sales section cut out — which means the replay has NO offer in it. The
+// `note` on Day 2 tells viewers that, and the CTA section below is now the
+// only place a replay viewer hears about Senior Golf Mastery.
 //
 // For reference, the Aug 26 + 27 recordings were:
 //   Day 1 "S3Ueeky9e0A" · Day 2 "nqm-9OhMG1s"
-const DAY_1_VIDEO_ID = "";
-const DAY_2_VIDEO_ID = "";
+const DAY_1_VIDEO_ID = "w5x6LW2-OTE";
+const DAY_2_VIDEO_ID = "CBktMj7UhGk";
 
-const days = [
+const days: {
+  label: string;
+  title: string;
+  blurb: string;
+  videoId: string;
+  published: boolean;
+  /** Optional callout shown above the video. */
+  note?: string;
+}[] = [
   {
     label: "Day 1",
     title: "The Activation Method",
@@ -50,7 +61,8 @@ const days = [
     title: "Putting It Into Your Swing",
     blurb: "Turning activation into real clubhead speed — and the path to keep gaining after today.",
     videoId: DAY_2_VIDEO_ID,
-    published: false,
+    published: true,
+    note: "Quick heads up from Jake: I hit pause on the Zoom recording during Day 2 and never turned it back on. This is the same Day 2 training from the last time I taught the challenge — about 80% of it matches what we covered live. If something from the live session isn't in here, just reply to any of my emails and ask.",
   },
 ];
 
@@ -195,6 +207,20 @@ export default function TwentyMoreYardsReplayPage() {
                     </p>
                   </div>
                 </div>
+                {day.note && (
+                  <div className="mb-5 rounded-xl border-l-4 border-[#F26B4E] bg-white/70 px-5 py-4">
+                    <p className="font-serif text-base sm:text-lg text-[#1a365d]/85 leading-relaxed">
+                      {day.note}
+                    </p>
+                    <p className="mt-2 text-sm font-bold text-[#1a365d]">
+                      The recording doesn&apos;t include the Senior Golf Mastery walkthrough &mdash;{" "}
+                      <a href="#next-step" className="text-[#F26B4E] underline underline-offset-2">
+                        here&apos;s what I shared at the end of Day 2
+                      </a>
+                      .
+                    </p>
+                  </div>
+                )}
                 <VideoEmbed videoId={day.videoId} title={`20 More Yards — ${day.label}`} />
               </div>
             ))}
@@ -209,7 +235,7 @@ export default function TwentyMoreYardsReplayPage() {
           Sept 30 + Oct 1 run. Replaced the $997 12-week program on
           Sept 29, 2026. See @/config/masteryMembership. The copy below has
           to keep matching that page; if the offer changes, change both. */}
-      <section className="py-16 md:py-20 bg-[#1a365d] text-[#f5ede0] mt-8">
+      <section id="next-step" className="py-16 md:py-20 bg-[#1a365d] text-[#f5ede0] mt-8 scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-[11px] md:text-xs font-bold tracking-[0.35em] uppercase text-[#f5ede0]/60 mb-4">
             {REPLAY_EXPIRED ? "Your Last Chance" : "Ready For The Next Step?"}
