@@ -13,19 +13,15 @@ export const workshops: Workshop[] = [
     // Wed Oct 28, 2026, 11:00 AM ET (still EDT = UTC-4; DST ends Nov 1).
     // Keep `date`/`time` and `start` in sync — the page shows the strings, the
     // calendar link uses `start`.
-    //
-    // ⚠️ Still the Oct 15 GHL form. Swap in the 10.28.26 form below once it
-    // exists, or the Oct 15 confirmation/reminder workflow fires for Oct 28
-    // registrants.
     date: "Wednesday, October 28th",
     time: "11:00 AM ET",
     start: new Date("2026-10-28T15:00:00Z"),
     durationMinutes: 90,
     form: {
-      src: "https://link.physiofunnels.com/widget/form/C6sIbSQJXDh72Zwnzmdp",
-      id: "inline-C6sIbSQJXDh72Zwnzmdp",
-      formName: "(TM) 10.15.26 Webclass Sign Up Page",
-      formId: "C6sIbSQJXDh72Zwnzmdp",
+      src: "https://link.physiofunnels.com/widget/form/wHIVvYFTfEgvgrwcC5s3",
+      id: "inline-wHIVvYFTfEgvgrwcC5s3",
+      formName: "(TM) 10.28.26 Webclass Sign Up Page",
+      formId: "wHIVvYFTfEgvgrwcC5s3",
     },
   },
 ];

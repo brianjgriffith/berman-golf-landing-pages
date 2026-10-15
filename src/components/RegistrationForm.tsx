@@ -36,10 +36,10 @@ export default function RegistrationForm({ workshops }: RegistrationFormProps) {
                 </div>
 
                 {/* GHL Embedded Form */}
-                <div className="w-full min-h-[627px]">
+                <div className="w-full min-h-[638px]">
                   <iframe
                     src={workshop.form.src}
-                    style={{ width: "100%", height: "627px", border: "none", borderRadius: "3px" }}
+                    style={{ width: "100%", height: "638px", border: "none", borderRadius: "3px" }}
                     id={workshop.form.id}
                     data-layout='{"id":"INLINE"}'
                     data-trigger-type="alwaysShow"
@@ -49,7 +49,7 @@ export default function RegistrationForm({ workshops }: RegistrationFormProps) {
                     data-deactivation-type="neverDeactivate"
                     data-deactivation-value=""
                     data-form-name={workshop.form.formName}
-                    data-height="627"
+                    data-height="638"
                     data-layout-iframe-id={workshop.form.id}
                     data-form-id={workshop.form.formId}
                     title={workshop.form.formName}

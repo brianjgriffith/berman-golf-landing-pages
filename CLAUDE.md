@@ -19,8 +19,8 @@ signups — the webclass (`/free-class`) or the challenge (`/20-more-yards`). Th
 other one's opt-in pages forward to it, so there's always exactly one, and the
 two can't redirect into each other. **Currently `"webclass"`** — the
 **Wed Oct 28, 2026, 11:00 AM ET** class (set Oct 15, 2026; the Oct 15
-class ran first). ⚠️ The page still embeds the Oct 15 GHL form until a 10.28.26
-form is made and dropped into `workshops.ts`:
+class ran first). Form: "(TM) 10.28.26 Webclass Sign Up Page"
+(`wHIVvYFTfEgvgrwcC5s3`):
 
 | Entry point | owner `"webclass"` (now) | owner `"challenge"` |
 |---|---|---|
