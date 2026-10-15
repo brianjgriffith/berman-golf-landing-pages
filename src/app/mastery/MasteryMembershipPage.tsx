@@ -75,7 +75,11 @@ function buildFaqs(bonusLive: boolean) {
   },
   {
     question: "How does the 1-on-1 with Dr. Jake work? (Annual)",
-    answer: "It's a private virtual session — just you and Jake. After you join, you'll get an email with how to book it. Most golfers use it early, so everything after is aimed at their body specifically.",
+    answer: "It's a private one-hour session — just you and Jake, on Zoom or in person in Naples. After you join, you'll get an email with how to book it. Most golfers use it early, so everything after is aimed at their body specifically.",
+  },
+  {
+    question: "Is there a guarantee?",
+    answer: `Yes — ${mm.guarantee.body.charAt(0).toLowerCase()}${mm.guarantee.body.slice(1)}`,
   },
   {
     question: "What equipment do I need?",
@@ -395,6 +399,19 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
               >
                 Join Annual &amp; Save
               </a>
+            </div>
+          </div>
+
+          {/* Guarantee — Jake states it on the class; it belongs next to the price */}
+          <div className="max-w-3xl mx-auto mt-10 bg-gray-50 border-2 border-dashed border-[#0f4c81]/30 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
+            <div className="flex-shrink-0 w-20 h-20 rounded-full bg-[#0f4c81] text-white flex flex-col items-center justify-center leading-none">
+              <span className="text-2xl font-extrabold">90</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest mt-1">Days</span>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{mm.guarantee.title}</h3>
+              <p className="text-gray-700 mb-2">{mm.guarantee.body}</p>
+              <p className="text-gray-500 text-sm italic">&ldquo;{mm.guarantee.quote}&rdquo; &mdash; Dr. Jake</p>
             </div>
           </div>
         </div>

@@ -94,13 +94,31 @@ export const masteryMembership = {
    * what keeps the deadline honest — if the bonus were still on the page on
    * Oct 8, the emails would have been fake urgency. To run it again, move
    * `endsAt` + `endsLabel` together (and tell the email side).
+   *
+   * Oct 15, 2026: re-opened through Sat Oct 31. Jake pitched "annual comes
+   * with a free 1-on-1, through the month of October" on the Oct 15 free
+   * class, and the replay emails say the same.
    */
   annualBonus: {
     label: "A Free 1-on-1 Session with Dr. Jake",
     value: "$500",
-    // Thu Oct 8, 12:00 AM ET (EDT = UTC-4) = end of Wed Oct 7.
-    endsAt: new Date("2026-10-08T04:00:00Z"),
-    endsLabel: "Wednesday, October 7 at midnight ET",
+    // Sun Nov 1, 12:00 AM ET (still EDT = UTC-4; DST ends 2 AM that day)
+    // = end of Sat Oct 31.
+    endsAt: new Date("2026-11-01T04:00:00Z"),
+    endsLabel: "Saturday, October 31 at midnight ET",
+  },
+
+  /**
+   * Jake's 90-day guarantee, as he stated it on the Oct 15, 2026 class:
+   * follow the program, take part in the coaching, do the practice plan,
+   * track progress — no measurable improvement in 90 days, money back.
+   * Shown under the plan cards and in the FAQ on /mastery.
+   */
+  guarantee: {
+    title: "The 90-Day Guarantee",
+    body:
+      "Follow the program, show up to the coaching, do your practice plan and track your progress. If after 90 days you don't see measurable improvement in your distance, ball striking or consistency — whichever one you came for — you get your money back.",
+    quote: "I don't care about the transaction. I care about the results.",
   },
 
   /**
