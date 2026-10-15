@@ -25,7 +25,10 @@
 // challenge automatically when the Aug 6 class started. There's no challenge
 // booked after Oct 15, so it's a plain switch now.
 //
-// ⚠️ Nothing changes on its own after the Oct 15 class starts: /free-class
+// Oct 15, 2026: re-dated to the Wed Oct 28, 11:00 AM ET class (Jake's email
+// after the Oct 14 strategy call).
+//
+// ⚠️ Nothing changes on its own after the Oct 28 class starts: /free-class
 // keeps taking signups for a date that has passed. Book the next class (or
 // challenge) and flip this, or update workshops.ts, before then.
 

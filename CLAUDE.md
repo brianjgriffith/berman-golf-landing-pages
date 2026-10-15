@@ -18,7 +18,9 @@ silently shadow it.
 signups — the webclass (`/free-class`) or the challenge (`/20-more-yards`). The
 other one's opt-in pages forward to it, so there's always exactly one, and the
 two can't redirect into each other. **Currently `"webclass"`** — the
-**Thu Oct 15, 2026, 12:00 PM ET** class (set Oct 1, 2026):
+**Wed Oct 28, 2026, 11:00 AM ET** class (set Oct 15, 2026; the Oct 15
+class ran first). ⚠️ The page still embeds the Oct 15 GHL form until a 10.28.26
+form is made and dropped into `workshops.ts`:
 
 | Entry point | owner `"webclass"` (now) | owner `"challenge"` |
 |---|---|---|
@@ -38,7 +40,7 @@ Query strings survive the redirect, so ad UTMs are preserved. 307 (not 308)
 because ownership flips between runs.
 
 ⚠️ It's a plain switch, not a timestamp (it used to flip automatically when the
-Aug 6 class started). Nothing changes on its own after Oct 15 — `/free-class`
+Aug 6 class started). Nothing changes on its own after Oct 28 — `/free-class`
 will keep taking signups for a past date until someone books the next class or
 challenge and updates `workshops.ts` / `FUNNEL_OWNER`.
 
