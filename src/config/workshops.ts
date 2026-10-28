@@ -10,18 +10,18 @@ export interface Workshop {
 
 export const workshops: Workshop[] = [
   {
-    // Wed Oct 28, 2026, 11:00 AM ET (still EDT = UTC-4; DST ends Nov 1).
-    // Keep `date`/`time` and `start` in sync — the page shows the strings, the
-    // calendar link uses `start`.
-    date: "Wednesday, October 28th",
-    time: "11:00 AM ET",
-    start: new Date("2026-10-28T15:00:00Z"),
+    // Thu Nov 19, 2026, 12:00 PM ET (EST = UTC-5; DST ended Nov 1).
+    // Set on the Oct 28 strategy call. Keep `date`/`time` and `start` in sync —
+    // the page shows the strings, the calendar link uses `start`.
+    date: "Thursday, November 19th",
+    time: "12:00 PM ET",
+    start: new Date("2026-11-19T17:00:00Z"),
     durationMinutes: 90,
     form: {
-      src: "https://link.physiofunnels.com/widget/form/wHIVvYFTfEgvgrwcC5s3",
-      id: "inline-wHIVvYFTfEgvgrwcC5s3",
-      formName: "(TM) 10.28.26 Webclass Sign Up Page",
-      formId: "wHIVvYFTfEgvgrwcC5s3",
+      src: "https://link.physiofunnels.com/widget/form/3ciK8sc32097UNwGDeR3",
+      id: "inline-3ciK8sc32097UNwGDeR3",
+      formName: "(TM) 11.19.26 Webclass Sign Up Page",
+      formId: "3ciK8sc32097UNwGDeR3",
     },
   },
 ];

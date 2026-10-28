@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { workshops, googleCalendarUrl } from "@/config/workshops";
 
 // Where the free-class GHL form lands after submit. The redirect itself is
-// set on the form in GHL ("(TM) 10.28.26 Webclass Sign Up Page" → On Submit →
+// set on the form in GHL ("(TM) 11.19.26 Webclass Sign Up Page" → On Submit →
 // Open URL → gaindistance.com/free-class/thank-you); nothing in this repo
 // sends people here.
 //
