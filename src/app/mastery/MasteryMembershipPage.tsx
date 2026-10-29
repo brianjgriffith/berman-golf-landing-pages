@@ -495,6 +495,44 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
         </div>
       </section>
 
+      {/* Perry — the "it's virtual, will it work for me?" objection, for whoever is still on the fence.
+          Quotes are verbatim (fillers trimmed); the 200 -> 220 driver average is from his interview,
+          see Docs/Berman Knowledge Base/testimonials/Perry (65, raw transcript).md. */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <p className="text-[#F26B4E] font-semibold tracking-wide uppercase text-sm mb-3 text-center">
+            Not a Computer Person?
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">
+            Neither Was Perry
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg bg-black md:order-2">
+              <iframe
+                src="https://www.youtube.com/embed/n-yNUxO1fGM"
+                title="Perry testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="text-xl md:text-2xl text-gray-900 italic leading-snug mb-4">
+                &quot;I never was a fan of that, because we&apos;re older. We&apos;re not used to it.
+                But once you do it, it comes through clear.&quot;
+              </p>
+              <p className="text-gray-700 italic mb-5">
+                &quot;It&apos;s so simple as long as you just follow the instructions.&quot;
+              </p>
+              <span className="inline-block bg-[#F26B4E]/10 text-[#c2492f] font-semibold text-sm px-4 py-2 rounded-full mb-4">
+                Driver average: 200 &rarr; 220 yards
+              </span>
+              <p className="font-semibold text-gray-900">- Perry, 65, Knoxville, TN</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Meet Jake */}
       <section className="py-20 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
         <div className="max-w-6xl mx-auto px-4">
