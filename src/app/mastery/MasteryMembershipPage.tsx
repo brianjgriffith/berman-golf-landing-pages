@@ -155,14 +155,14 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
               )}
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <Image
-                src="/senior-golf-mastery-bundle-image.png"
-                alt="Senior Golf Mastery"
-                width={1200}
-                height={900}
-                className="object-contain w-full max-w-md lg:max-w-none"
-                priority
+            {/* The VSL (Videos/06_SGM-VSL). rel=0 keeps the end screen to Berman videos only. */}
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/3lTHnMGGH2c?rel=0"
+                title="Senior Golf Mastery with Dr. Jake Berman"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
               />
             </div>
           </div>
