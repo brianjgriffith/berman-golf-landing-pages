@@ -205,6 +205,38 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
         </div>
       </section>
 
+      {/* Jeff — the "lessons never taught me how" story, right after the lessons argument.
+          Quotes are verbatim; see Docs/Berman Knowledge Base/testimonials/Jeff (68, ...).md
+          before adding any distance claim (there isn't one yet). */}
+      <section className="pb-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/HJCHFrbrS-Q"
+                title="Jeff testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="text-xl md:text-2xl text-gray-900 italic leading-snug mb-4">
+                &quot;Three or four months ago I was really thinking about just stopping playing golf
+                because it was getting so, so frustrating. I took the mastery class, started getting more consistent, and golf really became fun again.&quot;
+              </p>
+              <p className="text-gray-700 italic mb-5">
+                &quot;Golf pros have never taught me how.&quot;
+              </p>
+              <span className="inline-block bg-[#F26B4E]/10 text-[#c2492f] font-semibold text-sm px-4 py-2 rounded-full mb-4">
+                Handicap index: 13 &rarr; 10.3 in two months
+              </span>
+              <p className="font-semibold text-gray-900">- Jeff, 68, north of Boston</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What's inside */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
