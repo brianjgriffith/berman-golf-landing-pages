@@ -280,6 +280,35 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
         </div>
       </section>
 
+      {/* Rich — "feel what it should feel like for me", after the curriculum. He's a 1-on-1 coaching client, not a
+          member: keep that label. No score or yardage claim (none measured); see
+          Docs/Berman Knowledge Base/testimonials/Rich Siegel (62, ...).md */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/GCYxPrwvrR0"
+                title="Rich testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="text-xl md:text-2xl text-gray-900 italic leading-snug mb-4">
+                &quot;Prior lessons was just, here&apos;s what the swing should feel like. And maybe feel like
+                for the pro, but not for me. The Berman method allows me now to feel what it should feel like for me.&quot;
+              </p>
+              <span className="inline-block bg-[#F26B4E]/10 text-[#c2492f] font-semibold text-sm px-4 py-2 rounded-full mb-4">
+                His goal: break 100 &rarr; now the 80s
+              </span>
+              <p className="font-semibold text-gray-900">- Rich, 62, Boston &middot; 1-on-1 coaching client</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Michael Litwin */}
       <section className="py-12 bg-white">
         <div className="max-w-3xl mx-auto px-4">
