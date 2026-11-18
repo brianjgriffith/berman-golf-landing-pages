@@ -1,5 +1,5 @@
 import MasteryMembershipPage from "./MasteryMembershipPage";
-import { annualBonusLive } from "@/config/masteryMembership";
+import { annualBonusLive, blackFridayLive } from "@/config/masteryMembership";
 
 // Per request, not prerendered: the annual 1-on-1 bonus expires at a fixed
 // instant (config/masteryMembership.ts) and the page has to drop it then,
@@ -7,5 +7,5 @@ import { annualBonusLive } from "@/config/masteryMembership";
 export const dynamic = "force-dynamic";
 
 export default function MasteryPage() {
-  return <MasteryMembershipPage bonusLive={annualBonusLive()} />;
+  return <MasteryMembershipPage bonusLive={annualBonusLive()} blackFridayLive={blackFridayLive()} />;
 }

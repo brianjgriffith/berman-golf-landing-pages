@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { masteryMembership as mm, annualBonusLive } from "@/config/masteryMembership";
+import { masteryMembership as mm, annualBonusLive, blackFriday as bf, kickoffUpcoming } from "@/config/masteryMembership";
 
 export const metadata: Metadata = {
   title: "Welcome to Senior Golf Mastery | Berman Golf",
@@ -15,6 +15,8 @@ export const dynamic = "force-dynamic";
 
 export default function MasteryThankYouPage() {
   const bonusLive = annualBonusLive();
+  // Shown until the call has happened, not just until the sale closes.
+  const showKickoff = kickoffUpcoming();
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -76,6 +78,14 @@ export default function MasteryThankYouPage() {
               Annual members get a free private session with Jake. Look for a separate email with how
               to book it. Most golfers use it early, so everything after is aimed at their body specifically.
             </p>
+          </div>
+          )}
+
+          {showKickoff && (
+          <div className="mt-10 max-w-3xl mx-auto bg-red-50 border-2 border-red-300 rounded-2xl p-6 md:p-8 text-center">
+            <p className="text-xs font-bold tracking-widest uppercase text-red-700 mb-2">Joined for the year during Black Friday?</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Save the Date: Live Kickoff Call With Dr. Jake</h3>
+            <p className="text-gray-700">{bf.bonuses.find((b) => b.label.startsWith("Live Group Kickoff"))?.body} Look for an email with the link.</p>
           </div>
           )}
 

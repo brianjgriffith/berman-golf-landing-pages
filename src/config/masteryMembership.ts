@@ -159,6 +159,105 @@ export const masteryMembership = {
   ],
 } as const;
 
+/**
+ * BLACK FRIDAY SPECIAL (decided on the Nov 18, 2026 call with Jake).
+ *
+ * Opens at the Thu Nov 19 free class, closes Mon Nov 30 at midnight ET (the
+ * Cyber Monday last-call class runs that afternoon). No discount: annual stays
+ * $1,997. The special is the bonuses, and they come with ANNUAL only, matching
+ * the "Choose Your Plan" slide.
+ *
+ * `stack` is the "Inside Senior Golf Mastery" slide, line for line. `bonuses`
+ * are the Black Friday bonus slides with the values Jake set on the call.
+ * Tee Shot Transformation counts as a bonus at $397 (Brian, Nov 18: it's been
+ * in earlier offers too, so it isn't new, but it stays in the stack). The
+ * kickoff call has no dollar value (none was set).
+ *
+ * Like annualBonus, it comes down on its own at `endsAt` (pages check
+ * blackFridayLive() per request), so the deadline in the emails is real.
+ */
+export const blackFriday = {
+  label: "Black Friday Special",
+  // Tue Dec 1, 12:00 AM ET (EST = UTC-5) = end of Mon Nov 30.
+  endsAt: new Date("2026-12-01T05:00:00Z"),
+  endsLabel: "Monday, November 30 at midnight ET",
+  endsShort: "Mon, Nov 30",
+
+  stack: [
+    { label: "Complete Senior Golf Mastery Curriculum", value: 4997 },
+    { label: "Monthly Group Coaching", value: 500 },
+    { label: "Access to Dr. Jake Berman", value: 500 },
+    { label: "Personalized Practice Plans", value: 997 },
+    { label: "Swing Assessments & Progress Tracking", value: 497 },
+    { label: "Complete Training Video Library", value: 2997 },
+    { label: "Monthly Challenges", value: 297 },
+    { label: "Senior Golf Community", value: 0 },
+  ],
+  stackTotal: 10785,
+
+  bonuses: [
+    {
+      label: "Tee Shot Transformation",
+      value: 397,
+      body:
+        "Worried your body physically can't do this? Jake's first program: 100% biomechanics, built for backs, hips and knees. Start here if anything hurts.",
+    },
+    {
+      label: "Done-for-You Onboarding",
+      value: 500,
+      body:
+        "Terrible with technology? Jake's team walks you through setup, step by step, until your first swing upload is done. You're never stuck on a screen.",
+    },
+    {
+      label: "Your First Swing Review",
+      value: 500,
+      body:
+        "Upload a 7-iron swing on day one. Jake watches it and tells you exactly which of the 7 steps to start on.",
+    },
+    {
+      label: "The Winter At-Home Plan",
+      value: 997,
+      body:
+        "Golf season's ending? Good. Six months of accountability from Jake's team while you train your body at home all winter. No range, no course. Show up in spring swinging better than you left.",
+    },
+    {
+      label: "Live Group Kickoff Call with Dr. Jake",
+      value: 0,
+      body:
+        "Wednesday, December 2 at 12:00 PM ET, 60 minutes. Jake onboards the whole group live and walks through the 7 steps with you. Everyone starts the same day.",
+    },
+  ],
+  bonusTotal: 2394,
+
+  /** Everything on the slide plus the bonuses. Self-checked below. */
+  totalValue: 13179,
+} as const;
+
+export const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
+
+/**
+ * True until the kickoff call ends (Wed Dec 2, 1:00 PM ET). The thank-you page
+ * reminds Black Friday annual buyers about it until then.
+ */
+export function kickoffUpcoming(now: number = Date.now()): boolean {
+  return now < new Date("2026-12-02T18:00:00Z").getTime();
+}
+
+/** True while the Black Friday bonuses are on offer. Check per request. */
+export function blackFridayLive(now: number = Date.now()): boolean {
+  return now < blackFriday.endsAt.getTime();
+}
+
+{
+  const sum = (xs: readonly { value: number }[]) => xs.reduce((a, x) => a + x.value, 0);
+  if (sum(blackFriday.stack) !== blackFriday.stackTotal)
+    throw new Error("Black Friday: stack lines don't add up to stackTotal.");
+  if (sum(blackFriday.bonuses) !== blackFriday.bonusTotal)
+    throw new Error("Black Friday: bonus values don't add up to bonusTotal.");
+  if (blackFriday.stackTotal + blackFriday.bonusTotal !== blackFriday.totalValue)
+    throw new Error("Black Friday: totalValue must equal stackTotal + bonusTotal.");
+}
+
 /** True while the annual 1-on-1 bonus is still on offer. Check per request. */
 export function annualBonusLive(now: number = Date.now()): boolean {
   return now < masteryMembership.annualBonus.endsAt.getTime();

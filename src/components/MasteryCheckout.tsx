@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { masteryMembership as mm, type MasteryPlan } from "@/config/masteryMembership";
+import { masteryMembership as mm, blackFriday as bf, usd, type MasteryPlan } from "@/config/masteryMembership";
 
 /**
  * Checkout for the Senior Golf Mastery membership. One component, two plans,
@@ -19,9 +19,11 @@ import { masteryMembership as mm, type MasteryPlan } from "@/config/masteryMembe
 export default function MasteryCheckout({
   planKey,
   bonusLive,
+  blackFridayLive = false,
 }: {
   planKey: "monthly" | "annual";
   bonusLive: boolean;
+  blackFridayLive?: boolean;
 }) {
   const plan: MasteryPlan = mm[planKey];
   const other: MasteryPlan = planKey === "monthly" ? mm.annual : mm.monthly;
@@ -108,6 +110,17 @@ export default function MasteryCheckout({
                       </span>
                     </li>
                   )}
+                  {isAnnual && blackFridayLive && (
+                    <li className="flex items-start gap-2 font-semibold text-gray-900">
+                      <span aria-hidden>🎁</span>
+                      <span>
+                        Black Friday bonuses ({usd(bf.bonusTotal)} value)
+                        <span className="block font-normal text-gray-600 text-xs mt-0.5">
+                          {bf.bonuses.map((b) => b.label).join(" · ")}. Join by {bf.endsLabel}.
+                        </span>
+                      </span>
+                    </li>
+                  )}
                   {!isAnnual && (
                     <li className="flex items-start gap-2">
                       <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -128,6 +141,7 @@ export default function MasteryCheckout({
                   <p className="text-gray-600 text-sm mb-3">
                     Monthly is {other.price}{other.cadence}, cancel anytime.
                     {bonusLive && " (The free 1-on-1 with Dr. Jake is annual only.)"}
+                    {blackFridayLive && " (The Black Friday bonuses are annual only.)"}
                   </p>
                 </>
               ) : (
@@ -137,6 +151,8 @@ export default function MasteryCheckout({
                     Go annual for {other.price}{other.cadence}
                     {bonusLive
                       ? ` and get a free 1-on-1 session with Dr. Jake (${mm.annualBonus.value} value) — through ${mm.annualBonus.endsLabel}.`
+                      : blackFridayLive
+                      ? ` and get the Black Friday bonuses (${usd(bf.bonusTotal)} value), including the live kickoff call with Dr. Jake — through ${bf.endsLabel}.`
                       : ` — that's ${mm.annualSavings} less than twelve months of monthly.`}
                   </p>
                 </>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { masteryMembership as mm } from "@/config/masteryMembership";
+import { masteryMembership as mm, blackFriday as bf, usd } from "@/config/masteryMembership";
 
 function Check({ className = "w-5 h-5 text-green-500" }: { className?: string }) {
   return (
@@ -106,7 +106,13 @@ const BONUS_DEADLINE_LINE = `The free 1-on-1 comes with annual through ${mm.annu
 
 // Rendered by ./page.tsx (a server component) so `bonusLive` is decided per
 // request on the server — the bonus comes down at the deadline on its own.
-export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolean }) {
+export default function MasteryMembershipPage({
+  bonusLive,
+  blackFridayLive,
+}: {
+  bonusLive: boolean;
+  blackFridayLive: boolean;
+}) {
   const faqs = buildFaqs(bonusLive);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -117,6 +123,18 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
       {/* Hero */}
       <section className="pt-24 pb-14 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
         <div className="max-w-6xl mx-auto px-4">
+          {blackFridayLive && (
+            <a
+              href="#black-friday"
+              className="block bg-red-600 hover:bg-red-700 text-white text-center rounded-xl px-4 py-3 mb-8 shadow-lg"
+            >
+              <span className="font-extrabold uppercase tracking-widest">{bf.label}</span>
+              <span className="hidden sm:inline"> &middot; </span>
+              <span className="block sm:inline font-semibold">
+                Join annual by {bf.endsShort} and get {usd(bf.bonusTotal)} in bonuses free &rarr;
+              </span>
+            </a>
+          )}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm md:text-base px-5 py-2 rounded-full mb-6">
@@ -126,7 +144,7 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
                 The Complete System, a Coach in Your Corner, and a Clubhouse Full of Golfers Who Get It
               </h1>
               <p className="text-lg lg:text-xl text-blue-100 mb-8">
-                Two days got you moving. This is where it sticks. The full 7-step Berman Method,
+                Felt something click? This is where it sticks. The full 7-step Berman Method,
                 live coaching with Dr. Jake every month, and a community of senior golfers doing
                 the work right alongside you.
               </p>
@@ -147,6 +165,11 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
                   {mm.annual.price}{mm.annual.cadence}
                 </a>
               </div>
+              {blackFridayLive && (
+                <p className="text-white text-sm font-semibold mt-4">
+                  Black Friday: annual comes with {bf.bonuses.length} bonuses through {bf.endsLabel}.
+                </p>
+              )}
               {bonusLive && (
                 <p className="text-blue-200 text-sm mt-4">
                   Annual includes a free 1-on-1 with Dr. Jake ({mm.annualBonus.value} value) &mdash;
@@ -260,6 +283,70 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
               </div>
             ))}
           </div>
+
+          {blackFridayLive && (
+            <div id="black-friday" className="mt-14 max-w-4xl mx-auto scroll-mt-24">
+              <div className="text-center mb-8">
+                <span className="inline-block bg-red-600 text-white font-extrabold uppercase tracking-widest text-sm px-4 py-2 rounded-full mb-4">
+                  {bf.label} &middot; Annual Only
+                </span>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                  Join for the Year by {bf.endsShort} and You Also Get&hellip;
+                </h3>
+                <p className="text-gray-600">Same {mm.annual.price} price. The bonuses are the special, and they end {bf.endsLabel}.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-5">
+                {bf.bonuses.map((b, i) => (
+                  <div key={b.label} className="bg-white rounded-2xl p-6 shadow-sm border-2 border-red-100">
+                    <p className="text-xs font-bold tracking-widest uppercase text-red-600 mb-1">
+                      Bonus #{i + 1}
+                    </p>
+                    <h4 className="text-xl font-bold text-gray-900 mb-1">{b.label}</h4>
+                    {b.value > 0 && (
+                      <p className="text-sm font-bold text-[#c2492f] mb-2">{usd(b.value)} value</p>
+                    )}
+                    <p className="text-gray-600">{b.body}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* The value stack, as Jake reads it off the slides */}
+              <div className="mt-8 bg-white rounded-2xl shadow-lg border-2 border-gray-200 overflow-hidden">
+                <div className="bg-[#0f2a4a] text-white px-6 py-4 font-bold uppercase tracking-wide text-center">
+                  Everything You Get
+                </div>
+                <ul className="divide-y divide-gray-100">
+                  {bf.stack.map((line) => (
+                    <li key={line.label} className="flex justify-between gap-4 px-6 py-3 text-gray-800">
+                      <span>{line.label}</span>
+                      <span className="font-semibold whitespace-nowrap">{line.value > 0 ? usd(line.value) : "Priceless"}</span>
+                    </li>
+                  ))}
+                  {bf.bonuses.map((b) => (
+                    <li key={b.label} className="flex justify-between gap-4 px-6 py-3 text-gray-800 bg-red-50/60">
+                      <span><span className="text-red-600 font-bold">BONUS:</span> {b.label}</span>
+                      <span className="font-semibold whitespace-nowrap">{b.value > 0 ? usd(b.value) : "Included"}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="px-6 py-5 bg-gray-50 text-center">
+                  <p className="text-gray-500 font-bold uppercase tracking-wide">
+                    Total value: <span className="line-through">{usd(bf.totalValue)}</span>
+                  </p>
+                  <p className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-1">
+                    Yours for <span className="text-green-700">{mm.annual.price}</span>/year
+                  </p>
+                  <a
+                    href={mm.annual.checkoutPath}
+                    className="inline-block mt-4 bg-[#F26B4E] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e05a3d] uppercase tracking-wide"
+                  >
+                    Join Annual by {bf.endsShort}
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
 
           {bonusLive && (
           <div className="mt-8 max-w-3xl mx-auto bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-300 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
@@ -375,7 +462,7 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
           </h2>
           <p className="text-gray-600 mb-14 text-center">
             Same membership either way. Annual saves you {mm.annualSavings}
-            {bonusLive ? " and adds a 1-on-1 with Jake." : "."}
+            {bonusLive ? " and adds a 1-on-1 with Jake." : blackFridayLive ? ` and, through ${bf.endsShort}, comes with the Black Friday bonuses.` : "."}
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
@@ -450,6 +537,18 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
                     <p className="text-gray-700 text-xs mt-1">Through {mm.annualBonus.endsLabel}</p>
                   </div>
                 </div>
+              ) : blackFridayLive ? (
+                <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 mb-8 flex-1">
+                  <p className="font-extrabold text-red-700 uppercase text-sm mb-2">
+                    + Black Friday Bonuses ({usd(bf.bonusTotal)} value)
+                  </p>
+                  <ul className="space-y-1 text-sm text-gray-800">
+                    {bf.bonuses.map((b) => (
+                      <li key={b.label}>🎁 {b.label}</li>
+                    ))}
+                  </ul>
+                  <p className="text-gray-700 text-xs mt-2">Join by {bf.endsLabel}</p>
+                </div>
               ) : (
                 <div className="mb-8 flex-1" />
               )}
@@ -489,7 +588,7 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
               <h3 className="text-xl font-bold text-gray-900 mb-6">This IS for you if&hellip;</h3>
               <ul className="space-y-4">
                 {[
-                  "You felt something click in the challenge and don't want to lose it",
+                  "You felt something click in class and don't want to lose it",
                   "You're tired of losing distance and being told it's just age",
                   "You've tried lessons, tips and new clubs — and nothing stuck",
                   "You want someone checking your work, not another course to watch alone",
@@ -657,6 +756,11 @@ export default function MasteryMembershipPage({ bonusLive }: { bonusLive: boolea
               {mm.annual.price}{mm.annual.cadence}
             </a>
           </div>
+          {blackFridayLive && (
+            <p className="text-white font-semibold mt-6 text-sm">
+              Black Friday: annual comes with {usd(bf.bonusTotal)} in bonuses through {bf.endsLabel}.
+            </p>
+          )}
           {bonusLive && (
             <p className="text-blue-200 mt-6 text-sm">
               Annual includes a free 1-on-1 session with Dr. Jake ({mm.annualBonus.value} value) &mdash;
