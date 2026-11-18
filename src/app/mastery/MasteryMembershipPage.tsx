@@ -118,23 +118,27 @@ export default function MasteryMembershipPage({
 
   return (
     <main className="min-h-screen">
-      <Header />
-
-      {/* Hero */}
-      <section className="pt-24 pb-14 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          {blackFridayLive && (
+      <Header
+        banner={
+          blackFridayLive ? (
             <a
               href="#black-friday"
-              className="block bg-red-600 hover:bg-red-700 text-white text-center rounded-xl px-4 py-3 mb-8 shadow-lg"
+              className="block bg-red-600 hover:bg-red-700 text-white text-center px-4 py-2.5 text-sm md:text-base"
             >
               <span className="font-extrabold uppercase tracking-widest">{bf.label}</span>
-              <span className="hidden sm:inline"> &middot; </span>
-              <span className="block sm:inline font-semibold">
-                Join annual by {bf.endsShort} and get {usd(bf.bonusTotal)} in bonuses free &rarr;
+              <span className="hidden sm:inline">
+                {" "}&middot; Join annual by {bf.endsShort} and get {usd(bf.bonusTotal)} in bonuses free
               </span>
+              <span className="sm:hidden"> &middot; Ends {bf.endsShort}</span>
+              {" "}&rarr;
             </a>
-          )}
+          ) : undefined
+        }
+      />
+
+      {/* Hero */}
+      <section className={`${blackFridayLive ? "pt-36" : "pt-24"} pb-14 bg-gradient-to-br from-[#0f4c81] via-[#1565c0] to-[#1e88e5] text-white`}>
+        <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <span className="inline-block bg-[#F26B4E] text-white font-bold tracking-widest uppercase text-sm md:text-base px-5 py-2 rounded-full mb-6">
@@ -285,7 +289,7 @@ export default function MasteryMembershipPage({
           </div>
 
           {blackFridayLive && (
-            <div id="black-friday" className="mt-14 max-w-4xl mx-auto scroll-mt-24">
+            <div id="black-friday" className="mt-14 max-w-4xl mx-auto scroll-mt-36">
               <div className="text-center mb-8">
                 <span className="inline-block bg-red-600 text-white font-extrabold uppercase tracking-widest text-sm px-4 py-2 rounded-full mb-4">
                   {bf.label} &middot; Annual Only
@@ -455,7 +459,7 @@ export default function MasteryMembershipPage({
       </section>
 
       {/* Pricing — mirrors Jake's "Choose Your Plan" slide */}
-      <section id="join" className="py-20 bg-white scroll-mt-20">
+      <section id="join" className="py-20 bg-white scroll-mt-32">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 text-center uppercase tracking-tight">
             Choose Your <span className="text-green-600">Plan</span>

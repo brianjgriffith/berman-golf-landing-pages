@@ -1,12 +1,18 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { seniorGolfMasteryCohort as cohort } from "@/config/cohort";
 import { twentyMoreYardsEvent, isWaitlist } from "@/config/events";
 import { clubhouse } from "@/config/clubhouse";
 import { masteryMembership } from "@/config/masteryMembership";
 
-export default function Header() {
+/**
+ * `banner` renders a strip under the nav, inside the fixed header, so it stays
+ * on screen while the page scrolls (used for the Black Friday bar on /mastery).
+ * Pages that pass one need extra top padding on their first section.
+ */
+export default function Header({ banner }: { banner?: ReactNode } = {}) {
   const pathname = usePathname();
 
   const getCtaConfig = () => {
@@ -119,6 +125,7 @@ export default function Header() {
           </a>
         )}
       </div>
+      {banner}
     </header>
   );
 }
