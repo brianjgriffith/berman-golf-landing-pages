@@ -10,18 +10,21 @@ export interface Workshop {
 
 export const workshops: Workshop[] = [
   {
-    // Thu Nov 19, 2026, 12:00 PM ET (EST = UTC-5; DST ended Nov 1).
-    // Set on the Oct 28 strategy call. Keep `date`/`time` and `start` in sync —
-    // the page shows the strings, the calendar link uses `start`.
-    date: "Thursday, November 19th",
-    time: "12:00 PM ET",
-    start: new Date("2026-11-19T17:00:00Z"),
+    // Mon Nov 30, 2026, 2:00 PM ET (EST = UTC-5) — the Cyber Monday "last
+    // call" class, same class as Nov 19. Set on the Oct 28 strategy call; the
+    // Black Friday sale it closes ends that night at midnight ET
+    // (config/masteryMembership.ts → blackFriday.endsAt). Keep `date`/`time`
+    // and `start` in sync — the page shows the strings, the calendar link
+    // uses `start`.
+    date: "Monday, November 30th",
+    time: "2:00 PM ET",
+    start: new Date("2026-11-30T19:00:00Z"),
     durationMinutes: 90,
     form: {
-      src: "https://link.physiofunnels.com/widget/form/3ciK8sc32097UNwGDeR3",
-      id: "inline-3ciK8sc32097UNwGDeR3",
-      formName: "(TM) 11.19.26 Webclass Sign Up Page",
-      formId: "3ciK8sc32097UNwGDeR3",
+      src: "https://link.physiofunnels.com/widget/form/oXEX7JWwdrnMSPePRr1j",
+      id: "inline-oXEX7JWwdrnMSPePRr1j",
+      formName: "(TM) 11.30.26 Webclass Sign Up Page",
+      formId: "oXEX7JWwdrnMSPePRr1j",
     },
   },
 ];

@@ -18,9 +18,9 @@ silently shadow it.
 signups — the webclass (`/free-class`) or the challenge (`/20-more-yards`). The
 other one's opt-in pages forward to it, so there's always exactly one, and the
 two can't redirect into each other. **Currently `"webclass"`** — the
-**Thu Nov 19, 2026, 12:00 PM ET** class (set on the Oct 28, 2026 call; the
-Oct 15 and Oct 28 classes ran first). Form: "(TM) 11.19.26 Webclass Sign Up
-Page" (`3ciK8sc32097UNwGDeR3`):
+**Mon Nov 30, 2026, 2:00 PM ET** Cyber Monday class (set on the Oct 28, 2026 call; the
+Oct 15, Oct 28 and Nov 19 classes ran first). Form: "(TM) 11.30.26 Webclass Sign Up
+Page" (`oXEX7JWwdrnMSPePRr1j`):
 
 | Entry point | owner `"webclass"` (now) | owner `"challenge"` |
 |---|---|---|
